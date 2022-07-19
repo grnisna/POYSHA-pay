@@ -1,8 +1,13 @@
+import Footer from "./components/SharedCompo/Footer/Footer";
+import Navbar from "./components/SharedCompo/Navbar/Navbar";
+
+
 function App() {
   return (
     <div>
-      <h1 className="text-center">The POYSHA-pay is F-Commerce Wallet</h1>  
-      <h2> Project Type: We will create an f-commerce website like bkash, upay,Paypal ect.</h2>    
+      <Navbar />
+      <h1 className="text-center">The POYSHA-pay is F-Commerce Wallet</h1>
+      <Footer />
     </div>
   );
 }
