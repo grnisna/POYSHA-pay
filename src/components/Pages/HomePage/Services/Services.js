@@ -1,9 +1,9 @@
 import React from 'react';
 import './Services.css';
-import sendmoney from '../../../../Assets/sendmoney.png';
-import cashin from '../../../../Assets/cashin.png';
-import billpay from '../../../../Assets/billpay.png';
-import recharge from '../../../../Assets/recharge.png';
+import sendmoney from '../../../../Assets/serviceImg/sendmoney.png'
+import cashin from '../../../../Assets/serviceImg/cashin.png';
+import billpay from '../../../../Assets/serviceImg/billpay.png';
+import recharge from '../../../../Assets/serviceImg/recharge.png';
 
 const Services = () => {
     return (
