@@ -1,0 +1,121 @@
+.serviceArea{
+    width: 100%;
+    height: 15%;
+}
+
+/* card area */
+.myCard{
+    height: 50%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #e9ecef;
+    text-align: center;    
+    padding: 30px;
+    transition: 1.2s;
+    border: 3px solid #fff;
+    animation: beforeSpin 4s linear infinite;
+}
+/* image container */
+.imageContainer{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 50%;
+    border: 1px solid black;    
+}
+.myCard:hover{
+    background-color: #98c1d9;
+    transform: scale(1.1);
+    animation: spin 6s linear infinite;
+}
+
+.summaryText{
+    color: #1d3557;
+}
+
+
+@keyframes spin { 
+    10% { 
+      border-left: 3px solid red;
+    }
+    20% { 
+      border-top: 3px solid red;
+    }
+    30% { 
+      border-right: 3px solid red;
+    }
+    40% { 
+      border-bottom: 3px solid red;
+    }
+    50% { 
+      border-left: 3px solid red;
+    }
+    60% { 
+      border-top: 3px solid red;
+    }
+    70% { 
+      border-right: 3px solid red;
+    }
+    80% { 
+      border-bottom: 3px solid red;
+    }
+    90% { 
+      border-right: 3px solid red;
+    }
+    100% { 
+      border-bottom: 3px solid red;
+    }
+  }
+
+@keyframes beforeSpin { 
+    10% { 
+      border-left: 3px solid blue;
+    }
+    20% { 
+      border-top: 3px solid blue;
+    }
+    30% { 
+      border-right: 3px solid blue;
+    }
+    40% { 
+      border-bottom: 3px solid blue;
+    }
+    50% { 
+      border-left: 3px solid blue;
+    }
+    60% { 
+      border-top: 3px solid blue;
+    }
+    70% { 
+      border-right: 3px solid blue;
+    }
+    80% { 
+      border-bottom: 3px solid blue;
+    }
+    90% { 
+      border-right: 3px solid blue;
+    }
+    100% { 
+      border-bottom: 3px solid blue;
+    }
+  }
+  
+.cardTwo{
+    height: 50%;
+    margin: auto;
+    background-color: blue;
+}
+.cardThree{
+    height: 50%;
+    margin: auto;
+    background-color: blue;
+}
+.cardFour{
+    height: 50%;
+    margin: auto;
+    background-color: blue;
+}
+
+
+
+ 
