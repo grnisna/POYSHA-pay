@@ -1,7 +1,9 @@
+import AppDownload from "./components/Pages/HomePage/AppDownload";
+
 function App() {
   return (
     <div>
-      <h1 className="text-center">The POYSHA-pay is F-Commerce Wallet</h1>      
+      <AppDownload></AppDownload>
     </div>
   );
 }
