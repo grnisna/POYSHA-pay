@@ -1,4 +1,7 @@
 import React from 'react';
+import { BsFacebook, BsTwitter, BsPinterest, BsLinkedin, BsApple } from 'react-icons/bs';
+import { FaGooglePlay } from 'react-icons/fa';
+
 
 const Footer = () => {
     let getYear = () => {
@@ -6,45 +9,74 @@ const Footer = () => {
         return currentYear;
     };
     return (
-        <footer class="footer p-10 bg-blue-500 text-white font-bold text-base-content">
-            <div>
-                <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
-                <p>Poysha-pay.<br />
-                    Providing reliable tech since 1992</p>
-                <div>
-                    <p>Copyright &copy; {getYear()} - Team Cyper-6 for Poysha-pay</p>
+        <div className='bg-violet-800 shadow-2xl rounded-t-3xl text-white' >
+            <footer className="footer px-20 py-4 border-t  border-base-300">
+                <div className="items-center grid-flow-col">
+                    <p className='text-2xl font-bold uppercase'>Poysha-pay.</p>
                 </div>
-            </div>
-            <div>
-                <span class="footer-title">Services</span>
-                <a class="link link-hover">Branding</a>
-                <a class="link link-hover">Design</a>
-                <a class="link link-hover">Marketing</a>
-                <a class="link link-hover">Advertisement</a>
-            </div>
-            <div>
-                <span class="footer-title">Company</span>
-                <a class="link link-hover">About us</a>
-                <a class="link link-hover">Contact</a>
-            </div>
-            <div>
-                <span class="footer-title">Legal</span>
-                <a class="link link-hover">Terms of use</a>
-                <a class="link link-hover">Privacy policy</a>
-                <a class="link link-hover">Cookie policy</a>
-                <div className='pt-5'>
-                    <h1 className='text-xl uppercase font-bold pb-2'>
-                        Download Poysha-pay App</h1>
-                    <span className='py-3  w-80'>
-                        To make your life easier Download Nagad app and <br />access all our services from a single touchpoint. </span> <br />
-
-                    <div className='pt-2'>
-                        <button className='btn btn-xl rounded-full btn-primary'>Download App</button>
+                <div className="md:place-self-center md:justify-self-end">
+                    <div className='grid grid-flow-col gap-4 mx-auto justify-between items-center'>
+                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsFacebook /></a>
+                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsTwitter /></a>
+                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsPinterest /></a>
+                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsLinkedin /></a>
                     </div>
                 </div>
-            </div>
+            </footer>
+            <footer className="footer pb-2 lg:px-20 bg-violet-500 mx-auto shadow-2xl text-white font-bold ">
 
-        </footer>
+                <div>
+                    <span className="text-xl uppercase">Services</span>
+                    <a className="link link-hover">Branding</a>
+                    <a className="link link-hover">Design</a>
+                    <a className="link link-hover">Marketing</a>
+                    <a className="link link-hover">Advertisement</a>
+                </div>
+                <div>
+                    <span className="text-xl uppercase">Company</span>
+                    <a className="link link-hover">About us</a>
+                    <a className="link link-hover">Contact</a>
+                    <a className="link link-hover">Blogs</a>
+                    <a className="link link-hover">Media</a>
+                </div>
+                <div>
+                    <span className="text-xl uppercase">Legal</span>
+                    <a className="link link-hover">Terms of use</a>
+                    <a className="link link-hover">Privacy policy</a>
+                    <a className="link link-hover">Cookie policy</a>
+                    <a className="link link-hover">Data Security</a>
+
+                </div>
+                <div >
+                    <h1 className='text-xl uppercase '>
+                        Follow us</h1>
+                    <span className='w-48'>
+                        To make your life easier Download Nagad app and <br />access all our services from a single touch point.
+                    </span>
+                    <div className='lg:flex lg:gap-4 mb-2  '>
+                        <button className='btn btn-sm  rounded-full bg-black'><FaGooglePlay className=' text-green-400' />  Google Play</button>
+                        <button className='btn btn-sm  rounded-full bg-black'><BsApple className=' text-grey-400' />  Apple Store</button>
+                    </div>
+
+                </div>
+                <div>
+                    <span className="text-xl uppercase">Newsletter</span>
+                    <div className="form-control  w-60">
+                        <label className="label">
+                            <span className="">Enter your email address hear and get every update of the features via Email. </span>
+                        </label>
+                        <div className="relative">
+                            <input type="text" placeholder="username@site.com" className="input input-bordered rounded-lg w-full pr-16" />
+                            <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+            <div className='bg-violet-800 text-white font-bold'>
+                <p className='text-center p-5'><p>All Rights Received || Copyright &copy; {getYear()} - Team Cyber-6 </p></p>
+            </div>
+        </div>
     );
 };
 
