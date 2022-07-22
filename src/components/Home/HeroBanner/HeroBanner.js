@@ -1,5 +1,6 @@
 import React from 'react';
-import HeroBlob from '../../../Assets/SVG/3rd-bannar-blob.svg'
+import card from '../../../Assets/SVG/3rd-bannar-blob.svg'
+// import HeroBlob from '../../../Assets/SVG/3rd-bannar-blob.svg'
 import './HeroBanner.css';
 import { FaArrowRight } from "react-icons/fa";
 const HeroBanner = () => {
@@ -27,7 +28,7 @@ const HeroBanner = () => {
     </div>
    </div>
    <div className="hero-blob grid">
-    <img className='blob-svg' src={HeroBlob} alt="" />
+    <img className='blob-svg' src={card} alt="" />
    </div>
   </section>
  );
