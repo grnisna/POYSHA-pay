@@ -1,5 +1,5 @@
 import React from 'react';
-import card from '../../../Assets/SVG/3rd-bannar-blob.svg'
+import card from '../../../../Assets/SVG/3rd-bannar-blob.svg'
 // import HeroBlob from '../../../Assets/SVG/3rd-bannar-blob.svg'
 import './HeroBanner.css';
 import { FaArrowRight } from "react-icons/fa";
