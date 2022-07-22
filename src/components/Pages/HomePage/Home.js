@@ -1,16 +1,17 @@
 import React from 'react';
 import AppDownload from './AppDownload';
+import Growth from './Growth';
 import Services from './Services/Services';
+import HeroBanner from './HeroBanner/HeroBanner';
 
 const Home = () => {
     return (
         <div>
-<<<<<<< HEAD
-
-=======
-            <AppDownload></AppDownload>
+            <HeroBanner></HeroBanner>
             <Services></Services>
->>>>>>> a026eba897b883700cf84a5e694f6d0d7356aee4
+            <AppDownload></AppDownload>
+            <Growth></Growth>
+
         </div>
     );
 };
