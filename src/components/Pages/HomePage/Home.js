@@ -6,10 +6,9 @@ import Services from './Services/Services';
 const Home = () => {
     return (
         <div>
-
-            <Growth></Growth>
-            <AppDownload></AppDownload>
             <Services></Services>
+            <AppDownload></AppDownload>
+            <Growth></Growth>
         </div>
     );
 };
