@@ -1,0 +1,82 @@
+[
+    {
+        "_id": 1,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/0fmDSSh/Bank-Americard-credit-card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 2,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/3m6HLYP/Capital-One-Quicksilver-Cash-Rewards-Credit-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 3,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/19jtDp9/Capital-One-Venture-One-Rewards-Credit-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 4,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/j4YF1XH/Citi-Simplicity-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 5,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/m640ZzW/Citi-Diamond-Preferred-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 6,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/gWYfTdp/Citi-Double-Cash-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 7,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/R6Syt1v/Discover-it-Balance-Transfer.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 8,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/LnbRFKs/U-S-Bank-Visa-Platinum-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 9,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/zRJRh9Y/Wells-Fargo-Active-Cash-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    },
+    {
+        "_id": 10,
+        "CompanyName": "U.S. Bank Visa® Platinum Card",
+        "CardPic": "https://i.ibb.co/C5Qmnt9/Wells-Fargo-Reflect-Card.webp",
+        "Offer1": "0% for 33 months (2.65% fee)",
+        "Offer2": "0% for 3 months reverting to 21.9%",
+        "Description": "Earn 1% cashback on purchases made between 13 June and 18 September 2022 when using your card abroad."
+    }
+]
