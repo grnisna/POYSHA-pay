@@ -9,7 +9,7 @@ const Footer = () => {
         return currentYear;
     };
     return (
-        <div className='bg-violet-800 shadow-2xl rounded-t-3xl text-white' >
+        <div className='bg-violet-800 shadow-2xl  text-white' >
             <footer className="footer px-20 py-4 border-t  border-base-300">
                 <div className="items-center grid-flow-col">
                     <p className='text-2xl font-bold uppercase'>Poysha-pay.</p>
@@ -23,7 +23,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer className="footer pb-2 lg:px-20 bg-violet-500 mx-auto shadow-2xl text-white font-bold ">
+            <footer className="footer py-10 lg:px-20 bg-violet-500 mx-auto shadow-2xl text-white font-bold ">
 
                 <div>
                     <span className="text-xl uppercase">Services</span>

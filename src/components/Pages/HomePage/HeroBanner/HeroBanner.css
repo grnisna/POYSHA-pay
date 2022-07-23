@@ -1,0 +1,26 @@
+.hero-h1 {
+ font-size: 50px;
+ font-weight: 700;
+}
+
+.hero-content {
+ /* width: 90%; */
+}
+
+.btn-explore {
+ font-size: 20px;
+ font-weight: lighter;
+}
+
+
+.get-link {
+ width: 100px;
+ height: 40px;
+ background-color: #6C63FF;
+ color: #FFFFFF;
+}
+
+/* .blob-svg {
+ width: 400rem;
+ height: 100vh;
+} */
