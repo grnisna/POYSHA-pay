@@ -3,38 +3,54 @@ import AppleStore from '../../../Assets/AppDownload/apple-store.png';
 import PlayStore from '../../../Assets/AppDownload/play-store.png';
 import mobile from '../../../Assets/AppDownload/mobile.gif';
 import support from '../../../Assets/AppDownload/support.png';
-import userinterface from '../../../Assets/AppDownload/user-interface.png';
-import customize from '../../../Assets/AppDownload/easy-customize.png';
+import cashIn from '../../../Assets/AppDownload/cash-in.png';
+import cashOut from '../../../Assets/AppDownload/cash-out.png';
+import currency from '../../../Assets/AppDownload/currency.png';
 import security from '../../../Assets/AppDownload/Security.png';
-import QRCode from '../../../Assets/AppDownload/QR Code.png';
+import encrypted from '../../../Assets/AppDownload/encrypted.png';
 
 const AppDownload = () => {
     return (
         <div>
+<<<<<<< HEAD
+            {/* first part */}
+            <div className='flex flex-col items-center justify-center h-screen bg-primary'>
+                <h1 className='text-white text-2xl lg:text-5xl font-bold mt-2'>Easy To Use</h1>
+                <h1 className='text-white text-2xl lg:text-5xl font-bold mt-2'>Download Your App.</h1>
+                <p className='text-white font-bold mt-2'>Our goal is safe and complete service</p>
+                <div className='flex justify-center mt-2'>
+                    <a href="https://apps.apple.com/us/app/nagad/id1471844924" target='_blank' rel="noreferrer"><img src={AppleStore} alt="" width={170} /></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.konasl.nagad&hl=en&gl=US" target='_blank' rel="noreferrer"><img src={PlayStore} alt="" width={170} /></a>
+                </div>
+            </div>
+            {/* Second Part */}
+            <div className='lg:flex items-center justify-center h-screen pl-10 pr-10'>
+=======
 
             {/* Second Part */}
             <div className='lg:flex items-center justify-center h-screen px-10 '>
+>>>>>>> 95981e4cd66241b8d747b3fe8d0cd35074c693d5
                 <div className='lg:mr-20 lg:mt-0 mt-10 '>
                     <div className='lg:text-right text-center mb-10'>
                         <div className='flex justify-center lg:justify-end'>
-                            <img src={support} alt="" width={50} />
+                            <img src={security} alt="" width={75} />
                         </div>
-                        <h1 className='font-bold text-xl'>Support</h1>
+                        <h1 className='font-bold text-xl'>Secure Payment</h1>
                         <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
 
                     <div className='lg:text-right text-center mb-10'>
                         <div className='flex justify-center lg:justify-end'>
-                            <img src={userinterface} alt="" width={50} />
+                            <img src={currency} alt="" width={75} />
                         </div>
-                        <h1 className='font-bold text-xl'>User Inerface</h1>
+                        <h1 className='font-bold text-xl'>Currency Exchange</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
                     <div className='lg:text-right text-center mb-10'>
                         <div className='flex justify-center lg:justify-end'>
-                            <img src={customize} alt="" width={100} />
+                            <img src={encrypted} alt="" width={75} />
                         </div>
-                        <h1 className='font-bold text-xl'>Easy To Handle</h1>
+                        <h1 className='font-bold text-xl'>Fully Encrypted</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
@@ -44,16 +60,24 @@ const AppDownload = () => {
                 <div className='lg:ml-20'>
                     <div className='lg:text-left text-center mb-10'>
                         <div className='flex justify-center lg:justify-start'>
-                            <img src={security} alt="" width={50} />
+                            <img src={cashIn} alt="" width={75} />
                         </div>
-                        <h1 className='font-bold text-xl'>Security</h1>
+                        <h1 className='font-bold text-xl'>Cahs In</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
-                    <div className='text-center lg:text-start'>
-                        <h1 className='font-bold text-2xl'>Download your app</h1>
+                    <div className='lg:text-left text-center mb-10'>
                         <div className='flex justify-center lg:justify-start'>
-                            <img src={QRCode} alt="" width={250} />
+                            <img src={cashOut} alt="" width={75} />
                         </div>
+                        <h1 className='font-bold text-xl'>Cash Out</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div className='lg:text-left text-center mb-10'>
+                        <div className='flex justify-center lg:justify-start'>
+                            <img src={support} alt="" width={75} />
+                        </div>
+                        <h1 className='font-bold text-xl'>Fully Support</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>
