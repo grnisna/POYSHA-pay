@@ -11,7 +11,6 @@ const Home = () => {
             <Services></Services>
             <AppDownload></AppDownload>
             <Growth></Growth>
-
         </div>
     );
 };
