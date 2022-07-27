@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import auth from '../../../firebase.init';
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm, Controller } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 
@@ -20,9 +20,16 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const onSubmit = data => {
-        console.log(data);
         createUserWithEmailAndPassword(data.email, data.password);        
     };
+
+    const navigate = useNavigate();
+
+    useEffect( ()=>{
+        if(user){
+            navigate('/');
+        }
+    } ,[navigate,user])
 
 
 
