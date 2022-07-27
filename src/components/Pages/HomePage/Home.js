@@ -13,7 +13,6 @@ const Home = () => {
             <CardSlide></CardSlide>
             <AppDownload></AppDownload>
             <Growth></Growth>
-
         </div>
     );
 };
