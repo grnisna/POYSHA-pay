@@ -1,22 +1,25 @@
 import DashboardNav from "./components/Dashboard/Shared/DashboardNav";
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
-import CardSlide from "./components/Pages/HomePage/CardSlide";
 
 import Home from "./components/Pages/HomePage/Home";
-import Users from "./components/Pages/HomePage/Users";
 import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
+import Login from "./components/Auth/Login/Login";
+import SignUp from "./components/Auth/SignUp/SignUp";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <h1 className="text-center">The POYSHA-pay is F-Commerce Wallet</h1>
-      <CardSlide></CardSlide>
-      <Navbar />
-      <Home></Home>
-      <Users></Users>
-      <DashboardNav></DashboardNav>
+      <Navbar></Navbar>
+      {/* <DashboardNav></DashboardNav> */}
       <SendMoney></SendMoney>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/Login' element={<Login></Login>}></Route>
+
+        <Route path='/SignUp' element={<SignUp></SignUp>}></Route>
+      </Routes>
       <Footer />
     </div>
   );
