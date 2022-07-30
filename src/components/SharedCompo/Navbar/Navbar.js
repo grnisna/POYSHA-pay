@@ -1,6 +1,24 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { NavLink, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
+
+    const logOut = () => {
+        signOut(auth);
+        navigate('/login');
+        // localStorage.removeItem('accessToken');
+    }
+
+    // if(user){
+    //     navigate('/')
+    // }
+
     return (
         <nav>
             <div className="navbar  bg-white border-b-2 border-violet-600  lg:px-14 text-violet-700 uppercase font-bold">
@@ -54,7 +72,15 @@ const Navbar = () => {
 
 
                 <div className="navbar-end">
-                    <ul><button className="btn rounded-2xl btn-outline mx-5 btn-ghost hidden ">Log in</button> </ul>
+                    <ul>
+                        {
+                            user ?
+                                <button className='btn btn-secondary' onClick={logOut}  >Logout</button> 
+                                :
+                                <NavLink to="/login" className="btn rounded-2xl btn-outline mx-5 btn-ghost">Log in</NavLink>
+
+                        }
+                    </ul>
                     <ul><a className="btn lg:w-24 w-14 rounded-2xl btn-active bg-violet-600" href='/'>Get started</a> </ul>
 
                     {/* <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
