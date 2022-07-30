@@ -24,3 +24,22 @@
  width: 400rem;
  height: 100vh;
 } */
+
+@media screen and (max-width:400px) {
+    .hero-h1{
+        font-size: 25px;
+        text-align: center;
+
+    }
+    .explore{
+        font-size: 14px;
+        margin-left: 30px;
+    }
+    .leading-tight{
+        margin-left: 20px;
+    }
+    .banner-image{
+        margin-top: 20px;
+    }
+
+}

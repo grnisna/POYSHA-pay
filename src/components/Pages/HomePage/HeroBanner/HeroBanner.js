@@ -10,7 +10,7 @@ const HeroBanner = () => {
                 <div className="content-header">
                     <h1 className='hero-h1'> MOST POPULAR AND TRUSTED PAYMENT SERVICES ON EARTH</h1>
                     <div className="hero-explore flex items-center">
-                        <h3 className='explore py-8'>KNOW MORE ABOUT OUR SERVICES </h3>
+                        <h3 className='explore py-8 '>KNOW MORE ABOUT OUR SERVICES </h3>
                         <div className="explore-arrow pl-5">
                             <FaArrowRight />
                         </div>
@@ -27,7 +27,7 @@ const HeroBanner = () => {
                     </div>
                 </div>
             </div>
-            <div className=" grid">
+            <div className=" grid banner-image ">
                 <img className='blob-svg' src={card} alt="" />
             </div>
         </section>
