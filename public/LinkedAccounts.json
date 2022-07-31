@@ -1,0 +1,29 @@
+[{
+    "key": "1",
+    "BankName": "Bank Of America",
+    "BankLogo": "https://i.ibb.co/WKKpJP3/bank-of-america-150px.png",
+    "BankAccountNum": "2051***8664"
+
+  },
+  {
+    "key": "2",
+    "BankName": "Citizens Bank",
+    "BankLogo": "https://i.ibb.co/pWZGVY7/Citizens-Bank-150px.png",
+    "BankAccountNum": "1111****9696"
+
+  },
+  {
+    "key": "3",
+    "BankName": "US Bank",
+    "BankLogo": " https://i.ibb.co/XVBxBtW/U-S-Bank-200-100.png",
+    "BankAccountNum": "4545****0827"
+
+  },
+  {
+    "key": "4",
+    "BankName": "US Bank",
+    "BankLogo": " https://i.ibb.co/XVBxBtW/U-S-Bank-200-100.png",
+    "BankAccountNum": "4545****0827"
+
+  }
+]
