@@ -16,7 +16,7 @@
                         Still, we are discussing ‍about futures. Some could be changed or added new.
 
 
-* Uses Technologies: (1). React Js (2).TailwindCss. (3).React Icons (4).Firebase (5).Daisy UI 
+* Uses Technologies: (1). React Js (2).TailwindCss. (3).React Icons (4).Firebase (5).Daisy UI (6). recharts
 
 
 * TOTALLY COPY THIS CODE FOR tailwind.config.js FILE:
