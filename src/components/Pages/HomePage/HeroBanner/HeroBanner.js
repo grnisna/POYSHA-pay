@@ -8,12 +8,11 @@ const HeroBanner = () => {
         <section className='hero-banner lg:px-20 grid lg:grid-cols-2 justify-center grid-flow-dense '>
             <div className="hero-content ">
                 <div className="content-header">
-                    <div className='hero-title '>
-                        <h1 className='hero-h1'>NOW MOST POPULAR, TRUSTED AND FASTED</h1>
-                        <span className='hero-h1-color text-primary underline'>PAYMENT SERVICES</span></div>
-                    <div className="hero-explore lg:pt-4 pt-2 lg:pb-10 pb-6 flex items-center">
-                        <h3 className='explore  '>KNOW MORE ABOUT OUR SERVICES </h3>
-                        <div className="explore-arrow lg:pl-5 pl-2">
+
+                    <h1 className='hero-h1'> MOST POPULAR AND TRUSTED PAYMENT SERVICES ON EARTH</h1>
+                    <div className="hero-explore flex items-center">
+                        <h3 className='explore py-8 '>KNOW MORE ABOUT OUR SERVICES </h3>
+                        <div className="explore-arrow pl-5">
                             <FaArrowRight />
                         </div>
                     </div>
@@ -28,7 +27,8 @@ const HeroBanner = () => {
                     </div>
                 </div>
             </div>
-            <div className="hero-blob grid">
+            <div className=" grid banner-image ">
+
                 <img className='blob-svg' src={card} alt="" />
             </div>
         </section>

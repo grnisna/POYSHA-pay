@@ -13,12 +13,11 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
-
-      <Home></Home>
-      <Footer></Footer>
-      <Account></Account>
-      <LinkedAccounts></LinkedAccounts>
-      <ShortHistory></ShortHistory>
+      {/* <DashboardNav></DashboardNav> */}
+      {/* <SendMoney></SendMoney> */}
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/Login' element={<Login></Login>}></Route>
 
     </div>
   );
