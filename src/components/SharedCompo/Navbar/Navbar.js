@@ -72,27 +72,30 @@ const Navbar = () => {
                             <li><a>Contact</a></li>
 
 
-                            
                         </ul>
                     </div>
                 </div>
 
 
                 <div className="navbar-end">
-                    
+
 
                     <ul>
-                    {
+                        {
                             user ?
                                 <button className='btn btn-secondary' onClick={logOut}  >Logout</button>
-                                :
-                                <NavLink to='/signUp' className="btn lg:w-24 w-14 rounded-2xl btn-active btn-outline border-violet-600 invisible lg:visible hover:text-violet-600 hover:bg-white hover:border-violet-600" href='/'>Get started</NavLink> 
+                                : <div className='flex items-center justify-center gap-2'>
+
+                                    <NavLink to="/login" className="btn lg:w-24 w-14 rounded-2xl btn-active btn-outline border-violet-600 invisible lg:visible hover:text-violet-600 hover:bg-white hover:border-violet-600">Log in</NavLink>
+
+                                    <NavLink to='/signUp' className="btn lg:w-24 w-20 rounded-2xl btn-active btn-outline border-violet-600 hover:text-violet-600 hover:bg-white hover:border-violet-600" href='/'>Get started</NavLink>
+                                </div>
 
                         }
 
 
-                        
-                        </ul>
+
+                    </ul>
 
                     {/* <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
