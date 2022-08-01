@@ -1,7 +1,30 @@
+.hero-banner {
+ background: hsla(243, 100%, 73%, 1);
+
+ background: linear-gradient(90deg, hsla(243, 100%, 73%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+
+ background: -moz-linear-gradient(90deg, hsla(243, 100%, 73%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+
+ background: -webkit-linear-gradient(90deg, hsla(243, 100%, 73%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+
+ filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#7A73FF", endColorstr="#FFFFFF", GradientType=1);
+}
+
+.hero-title {
+ line-height: 5em;
+}
+
 .hero-h1 {
  font-size: 50px;
- font-weight: 700;
+ font-weight: 900;
 }
+
+.hero-h1-color {
+ font-size: 50px;
+ font-weight: 600;
+}
+
+.hero-h1-color {}
 
 .hero-content {
  /* width: 90%; */
@@ -23,6 +46,7 @@
 /* .blob-svg {
  width: 400rem;
  height: 100vh;
+
 } */
 
 @media screen and (max-width:400px) {
@@ -42,4 +66,51 @@
         margin-top: 20px;
     }
 
+
+
+
+
+/* media query  */
+
+ .hero-title {
+  line-height: 2.4em;
+ }
+
+ .hero-h1 {
+  font-size: 24px;
+  font-weight: 900;
+ }
+
+ .hero-h1-color {
+  font-size: 22px;
+  font-weight: 600;
+ }
+
+ .btn-explore {
+  font-size: 10px;
+  font-weight: lighter;
+ }
+
+ .get-link {
+  font-size: 10px;
+  width: 80px;
+  height: 30px;
+  background-color: #6C63FF;
+  color: #FFFFFF;
+ }
+
+
+ input,
+ input::placeholder {
+  font-size: 10px;
+ }
+
+ .explore {
+  font-size: 10px;
+ }
+
+ .explore-arrow {
+  font-size: 10px;
+ }
 }
+
