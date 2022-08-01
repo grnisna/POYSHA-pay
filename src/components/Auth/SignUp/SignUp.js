@@ -54,14 +54,14 @@ const SignUp = () => {
                     <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autocomplete="off" required />
 
                     <label>Phone Number</label>
-                    <Controller
+                    <Controller 
                         name="phone"
                         control={control}
                         rules={{
                             validate: (value) => isValidPhoneNumber(value)
                         }}
                         render={({ field: { onChange, value } }) => (
-                            <PhoneInput className='w-20 ' placeholder="Type Your Phone Number"
+                            <PhoneInput className='w-24 ' placeholder="Type Your Phone Number"
                                 value={value}
                                 defaultCountry="BD"
                                 onChange={onChange}
