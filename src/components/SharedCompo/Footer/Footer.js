@@ -26,26 +26,26 @@ const Footer = () => {
 
             <footer className="footer py-10 lg:px-20 bg-violet-500 mx-auto shadow-2xl text-white font-bold ">
 
-                <div>
-                    <span className="text-xl uppercase pl-10">Services</span>
-                    <a className="link link-hover pl-10">Branding</a>
-                    <a className="link link-hover pl-10">Design</a>
-                    <a className="link link-hover pl-10">Marketing</a>
-                    <a className="link link-hover pl-10">Advertisement</a>
+                <div className='w-full mx-auto'>
+                    <span className="text-xl uppercase lg:pl-10">Services</span>
+                    <a className="link link-hover lg:pl-10">Branding</a>
+                    <a className="link link-hover lg:pl-10">Design</a>
+                    <a className="link link-hover lg:pl-10">Marketing</a>
+                    <a className="link link-hover lg:pl-10">Advertisement</a>
                 </div>
-                <div>
-                    <span className="text-xl uppercase pl-10">Company</span>
-                    <a className="link link-hover pl-10">About us</a>
-                    <a className="link link-hover pl-10">Contact</a>
-                    <a className="link link-hover pl-10">Blogs</a>
-                    <a className="link link-hover pl-10">Media</a>
+                <div className='w-full mx-auto'>
+                    <span className="text-xl uppercase lg:pl-10">Company</span>
+                    <a className="link link-hover lg:pl-10">About us</a>
+                    <a className="link link-hover lg:pl-10">Contact</a>
+                    <a className="link link-hover lg:pl-10">Blogs</a>
+                    <a className="link link-hover lg:pl-10">Media</a>
                 </div>
-                <div>
-                    <span className="text-xl uppercase pl-10">Legal</span>
-                    <a className="link link-hover pl-10">Terms of use</a>
-                    <a className="link link-hover pl-10">Privacy policy</a>
-                    <a className="link link-hover pl-10">Cookie policy</a>
-                    <a className="link link-hover pl-10">Data Security</a>
+                <div className='w-full mx-auto'>
+                    <span className="text-xl uppercase lg:pl-10">Legal</span>
+                    <a className="link link-hover lg:pl-10">Terms of use</a>
+                    <a className="link link-hover lg:pl-10">Privacy policy</a>
+                    <a className="link link-hover lg:pl-10">Cookie policy</a>
+                    <a className="link link-hover lg:pl-10">Data Security</a>
 
                 </div>
                 <div className='w-full '>
