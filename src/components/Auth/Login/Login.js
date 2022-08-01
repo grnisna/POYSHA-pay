@@ -33,7 +33,7 @@ const Login = () => {
 
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen"
+        <div className="flex flex-col items-center justify-center"
             style={{ backgroundImage: `url(${BGLogin})`, backgroundSize: 'cover' }}>
             <div className='lg:w-96 sm:w-80 shadow-xl mx-auto bg-clip-padding backdrop-filter bg-white bg-opacity-50 backdrop-blur-md py-10 px-8 rounded-md'>
                 <h1 className="mb-10 text-3xl font-bold text-center text-white">Login</h1>
