@@ -47,7 +47,7 @@ const Navbar = () => {
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl font-bold uppercase" href='/'>POYSHA-pay</a>
+                    <a className="btn btn-ghost lg:text-2xl font-bold uppercase text-xl" href='/'>POYSHA-pay</a>
 
                 </div>
                 <div className='navbar-center'>

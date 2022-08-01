@@ -48,21 +48,22 @@ const Footer = () => {
                     <a className="link link-hover pl-10">Data Security</a>
 
                 </div>
-                <div >
-                    <h1 className='text-xl uppercase mx-auto'>
-                        Follow us</h1>
+                <div className='w-full '>
+                    <h1 className='text-xl uppercase lg:text-left mx-auto'>
+                        Follow us
+                    </h1>
                     <span className='w-48 mx-auto'>
                         To make your life easier Download Nagad app and <br />access all our services from a single touch point.
                     </span>
-                    <div className='lg:flex lg:gap-4 mb-2  '>
+                    <div className='lg:flex lg:gap-4 mb-2'>
                         <button className='btn btn-sm  rounded-full bg-black'><FaGooglePlay className=' text-green-400' />  Google Play</button>
                         <button className='btn btn-sm  rounded-full bg-black'><BsApple className=' text-grey-400' />  Apple Store</button>
                     </div>
 
                 </div>
-                <div>
-                    <span className="text-xl uppercase">Newsletter</span>
-                    <div className="form-control  w-60">
+                <div className='w-full'>
+                    <span className="text-xl uppercase mx-auto">Newsletter</span>
+                    <div className="form-control  w-60 mx-auto">
                         <label className="label">
                             <span className="">Enter your email address and get every update of the features via Email. </span>
                         </label>
