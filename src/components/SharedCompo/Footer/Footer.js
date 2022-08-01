@@ -64,7 +64,7 @@ const Footer = () => {
                     <span className="text-xl uppercase">Newsletter</span>
                     <div className="form-control  w-60">
                         <label className="label">
-                            <span className="">Enter your email address hear and get every update of the features via Email. </span>
+                            <span className="">Enter your email address and get every update of the features via Email. </span>
                         </label>
                         <div className="relative">
                             <input type="text" placeholder="username@site.com" className="input input-bordered rounded-lg w-full pr-16" />
