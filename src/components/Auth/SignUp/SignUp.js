@@ -4,7 +4,7 @@ import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm, Controller } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login.jpg';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import axios from 'axios';
 
 
@@ -21,6 +21,10 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    
+    const [updateProfile] = useUpdateProfile(auth);
+
+
 
     const onSubmit = async event => {
         await createUserWithEmailAndPassword(event.email, event.password);        
@@ -32,11 +36,11 @@ const SignUp = () => {
     };
 
 
-    useEffect( ()=>{
-        if(user){
-            navigate('/MyAccount');
-        }
-    } ,[navigate,user])
+    // useEffect( ()=>{
+    //     if(user){
+    //         navigate('/MyAccount');
+    //     }
+    // }, [navigate, user])
 
 
 
@@ -49,16 +53,16 @@ const SignUp = () => {
                 <h1 className="mb-10 text-3xl font-bold text-center text-white">Sign Up</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label >Account Name</label>
-                    <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autocomplete="off" required />
+                    <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autoComplete="off" required />
 
                     <label >Email</label>
-                    <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autocomplete="off" required />
+                    <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autoComplete="off" required />
 
                     <label htmlFor="">Password</label>
-                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
+                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autoComplete="off" required />
 
                     <label htmlFor="">Address</label>
-                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autocomplete="off" required />
+                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autoComplete="off" required />
 
                     <label>Phone Number</label>
                     <Controller 
@@ -91,4 +95,5 @@ const SignUp = () => {
         </div >
     );
 };
+
 export default SignUp;

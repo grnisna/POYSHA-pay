@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "1",
+        "bankName": "City Bank",
+        "img": "https://compassplus.ru/static/materials/testimonials/city-1.png"
+    },
+    {
+        "_id": "2",
+        "bankName": "Citi Bank",
+        "img": "https://i.pinimg.com/originals/52/96/8a/52968af44228ad023542426899b2fb07.jpg"
+    },
+    {
+        "_id": "3",
+        "bankName": "Dutch Bangla Bank",
+        "img": "https://updateoffer.com/wp-content/uploads/2019/01/Dutch-Bangla-Bank.jpg"
+    },
+    {
+        "_id": "4",
+        "bankName": "Eastern Bank",
+        "img": "https://bizdatainsights.com/wp-content/uploads/2020/07/ebl.jpg"
+    },
+    {
+        "_id": "5",
+        "bankName": "Word Bank",
+        "img": "https://banner2.cleanpng.com/20180530/ker/kisspng-world-bank-group-finance-world-development-report-5b0f49865e2ef4.1289488015277285183858.jpg"
+    },
+    {
+        "_id": "6",
+        "bankName": "Paypal Wallet",
+        "img": "https://explain.com.ng/wp-content/uploads/2021/07/paypal-logo.jpeg"
+    }
+]

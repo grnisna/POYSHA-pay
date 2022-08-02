@@ -16,9 +16,6 @@ const Navbar = () => {
         // localStorage.removeItem('accessToken');
     }
 
-    // if(user){
-    //     navigate('/')
-    // }
 
     return (
         <nav>
@@ -35,13 +32,14 @@ const Navbar = () => {
                                     Service
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                                 </a>
+
                                 <ul className="p-2 bg-white border">
-                                    <li><a>Send Money</a></li>
                                     <li><a>Add Money</a></li>
+                                    <li><NavLink to='/addMoney' >Add Money</NavLink></li>
                                     <li><a>Recharge</a></li>
                                 </ul>
                             </li>
-                            <li><a>My poisa</a></li>
+                            <li><NavLink to='/myPoisa'>My poisa</NavLink></li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
 
@@ -63,7 +61,7 @@ const Navbar = () => {
                                 </a>
                                 <ul className="p-2 bg-white border z-10">
                                     <li><a>Send Money</a></li>
-                                    <li><a>Add Money</a></li>
+                                    <li><NavLink to='/addMoney' >Add Money</NavLink></li>
                                     <li><a>Recharge</a></li>
                                 </ul>
                             </li>
@@ -97,27 +95,7 @@ const Navbar = () => {
 
                     </ul>
 
-                    {/* <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="https://api.lorem.space/image/face?hash=33791" />
-                        </div>
-                    </label> */}
-                    {/* <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
-                        <li><NavLink to='/profile'>Profile</NavLink> </li>
-
-
-                        <li><NavLink to='/setting'>Setting</NavLink> </li>
-
-
-
-                        <li>
-                            <button className="btn btn-active btn-ghost" onClick={logOut} >Sign Out</button> 
-
-                            <NavLink to='/login' >Login</NavLink>
-                        </li>
-
-                    </ul> */}
                 </div>
             </div>
         </nav>
