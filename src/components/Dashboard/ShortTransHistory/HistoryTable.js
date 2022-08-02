@@ -2,7 +2,6 @@ import React from 'react';
 
 const HistoryTable = ({ myHistory }) => {
  const { date, where, payBy, transactionsType, amount } = myHistory;
- console.log(myHistory);
  return (
   <tr>
    <td>{date}</td>

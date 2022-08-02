@@ -7,6 +7,7 @@ import Navbar from "./components/SharedCompo/Navbar/Navbar";
 import Account from "./components/Dashboard/MyAccount/Account"
 import LinkedAccounts from "./components/Dashboard/MyAccount/LinkedAccounts";
 import ShortHistory from "./components/Dashboard/ShortTransHistory/ShortHistory";
+import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Account></Account>
       <LinkedAccounts></LinkedAccounts>
       <ShortHistory></ShortHistory>
+      <OthersAccounts></OthersAccounts>
 
     </div>
   );
