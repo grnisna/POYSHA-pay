@@ -5,11 +5,14 @@ import { useForm, Controller } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import axios from 'axios';
 
 
 
 
 const SignUp = () => {
+
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors }, control } = useForm();
 
     const [
@@ -18,24 +21,26 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    
     const [updateProfile] = useUpdateProfile(auth);
 
 
-    const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name });
 
-        console.log('updated profile');
-
+    const onSubmit = async event => {
+        await createUserWithEmailAndPassword(event.email, event.password);        
+        const email = event.email;
+        const {data} = await axios.post('http://localhost:5000/login',{email});
+        localStorage.setItem('token',data.accessToken);
+        navigate('/MyAccount');
+        
     };
 
-    const navigate = useNavigate();
 
-    useEffect(() => {
-        if (user) {
-            navigate('/');
-        }
-    }, [navigate, user])
+    // useEffect( ()=>{
+    //     if(user){
+    //         navigate('/MyAccount');
+    //     }
+    // }, [navigate, user])
 
 
 
@@ -90,4 +95,5 @@ const SignUp = () => {
         </div >
     );
 };
+
 export default SignUp;

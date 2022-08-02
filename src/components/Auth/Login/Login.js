@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import axios from 'axios';
 
 
 
@@ -20,16 +21,18 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    useEffect(() => {
-        if (user) {
-            navigate(from, { replace: true });
-        }
-    }, [user, from, navigate])
 
 
-    const onSubmit = data => {
-        console.log(data)
-        signInWithEmailAndPassword(data.email, data.password)
+    const onSubmit = async event => {
+        await signInWithEmailAndPassword(event.email, event.password);
+        const email = event.email;
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        console.log(data);
+        const gettingToken = await  localStorage.setItem('Token', data);
+
+        // if (gettingToken) {
+            navigate('/MyAccount');
+        // }
     };
 
 

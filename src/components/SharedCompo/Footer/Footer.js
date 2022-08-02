@@ -17,35 +17,35 @@ const Footer = () => {
                 <div className="md:place-self-center md:justify-self-end  mx-auto">
                     <div className='grid grid-flow-col gap-4 mx-auto justify-between items-center'>
                         <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsFacebook /></a>
-                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsTwitter /></a>
-                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsPinterest /></a>
-                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsLinkedin /></a>
+                        <a  className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.twitter.com'><BsTwitter /></a>
+                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.printerest.com'><BsPinterest /></a>
+                        <a  className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.linkedin.com'><BsLinkedin /></a>
                     </div>
                 </div>
             </footer>
 
             <footer className="footer py-10 lg:px-20 bg-violet-500 mx-auto shadow-2xl text-white font-bold ">
 
-                <div>
-                    <span className="text-xl uppercase pl-10">Services</span>
-                    <a className="link link-hover pl-10">Branding</a>
-                    <a className="link link-hover pl-10">Design</a>
-                    <a className="link link-hover pl-10">Marketing</a>
-                    <a className="link link-hover pl-10">Advertisement</a>
+                <div className=' mx-auto'>
+                    <span className="text-xl uppercase lg:pl-10">Services</span>
+                    <a href='/' className="link link-hover lg:pl-10">Branding</a>
+                    <a href='/' className="link link-hover lg:pl-10">Design</a>
+                    <a href='/' className="link link-hover lg:pl-10">Marketing</a>
+                    <a href='/' className="link link-hover lg:pl-10">Advertisement</a>
                 </div>
-                <div>
-                    <span className="text-xl uppercase pl-10">Company</span>
-                    <a className="link link-hover pl-10">About us</a>
-                    <a className="link link-hover pl-10">Contact</a>
-                    <a className="link link-hover pl-10">Blogs</a>
-                    <a className="link link-hover pl-10">Media</a>
+                <div className='mx-auto'>
+                    <span className="text-xl uppercase lg:pl-10">Company</span>
+                    <a href='/' className="link link-hover lg:pl-10">About us</a>
+                    <a href='/' className="link link-hover lg:pl-10">Contact</a>
+                    <a href='/' className="link link-hover lg:pl-10">Blogs</a>
+                    <a href='/' className="link link-hover lg:pl-10">Media</a>
                 </div>
-                <div>
-                    <span className="text-xl uppercase pl-10">Legal</span>
-                    <a className="link link-hover pl-10">Terms of use</a>
-                    <a className="link link-hover pl-10">Privacy policy</a>
-                    <a className="link link-hover pl-10">Cookie policy</a>
-                    <a className="link link-hover pl-10">Data Security</a>
+                <div className='mx-auto'>
+                    <span className="text-xl uppercase lg:pl-10">Legal</span>
+                    <a href='/' className="link link-hover lg:pl-10">Terms of use</a>
+                    <a href='/' className="link link-hover lg:pl-10">Privacy policy</a>
+                    <a href='/' className="link link-hover lg:pl-10">Cookie policy</a>
+                    <a href='/' className="link link-hover lg:pl-10">Data Security</a>
 
                 </div>
                 <div className='w-full '>
@@ -55,7 +55,7 @@ const Footer = () => {
                     <span className='w-48 mx-auto'>
                         To make your life easier Download Nagad app and <br />access all our services from a single touch point.
                     </span>
-                    <div className='lg:flex lg:gap-4 mb-2'>
+                    <div className='lg:flex lg:gap-4 mb-2 mx-auto'>
                         <button className='btn btn-sm  rounded-full bg-black'><FaGooglePlay className=' text-green-400' />  Google Play</button>
                         <button className='btn btn-sm  rounded-full bg-black'><BsApple className=' text-grey-400' />  Apple Store</button>
                     </div>
