@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import axios from 'axios';
 
 
 
@@ -18,19 +19,24 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+
+
+    const onSubmit = async event => {
+        await signInWithEmailAndPassword(event.email, event.password);
+        const email = event.email;
+        const {data} = await axios.post('http://localhost:5000/login',{email});
+        localStorage.setItem('token',data.accessToken);
+        navigate('/MyAccount');
+    };
+
+
+
+
     useEffect(() => {
         if (user) {
             navigate('/MyAccount');
         }
-    }, [navigate,user])
-
-
-    const onSubmit = data => {
-        console.log(data)
-        signInWithEmailAndPassword(data.email, data.password)
-    };
-
-
+    }, [navigate, user])
 
     return (
         <div className="flex flex-col items-center justify-center"
@@ -40,7 +46,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label >Email</label>
 
-                    <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autocomplete="off" required />
+                    <input type="email" name='email' className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autocomplete="off" required />
 
                     <label htmlFor="">Password</label>
                     <input type="password" className='input w-full max-w-md mt-1'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
