@@ -38,7 +38,7 @@ const AppDownload = () => {
                             <img src={currency} alt="" width={75} />
                         </div>
                         <h1 className='font-bold text-xl'>Currency Exchange</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <p> ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
                     <div className='lg:text-right text-center mb-10'>
                         <div className='flex justify-center lg:justify-end'>
