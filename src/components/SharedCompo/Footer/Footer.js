@@ -9,7 +9,7 @@ const Footer = () => {
         return currentYear;
     };
     return (
-        <div className='bg-violet-800 shadow-2xl  text-white' >
+        <div className='bg-violet-800 shadow-2xl mt-10  text-white' >
             <footer className="footer px-20 py-4 border-t  border-base-300">
                 <div className="items-center grid-flow-col">
                     <p className='text-2xl font-bold uppercase'>Poysha-pay.</p>
