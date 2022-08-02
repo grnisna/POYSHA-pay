@@ -70,15 +70,6 @@ const Navbar = () => {
                             <li><a>My poisa</a></li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
-
-
-                            {
-                                user ?
-                                    <button className='btn btn-secondary' onClick={logOut}  >Logout</button>
-                                    :
-                                    <NavLink to="/login" className="btn rounded-2xl btn-outline mx-5 btn-ghost lg:invisible visible">Log in</NavLink>
-
-                            }
                         </ul>
                     </div>
                 </div>
@@ -86,16 +77,19 @@ const Navbar = () => {
 
                 <div className="navbar-end">
                     <ul>
-                        {
+                    {
                             user ?
                                 <button className='btn btn-secondary' onClick={logOut}  >Logout</button>
-                                :
-                                <NavLink to="/login" className="btn rounded-2xl btn-outline lg:mx-5 mr-[-3rem] border-violet-600 hover:text-violet-600 hover:bg-white hover:border-violet-600 btn-ghost ">Log in</NavLink>
+                                : <div className='flex items-center justify-center gap-2'>
+
+                                    <NavLink to="/login" className="btn lg:w-24 w-14 rounded-2xl btn-active btn-outline border-violet-600 invisible lg:visible hover:text-violet-600 hover:bg-white hover:border-violet-600">Log in</NavLink>
+
+                                    <NavLink to='/signUp' className="btn lg:w-24 w-20 rounded-2xl btn-active btn-outline border-violet-600 hover:text-violet-600 hover:bg-white hover:border-violet-600" href='/'>Get started</NavLink>
+                                </div>
 
                         }
                     </ul>
-                    <ul><NavLink to='/signUp' className="btn lg:w-24 w-14 rounded-2xl btn-active btn-outline border-violet-600 invisible lg:visible hover:text-violet-600 hover:bg-white hover:border-violet-600" href='/'>Get started</NavLink> </ul>
-
+                    
                     {/* <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src="https://api.lorem.space/image/face?hash=33791" />
