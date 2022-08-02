@@ -23,7 +23,7 @@ const AppDownload = () => {
                 </div>
             </div>
             {/* Second Part */}
-            <div className='lg:flex items-center justify-center h-screen pl-10 pr-10 mt-10'>
+            <div className='lg:flex items-center justify-center  pl-10 pr-10 mt-10'>
                 <div className='lg:mr-20 lg:mt-0 mt-10'>
                     <div className='lg:text-right text-center mb-10'>
                         <div className='flex justify-center lg:justify-end'>

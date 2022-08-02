@@ -1,0 +1,70 @@
+.dashnav {
+    background-color: white;
+    display: flex;
+}
+
+.nav ul {
+    color: brown;
+    text-decoration: none;
+}
+
+.nav ul img {
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.nav ul li {
+    display: inline-flex;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    padding: 10px 5px;
+}
+
+.image img {
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.navlogin ul li {
+    display: inline-flex;
+    position: relative;
+}
+
+.dashnav ul li a {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    padding: 10px 5px;
+}
+
+.dashnav ul ul {
+    position: absolute;
+    left: -99999px;
+    top: 43px;
+    width: 200px;
+}
+
+.dashnav ul li:hover ul {
+    left: 0px;
+}
+
+.dashnav ul ul a {
+    background: #C0C0C0;
+    width: 105px;
+    padding: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #fff;
+    transition: 00.5s;
+}
+
+.dashnav ul ul a:hover {
+    background: wheat;
+}
