@@ -24,19 +24,16 @@ const Login = () => {
     const onSubmit = async event => {
         await signInWithEmailAndPassword(event.email, event.password);
         const email = event.email;
-        const {data} = await axios.post('http://localhost:5000/login',{email});
-        localStorage.setItem('token',data.accessToken);
-        navigate('/MyAccount');
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        console.log(data);
+        const gettingToken = await  localStorage.setItem('Token', data);
+
+        // if (gettingToken) {
+            navigate('/MyAccount');
+        // }
     };
 
 
-
-
-    useEffect(() => {
-        if (user) {
-            navigate('/MyAccount');
-        }
-    }, [navigate, user])
 
     return (
         <div className="flex flex-col items-center justify-center"
