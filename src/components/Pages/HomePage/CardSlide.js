@@ -9,7 +9,7 @@ import CardSlide5 from '../../../Assets/images/card5.png'
 const CardSlide = () => {
     return (
         <div>
-            <h2 className='Tcompany text-2xl uppercase text-center py-10'>Your Trusted Companies</h2>
+            <h2 className='Tcompany lg:text-2xl text-l uppercase text-center py-10'>Your Trusted Companies</h2>
             <div className=' grid lg:grid-cols-5 grid-cols-3 justify-items-center px-32 mx-auto '>
                 <img className='opacity-80 cursor-pointer hover:opacity-100 ' src={CardSlide1} alt="" />
                 <img className='opacity-80 cursor-pointer hover:opacity-100 ' src={CardSlide2} alt="" />
