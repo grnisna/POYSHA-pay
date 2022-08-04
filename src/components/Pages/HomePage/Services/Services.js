@@ -8,14 +8,15 @@ import twintyfourHours from '../../../../Assets/serviceImg/twintyfourHours.png';
 import gasbill from '../../../../Assets/serviceImg/gasbill.png';
 import creditcard from '../../../../Assets/serviceImg/creditcard.png';
 import ourPackage from '../../../../Assets/serviceImg/package.gif';
-import {GoArrowRight} from 'react-icons/go' 
+import { GoArrowRight } from 'react-icons/go'
 
 const Services = () => {
     return (
-        <div className='py-10'>
-            <div className='services flex justify-center items-center gap-5'><h2 className='text-base-100 font-bold text-2xl'>SERVICE'S </h2><GoArrowRight color='white' size={24}></GoArrowRight>  </div>
+        <div className='lg:py-10 py-5 '>
+            <div className='services flex justify-center items-center gap-5'><h2 className='text-base-100 font-bold lg:text-2xl text-l'>SERVICE'S </h2><GoArrowRight color='white' size={24}></GoArrowRight>  </div>
+
             <div className='serviceArea lg:py-10'>
-                <div className='flex justify-center items-center'>
+                <div className='lg:flex justify-center items-center'>
                     <div className='myCard '>
                         <div className='success '></div>
                         <div className='imageContainer '>
@@ -49,7 +50,7 @@ const Services = () => {
 
             </div>
             <div className='serviceArea lg:py-10'>
-                <div className='flex justify-center items-center'>
+                <div className='lg:flex justify-center items-center'>
                     <div className='myCard '>
                         <div className='success '></div>
                         <div className='imageContainer '>
@@ -74,7 +75,7 @@ const Services = () => {
                     <div className='myCard '>
                         <div className='success '></div>
                         <div className='imageContainer '>
-                            <img className='w-24' src={  twintyfourHours} alt="Recharge" />
+                            <img className='w-24' src={twintyfourHours} alt="Recharge" />
                         </div>
                         <h1 className='3xl font-bold text-white pt-5 summaryText'>CALL US</h1>
                     </div>
