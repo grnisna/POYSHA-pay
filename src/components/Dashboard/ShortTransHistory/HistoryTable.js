@@ -1,15 +1,14 @@
 import React from 'react';
 
 const HistoryTable = ({ myHistory }) => {
- const { date, where, payBy, transactionsType, amount } = myHistory;
- console.log(myHistory);
+ const { accountNumber, banks, accountName, transferredAmount } = myHistory;
+
  return (
   <tr>
-   <td>{date}</td>
-   <td>{where}</td>
-   <td>{payBy}</td>
-   <td>{transactionsType}</td>
-   <td>{amount}</td>
+   <td>{accountNumber}</td>
+   <td>{banks}</td>
+   <td>{accountName}</td>
+   <td>{transferredAmount}</td>
   </tr>
  );
 };

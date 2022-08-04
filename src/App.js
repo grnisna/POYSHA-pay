@@ -7,6 +7,7 @@ import Login from "./components/Auth/Login/Login";
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./components/Auth/SignUp/SignUp";
 import Account from "./components/Dashboard/MyAccount/Account";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 function App() {
@@ -16,12 +17,14 @@ function App() {
       {/* <DashboardNav></DashboardNav> */}
       {/* <SendMoney></SendMoney> */}
       <Routes>
+        <Route path='dashboard' element={<Dashboard></Dashboard>}></Route>
         <Route path='/' element={<Home />}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/SignUp' element={<SignUp></SignUp>}></Route>
         <Route path='/MyAccount' element={<Account></Account>}></Route>
       </Routes>
       <Footer />
+
 
     </div>
   );
