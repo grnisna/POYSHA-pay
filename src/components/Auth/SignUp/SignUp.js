@@ -19,17 +19,52 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const onSubmit = data => {
-        createUserWithEmailAndPassword(data.email, data.password);        
+    // const onSubmit = data => {
+    //     createUserWithEmailAndPassword(data.email, data.password);
+    //     console.log(data);
+
+
+    // };
+
+    const onSubmit = (data) => {
+        console.log(data)
+        const newData = {
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            address: data.address,
+            phone: data.phone,
+            balance: 1000
+        }
+        console.log(newData)
+        const url = `http://localhost:5000/users`;
+
+        fetch(url, {
+
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+            })
     };
+
+
+
+
 
     const navigate = useNavigate();
 
-    useEffect( ()=>{
-        if(user){
+    useEffect(() => {
+        if (user) {
+
             navigate('/');
         }
-    } ,[navigate,user])
+    }, [navigate, user])
 
 
 
@@ -73,8 +108,6 @@ const SignUp = () => {
                     )}
 
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
-
-
 
                 </form>
 
