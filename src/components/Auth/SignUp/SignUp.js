@@ -4,10 +4,13 @@ import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm, Controller } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login.jpg';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import axios from 'axios';
 
 
 const SignUp = () => {
+
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors }, control } = useForm();
 
     const [
@@ -16,18 +19,26 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    
+    const [updateProfile] = useUpdateProfile(auth);
 
-    const onSubmit = data => {
-        createUserWithEmailAndPassword(data.email, data.password);        
+
+
+    const onSubmit = async event => {
+        await createUserWithEmailAndPassword(event.email, event.password);        
+        const email = event.email;
+        const {data} = await axios.post('http://localhost:5000/login',{email});
+        localStorage.setItem('token',data.accessToken);
+        navigate('/MyAccount');
+        
     };
 
-    const navigate = useNavigate();
 
-    useEffect( ()=>{
-        if(user){
-            navigate('/');
-        }
-    } ,[navigate,user])
+    // useEffect( ()=>{
+    //     if(user){
+    //         navigate('/MyAccount');
+    //     }
+    // }, [navigate, user])
 
 
 
@@ -43,6 +54,7 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/****************** * Account Name ******************/}
                     <label >Account Name</label>
+<<<<<<< HEAD
                     <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autocomplete="off" required />
                     {/******************* Email ******************/}
                     <label >Email</label>
@@ -51,19 +63,28 @@ const SignUp = () => {
                     <label htmlFor="">Password</label>
                     <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
                     {/******************* Phone Number ******************/}
+=======
+                    <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autoComplete="off" required />
+
+                    <label >Email</label>
+                    <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autoComplete="off" required />
+
+                    <label htmlFor="">Password</label>
+                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autoComplete="off" required />
+>>>>>>> 3d7dedfe00c8a7fd5a6ce4001ea3928335de56f9
 
                     <label htmlFor="">Address</label>
-                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autocomplete="off" required />
+                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autoComplete="off" required />
 
                     <label>Phone Number</label>
-                    <Controller
+                    <Controller 
                         name="phone"
                         control={control}
                         rules={{
                             validate: (value) => isValidPhoneNumber(value)
                         }}
                         render={({ field: { onChange, value } }) => (
-                            <PhoneInput className='w-20 ' placeholder="Type Your Phone Number"
+                            <PhoneInput className='w-24 ' placeholder="Type Your Phone Number"
                                 value={value}
                                 defaultCountry="BD"
                                 onChange={onChange}
@@ -85,4 +106,5 @@ const SignUp = () => {
         </div >
     );
 };
+
 export default SignUp;
