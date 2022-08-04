@@ -13,7 +13,7 @@ function App() {
     <div>
       <Navbar></Navbar>
       {/* <DashboardNav></DashboardNav> */}
-      <SendMoney></SendMoney>
+      {/* <SendMoney></SendMoney> */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
