@@ -8,8 +8,6 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import axios from 'axios';
 
 
-
-
 const SignUp = () => {
 
     const navigate = useNavigate();
@@ -50,9 +48,22 @@ const SignUp = () => {
             style={{ backgroundImage: `url(${BGLogin})`, width: '100%', height: '100%', backgroundSize: 'cover' }}>
 
             <div className='lg:w-96 sm:w-80 shadow-xl mx-auto bg-clip-padding backdrop-filter bg-white bg-opacity-50 backdrop-blur-md py-10 px-8 rounded-md text-black'>
-                <h1 className="mb-10 text-3xl font-bold text-center text-white">Sign Up</h1>
+
+                <h1 className="mb-10 text-3xl font-bold text-center text-black">Sign Up</h1>
+                {/************* Sign Up Form ******************************/}
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    {/****************** * Account Name ******************/}
                     <label >Account Name</label>
+<<<<<<< HEAD
+                    <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autocomplete="off" required />
+                    {/******************* Email ******************/}
+                    <label >Email</label>
+                    <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autocomplete="off" required />
+                    {/******************* Password ******************/}
+                    <label htmlFor="">Password</label>
+                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
+                    {/******************* Phone Number ******************/}
+=======
                     <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autoComplete="off" required />
 
                     <label >Email</label>
@@ -60,6 +71,7 @@ const SignUp = () => {
 
                     <label htmlFor="">Password</label>
                     <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autoComplete="off" required />
+>>>>>>> 3d7dedfe00c8a7fd5a6ce4001ea3928335de56f9
 
                     <label htmlFor="">Address</label>
                     <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autoComplete="off" required />
@@ -79,13 +91,12 @@ const SignUp = () => {
                             />
                         )}
                     />
+                    <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
                     {errors["phone-input"] && (
                         <p className="text-red-600">Invalid Phone</p>
                     )}
 
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
-
-
 
                 </form>
 
