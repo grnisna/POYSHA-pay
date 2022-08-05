@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import logo from '../../../Assets/poyshaLogo/poyshalogo.png';
 
@@ -9,11 +9,14 @@ import logo from '../../../Assets/poyshaLogo/poyshalogo.png';
 const Navbar = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+    const location = useLocation();
+    // const from = location?.state?.from?.pathname|| '/';
 
     const logOut = () => {
         signOut(auth);
+        // localStorage.removeItem('AccessToken');
         navigate('/login');
-        // localStorage.removeItem('accessToken');
+        window.localStorage.removeItem('AccessToken');
     }
 
 
