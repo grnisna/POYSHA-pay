@@ -39,7 +39,7 @@ const Navbar = () => {
                                     <li><a>Recharge</a></li>
                                 </ul>
                             </li>
-                            <li><NavLink to='/myPoisa'>My poisa</NavLink></li>
+                            <li><NavLink to='/dashboard' >My poisa</NavLink></li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
 
@@ -65,7 +65,8 @@ const Navbar = () => {
                                     <li><a>Recharge</a></li>
                                 </ul>
                             </li>
-                            <li><a>My poisa</a></li>
+                            <li><NavLink to='/dashboard' >My poisa</NavLink></li>
+
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
 
