@@ -26,7 +26,17 @@ const Login = () => {
 
 
     const onSubmit = async event => {
-        await signInWithEmailAndPassword(event.email, event.password);       
+
+        await signInWithEmailAndPassword(event.email, event.password);
+        const email = event.email;
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        console.log(data);
+        const gettingToken = await localStorage.setItem('Token', data);
+
+        // if (gettingToken) {
+        navigate('/MyAccount');
+        // }
+
     };
 
   useEffect( ()=>{
@@ -52,6 +62,7 @@ const Login = () => {
                 <h1 className="mb-10 text-3xl font-bold text-center text-black">Login</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label >Email</label>
+
 
                     <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autoComplete="off" required />
 

@@ -19,26 +19,72 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    
+
     const [updateProfile] = useUpdateProfile(auth);
 
+    // const onSubmit = data => {
+    //     createUserWithEmailAndPassword(data.email, data.password);
+    //     console.log(data);
 
 
-    const onSubmit = async event => {
-        await createUserWithEmailAndPassword(event.email, event.password);        
-        const email = event.email;
-        const {data} = await axios.post('http://localhost:5000/login',{email});
-        localStorage.setItem('token',data.accessToken);
-        navigate('/MyAccount');
-        
+    // };
+
+    const onSubmit = (data) => {
+        console.log(data)
+        const newData = {
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            address: data.address,
+            phone: data.phone,
+            balance: 1000
+        }
+        console.log(newData)
+        const url = `http://localhost:5000/users`;
+
+        fetch(url, {
+
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+            })
     };
 
 
-    // useEffect( ()=>{
-    //     if(user){
-    //         navigate('/MyAccount');
-    //     }
-    // }, [navigate, user])
+
+
+
+
+
+    useEffect(() => {
+        if (user) {
+
+            navigate('/');
+        }
+    }, [navigate, user])
+
+
+    // const onSubmit = async event => {
+    //     await createUserWithEmailAndPassword(event.email, event.password);
+    //     const email = event.email;
+    //     const { data } = await axios.post('http://localhost:5000/login', { email });
+    //     localStorage.setItem('token', data.accessToken);
+    //     navigate('/MyAccount');
+
+    // };
+
+
+    useEffect(() => {
+        if (user) {
+            navigate('/MyAccount');
+        }
+    }, [navigate, user])
 
 
 
@@ -54,6 +100,7 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/****************** * Account Name ******************/}
                     <label >Account Name</label>
+
                     <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autoComplete="off" required />
 
                     <label >Email</label>
@@ -66,7 +113,7 @@ const SignUp = () => {
                     <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autoComplete="off" required />
 
                     <label>Phone Number</label>
-                    <Controller 
+                    <Controller
                         name="phone"
                         control={control}
                         rules={{
