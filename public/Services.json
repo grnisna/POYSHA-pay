@@ -1,0 +1,20 @@
+[{
+    "services": "Add Money",
+    "servicesLogo": "https://i.ibb.co/VmnvpsN/withdrawal.png"
+  },
+  {
+    "services": "Send Money",
+    "servicesLogo": "https://i.ibb.co/zNrNhcB/Deposit2.png"
+  },
+  {
+    "services": "Add Account",
+    "servicesLogo": "https://i.ibb.co/zNrNhcB/Deposit2.png"
+  },
+  {
+    "services": "Recharge",
+    "servicesLogo": "https://i.ibb.co/zNrNhcB/Deposit2.png"
+  }, {
+    "services": "TopUp",
+    "servicesLogo": "https://i.ibb.co/zNrNhcB/Deposit2.png"
+  }
+]

@@ -1,0 +1,13 @@
+[{
+  "duration": "Daily",
+  "spend": "100.00"
+ },
+ {
+  "duration": "weekly",
+  "spend": "600.00"
+ },
+ {
+  "duration": "Monthly",
+  "spend": "2400.00"
+ }
+]
