@@ -1,0 +1,7 @@
+.backColor{
+    background-image: linear-gradient( #373737, rgb(75, 68, 68));
+}
+hr{
+    border: 1px solid white;
+    width: 20%;
+}

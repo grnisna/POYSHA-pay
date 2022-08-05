@@ -13,6 +13,7 @@ import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import RechargeMoney from "./components/Services/RechargeMoney";
+import SubFooter from './components/SharedCompo/Footer/SubFooter';
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
 
       </Routes>
       <Footer />
+      
+      <SubFooter></SubFooter>
       
       <ToastContainer />
     </div>

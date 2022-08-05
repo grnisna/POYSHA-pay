@@ -10,9 +10,9 @@ const Footer = () => {
     };
     return (
         <div className='bg-violet-500 text-white' >
-            <footer className="footer px-14 py-4 border  border-base-300">
-                <div className="items-center grid-flow-col  mx-auto">
-                    <p className='text-2xl font-bold uppercase'>Poysha-pay.</p>
+            <footer className="footer px-14 py-4 border border-base-300">
+                <div className="items-center grid-flow-col mx-auto">
+                    <p className='text-2xl font-bold uppercase'>Poysha-pay</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end  mx-auto">
                     <div className='grid grid-flow-col gap-4 mx-auto justify-between items-center'>
