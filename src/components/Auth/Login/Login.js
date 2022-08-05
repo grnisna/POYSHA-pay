@@ -13,12 +13,10 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
-    let from = location.state?.pathname || "/";
+    const from = location?.state?.from?.pathname|| '/';
 
     const [
         signInWithEmailAndPassword,
-
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
