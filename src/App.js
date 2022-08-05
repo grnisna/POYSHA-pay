@@ -15,17 +15,19 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
+
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/addMoney' element={<RequireAuth>
           <AddMoney />
         </RequireAuth>}>
         </Route>
-        {/* <Route path='/sendMoney' element={<RequireAuth>
+        
+        <Route path='/sendMoney' element={<RequireAuth>
           <SendMoney />
         </RequireAuth>}>
-        </Route> */}
-        <Route path='/sendMoney' element={<SendMoney />}></Route>
+        </Route>
+       
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
