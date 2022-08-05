@@ -5,6 +5,7 @@ const SendMoney = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => console.log(data);
+    
     return (
         <div>
             <h2>Send money</h2>

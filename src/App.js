@@ -8,6 +8,7 @@ import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SendMoney from "./components/Dashboard/Shared/SendMoney";
 
 
 function App() {
@@ -20,6 +21,11 @@ function App() {
           <AddMoney />
         </RequireAuth>}>
         </Route>
+        {/* <Route path='/sendMoney' element={<RequireAuth>
+          <SendMoney />
+        </RequireAuth>}>
+        </Route> */}
+        <Route path='/sendMoney' element={<SendMoney />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>

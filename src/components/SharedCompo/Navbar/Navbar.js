@@ -59,8 +59,8 @@ const Navbar = () => {
                                     Service
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                                 </a>
-                                <ul className="p-2 bg-white border z-10">
-                                    <li><a>Send Money</a></li>
+                                <ul className="p-2 bg-white border z-10">                                    
+                                    <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
                                     <li><NavLink to='/addMoney' >Add Money</NavLink></li>
                                     <li><a>Recharge</a></li>
                                 </ul>
