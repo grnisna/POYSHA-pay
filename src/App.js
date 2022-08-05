@@ -17,6 +17,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path="/AddedAccount" element={<OthersAccounts></OthersAccounts>}></Route>
         <Route path='/addMoney' element={<RequireAuth>
           <AddMoney />
         </RequireAuth>}>
@@ -25,7 +26,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <Footer />
-      
+
       <ToastContainer />
     </div>
   );
