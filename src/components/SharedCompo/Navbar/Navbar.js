@@ -37,12 +37,13 @@ const Navbar = () => {
                                 </a>
 
                                 <ul className="p-2 bg-white border">
-                                    <li><a>Add Money</a></li>
+                                    <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
                                     <li><NavLink to='/addMoney' >Add Money</NavLink></li>
+                                    <li><NavLink to='/addAccount' >Add Account</NavLink></li>
                                     <li><a>Recharge</a></li>
                                 </ul>
                             </li>
-                            <li><NavLink to='/myPoisa'>My poisa</NavLink></li>
+                            <li><NavLink to='/dashboard'>My poisa</NavLink></li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
 
@@ -63,12 +64,13 @@ const Navbar = () => {
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                                 </a>
                                 <ul className="p-2 bg-white border z-10">
-                                    <li><a>Send Money</a></li>
+                                    <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
                                     <li><NavLink to='/addMoney' >Add Money</NavLink></li>
+                                    <li><NavLink to='/addAccount' >Add Account</NavLink></li>
                                     <li><a>Recharge</a></li>
                                 </ul>
                             </li>
-                            <li><a>My poisa</a></li>
+                            <li><NavLink to='/dashboard'>My poisa</NavLink></li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
 
@@ -82,7 +84,7 @@ const Navbar = () => {
 
 
                     <ul>
-                    {
+                        {
                             user ?
                                 <button className='btn btn-secondary' onClick={logOut}  >Logout</button>
                                 : <div className='flex items-center justify-center gap-2'>

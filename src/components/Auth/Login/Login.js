@@ -13,7 +13,7 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location?.state?.from?.pathname|| '/';
+    const from = location?.state?.from?.pathname || '/';
 
     const [
         signInWithEmailAndPassword,
@@ -26,14 +26,6 @@ const Login = () => {
     const onSubmit = async event => {
 
         await signInWithEmailAndPassword(event.email, event.password);
-        const email = event.email;
-        const { data } = await axios.post('http://localhost:5000/login', { email });
-        console.log(data);
-        const gettingToken = await localStorage.setItem('Token', data);
-
-        // if (gettingToken) {
-        navigate('/MyAccount');
-        // }
 
     };
 
@@ -41,9 +33,8 @@ const Login = () => {
     if(user){
         async function getToken(){
             const email = user.email;
-            const {data} = await axios.post('http://localhost:5000/login',{email});
+            const {data} = await axios.post('https://powerful-basin-90376.herokuapp.com/login',{email});
             localStorage.setItem('AccessToken',data);
-            // navigate('/MyAccount');
             navigate(from, { replace: true });
         }
 
@@ -69,7 +60,7 @@ const Login = () => {
 
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
                 </form>
-                <p className='pt-3 text-black'>New to <span className='text-blue-500 pointer '> <Link to="/signup" >Registration now</Link> </span> </p>
+                <p className='pt-3 text-black'>New to <span className='text-blue-500 pointer '> <Link to="/signup" >Registration</Link> </span> </p>
             </div>
         </div >
     );
