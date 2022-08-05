@@ -25,7 +25,7 @@ const SignUp = () => {
 
     // const onSubmit = data => {
     //     createUserWithEmailAndPassword(data.email, data.password);
-    //     console.log(data);
+    //    
 
 
     // };
@@ -53,6 +53,7 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(result => {
+                console.log(result);
                 navigate(from, { replace: true });
             })
     };

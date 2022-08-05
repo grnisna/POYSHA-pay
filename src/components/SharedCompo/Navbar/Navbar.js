@@ -51,7 +51,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img src={logo} className="w-12 lg:visible invisible " alt="" />
-                    <a className="btn btn-ghost lg:ml-1 ml-[-50px] lg:text-2xl font-bold uppercase text-xl" href='/'>POYSHA-pay</a>
+                    <NavLink to='/' className="btn btn-ghost lg:ml-1 ml-[-50px] lg:text-2xl font-bold uppercase text-xl" >POYSHA-pay</NavLink>
 
                 </div>
                 <div className='navbar-center'>
