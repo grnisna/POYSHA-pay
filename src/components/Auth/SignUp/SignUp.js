@@ -100,14 +100,7 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/****************** * Account Name ******************/}
                     <label >Account Name</label>
-                    <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autocomplete="off" required />
-                    {/******************* Email ******************/}
-                    <label >Email</label>
-                    <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autocomplete="off" required />
-                    {/******************* Password ******************/}
-                    <label htmlFor="">Password</label>
-                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
-                    {/******************* Phone Number ******************/}
+
                     <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autoComplete="off" required />
 
                     <label >Email</label>

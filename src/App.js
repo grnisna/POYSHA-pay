@@ -14,8 +14,7 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
-      {/* <DashboardNav></DashboardNav> */}
-      {/* <SendMoney></SendMoney> */}
+
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/addMoney' element={<RequireAuth>
