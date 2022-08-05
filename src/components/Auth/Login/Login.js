@@ -69,7 +69,7 @@ const Login = () => {
 
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
                 </form>
-                <p className='pt-3 text-black'>New to <span className='text-blue-500 pointer '> <Link to="/signup" >Registration now</Link> </span> </p>
+                <p className='pt-3 text-black'>New to <span className='text-blue-500 pointer '> <Link to="/signup" >Registration</Link> </span> </p>
             </div>
         </div >
     );
