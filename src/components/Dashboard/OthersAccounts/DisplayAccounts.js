@@ -4,13 +4,13 @@ import { FcInfo } from "react-icons/fc";
 
 
 const DisplayAccounts = ({ accounts }) => {
- const { AccountHolder, HolderImg, AccountNumber } = accounts;
+ const { AccountHolder, HolderImg, AccountNumber, origin } = accounts;
  
 
  
  return (
   <tr className='border-b-2 border-secondary hover:bg-primary hover:text-white '>
-   <td className='flex items-center justify-center py-2 '>
+   <td className='flex items-center flex-start py-2 '>
     <div class="avatar px-5">
      <div class="w-12 rounded-full">
       <img src={HolderImg} alt="" />
@@ -21,7 +21,7 @@ const DisplayAccounts = ({ accounts }) => {
       <h3>{AccountHolder}</h3>
       <span className=' px-1 cursor-pointer'><FcInfo /></span>
      </div>
-     <p className='text-xs'>Bangladesh</p>
+     <p className='text-xs'>{origin}</p>
     </div>
    </td>
    {/* <td>{AccountHolder}</td> */}
