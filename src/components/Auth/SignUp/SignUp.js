@@ -3,42 +3,77 @@ import auth from '../../../firebase.init';
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm, Controller } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login.jpg';
-import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import axios from 'axios';
 
 
 const SignUp = () => {
-
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors }, control } = useForm();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
 
     const [
         createUserWithEmailAndPassword,
-        user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    
+
     const [updateProfile] = useUpdateProfile(auth);
 
+    // const onSubmit = data => {
+    //     createUserWithEmailAndPassword(data.email, data.password);
+    //    
 
 
-    const onSubmit = async event => {
-        await createUserWithEmailAndPassword(event.email, event.password);        
-        const email = event.email;
-        const {data} = await axios.post('http://localhost:5000/login',{email});
-        localStorage.setItem('token',data.accessToken);
-        navigate('/MyAccount');
-        
+    // };
+
+    const onSubmit = (data) => {
+
+        const newData = {
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            address: data.address,
+            phone: data.phone,
+            balance: 1000
+        }
+
+        const url = `https://powerful-basin-90376.herokuapp.com/users`;
+
+        fetch(url, {
+
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                navigate(from, { replace: true });
+            })
     };
 
 
-    // useEffect( ()=>{
-    //     if(user){
-    //         navigate('/MyAccount');
-    //     }
-    // }, [navigate, user])
+
+
+    useEffect(() => {
+        if (user) {
+            async function getToken() {
+                const email = user.email;
+                const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
+                localStorage.setItem('AccessToken', data);
+
+                navigate(from, { replace: true });
+            }
+
+            getToken();
+        }
+    }, [navigate, user, from])
 
 
 
@@ -54,6 +89,7 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/****************** * Account Name ******************/}
                     <label >Account Name</label>
+
                     <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autocomplete="off" required />
                     {/******************* Email ******************/}
                     <label >Email</label>
@@ -61,9 +97,14 @@ const SignUp = () => {
                     {/******************* Password ******************/}
                     <label htmlFor="">Password</label>
                     <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
+                    {/******************* Address ******************/}
+
+                    <label htmlFor="">Address</label>
+                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Your Address" autoComplete="off" required />
+
                     {/******************* Phone Number ******************/}
                     <label>Phone Number</label>
-                    <Controller 
+                    <Controller
                         name="phone"
                         control={control}
                         rules={{
@@ -77,12 +118,13 @@ const SignUp = () => {
                             />
                         )}
                     />
-                    <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
+
                     {errors["phone-input"] && (
                         <p className="text-red-600">Invalid Phone</p>
                     )}
 
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
+
 
                 </form>
 
