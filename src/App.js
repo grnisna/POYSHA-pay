@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
+import RechargeMoney from "./components/Services/RechargeMoney";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={ <RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/addAccount' element={ <RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
+        <Route path='/rechargeMoney' element={ <RequireAuth> <RechargeMoney></RechargeMoney></RequireAuth>}></Route>
        
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
