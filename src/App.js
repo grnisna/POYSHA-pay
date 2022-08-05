@@ -8,6 +8,7 @@ import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <Footer />
+      
       <ToastContainer />
     </div>
   );
