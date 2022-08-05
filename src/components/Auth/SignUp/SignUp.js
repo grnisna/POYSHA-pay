@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-=======
+
 import React, { useEffect } from 'react';
 import auth from '../../../firebase.init';
->>>>>>> 157dc87948680079dc8461d0aa567677cf2585a3
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import { useForm, Controller } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login.jpg';
@@ -13,10 +11,8 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 
 const SignUp = () => {
-<<<<<<< HEAD
-    const { register, handleSubmit,  control } = useForm();
-    const onSubmit = data => console.log(data);
-=======
+
+    
     const { register, handleSubmit, formState: { errors }, control } = useForm();
 
     const [
@@ -40,8 +36,6 @@ const SignUp = () => {
 
 
 
-
->>>>>>> 157dc87948680079dc8461d0aa567677cf2585a3
     return (
         <div className="flex flex-col items-center justify-center h-screen p-5 "
             style={{ backgroundImage: `url(${BGLogin})`, width: '100%', height: '100%', backgroundSize: 'cover' }}>
@@ -60,14 +54,11 @@ const SignUp = () => {
                     {/******************* Password ******************/}
                     <label htmlFor="">Password</label>
                     <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
-<<<<<<< HEAD
-                    {/******************* Phone Number ******************/}
-=======
+
 
                     <label htmlFor="">Address</label>
                     <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autocomplete="off" required />
 
->>>>>>> 157dc87948680079dc8461d0aa567677cf2585a3
                     <label>Phone Number</label>
                     <Controller
                         name="phone"
@@ -83,15 +74,14 @@ const SignUp = () => {
                             />
                         )}
                     />
-<<<<<<< HEAD
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
-=======
+
                     {errors["phone-input"] && (
                         <p className="text-red-600">Invalid Phone</p>
                     )}
 
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
->>>>>>> 157dc87948680079dc8461d0aa567677cf2585a3
+
 
                 </form>
 
