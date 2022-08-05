@@ -103,11 +103,11 @@ const SignUp = () => {
 
                     <label htmlFor="">Password</label>
 
-                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
+                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Your Password" autocomplete="off" required />
 
 
                     <label htmlFor="">Address</label>
-                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autoComplete="off" required />
+                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Your Address" autoComplete="off" required />
 
                     <label>Phone Number</label>
                     <Controller
