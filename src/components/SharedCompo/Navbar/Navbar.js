@@ -40,7 +40,7 @@ const Navbar = () => {
                                     <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
                                     <li><NavLink to='/addMoney' >Add Money</NavLink></li>
                                     <li><NavLink to='/addAccount' >Add Account</NavLink></li>
-                                    <li><a>Recharge</a></li>
+                                    <li><NavLink to='/rechargeMoney' >Recharge</NavLink></li>
                                 </ul>
                             </li>
                             <li><NavLink to='/dashboard'>My poisa</NavLink></li>
@@ -67,7 +67,7 @@ const Navbar = () => {
                                     <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
                                     <li><NavLink to='/addMoney' >Add Money</NavLink></li>
                                     <li><NavLink to='/addAccount' >Add Account</NavLink></li>
-                                    <li><a>Recharge</a></li>
+                                    <li><NavLink to='/rechargeMoney' >Recharge</NavLink></li>
                                 </ul>
                             </li>
                             <li><NavLink to='/dashboard'>My poisa</NavLink></li>
