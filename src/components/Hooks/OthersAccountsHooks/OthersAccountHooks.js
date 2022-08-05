@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const OthersAccountHooks = () => {
  const [othersAccount, setOthersAccounts] = useState([]);
  useEffect(() => {
-  fetch('http://localhost:5000/addedAccount')
+  fetch('https://powerful-basin-90376.herokuapp.com/addedAccount')
    .then(res => res.json())
    .then(data => setOthersAccounts(data))
  }, [])
