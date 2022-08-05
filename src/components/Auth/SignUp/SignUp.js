@@ -59,9 +59,6 @@ const SignUp = () => {
 
 
 
-
-
-
     useEffect(() => {
         if (user) {
 
@@ -87,8 +84,6 @@ const SignUp = () => {
     }, [navigate, user])
 
 
-
-
     return (
         <div className="flex flex-col items-center justify-center h-screen p-5 "
             style={{ backgroundImage: `url(${BGLogin})`, width: '100%', height: '100%', backgroundSize: 'cover' }}>
@@ -107,10 +102,12 @@ const SignUp = () => {
                     <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autoComplete="off" required />
 
                     <label htmlFor="">Password</label>
-                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autoComplete="off" required />
+
+                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Your Password" autocomplete="off" required />
+
 
                     <label htmlFor="">Address</label>
-                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autoComplete="off" required />
+                    <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Your Address" autoComplete="off" required />
 
                     <label>Phone Number</label>
                     <Controller
@@ -127,12 +124,13 @@ const SignUp = () => {
                             />
                         )}
                     />
-                    <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
+
                     {errors["phone-input"] && (
                         <p className="text-red-600">Invalid Phone</p>
                     )}
 
                     <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
+
 
                 </form>
 
