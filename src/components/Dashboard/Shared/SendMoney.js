@@ -34,7 +34,7 @@ const SendMoney = () => {
                 <form className='bg-base-200 shadow-2xl py-2 px-2 rounded' onSubmit={handleSubmit(onSubmit)}>
 
                     <div class="form-control w-96">
-                        {/* <label class="label">
+                        <label class="label">
                             <span class="label-text">Your available balance</span>
                         </label>
                         <input id='balance' type=
@@ -50,7 +50,7 @@ const SendMoney = () => {
                                     // message: 'Provide valid Amount'
                                 }
                             })}
-                        /> */}
+                        />
                         <label class="label">
                             {errors.yourBalance?.type === 'required' && <span class="label-text-alt text-red-500">{errors.yourBalance.message}</span>}
                             {errors.yourBalance?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.yourBalance.message}</span>}
