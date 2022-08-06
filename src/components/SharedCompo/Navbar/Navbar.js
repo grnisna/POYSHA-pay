@@ -43,7 +43,7 @@ const Navbar = () => {
                                     <li><NavLink to='/rechargeMoney' >Recharge</NavLink></li>
                                 </ul>
                             </li>
-                            <li><NavLink to='/dashboard'>My poisa</NavLink></li>
+                            <li>{user ? <NavLink to='/dashboard'>My poisa</NavLink> : <> </>}</li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
 
@@ -70,7 +70,7 @@ const Navbar = () => {
                                     <li><NavLink to='/rechargeMoney' >Recharge</NavLink></li>
                                 </ul>
                             </li>
-                            <li><NavLink to='/dashboard'>My poisa</NavLink></li>
+                            <li>{user ? <NavLink to='/dashboard'>My poisa</NavLink> : <> </>}</li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
 
