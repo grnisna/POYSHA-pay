@@ -5,7 +5,7 @@ import './HeroBanner.css';
 import { FaArrowRight } from "react-icons/fa";
 const HeroBanner = () => {
     return (
-        <section className='hero-banner lg:px-20 grid lg:grid-cols-2 justify-center grid-flow-dense '>
+        <section className='hero-banner lg:px-20 lg:py-20 grid lg:grid-cols-2 justify-center grid-flow-dense '>
             <div className="hero-content ">
                 <div className="content-header">
 
@@ -17,7 +17,7 @@ const HeroBanner = () => {
                         </div>
                     </div>
 
-                    <div className="getApp-link flex items-center">
+                    <div className="getApp-link flex items-center gap-4">
                         <div className="email-input ">
                             <input class=" email-input appearance-none border-2 rounded-full border-primary w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="example@gamil.com"></input>
                         </div>

@@ -3,6 +3,7 @@ import OthersAccountHooks from '../../Hooks/OthersAccountsHooks/OthersAccountHoo
 import DisplayAccounts from './DisplayAccounts';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const OthersAccounts = () => {
  const [othersAccount] = OthersAccountHooks()
@@ -14,8 +15,11 @@ const OthersAccounts = () => {
    origin: data.origin,
    HolderImg: 'https://placeimg.com/192/192/people'
   }
-  axios.post('http://localhost:5000/addedAccount', accountData)
-   .then(response => console.log(response))
+  axios.post('https://powerful-basin-90376.herokuapp.com/addedAccount', accountData)
+   .then(response => {
+    console.log(response);
+    toast.success('successfully new Account added');
+   })
  };
  return (
   <div className='others-account-history bg-slate-200 px-20 justify-center'>
