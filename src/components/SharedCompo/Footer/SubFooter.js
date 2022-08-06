@@ -17,7 +17,7 @@ const Footer = () => {
         <div className='backColor text-white pt-10 pb-2' >
             <div className='flex justify-between items-center  '>
 
-                <hr />
+                <hr className='first_line' />
                 <div className='logoArea flex items-center'>
 
                     <img className='w-10' src={footerLogo} alt="" />
@@ -67,7 +67,7 @@ const Footer = () => {
 
             <div className=' text-white font-bold flex justify-between items-center px-10 py-1'>
                 <p className='text-center '><p>All Rights Received || Copyright &copy; {getYear()} - Team Cyber-6 </p></p>
-                <p>Terms || Privacy</p>
+                <p><a href='/' className='terms'> Terms </a>|| <a href='/' className='privacy'>Privacy</a></p>
             </div>
         </div>
     );

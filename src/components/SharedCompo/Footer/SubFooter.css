@@ -1,7 +1,16 @@
 .backColor{
     background-image: linear-gradient( #373737, rgb(75, 68, 68));
 }
+.first_line{
+    width: 13%;
+}
 hr{
     border: 1px solid white;
     width: 20%;
+}
+.terms:hover{
+    color: blue;
+}
+.privacy:hover{
+    color: blue;
 }
