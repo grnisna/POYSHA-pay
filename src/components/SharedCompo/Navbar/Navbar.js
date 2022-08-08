@@ -22,13 +22,13 @@ const Navbar = () => {
 
     return (
         <nav>
-            <div className="navbar  bg-white border-b-2 lg:px-14 text-violet-700 uppercase font-bold">
+            <div className="navbar border-b-2 lg:px-14 text-violet-700 uppercase font-bold">
                 <div className="navbar-start ">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2   bg-white w-32 border">
+                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 bg-white w-32">
                             <li><a>Offers</a></li>
                             <li tabIndex="0">
                                 <a className="justify-between">
@@ -46,8 +46,6 @@ const Navbar = () => {
                             <li>{user ? <NavLink to='/dashboard'>My poisa</NavLink> : <> </>}</li>
                             <li><a>About us</a></li>
                             <li><a>Contact</a></li>
-
-
                         </ul>
                     </div>
                     <img src={logo} className="w-12 lg:visible invisible " alt="" />
@@ -91,7 +89,7 @@ const Navbar = () => {
 
                                     <NavLink to="/login" className="btn lg:w-24 w-14 rounded-2xl btn-active btn-outline border-violet-600 invisible lg:visible hover:text-violet-600 hover:bg-white hover:border-violet-600">Log in</NavLink>
 
-                                    <NavLink to='/signUp' className="btn lg:w-24 w-20 rounded-2xl btn-active btn-outline border-violet-600 hover:text-violet-600 hover:bg-white hover:border-violet-600" href='/'>Get started</NavLink>
+                                    <NavLink to='/signUp' className="btn lg:w-32 w-20 rounded-2xl btn-active btn-outline border-violet-600 hover:text-violet-600 hover:bg-white hover:border-violet-600" href='/'>Get started</NavLink>
                                 </div>
 
                         }
