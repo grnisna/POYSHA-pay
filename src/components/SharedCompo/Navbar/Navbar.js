@@ -97,12 +97,6 @@ const Navbar = () => {
 
             }
 
-
-
-                                    <NavLink to='/signUp' className="btn lg:w-32 w-20 rounded-2xl btn-active btn-outline border-violet-600 hover:text-violet-600 hover:bg-white hover:border-violet-600" href='/'>Get started</NavLink>
-                                </div>
-
-
           </ul>
 
 
