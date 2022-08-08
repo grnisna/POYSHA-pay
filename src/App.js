@@ -7,38 +7,34 @@ import AddMoney from "./components/Services/AddMoney";
 import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import RechargeMoney from "./components/Services/RechargeMoney";
+
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
+// import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
+
 
 
 function App() {
   return (
     <div>
       <Navbar></Navbar>
-
       <Routes>
         <Route path='/' element={<Home />}></Route>
-
-        <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>        
+        <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
-        <Route path='/dashboard' element={ <RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
-        <Route path='/addAccount' element={ <RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
-        <Route path='/rechargeMoney' element={ <RequireAuth> <RechargeMoney></RechargeMoney></RequireAuth>}></Route>
-       
+        <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
+        <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
+        <Route path='/rechargeMoney' element={<RequireAuth> <RechargeMoney></RechargeMoney></RequireAuth>}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
-
       </Routes>
       <Footer />
-      
-      <SubFooter></SubFooter>
-      
+
       <ToastContainer />
+
     </div>
   );
 }

@@ -8,9 +8,9 @@ import CardSlide5 from '../../../Assets/images/card5.png'
 
 const CardSlide = () => {
     return (
-        <div>
-            <h2 className='Tcompany lg:text-2xl text-l uppercase text-center py-10'>Your Trusted Companies</h2>
-            <div className=' grid lg:grid-cols-5 grid-cols-3 justify-items-center lg:px-32 px-24  gap-3 mx-auto '>
+        <div className='lg:pt-20'>
+            <h2 className='Tcompany lg:text-2xl text-l uppercase text-center '>Our Happy panthers</h2>
+            <div className=' grid lg:grid-cols-5 grid-cols-3 justify-items-center lg:px-32 px-24 lg:pt-20  gap-3 mx-auto '>
                 <img className='opacity-80 cursor-pointer hover:opacity-100 ' src={CardSlide1} alt="" />
                 <img className='opacity-80 cursor-pointer hover:opacity-100 ' src={CardSlide2} alt="" />
                 <img className='cursor-pointer hover:opacity-100 ' src={CardSlide3} alt="" />
