@@ -8,6 +8,7 @@ import Loading from '../SharedCompo/Loading';
 const AddMoneyModal = ({ banks, setBanks }) => {
     const { _id, bankName } = banks;
     const [user, loading] = useAuthState(auth);
+    console.log(user);
 
     const handelAddMoney = event => {
         event.preventDefault();
