@@ -1,0 +1,65 @@
+.MyAccount {
+ background-color: rgb(208, 224, 226);
+
+
+}
+
+.account-info {
+ background-color: #fff;
+ border-radius: 5px;
+}
+
+.account-section-title {
+ font-size: 14px;
+ font-style: lighter;
+ color: rgb(35, 58, 69);
+ padding: 20px 0px;
+}
+
+.account-title {
+ font-size: 18px;
+ font-weight: bold;
+}
+
+.account-id,
+.left-arrow {
+ font-size: 16px;
+ font-weight: medium;
+}
+
+.account-btn {
+ padding: 10px 0;
+}
+
+.transfer-btn {
+ /* padding: 5px 5px; */
+ padding: 10px 10px;
+ margin: 10px 0;
+ font-size: 14px;
+ font-weight: bold;
+ background-color: #6C63FF;
+ color: #fff;
+ border-radius: 5px;
+}
+
+.link-btn {
+ /* padding: 5px 5px; */
+ padding: 10px 10px;
+ margin: 10px 0;
+ font-size: 14px;
+ font-weight: bold;
+ color: rgb(7, 7, 7);
+ border: 1px solid #6C63FF;
+ border-radius: 5px;
+}
+
+.founds {
+ font-size: 28px;
+ font-weight: bold;
+}
+
+.money-type {
+ padding: 0 0px 0 8px;
+ font-size: 24px;
+ font-weight: normal;
+}

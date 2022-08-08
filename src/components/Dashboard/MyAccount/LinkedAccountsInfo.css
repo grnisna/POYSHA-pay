@@ -1,0 +1,14 @@
+.BankLogo {
+ width: 24px;
+ height: 24px;
+}
+
+.menu-icon {
+ font-weight: normal;
+ color:rgba(10, 28, 32, 0.582)
+}
+
+.copy-icon{
+ font-size: 10px;
+ color: #000;
+}
