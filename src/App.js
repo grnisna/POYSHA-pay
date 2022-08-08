@@ -11,6 +11,7 @@ import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import RechargeMoney from "./components/Services/RechargeMoney";
+// import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 
 
 function App() {

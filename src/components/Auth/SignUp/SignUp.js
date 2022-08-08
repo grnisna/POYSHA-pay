@@ -22,6 +22,7 @@ const SignUp = () => {
         loading,
         error
     ] = useCreateUserWithEmailAndPassword(auth);
+    console.log(user);
 
     const [updateProfile] = useUpdateProfile(auth);
 
@@ -106,6 +107,7 @@ const SignUp = () => {
                             defaultCountry="BD"
                             value={value}
                             onChange={setValue} 
+                            {...register("phone")}
                             required
                             />
 
