@@ -5,7 +5,7 @@ import './HeroBanner.css';
 import { FaArrowRight } from "react-icons/fa";
 const HeroBanner = () => {
     return (
-        <section className='hero-banner lg:px-20 lg:py-7 grid lg:grid-cols-2 justify-center grid-flow-dense '>
+        <section className='hero-banner lg:px-20 lg:py-20 grid lg:grid-cols-2 justify-center grid-flow-dense '>
             <div className="hero-content ">
                 <div className="content-header">
 

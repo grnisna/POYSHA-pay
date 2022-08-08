@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
+import PhoneInput from 'react-phone-number-input'
+import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import Button from '../../SharedCompo/Button';
 
+
 const SendMoney = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const [value, setValue] = useState();
 
 
     const onSubmit = (data) => {
-        const url = `http://localhost:5000/sendMoney`;
+        console.log(data);
+        const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -17,58 +23,67 @@ const SendMoney = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
+                console.log(result);
+                toast.success('send money successfully')
+                reset();
             })
     };
 
-
-
-
     return (
-        <div className=''>
-            <h2 className='text-center text-2xl'>Send Money</h2>
+        <div className='flex flex-col items-center justify-center p-5'
+            style={{ backgroundImage: `url(${BgSendMoney})`, backgroundSize: 'cover' }}
+        >
             <div className='flex items-center justify-center'>
-                <form className='bg-base-200 shadow-2xl py-2 px-2 rounded' onSubmit={handleSubmit(onSubmit)}>
-
-                    <div class="form-control w-96">
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl bg-clip-padding backdrop-filter bg-white bg-opacity-10 backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
+                    <h2 className='text-center text-white text-2xl'>Send Money</h2>
+                    <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Your available balance</span>
+                            <span class="label-text text-white">From To</span>
                         </label>
-                        <input id='balance' type=
-                            "number" placeholder="Your available balance"
-                            class="input input-bordered w-96"
-                            {...register("balance", {
+                        <PhoneInput
+                            className='input'
+                            placeholder="Enter phone number"
+                            value="+8801629504411"
+                            readOnly
+                            {...register("senderNumber")}
+                        />
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text text-white">Send To</span>
+                        </label>
+                        <PhoneInput
+                            className='input'
+                            placeholder="Enter phone number"
+                            international
+                            defaultCountry="BD"
+                            value={value}
+                            onChange={setValue}
+                            {...register("receiverNumber", {
                                 required: {
                                     value: true,
-                                    // message: 'Amount is reqiured'
-                                },
-                                pattern: {
-                                    value: /^[0-9]+$/,
-                                    // message: 'Provide valid Amount'
+                                    message: 'Phone Number is required'
                                 }
                             })}
                         />
-                        <label class="label">
-                            {errors.yourBalance?.type === 'required' && <span class="label-text-alt text-red-500">{errors.yourBalance.message}</span>}
-                            {errors.yourBalance?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.yourBalance.message}</span>}
-
-                        </label>
                     </div>
-                    <div class="form-control w-96">
+
+                    <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Send Amount</span>
+                            <span class="label-text text-white">Amount</span>
                         </label>
-                        <input id='sendAmount' type=
-                            "number" placeholder="Sending amount $"
-                            class="input input-bordered w-96"
+                        <input
+                            placeholder="Sending amount $"
+                            class="input input-bordered"
                             {...register("sendAmount", {
-                                // required: {
-                                //     value: true,
-                                //     message: 'Sending amount is reqiured'
-                                // },
+                                required: {
+                                    value: true,
+                                    message: 'Please Type Your Amount'
+                                },
                                 pattern: {
                                     value: /^[0-9]+$/,
-                                    message: 'Provide valid sending amount'
+                                    message: 'Provide Valid Amount'
                                 }
                             })}
                         />
@@ -78,57 +93,33 @@ const SendMoney = () => {
 
                         </label>
                     </div>
-                    <div class="form-control w-96">
+
+                    <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Mobile Number</span>
+                            <span class="label-text text-white">Reference</span>
                         </label>
-                        <input id='sendNumber' type=
-                            "number" placeholder="Sending number"
-                            class="input input-bordered w-96"
-                            {...register("sendNumber", {
-                                // required: {
-                                //     value: true,
-                                //     message: 'Sending number is reqiured'
-                                // },
+                        <input
+                            type="text"
+                            placeholder="Write Something"
+                            className="input input-bordered"
+                            {...register("Reference", {
+                                required: {
+                                    value: true,
+                                    message: 'Reference is required'
+                                },
                                 pattern: {
                                     value: /^[0-9]+$/,
-                                    message: 'Provide valid sending number'
+                                    message: 'Only Number is allowed'
                                 }
                             })}
                         />
                         <label class="label">
-                            {errors.sendNumber?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendNumber.message}</span>}
-                            {errors.sendNumber?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.sendNumber.message}</span>}
+                            {errors.Reference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                            {errors.Reference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
 
                         </label>
                     </div>
-                    <div class="form-control w-96">
-                        <label class="label">
-                            <span class="label-text">Refference</span>
-                        </label>
-                        <textarea id='refference' type=
-                            "text" placeholder="Refference"
-                            class="input input-bordered w-96"
-                            {...register("refference", {
-                                // required: {
-                                //     value: true,
-                                //     message: 'Refference is reqiured'
-                                // },
-                                // pattern: {
-                                //     value: /[A-Za-z]{10}/,
-                                //     message: 'Provide valid Refference'
-                                // }
-                            })}
-                        />
-                        <label class="label">
-                            {errors.refference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.refference.message}</span>}
-                            {errors.refference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.refference.message}</span>}
-
-                        </label>
-                    </div>
-                    {/* <input type="submit" /> */}
-
-                    <Button id="restBalance" className='w-96'><input type="submit" /></Button>
+                    <input className='input input-bordered w-full cursor-pointer bg-violet-400' type="submit" value="Submit" />
 
                 </form>
             </div>
