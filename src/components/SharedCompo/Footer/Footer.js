@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { BsFacebook, BsTwitter, BsPinterest, BsLinkedin, BsApple } from 'react-icons/bs';
 import { FaGooglePlay } from 'react-icons/fa';
 import './Footer.css'
-
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 const Footer = () => {
     let getYear = () => {
@@ -89,7 +90,20 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    );
+
+            </footer>
+            <div className='bg-primary text-white text-sm'>
+                <p className='text-center py-4'><p>All Rights Received || Copyright &copy; {getYear()} - Team Cyber-6 </p></p>
+            </div>
+            <div>
+        <MessengerCustomerChat
+          pageId="104407232378992"
+          appId="5433920909987628"
+        />
+        ,
+      </div>
+        </div>
+    );
 };
 
-                    export default Footer;
+export default Footer;
