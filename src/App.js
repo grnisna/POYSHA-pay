@@ -17,6 +17,8 @@ import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import RechargeMoney from "./components/Services/RechargeMoney";
+
+import SubFooter from './components/SharedCompo/Footer/SubFooter';
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 
 
@@ -36,6 +38,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <Footer />
+
       <ToastContainer />
 
 
