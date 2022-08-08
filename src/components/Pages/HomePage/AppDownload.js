@@ -12,7 +12,6 @@ import encrypted from '../../../Assets/AppDownload/encrypted.png';
 const AppDownload = () => {
     return (
         <div>
-<<<<<<< HEAD
             {/* first part */}
             <div className='flex flex-col items-center justify-center h-screen bg-primary'>
                 <h1 className='text-white text-2xl lg:text-5xl font-bold mt-2'>Easy To Use</h1>
@@ -25,11 +24,9 @@ const AppDownload = () => {
             </div>
             {/* Second Part */}
             <div className='lg:flex items-center justify-center h-screen pl-10 pr-10'>
-=======
 
             {/* Second Part */}
             <div className='lg:flex items-center justify-center h-screen px-10 '>
->>>>>>> 95981e4cd66241b8d747b3fe8d0cd35074c693d5
                 <div className='lg:mr-20 lg:mt-0 mt-10 '>
                     <div className='lg:text-right text-center mb-10'>
                         <div className='flex justify-center lg:justify-end'>
@@ -92,6 +89,7 @@ const AppDownload = () => {
                     <a href="https://play.google.com/store/apps/details?id=com.konasl.nagad&hl=en&gl=US" target='_blank' rel="noreferrer"><img src={PlayStore} alt="" width={170} /></a>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

@@ -1,8 +1,10 @@
 import React from 'react';
 import AppDownload from './AppDownload';
-import Growth from './Growth';
+
 import Services from './Services/Services';
 import HeroBanner from './HeroBanner/HeroBanner';
+// import Review from './Reviews/Review';
+import ReviewData from './Reviews/ReviewData';
 
 const Home = () => {
     return (
@@ -10,7 +12,8 @@ const Home = () => {
             <HeroBanner></HeroBanner>
             <Services></Services>
             <AppDownload></AppDownload>
-            <Growth></Growth>
+            <ReviewData></ReviewData>
+            
 
         </div>
     );
