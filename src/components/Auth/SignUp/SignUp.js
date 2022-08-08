@@ -108,13 +108,6 @@ const SignUp = () => {
                     <label htmlFor="">Password</label>
                     <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
                     {/******************* Phone Number ******************/}
-                    <input type="name" className='input w-full max-w-md mt-1 mb-7'{...register("name")} placeholder="Type Your Account Name" autoComplete="off" required />
-
-                    <label >Email</label>
-                    <input type="email" className='input w-full max-w-md mt-1 mb-7'{...register("email")} placeholder="Type Your Email" autoComplete="off" required />
-
-                    <label htmlFor="">Password</label>
-                    <input type="password" className='input w-full max-w-md mt-1 mb-7'{...register("password")} placeholder="Type Your Password" autoComplete="off" required />
 
                     <label htmlFor="">Address</label>
                     <input type="text" className='input w-full max-w-md mt-1 mb-7'{...register("address")} placeholder="Type Your Address" autoComplete="off" required />
