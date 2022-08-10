@@ -17,7 +17,6 @@ const OthersAccounts = () => {
   }
   axios.post('https://powerful-basin-90376.herokuapp.com/addedAccount', accountData)
    .then(response => {
-    console.log(response);
     toast.success('successfully new Account added');
    })
  };

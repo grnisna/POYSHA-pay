@@ -13,6 +13,7 @@ import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import RechargeMoney from "./components/Services/RechargeMoney";
 
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
+import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 
 
@@ -32,7 +33,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <Footer />
-
+    <ViewAllTransaction></ViewAllTransaction>
       <ToastContainer />
 
     </div>
