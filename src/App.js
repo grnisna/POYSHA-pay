@@ -1,11 +1,17 @@
+
+
+// import AppDownload from "./components/Pages/HomePage/AppDownload";
+
 import { Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login/Login";
 import SignUp from "./components/Auth/SignUp/SignUp";
 import RequireAuth from "./components/Auth/RequireAuth/RequireAuth";
+
 import Home from "./components/Pages/HomePage/Home";
 import AddMoney from "./components/Services/AddMoney";
 import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
+
 import { ToastContainer } from 'react-toastify';
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
@@ -35,6 +41,8 @@ function App() {
       <Footer />
     <ViewAllTransaction></ViewAllTransaction>
       <ToastContainer />
+
+
 
     </div>
   );
