@@ -11,9 +11,9 @@
       "_id": "62f300876812270582982b34",
       "Received_number": "01811509963",
       "Send_number": "01636428742",
-      "Amount": 100,
-      "Send_money":true,
-      "Received_money":false
+      "Amount": 50,
+      "Send_money":false,
+      "Received_money":true
     },
     {
       "_id": "62f30087f6acb77bea97282c",
@@ -35,15 +35,15 @@
       "_id": "62f3008775f48a50e737e5e1",
       "Received_number": "01811509963",
       "Send_number": "01636428742",
-      "Amount": 100,
-      "Send_money":true,
-      "Received_money":false
+      "Amount": 50,
+      "Send_money":false,
+      "Received_money":true
     },
     {
       "_id": "62f3008705f52a4a167dd3af",
       "Received_number": "01811509963",
       "Send_number": "01636428742",
-      "Amount": 100,
+      "Amount": 50,
       "Send_money":true,
       "Received_money":false
     },

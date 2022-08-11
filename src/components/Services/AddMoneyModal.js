@@ -1,13 +1,14 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { toast } from 'react-toastify';
+    import { toast } from 'react-toastify';
 import Loading from '../SharedCompo/Loading';
 
 
 const AddMoneyModal = ({ banks, setBanks }) => {
     const { _id, bankName } = banks;
     const [user, loading] = useAuthState(auth);
+    
     console.log(user);
 
     const handelAddMoney = event => {
