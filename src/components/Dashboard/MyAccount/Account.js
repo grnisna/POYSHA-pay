@@ -24,7 +24,7 @@ const Account = () => {
                   <p className="account-section-title">Main Account</p>
                   <div className="">
                     <h1 className="account-title">
-                      Poisha Pay Personal Account
+                      Poisha - Pay Personal Account
                     </h1>
                     <div className="account-number grid grid-cols-1 items-center">
                       <h5 className="account-id">880 1886 627 127</h5>
