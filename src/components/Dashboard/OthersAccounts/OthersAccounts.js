@@ -4,6 +4,7 @@ import DisplayAccounts from './DisplayAccounts';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import ViewAllTransaction from '../Shared/ViewAllTransaction/ViewAllTransaction';
 
 const OthersAccounts = () => {
  const [othersAccount] = OthersAccountHooks()
@@ -50,6 +51,7 @@ const OthersAccounts = () => {
      </table>
     </div>
    </div>
+   <ViewAllTransaction></ViewAllTransaction>
 
   </div>
  );

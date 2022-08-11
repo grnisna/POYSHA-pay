@@ -13,7 +13,7 @@ const ShortHistory = () => {
     const [userSpend] = OverallSpend();
 
     return (
-        <div className='bg-slate-200 grid grid-cols-3 px-10 gap-10 pb-10'>
+        <div className='bg-slate-200 grid lg:grid-cols-3 grid-cols-1 px-4 pb-4 gap-4 '>
             <div class="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
                 <div className="history-Header grid grid-cols-2 items-center py-5">
                     <div className="header grid justify-start">
@@ -38,10 +38,10 @@ const ShortHistory = () => {
             </div>
 
             {/* overview of user account  */}
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card bg-base-100 shadow-xl">
 
                 <div class="card-body">
-                    <div className="history-Header grid grid-cols-2 items-center py-5">
+                    <div className="history-Header grid grid-cols-2  items-center py-5">
                         <div className="header grid justify-start">
                             <h2 className='text-xl font-bold'>Overall</h2>
                         </div>
@@ -51,7 +51,7 @@ const ShortHistory = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="total-spend grid lg:grid-cols-3">
+                    <div className="total-spend grid lg:grid-cols-3 ">
                         {
                             userSpend.map(totalSpend => <Overall
                                 totalSpend={totalSpend}
