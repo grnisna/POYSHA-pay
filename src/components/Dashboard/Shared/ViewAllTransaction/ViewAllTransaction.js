@@ -44,7 +44,7 @@ const ViewAllTransaction = () => {
 
 
     return (
-        <div class="card  bg-base-100 shadow-xl p-10">
+        <div class="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
             <div className='flex justify-center items-center gap-7 my-10'>
                 {/* <span className='hover:bg-yellow-300'>All</span> */}
                 <span onClick={trueFunction} className='btn hover:bg-violet-700 btn-outline'>Received Money</span>
@@ -52,7 +52,7 @@ const ViewAllTransaction = () => {
 
             </div>
 
-            <table className="viewAllTable lg:w-full table-zebra shadow-xl ">
+            <table className="viewAllTable  table-zebra shadow-xl ">
             {/*================ table heading ================ */}
                 <thead className='bg-red-200'>
                     <tr>
@@ -72,9 +72,9 @@ const ViewAllTransaction = () => {
                 {separateData === true ?
                     <tbody className='text-center'>
                         {
-                            viewAllAddedMoney.map(viewAddMoney =>
+                            viewAllAddedMoney.map((viewAddMoney,index) =>
                                 <tr className=' border bg-green-300' key={viewAddMoney._id}>
-                                    <td>{number+1}</td>
+                                    <td>{index}</td>
                                     <td >{viewAddMoney.accountNumber}</td>
                                     <td >{viewAddMoney.transferredAmount}</td>
                                 </tr>
@@ -86,9 +86,9 @@ const ViewAllTransaction = () => {
                     <tbody className='text-center'>
 
                         {
-                            sendMoney.map(viewAllSendMoney =>
+                            sendMoney.map((viewAllSendMoney,index) =>
                                 <tr  className=' border bg-cyan-200'  key={viewAllSendMoney._id}>
-                                    <td>{number}</td>
+                                    <td>{index}</td>
                                     <td >{viewAllSendMoney.sendNumber}</td>
                                     <td >{viewAllSendMoney.sendAmount}</td>
                                 </tr>

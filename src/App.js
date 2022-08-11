@@ -39,7 +39,6 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <Footer />
-    <ViewAllTransaction></ViewAllTransaction>
       <ToastContainer />
 
 
