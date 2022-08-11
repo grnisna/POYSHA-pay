@@ -7,6 +7,7 @@ import logo from '../../../Assets/poyshaLogo/poyshalogo.png';
 
 
 const Navbar = () => {
+
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const location = useLocation();
@@ -91,18 +92,17 @@ const Navbar = () => {
 
                   <NavLink to="/login" className="btn btn-sm rounded-full btn-active btn-outline border-violet-600 invisible lg:visible hover:text-violet-600 hover:bg-white hover:border-violet-600">Log in</NavLink>
                   <NavLink to='/signUp' className="btn btn-sm rounded-full btn-active bg-primary border-0 text-white" href='/'>Get started</NavLink>
+
                 </div>
 
             }
-
-
 
           </ul>
 
 
         </div>
       </div>
-    </nav>
+    </nav >
   );
 };
 
