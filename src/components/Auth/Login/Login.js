@@ -36,6 +36,7 @@ const Login = () => {
                 navigate(from, { replace: true });
             }
 
+
             getToken();
         }
     }, [navigate, user, from])
@@ -63,7 +64,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
