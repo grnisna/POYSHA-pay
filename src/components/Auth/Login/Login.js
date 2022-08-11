@@ -28,19 +28,18 @@ const Login = () => {
         await signInWithEmailAndPassword(event.email, event.password);
 
     };
+    useEffect(() => {
+        if (user) {
+            async function getToken() {
+                const email = user.email;
+                const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
+                localStorage.setItem('AccessToken', data);
+                navigate(from, { replace: true });
+            }
 
-  useEffect( ()=>{
-    if(user){
-        async function getToken(){
-            const email = user.email;
-            const {data} = await axios.post('https://powerful-basin-90376.herokuapp.com/login',{email});
-            localStorage.setItem('AccessToken',data);
-            navigate(from, { replace: true });
+            getToken();
         }
-
-        getToken();
-    }
-  } ,[navigate, user,from])
+    }, [navigate, user, from])
 
 
 

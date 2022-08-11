@@ -2,9 +2,26 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import Button from '../../SharedCompo/Button';
 import { toast } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const SendMoney = () => {
-    const { register, formState: { errors }, reset , handleSubmit } = useForm();    
+    const [user] = useAuthState(auth)
+    const { register, formState: { errors }, reset, handleSubmit } = useForm();
+
+    const userEmail = user?.email;
+    const url = `http://localhost:5000/user`
+    fetch(url, {
+        method: "GET",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(userEmail)
+    })
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
+        })
 
 
     const onSubmit = (data) => {
@@ -21,7 +38,7 @@ const SendMoney = () => {
                 console.log(result);
                 toast.success('send money successfully')
                 reset();
-                
+
             })
     };
 
