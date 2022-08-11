@@ -13,7 +13,7 @@ const ViewAllTransaction = () => {
     // get all received money info
     // --------------------------------
     useEffect(() => {
-        const url = "http://localhost:5000/addMoneyTransactions"
+        const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
         fetch(url)
             .then(res => res.json())
             .then(data => setViewAllAddedMoney(data))
@@ -23,7 +23,7 @@ const ViewAllTransaction = () => {
     // get all send money info 
     // --------------------------
     useEffect(() => {
-        const url = "http://localhost:5000/sendMoney"
+        const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
         fetch(url)
             .then(res => res.json())
             .then(data => setSendMoney(data))
