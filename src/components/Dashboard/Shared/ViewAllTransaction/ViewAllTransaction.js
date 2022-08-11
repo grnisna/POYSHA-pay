@@ -8,8 +8,8 @@ const ViewAllTransaction = () => {
     const [viewAllAddedMoney, setViewAllAddedMoney] = useState([]);
     const [number, setNumber] = useState(0);
     const [sendMoney, setSendMoney] = useState([]);
-    const [separateData , setSeparateData] = useState(false);
-    
+    const [separateData, setSeparateData] = useState(false);
+
     // get all received money info
     // --------------------------------
     useEffect(() => {
@@ -46,47 +46,53 @@ const ViewAllTransaction = () => {
     return (
         <div class="card  bg-base-100 shadow-xl p-10">
             <div className='flex justify-center items-center gap-7 my-10'>
-                <span className='hover:bg-yellow-300'>All</span>
-                <span onClick={trueFunction} className='hover:bg-yellow-300'>Received Money</span>
-                <span onClick={falseFunction} className='hover:bg-yellow-300'>Send Money</span>
+                {/* <span className='hover:bg-yellow-300'>All</span> */}
+                <span onClick={trueFunction} className='btn hover:bg-violet-700 btn-outline'>Received Money</span>
+                <span onClick={falseFunction} className='btn hover:bg-violet-700 btn-outline'>Send Money</span>
 
             </div>
 
-            <table className="viewAllTable w-full">
-
-                <thead>
+            <table className="viewAllTable lg:w-full table-zebra shadow-xl ">
+            {/*================ table heading ================ */}
+                <thead className='bg-red-200'>
                     <tr>
                         <th>No.</th>
-                        <th>Receiver Number</th>
+                        {separateData === true ?
+                            <th>  Receiver Number</th>
+                            :
+                            <th>  Send Number</th>
+                        }
+
                         <th>Amount</th>
                     </tr>
                 </thead>
 
-
+            {/*================ table body ================ */}
 
                 {separateData === true ?
-                    <tbody>
-
+                    <tbody className='text-center'>
                         {
                             viewAllAddedMoney.map(viewAddMoney =>
-                                <tr key={viewAddMoney._id}>
-                                    <td>{number}</td>
+                                <tr className=' border bg-green-300' key={viewAddMoney._id}>
+                                    <td>{number+1}</td>
                                     <td >{viewAddMoney.accountNumber}</td>
                                     <td >{viewAddMoney.transferredAmount}</td>
                                 </tr>
-                            )
+                            ).slice(60)
                         }
                     </tbody>
-                    : <tbody>
+
+                    : 
+                    <tbody className='text-center'>
 
                         {
                             sendMoney.map(viewAllSendMoney =>
-                                <tr key={viewAllSendMoney._id}>
+                                <tr  className=' border bg-cyan-200'  key={viewAllSendMoney._id}>
                                     <td>{number}</td>
                                     <td >{viewAllSendMoney.sendNumber}</td>
                                     <td >{viewAllSendMoney.sendAmount}</td>
                                 </tr>
-                            )
+                            ).slice(2)
                         }
                     </tbody>
 

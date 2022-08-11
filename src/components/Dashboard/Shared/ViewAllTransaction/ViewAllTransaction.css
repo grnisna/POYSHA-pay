@@ -1,4 +1,13 @@
 .viewAllTable{
     width:455px;
     margin: auto;
+    box-shadow: 7px;
+}
+
+@media screen and (max-width:400px) {
+    .viewAllTable{
+        width: 60%;
+        margin: auto;
+
+    }
 }
