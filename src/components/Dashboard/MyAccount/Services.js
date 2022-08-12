@@ -3,9 +3,9 @@ import React from 'react';
 const Services = ({ service }) => {
  const { services, servicesLogo } = service
  return (
-  <div className='services'>
-   <div class="card width  bg-base-100 shadow-xl">
-    <div class="card-body justify-center items-center p-2">
+  <div className='service grid justify-center'>
+   <div class="card width bg-base-100 shadow-md text-secondary hover:text-primary justify-center justify-items-center">
+    <div class="card-body items-center ">
      <img className="services-img" src={servicesLogo} alt="" />
      <h2 class="text-sm">{services}</h2>
     </div>

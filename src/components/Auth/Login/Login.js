@@ -13,7 +13,7 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location?.state?.from?.pathname || '/';
+    const from = location?.state?.from?.pathname || '/dashboard';
 
     const [
         signInWithEmailAndPassword,
@@ -21,7 +21,6 @@ const Login = () => {
         loading,
         error
     ] = useSignInWithEmailAndPassword(auth);
-
 
 
     const onSubmit = async event => {
@@ -36,6 +35,7 @@ const Login = () => {
                 localStorage.setItem('AccessToken', data);
                 navigate(from, { replace: true });
             }
+
 
             getToken();
         }
@@ -64,7 +64,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

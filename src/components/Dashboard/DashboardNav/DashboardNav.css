@@ -1,0 +1,26 @@
+.routeLinks li {
+ padding: 10px 2px;
+ color: #313049;
+ /* color: #2B3151; */
+}
+
+.routeLinks li:hover {
+ background-color: #f8f9fa;
+ color: #6C63FF;
+}
+
+.routeLinks img {
+ width: 25px;
+ height: 25px;
+ margin: 0 10px;
+}
+
+.routeLinks img:hover {
+ color: #6C63FF;
+}
+
+
+.navItem {
+ font-size: 15px;
+ font-weight: medium;
+}
