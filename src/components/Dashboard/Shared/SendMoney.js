@@ -26,6 +26,7 @@ const SendMoney = () => {
                 console.log(result);
                 toast.success('send money successfully')
                 reset();
+                setValue('');
             })
     };
 
@@ -64,9 +65,18 @@ const SendMoney = () => {
                                 required: {
                                     value: true,
                                     message: 'Phone Number is required'
+                                },
+                                pattern: {
+                                    value: /^([+]\d{3}[ ])?\d{4}[ ]?\d{6}$/,
+                                    message: 'Phone Number is invalid'
                                 }
                             })}
                         />
+                        <label class="label">
+                            {errors.receiverNumber?.type === 'required' && <span class="label-text-alt text-red-500">{errors.receiverNumber.message}</span>}
+                            {errors.receiverNumber?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.receiverNumber.message}</span>}
+
+                        </label>
                     </div>
 
                     <div class="form-control">
@@ -120,7 +130,6 @@ const SendMoney = () => {
                         </label>
                     </div>
                     <input className='input input-bordered w-full cursor-pointer bg-violet-400' type="submit" value="Submit" />
-
                 </form>
             </div>
         </div>
