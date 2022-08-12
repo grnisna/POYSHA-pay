@@ -6,17 +6,18 @@ const useToken = user => {
 
     useEffect(() => {
         const runningUser = { email: email };
+        console.log(runningUser);
         if (email) {
             fetch(`https://aqueous-cove-84612.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: { 'content-type': 'application/json', },
-                body:JSON.stringify(runningUser)
+                body: JSON.stringify(runningUser)
             })
                 .then(res => res.json())
                 .then(data => {
-                    
+
                     const userToken = data.token;
-                    localStorage.setItem('userToken',userToken);
+                    localStorage.setItem('userToken', userToken);
                     setToken(userToken);
                 })
         }
