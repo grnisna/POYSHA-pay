@@ -14,9 +14,14 @@ import Navbar from "./components/SharedCompo/Navbar/Navbar";
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
+import RechargeMoney from "./components/Services/RechargeMoney";
+import SubFooter from './components/SharedCompo/Footer/SubFooter';
+import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
+// import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 import DashboardNav from "./components/Dashboard/DashboardNav/DashboardNav";
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
 import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
+
 
 
 
@@ -41,7 +46,7 @@ function App() {
           <Route path="BankTransfer" element={<AddMoney />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
           <Route path="Calculator" element={<AddMoney />}></Route>
-          <Route path="TransitionHistory" element={<AddMoney />}></Route>
+          <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
           <Route path="Setting" element={<TakeLone />}></Route>
