@@ -11,7 +11,7 @@ const Dashboard = () => {
             <div className="nav">
                 <DashboardNav></DashboardNav>
             </div>
-            <div className="sections lg:col-span-5 md:col-span-2">
+            <div className="sections lg:col-span-5 md:col-span-2 ">
                 <Outlet></Outlet>
             </div>
         </div>

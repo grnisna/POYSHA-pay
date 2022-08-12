@@ -11,14 +11,12 @@ import Home from "./components/Pages/HomePage/Home";
 import AddMoney from "./components/Services/AddMoney";
 import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
-
-
-import Account from "./components/Dashboard/MyAccount/Account";
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import DashboardNav from "./components/Dashboard/DashboardNav/DashboardNav";
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
+import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
 
 
 
@@ -33,8 +31,9 @@ function App() {
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>}>
-          <Route index element={<Account></Account>}></Route>
+          <Route index element={<DashboardOverView />}></Route>
           <Route path="dashboard" element={<SendMoney />}></Route>
+          <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
           <Route path="addAccount" element={<OthersAccounts />}></Route>

@@ -35,11 +35,26 @@ const SendMoney = () => {
     };
 
     return (
+
         <div className='flex flex-col items-center justify-center p-5'
-            style={{ backgroundImage: `url(${BgSendMoney})`, backgroundSize: 'cover' }}
+
+            style={{
+                // backgroundImage: `url(${BgSendMoney})`,
+                // backgroundSize: 'cover',
+
+                backgroundColor: '#f8f9fa'
+
+            }}
         >
-            <div className='flex items-center justify-center'>
-                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl bg-clip-padding backdrop-filter bg-white bg-opacity-10 backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
+            <div className='flex items-center justify-center rounded-md'
+                style={{
+                    backgroundImage: `url(${BgSendMoney})`,
+                    backgroundSize: 'cover',
+
+
+                }}
+            >
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding backdrop-filter bg-white bg-opacity-10 backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
                     <h2 className='text-center text-white text-2xl'>Send Money</h2>
                     <div class="form-control">
                         <label class="label">
