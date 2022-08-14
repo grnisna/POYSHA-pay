@@ -48,6 +48,7 @@ const Footer = () => {
                     <a className="link link-hover pl-10">Data Security</a>
 
                 </div>
+
                 <div className='w-full '>
                     <h1 className='text-xl uppercase lg:text-left mx-auto'>
                         Follow us
@@ -59,9 +60,9 @@ const Footer = () => {
                         <button className='btn btn-sm  rounded-full bg-black'><FaGooglePlay className=' text-green-400' />  Google Play</button>
                         <button className='btn btn-sm  rounded-full bg-black'><BsApple className=' text-grey-400' />  Apple Store</button>
                     </div>
-
                 </div>
-                <div className='w-full'>
+
+                {/* <div className='w-full'>
                     <span className="text-xl uppercase mx-auto">Newsletter</span>
                     <div className="form-control  w-60 mx-auto">
                         <label className="label">
@@ -72,7 +73,7 @@ const Footer = () => {
                             <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </footer>
             <div className='bg-violet-800 text-white font-bold'>
