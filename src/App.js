@@ -52,7 +52,7 @@ function App() {
           <Route path="Setting" element={<TakeLone />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
-        {/* <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route> */}
+        <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
