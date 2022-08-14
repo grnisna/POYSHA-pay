@@ -12,7 +12,7 @@ const ViewAllTransaction = () => {
     const [separateData, setSeparateData] = useState(false);
     const [allTransActionData, setAllTransActionData] = useState(false);
     const [viewAllTransaction, setViewAllTransaction] = useState([]);
-    console.log(viewAllTransaction);
+   
 
 
     // get all Add money info
@@ -28,7 +28,6 @@ const ViewAllTransaction = () => {
 
     // get all send money info 
     // --------------------------
-    const checking = [1,2,5,4,8,79,9,10]
     useEffect(() => {
         const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
         fetch(url)
