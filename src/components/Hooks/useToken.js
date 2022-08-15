@@ -2,11 +2,13 @@ import { useEffect, useState } from "react"
 
 const useToken = user => {
     const [token, setToken] = useState('');
-    const email = user?.user?.email;
+    
 
     useEffect(() => {
+
+        const email = user?.user?.email;
         const runningUser = { email: email };
-        console.log(runningUser);
+       console.log(email);
         if (email) {
             fetch(`https://aqueous-cove-84612.herokuapp.com/user/${email}`, {
                 method: 'PUT',
@@ -15,14 +17,13 @@ const useToken = user => {
             })
                 .then(res => res.json())
                 .then(data => {
-
                     const userToken = data.token;
                     localStorage.setItem('userToken', userToken);
                     setToken(userToken);
                 })
         }
 
-    }, [email]);
+    }, [user]);
 
     return [token];
 }

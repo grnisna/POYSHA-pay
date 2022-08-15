@@ -8,6 +8,7 @@ import LoginImage from '../../../Assets/Login/Login.png';
 import axios from 'axios';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import useToken from '../../Hooks/useToken';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -27,52 +28,65 @@ const SignUp = () => {
     const [updateProfile] = useUpdateProfile(auth);
 
 
-    const onSubmit = async data => {
-        console.log(data);
-        await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name });
-        const newData = {
-            name: data.name,
-            email: data.email,
-            password: data.password,
-            address: data.address,
-            phone: data.phone,
-            balance: 1000
+
+    const [token] = useToken(user);
+
+    // navigate -------------------------- 
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
         }
 
-        const url = `https://powerful-basin-90376.herokuapp.com/users`;
+    }, [from, navigate, token])
 
-        fetch(url, {
 
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newData)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-                navigate(from, { replace: true });
-            })
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
+        // const newData = {
+        //     name: data.name,
+        //     email: data.email,
+        //     password: data.password,
+        //     address: data.address,
+        //     phone: data.phone,
+        //     balance: 1000
+        // }
+
+        // const url = `https://powerful-basin-90376.herokuapp.com/users`;
+
+        // fetch(url, {
+
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(newData)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         console.log(result);
+        //         navigate(from, { replace: true });
+        //     })
     };
 
 
 
 
-    useEffect(() => {
-        if (user) {
-            async function getToken() {
-                const email = user.email;
-                const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
-                localStorage.setItem('AccessToken', data);
 
-                navigate(from, { replace: true });
-            }
 
-            getToken();
-        }
-    }, [navigate, user, from])
+    // useEffect(() => {
+    //     if (user) {
+    //         async function getToken() {
+    //             const email = user.email;
+    //             const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
+    //             localStorage.setItem('AccessToken', data);
+
+    //             navigate(from, { replace: true });
+    //         }
+
+    //         getToken();
+    //     }
+    // }, [navigate, user, from])
 
 
 
@@ -106,10 +120,10 @@ const SignUp = () => {
                             international
                             defaultCountry="BD"
                             value={value}
-                            onChange={setValue} 
+                            onChange={setValue}
                             {...register("phone")}
                             required
-                            />
+                        />
 
                         <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
 

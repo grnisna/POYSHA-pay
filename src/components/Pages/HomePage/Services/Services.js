@@ -9,14 +9,14 @@ import gasbill from '../../../../Assets/serviceImg/gasbill.png';
 import creditcard from '../../../../Assets/serviceImg/creditcard.png';
 import ourPackage from '../../../../Assets/serviceImg/package.gif';
 import { GoArrowRight } from 'react-icons/go'
-import serviceBackground from '../../../../Assets/serviceImg/poysha-pay-BG.png';
+import serviceBackground from '../../../../Assets/serviceImg/serviceSectionBG.png';
 
 const Services = () => {
     return (
         <div className=' lg:py-20 py-5 ' style={{
             backgroundImage: `url(${serviceBackground})`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
-            backgroundSize: 'cover', width: '100%',
+            backgroundSize: 'cover',
             opacity: '0.9.5'
 
 
