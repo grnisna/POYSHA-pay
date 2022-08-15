@@ -9,10 +9,18 @@ import gasbill from '../../../../Assets/serviceImg/gasbill.png';
 import creditcard from '../../../../Assets/serviceImg/creditcard.png';
 import ourPackage from '../../../../Assets/serviceImg/package.gif';
 import { GoArrowRight } from 'react-icons/go'
+import serviceBackground from '../../../../Assets/serviceImg/poysha-pay-BG.png';
 
 const Services = () => {
     return (
-        <div className=' lg:py-20 py-5 '>
+        <div className=' lg:py-20 py-5 ' style={{
+            backgroundImage: `url(${serviceBackground})`,
+            backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
+            backgroundSize: 'cover', width: '100%',
+            opacity: '0.9.5'
+
+
+        }} >
             {/* <div className='services flex justify-center items-center gap-5'><h2 className='text-base-100 font-bold lg:text-2xl text-l'>SERVICE'S </h2><GoArrowRight color='white' size={24}></GoArrowRight>  </div> */}
             <h2 className='Tcompany lg:text-2xl text-l uppercase text-center'>Our Services</h2>
 

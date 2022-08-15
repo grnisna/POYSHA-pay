@@ -5,7 +5,6 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import logo from '../../../Assets/poyshaLogo/poyshalogo.png';
 
-
 const Navbar = () => {
 
   const [user] = useAuthState(auth);
@@ -52,7 +51,7 @@ const Navbar = () => {
             </ul>
           </div>
           <NavLink to="/" ><img src={logo} className="w-12 lg:visible invisible " alt="" /></NavLink>
-          <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHA-PAY</h3>
+          <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase logoAnimation" >POYSHA-PAY</h3>
 
         </div>
         <div className='navbar-center'>
