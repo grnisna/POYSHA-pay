@@ -2,17 +2,18 @@ import { useEffect, useState } from "react"
 
 const useToken = user => {
     const [token, setToken] = useState('');
-    
+    console.log(user);
 
     useEffect(() => {
 
         const email = user?.user?.email;
+        
         const runningUser = { email: email };
-       console.log(email);
         if (email) {
-            fetch(`https://aqueous-cove-84612.herokuapp.com/user/${email}`, {
+            
+            fetch(`https://powerful-basin-90376.herokuapp.com/user/${email}`, {
                 method: 'PUT',
-                headers: { 'content-type': 'application/json', },
+                headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(runningUser)
             })
                 .then(res => res.json())
@@ -25,7 +26,7 @@ const useToken = user => {
 
     }, [user]);
 
-    return [token];
+    return [token,setToken];
 }
 
 export default useToken;

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login2.jpg';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -9,6 +8,7 @@ import axios from 'axios';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import useToken from '../../Hooks/useToken';
+import auth from '../../../firebase.init';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -27,9 +27,7 @@ const SignUp = () => {
 
     const [updateProfile] = useUpdateProfile(auth);
 
-
-
-    const [token] = useToken(user);
+    const [token,setToken] = useToken(user);
 
     // navigate -------------------------- 
     useEffect(() => {
@@ -52,7 +50,7 @@ const SignUp = () => {
         //     balance: 1000
         // }
 
-        // const url = `https://powerful-basin-90376.herokuapp.com/users`;
+        // const url = `https://powerful-basin-90376.herokuapp.com/user/${data.email}`;
 
         // fetch(url, {
 
@@ -63,9 +61,10 @@ const SignUp = () => {
         //     body: JSON.stringify(newData)
         // })
         //     .then(res => res.json())
-        //     .then(result => {
-        //         console.log(result);
-        //         navigate(from, { replace: true });
+        //     .then(data => {
+        //         // setToken(data);
+        //         console.log(data);
+        //         // navigate(from, { replace: true });
         //     })
     };
 
