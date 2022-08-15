@@ -16,7 +16,7 @@ const Services = () => {
             {/* <div className='services flex justify-center items-center gap-5'><h2 className='text-base-100 font-bold lg:text-2xl text-l'>SERVICE'S </h2><GoArrowRight color='white' size={24}></GoArrowRight>  </div> */}
             <h2 className='Tcompany lg:text-2xl text-l uppercase text-center'>Our Services</h2>
 
-            <div className='serviceArea lg:py-20'>
+            <div className='serviceArea lg:py-10'>
                 <div className='lg:flex justify-center items-center'>
                     <div className='myCard '>
                         <div className='success '></div>
@@ -50,7 +50,7 @@ const Services = () => {
                 </div>
 
             </div>
-            <div className='serviceArea lg:py-10'>
+            <div className='serviceArea lg:py-6'>
                 <div className='lg:flex justify-center items-center'>
                     <div className='myCard '>
                         <div className='success '></div>
