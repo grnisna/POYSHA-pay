@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import BGLogin from '../../../Assets/bg-login2.jpg';
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import axios from 'axios';
 import LoginImage from '../../../Assets/Login/Login.png';
-
-
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/dashboard';
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
 
     const [
         signInWithEmailAndPassword,
@@ -26,6 +26,7 @@ const Login = () => {
     const onSubmit = async event => {
         await signInWithEmailAndPassword(event.email, event.password);
     };
+
 
     useEffect(() => {
         if (user) {
@@ -60,6 +61,8 @@ const Login = () => {
                         <input type="password" className='input w-full max-w-md mt-1 rounded-3xl'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
 
                         <input className='mt-7 bg-white text-black bg-opacity-0 hover:bg-opacity-90  hover:rounded-3xl transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
+                        
+                        <p onClick={() => navigate('/resetpassword')} className='btn btn-link text-primary pe-auto text-decoration-none' variant="link">Forget Password</p>
                     </form>
                 </div>
             </div>

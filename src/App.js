@@ -11,6 +11,8 @@ import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import RechargeMoney from "./components/Services/RechargeMoney";
+import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
+import Calculate from "./components/Calculator/Calculate";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 
 
@@ -27,6 +29,8 @@ function App() {
         <Route path='/rechargeMoney' element={<RequireAuth> <RechargeMoney></RechargeMoney></RequireAuth>}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/resetpassword' element={<ResetPassword />}></Route>
+        <Route path='/calculate' element={<Calculate />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />
