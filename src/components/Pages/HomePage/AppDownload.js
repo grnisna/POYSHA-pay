@@ -76,6 +76,7 @@ const AppDownload = () => {
                 </div>
             </div>
         </div>
+        
     );
 };
 
