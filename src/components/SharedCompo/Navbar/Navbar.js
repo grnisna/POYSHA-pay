@@ -51,8 +51,8 @@ const Navbar = () => {
 
             </ul>
           </div>
-          <img src={logo} className="w-12 lg:visible invisible " alt="" />
-          <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHAPAY</h3>
+          <NavLink to="/" ><img src={logo} className="w-12 lg:visible invisible " alt="" /></NavLink>
+          <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHA-PAY</h3>
 
         </div>
         <div className='navbar-center'>
@@ -71,7 +71,7 @@ const Navbar = () => {
                   <li><a>Recharge</a></li>
                 </ul>
               </li>
-              <li><NavLink to='/dashboard'>My poisa</NavLink></li>
+              <li><NavLink to='/dashboard'>My poysha</NavLink></li>
               <li><a>About us</a></li>
               <li><a>Contact</a></li>
 

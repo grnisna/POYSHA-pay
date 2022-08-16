@@ -4,6 +4,7 @@ import DisplayAccounts from './DisplayAccounts';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import ViewAllTransaction from '../Shared/ViewAllTransaction/ViewAllTransaction';
 
 const OthersAccounts = () => {
  const [othersAccount] = OthersAccountHooks()
@@ -17,7 +18,6 @@ const OthersAccounts = () => {
   }
   axios.post('https://powerful-basin-90376.herokuapp.com/addedAccount', accountData)
    .then(response => {
-    console.log(response);
     toast.success('successfully new Account added');
    })
  };
