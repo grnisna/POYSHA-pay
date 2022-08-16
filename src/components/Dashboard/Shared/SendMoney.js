@@ -4,22 +4,29 @@ import { toast } from 'react-toastify';
 import PhoneInput from 'react-phone-number-input'
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import Button from '../../SharedCompo/Button';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 
 const SendMoney = () => {
+
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
+    const [user] = useAuthState(auth);
+
+    const onSubmit = (sending) => {
+        console.log(sending);
 
 
-    const onSubmit = (data) => {
-        console.log(data);
+
+
         const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
         fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(sending)
         })
             .then(res => res.json())
             .then(result => {
@@ -35,15 +42,27 @@ const SendMoney = () => {
         >
             <div className='flex items-center justify-center'>
                 <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl bg-clip-padding backdrop-filter bg-white bg-opacity-10 backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
+
                     <h2 className='text-center text-white text-2xl'>Send Money</h2>
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">From To</span>
+                            <span class="label-text text-white">Your available balance</span>
+                        </label>
+                        <input
+                            className='input'
+                            disabled
+                            value={user?.balance}
+                        />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text text-white">From</span>
                         </label>
                         <PhoneInput
                             className='input'
-                            placeholder="Enter phone number"
-                            value="+8801629504411"
+                            disabled
+                            // placeholder="Enter phone number"
+                            value={user?.phone}
                             readOnly
                             {...register("senderNumber")}
                         />
@@ -75,6 +94,7 @@ const SendMoney = () => {
                         </label>
                         <input
                             placeholder="Sending amount $"
+                            name='sendAmount'
                             class="input input-bordered"
                             {...register("sendAmount", {
                                 required: {
@@ -107,10 +127,10 @@ const SendMoney = () => {
                                     value: true,
                                     message: 'Reference is required'
                                 },
-                                pattern: {
-                                    value: /^[0-9]+$/,
-                                    message: 'Only Number is allowed'
-                                }
+                                // pattern: {
+                                //     value: /^[0-9]+$/,
+                                //     message: 'Only Number is allowed'
+                                // }
                             })}
                         />
                         <label class="label">

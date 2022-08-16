@@ -37,7 +37,7 @@ const SignUp = () => {
             password: data.password,
             address: data.address,
             phone: data.phone,
-            balance: 1000
+            balance: 0.00
         }
 
         const url = `https://powerful-basin-90376.herokuapp.com/users`;

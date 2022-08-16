@@ -20,6 +20,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home />}></Route>
+
         <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
@@ -29,6 +30,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <Footer />
+
       <ToastContainer />
 
     </div>

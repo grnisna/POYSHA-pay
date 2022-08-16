@@ -2,29 +2,18 @@ import React from 'react';
 import { BsFacebook, BsTwitter, BsPinterest, BsLinkedin, BsApple } from 'react-icons/bs';
 import { FaGooglePlay } from 'react-icons/fa';
 import './Footer.css'
+import ScrollToTop from "react-scroll-to-top";
 
 
 const Footer = () => {
+
     let getYear = () => {
         let currentYear = new Date().getFullYear();
         return currentYear;
     };
     return (
         <div className='text-primary bg-secondary' >
-            {/* <footer className="footer px-14 py-4 border  border-base-300">
-                <div className="items-center grid-flow-col  mx-auto">
-                    <p className='text-2xl font-bold uppercase'>Poysha-pay.</p>
-                </div>
-                <div className="md:place-self-center md:justify-self-end  mx-auto">
-                    <div className='grid grid-flow-col gap-4 mx-auto justify-between items-center'>
-                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.google.com'><BsFacebook /></a>
-                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.twitter.com'><BsTwitter /></a>
-                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.printerest.com'><BsPinterest /></a>
-                        <a className='text-2xl bg-blue-500 text-white rounded-full p-2 hover:bg-white hover:text-orange-500' href='http://www.linkedin.com'><BsLinkedin /></a>
-                    </div>
-                </div>
-            </footer> */}
-
+            <ScrollToTop smooth top="2000" />
             <footer className="footer  py-10 lg:px-20 mx-auto text-white font-normal">
 
                 <div className=' mx-auto content-footer '>
