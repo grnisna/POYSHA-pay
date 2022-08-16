@@ -15,8 +15,13 @@ import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
 import RechargeMoney from "./components/Services/RechargeMoney";
+<<<<<<< HEAD
+import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
+import Calculate from "./components/Calculator/Calculate";
+=======
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
+>>>>>>> e4e0fbba7faedcaac764e73fff91e11575fd0fe2
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 import DashboardNav from "./components/Dashboard/DashboardNav/DashboardNav";
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
@@ -58,6 +63,8 @@ function App() {
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/resetpassword' element={<ResetPassword />}></Route>
+        <Route path='/calculate' element={<Calculate />}></Route>
       </Routes>
       <Footer />
 
