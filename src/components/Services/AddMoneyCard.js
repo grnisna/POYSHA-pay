@@ -15,7 +15,7 @@ const AddMoneyCard = ({ addMoney, setBanks }) => {
             onClick={() => setBanks(addMoney)}
             htmlFor="add-money-modal"
             style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
-            className='px-40 py-24 w-64 h-36 shadow-2xl'>
+            className='px-40 py-24 w-64 h-36 shadow-2xl cursor-pointer'>
         </label>
     );
 };

@@ -19,7 +19,8 @@
   padding: 30px;
   transition: 1.2s;
   border: 3px solid #fff;
-  animation: beforeSpin 4s linear infinite;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) ;
+  /* animation: beforeSpin 4s linear infinite; */
 }
 /* image container */
 .imageContainer {
@@ -32,13 +33,14 @@
 .myCard:hover {
   background-color: #98c1d9;
   transform: scale(1.1);
-  animation: spin 6s linear infinite;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) ;
+  /* animation: spin 6s linear infinite; */
 }
 
 .summaryText {
   color: #1d3557;
 }
-
+/* 
 @keyframes spin {
   10% {
     border-left: 3px solid red;
@@ -103,7 +105,7 @@
   100% {
     border-bottom: 3px solid blue;
   }
-}
+} */
 
 .cardTwo {
   height: 50%;

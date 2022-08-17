@@ -8,11 +8,8 @@ import Loading from '../SharedCompo/Loading';
 const AddMoneyModal = ({ banks, setBanks }) => {
     const { _id, bankName } = banks;
     const [user, loading] = useAuthState(auth);
-    console.log(auth);
+
     console.log(user);
-
-
-
 
     const handelAddMoney = event => {
         event.preventDefault();
@@ -30,10 +27,11 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             accountNumber: event.target.account.value,
             transferredAmount: event.target.amount.value,
             reference: event.target.reference.value,
+            transactionType: "addMoney"
 
         }
 
-        fetch('http://localhost:5000/addMoney', {
+        fetch('https://powerful-basin-90376.herokuapp.com/addMoney', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,8 +42,9 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             .then(data => {
                 console.log(data);
                 setBanks(null)
+                toast.success('successfully added money');
             })
-        fetch('http://localhost:5000/transaction_history', {
+        fetch('https://powerful-basin-90376.herokuapp.com/transaction_history', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
