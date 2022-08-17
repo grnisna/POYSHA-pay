@@ -14,8 +14,10 @@ const Account = () => {
   }, [])
 
   return (
-    <div className="account grid lg:grid-cols-3 p-4 gap-4 lg:grid-flow-row-dense  bg-slate-200">
-      <div class="card w-100 bg-base-100 shadow-xl lg:col-span-2 justify-center">
+
+    <div className="account grid lg:grid-cols-3 lg:grid-flow-row-dense py-10  gap-10 px-10 bg-slate-200">
+      <div className="card w-100 bg-base-100 shadow-xl lg:col-span-2 justify-center">
+
         <div className="account-info grid lg:grid-cols-2  p-5 m-5 justify-center justify-items-center items-center">
           <div className="type">
             <div className="account">
@@ -70,8 +72,10 @@ const Account = () => {
         </div>
       </div>
 
-      <div class="card bg-base-100 shadow-xl justify-center">
-        <div className="account-info col-span-1 m-4  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-4 justify-center">
+
+      <div className ="card bg-base-100 shadow-xl justify-center p-4">
+        <div className="account-info col-span-1 m-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-4 justify-center">
+
           {
             services.map(service => <Services
               service={service}
