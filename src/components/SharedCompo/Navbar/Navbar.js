@@ -89,10 +89,16 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+
           <img src={logo} className="w-12 lg:visible invisible " alt="" />
           <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase ">
             POYSHAPAY
           </h3>
+
+          <NavLink to="/" ><img src={logo} className="w-12 lg:visible invisible " alt="" /></NavLink>
+          <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHA-PAY</h3>
+
+
         </div>
         <div className="navbar-center">
           <div className=" hidden lg:flex">
@@ -128,6 +134,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
+
               <li>
                 <NavLink to="/dashboard">My poisa</NavLink>
               </li>
@@ -140,6 +147,9 @@ const Navbar = () => {
               <li>
                 <NavLink to="/AddReview">Review</NavLink>
               </li>
+              <li><NavLink to='/dashboard'>My poysha</NavLink></li>
+              <li><a>About us</a></li>
+              <li><a>Contact</a></li>
             </ul>
           </div>
         </div>
