@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input';
+// import PhoneInput from 'react-phone-number-input'
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
-
-
-
-import PhoneInput from 'react-phone-number-input'
-import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
-import Button from '../../SharedCompo/Button';
 import DBUserData from '../../Hooks/UserData/DBUserData';
 
 
@@ -20,7 +13,7 @@ const SendMoney = () => {
 
   const [userData, setUserData] = DBUserData([]);
 
-  console.log(userData.phone);
+  console.log(userData);
 
 
   const onSubmit = (data) => {

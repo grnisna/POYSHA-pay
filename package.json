@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@lottiefiles/lottie-player": "^1.5.7",
     "@lottiefiles/react-lottie-player": "^3.4.7",
-    "@emailjs/browser": "^3.6.2",
     "@react-icons/all-files": "^4.1.0",
     "@stripe/react-stripe-js": "^1.10.0",
     "@stripe/stripe-js": "^1.35.0",

@@ -10,7 +10,7 @@ import CheckoutForm from '../../Hooks/Stripe/CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import StripePayment from '../../Hooks/Stripe/StripePayment';
 const stripePromise = loadStripe('pk_test_51L32KLCsQIHP5V5pO5zs1Mqu1tcstEOMngwtrtftvk3aUWXS91oilRcWhNEIK4vTTEZ6houmF4VijlGlGHI7FWEJ00jJLqyxcU');
-import PhoneInput from 'react-phone-input-2';
+// import PhoneInput from 'react-phone-input-2';
 
 
 
@@ -66,10 +66,7 @@ const OthersAccounts = () => {
 
     </div>
 
-        toast.success('successfully new Account added');
-      })
-  };
-  
+
   );
 };
 
