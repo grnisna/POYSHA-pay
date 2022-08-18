@@ -41,7 +41,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className='lg:py-2' >
+    <nav className='lg:py-2'>
       <div className="navbar  bg-white border-b-primary lg:px-14 text-violet-700 uppercase font-medium">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -49,25 +49,54 @@ const Navbar = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
             <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2   bg-white w-32 border">
-              {menu}
+              <li><NavLink to='/'>Home</NavLink></li>
+              <li tabIndex="0">
+                <a className="justify-between">
+                  Service
+                  <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+                </a>
 
+                <ul className="p-2 bg-white border">
+                  <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
+                  <li><NavLink to='/addMoney' >Add Money</NavLink></li>
+                  <li><NavLink to='/addAccount' >Add Account</NavLink></li>
+                  <li><a>Recharge</a></li>
+                </ul>
+              </li>
               <li><NavLink to='/dashboard'>My poisa</NavLink></li>
               <li><a>About us</a></li>
               <li><a>Contact</a></li>
+
+
             </ul>
           </div>
-          <NavLink to="/" ><img src={logo} className="w-12 lg:visible invisible " alt="" /></NavLink>
-          <NavLink to="/" className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHA-PAY</NavLink>
+          <img src={logo} className="w-12 lg:visible invisible " alt="" />
+         <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHAPAY</h3>
 
         </div>
         <div className='navbar-center'>
           <div className=" hidden lg:flex">
             <ul className="menu menu-horizontal p-0">
-              {menu}
 
-              <li><NavLink to='/dashboard'>My poysha</NavLink></li>
+              <li><NavLink to='/'>Home</NavLink></li>
+              <li tabIndex="0">
+                <a>
+                  Service
+                  <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                </a>
+                <ul className="p-2 bg-white border z-10 ">
+                  <li><NavLink to='/sendMoney'  >Send Money</NavLink></li>
+                  <li><NavLink to='/addMoney' >Add Money</NavLink></li>
+                  <li><NavLink to='/addAccount' >Add Account</NavLink></li>
+                  <li><a>Recharge</a></li>
+                </ul>
+              </li>
+              <li><NavLink to='/dashboard'>My poisa</NavLink></li>
+
               <li><a>About us</a></li>
               <li><a>Contact</a></li>
+
+
             </ul>
           </div>
         </div>

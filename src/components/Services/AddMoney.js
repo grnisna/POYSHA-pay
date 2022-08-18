@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import StripePayment from '../Hooks/Stripe/StripePayment';
 import { useForm } from 'react-hook-form';
 import AddMoneyCard from './AddMoneyCard';
 import AddMoneyModal from './AddMoneyModal';

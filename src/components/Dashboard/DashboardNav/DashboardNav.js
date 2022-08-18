@@ -12,6 +12,7 @@ import Calculator from '../../../Assets/DashboardNav/calculator.png';
 import TransitionHistory from '../../../Assets/DashboardNav/invoice.png';
 import TakeLone from '../../../Assets/DashboardNav/lones.png';
 import SupportTicket from '../../../Assets/DashboardNav/customer-service.png';
+import ContactUS from '../../Pages/ContactUS/ContactUS';
 import Setting from '../../../Assets/DashboardNav/settings.png';
 import Logout from '../../../Assets/DashboardNav/log-out.png';
 
@@ -22,7 +23,7 @@ const DashboardNav = () => {
         <ul className='routeLinks p-5'>
           <li className='flex items-center navItem'>
             <img src={DashboardIcon} alt="" />
-            <Link to='index'>Dashboard</Link>
+            <Link to=''>Dashboard</Link>
           </li>
           <li className='flex items-center navItem'>
             <img src={Account} alt="" />
@@ -60,8 +61,13 @@ const DashboardNav = () => {
             <Link to='takeLone'>Take Lone</Link>
           </li>
           <li className='flex items-center navItem'>
+
+            <img src={ContactUS} alt="" />
+            <Link to='ContactUS'>ContactUs</Link>
+
             {/* <img src={TakeLone} alt="" /> */}
             <Link to='addReview'>Add Review</Link>
+
           </li>
           <li className='flex items-center navItem'>
             <img src={SupportTicket} alt="" />

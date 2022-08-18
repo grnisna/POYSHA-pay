@@ -46,11 +46,18 @@ const ShortHistory = () => {
                     </thead>
                     <tbody>
                         {
+
                             viewShortHistory.map(myHistory => <HistoryTable
                                 myHistory={myHistory}
                                 key={myHistory._id}
                             ></HistoryTable>).reverse()
                         }
+                        {/* {
+                            myTransactionHistory.map(myHistory => <HistoryTable
+                                myHistory={myHistory}
+                                key={myHistory.amount}
+                            ></HistoryTable>)
+                        } */}
                     </tbody>
                 </table>
             </div>

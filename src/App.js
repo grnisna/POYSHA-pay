@@ -18,7 +18,9 @@ import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction
 
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
 import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
+import StripePayment from "./components/Hooks/Stripe/StripePayment";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
+
 
 
 
@@ -55,14 +57,15 @@ function App() {
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
-          <Route path="addMoney" element={<AddMoney />}></Route>
+          {/* <Route path="addMoney" element={<AddMoney />}></Route> */}
           <Route path="addAccount" element={<OthersAccounts />}></Route>
           <Route path="RequestMoney" element={<AddMoney />}></Route>
-          <Route path="BankTransfer" element={<AddMoney />}></Route>
+          <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
           <Route path="Calculator" element={<AddMoney />}></Route>
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
+          <Route path="ContactUS" element={<ContactUS />}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
           <Route path="Setting" element={<TakeLone />}></Route>
