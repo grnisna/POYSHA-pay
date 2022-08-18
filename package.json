@@ -24,13 +24,9 @@
     "react-query": "^4.0.0",
     "react-resize-detector": "^7.1.2",
     "react-router-dom": "^6.3.0",
-<<<<<<< HEAD
-    "react-scripts": "5.0.1",
     "react-scroll-to-top": "^3.0.0",
-=======
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
->>>>>>> 0b8face25d91c879a87d07da21226b595a80df88
     "react-toastify": "^9.0.7",
     "recharts": "^2.1.13",
     "slick-carousel": "^1.8.1",

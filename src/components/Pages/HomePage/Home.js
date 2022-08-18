@@ -5,6 +5,9 @@ import HeroBanner from './HeroBanner/HeroBanner';
 import CardSlide from './CardSlide';
 import Users from './Users';
 import ImageUpload from './ImageUpload';
+import UserImages from './UserImages';
+
+
 
 
 const Home = () => {
@@ -12,6 +15,7 @@ const Home = () => {
         <div>
             <HeroBanner></HeroBanner>
             <ImageUpload></ImageUpload>
+            <UserImages></UserImages>
             <CardSlide></CardSlide>
             {/* <Users></Users> */}
             <Services></Services>
