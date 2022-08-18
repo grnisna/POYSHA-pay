@@ -12,7 +12,7 @@ const ViewAllTransaction = () => {
     const [separateData, setSeparateData] = useState(false);
     const [allTransActionData, setAllTransActionData] = useState(false);
     const [viewAllTransaction, setViewAllTransaction] = useState([]);
-    console.log(viewAllTransaction);
+   
 
 
     // get all Add money info
@@ -99,9 +99,6 @@ const ViewAllTransaction = () => {
 
                     <table className="viewAllTable  table-zebra shadow-xl">
 
-            
-
-
                         <div className='lg:flex justify-evenly'>
 
                             <div>
@@ -123,7 +120,7 @@ const ViewAllTransaction = () => {
                                                 <td >{viewAddMoney.transferredAmount}</td>
 
                                             </tr>
-                                        )
+                                        ).reverse()
                                     }
                                 </tbody>
 
@@ -148,7 +145,7 @@ const ViewAllTransaction = () => {
                                                 <td >{viewAllSendMoney.sendNumber}</td>
                                                 <td >{viewAllSendMoney.sendAmount}</td>
                                             </tr>
-                                        )
+                                        ).reverse()
                                     }
                                 </tbody>
 
@@ -183,13 +180,13 @@ const ViewAllTransaction = () => {
                         {separateData === true ?
                             <tbody className='text-center'>
                                 {
-                                    AddedMoney.map((viewAddMoney, index) =>
+                                    AddedMoney.reverse().map((viewAddMoney, index) =>
                                         <tr className=' border bg-green-300' key={viewAddMoney._id}>
                                             <td>{index}</td>
                                             <td >{viewAddMoney.accountNumber}</td>
                                             <td >{viewAddMoney.transferredAmount}</td>
                                         </tr>
-                                    )
+                                    ).reverse()
                                 }
                             </tbody>
 
@@ -203,7 +200,7 @@ const ViewAllTransaction = () => {
                                             <td >{viewAllSendMoney.sendNumber}</td>
                                             <td >{viewAllSendMoney.sendAmount}</td>
                                         </tr>
-                                    )
+                                    ).reverse()
                                 }
                             </tbody>
 
