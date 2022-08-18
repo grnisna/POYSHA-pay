@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
+import PhoneInput from 'react-phone-number-input'
+import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
-
-import PhoneInput from 'react-phone-number-input'
-import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
-import Button from '../../SharedCompo/Button';
 
 
 const SendMoney = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
 
-
     const onSubmit = (data) => {
+
         const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
         fetch(url, {
             method: 'POST',
@@ -31,6 +29,19 @@ const SendMoney = () => {
 
                 setValue('');
 
+            })
+
+        fetch('https://powerful-basin-90376.herokuapp.com/transaction_history', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                reset()
             })
     };
 

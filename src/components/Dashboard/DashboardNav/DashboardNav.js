@@ -60,6 +60,10 @@ const DashboardNav = () => {
             <Link to='takeLone'>Take Lone</Link>
           </li>
           <li className='flex items-center navItem'>
+            {/* <img src={TakeLone} alt="" /> */}
+            <Link to='addReview'>Add Review</Link>
+          </li>
+          <li className='flex items-center navItem'>
             <img src={SupportTicket} alt="" />
             <Link to='SupportTicket'>Support Ticket</Link>
           </li>
