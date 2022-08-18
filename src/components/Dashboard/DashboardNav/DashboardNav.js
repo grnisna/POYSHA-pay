@@ -12,6 +12,7 @@ import Calculator from '../../../Assets/DashboardNav/calculator.png';
 import TransitionHistory from '../../../Assets/DashboardNav/invoice.png';
 import TakeLone from '../../../Assets/DashboardNav/lones.png';
 import SupportTicket from '../../../Assets/DashboardNav/customer-service.png';
+import ContactUS from '../../Pages/ContactUS/ContactUS';
 import Setting from '../../../Assets/DashboardNav/settings.png';
 import Logout from '../../../Assets/DashboardNav/log-out.png';
 
@@ -58,6 +59,10 @@ const DashboardNav = () => {
           <li className='flex items-center navItem'>
             <img src={TakeLone} alt="" />
             <Link to='takeLone'>Take Lone</Link>
+          </li>
+          <li className='flex items-center navItem'>
+            <img src={ContactUS} alt="" />
+            <Link to='ContactUS'>ContactUs</Link>
           </li>
           <li className='flex items-center navItem'>
             <img src={SupportTicket} alt="" />
