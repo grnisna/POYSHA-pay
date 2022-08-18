@@ -25,6 +25,8 @@ module.exports = {
           "warning": "#FFFFFF",
 
           "error": "#F87272",
+
+          "--border-1": "1px"
         },
       },
     ],

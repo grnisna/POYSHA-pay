@@ -4,14 +4,19 @@ import auth from "../../../firebase.init";
 import './Account.css'
 import './MyAccount.css'
 import Services from "./Services";
+import axios from 'axios';
+import DBUserData from "../../Hooks/UserData/DBUserData";
 
 const Account = () => {
   const [services, setServices] = useState([])
+  const [userData, setUserData] = DBUserData()
   useEffect(() => {
     fetch('Services.json')
       .then(res => res.json())
       .then(data => setServices(data))
   }, [])
+
+  console.log("Hey i got the user data", userData);
 
   return (
 
@@ -29,7 +34,7 @@ const Account = () => {
                       Poisha - Pay Personal Account
                     </h1>
                     <div className="account-number grid grid-cols-1 items-center">
-                      <h5 className="account-id">880 1886 627 127</h5>
+                      <h5 className="account-id">{userData.email}</h5>
                       {/* <FaArrowRight className='left-arrow' /> */}
                     </div>
                   </div>
@@ -52,7 +57,7 @@ const Account = () => {
               <p className="account-section-title">Account Founds</p>
               <div className="">
                 <h1 className="founds">
-                  500.55
+                  {userData.balance}
                   <span className="money-type">, 39 $</span>
                 </h1>
               </div>
