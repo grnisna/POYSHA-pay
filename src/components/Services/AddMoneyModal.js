@@ -29,8 +29,8 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             accountNumber: event.target.account.value,
             transferredAmount: event.target.amount.value,
             reference: event.target.reference.value,
-            transactionType: 'addMoney'
 
+            transactionType: 'addMoney'
         }
 
 
@@ -50,6 +50,18 @@ const AddMoneyModal = ({ banks, setBanks }) => {
                     icon: "success",
                     text: "Deposit Successful"
                 });
+            })
+        fetch('https://powerful-basin-90376.herokuapp.com/transaction_history', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addMoney)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setBanks(null)
             })
 
     }

@@ -61,8 +61,13 @@ const DashboardNav = () => {
             <Link to='takeLone'>Take Lone</Link>
           </li>
           <li className='flex items-center navItem'>
+
             <img src={ContactUS} alt="" />
             <Link to='ContactUS'>ContactUs</Link>
+
+            {/* <img src={TakeLone} alt="" /> */}
+            <Link to='addReview'>Add Review</Link>
+
           </li>
           <li className='flex items-center navItem'>
             <img src={SupportTicket} alt="" />
