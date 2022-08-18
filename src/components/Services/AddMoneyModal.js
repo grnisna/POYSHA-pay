@@ -1,14 +1,16 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-    import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Loading from '../SharedCompo/Loading';
-
+import axios from 'axios';
+import swal from 'sweetalert';
+import SweetSuccessTost from '../SharedCompo/SweetTost/SweetSuccessTost';
 
 const AddMoneyModal = ({ banks, setBanks }) => {
     const { _id, bankName } = banks;
     const [user, loading] = useAuthState(auth);
-    
+
     console.log(user);
 
     const handelAddMoney = event => {
@@ -27,8 +29,11 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             accountNumber: event.target.account.value,
             transferredAmount: event.target.amount.value,
             reference: event.target.reference.value,
+            transactionType: 'addMoney'
 
         }
+
+
 
         fetch('https://powerful-basin-90376.herokuapp.com/addMoney', {
             method: 'POST',
@@ -41,7 +46,10 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             .then(data => {
                 console.log(data);
                 setBanks(null)
-                toast.success('successfully added money');
+                swal({
+                    icon: "success",
+                    text: "Deposit Successful"
+                });
             })
 
     }

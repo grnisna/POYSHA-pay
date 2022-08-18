@@ -28,11 +28,17 @@ const ShortHistory = () => {
                 <table class="table-auto">
                     <tbody>
                         {
-                            myTransactionHistory.map(myHistory => <HistoryTable
+                            myTransactionHistory.slice(0, 10).map(myHistory => <HistoryTable
                                 myHistory={myHistory}
                                 key={myHistory.amount}
                             ></HistoryTable>)
                         }
+                        {/* {
+                            myTransactionHistory.map(myHistory => <HistoryTable
+                                myHistory={myHistory}
+                                key={myHistory.amount}
+                            ></HistoryTable>)
+                        } */}
                     </tbody>
                 </table>
             </div>

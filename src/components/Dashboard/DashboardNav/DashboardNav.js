@@ -22,7 +22,7 @@ const DashboardNav = () => {
         <ul className='routeLinks p-5'>
           <li className='flex items-center navItem'>
             <img src={DashboardIcon} alt="" />
-            <Link to='index'>Dashboard</Link>
+            <Link to=''>Dashboard</Link>
           </li>
           <li className='flex items-center navItem'>
             <img src={Account} alt="" />

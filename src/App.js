@@ -21,6 +21,7 @@ import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction
 import DashboardNav from "./components/Dashboard/DashboardNav/DashboardNav";
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
 import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
+import StripePayment from "./components/Hooks/Stripe/StripePayment";
 
 
 
@@ -40,10 +41,10 @@ function App() {
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
-          <Route path="addMoney" element={<AddMoney />}></Route>
+          {/* <Route path="addMoney" element={<AddMoney />}></Route> */}
           <Route path="addAccount" element={<OthersAccounts />}></Route>
           <Route path="RequestMoney" element={<AddMoney />}></Route>
-          <Route path="BankTransfer" element={<AddMoney />}></Route>
+          <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
           <Route path="Calculator" element={<AddMoney />}></Route>
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
@@ -52,7 +53,7 @@ function App() {
           <Route path="Setting" element={<TakeLone />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
-        {/* <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route> */}
+        <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
