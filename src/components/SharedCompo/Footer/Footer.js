@@ -47,6 +47,7 @@ const Footer = () => {
                     <a href='/' className="link link-hover lg:pl-10">Data Security</a>
 
                 </div>
+
                 <div className='w-full '>
                     <div className="grid justify-start">
                         <h1 className='text-xl uppercase lg:text-left mx-auto'>
@@ -60,9 +61,9 @@ const Footer = () => {
                             <button className='btn btn-sm  rounded-full bg-black'><BsApple className=' text-grey-400' />  Apple Store</button>
                         </div>
                     </div>
-
                 </div>
-                <div className='w-full'>
+
+                {/* <div className='w-full'>
                     <span className="text-xl uppercase mx-auto">Newsletter</span>
                     <div className="form-control  w-60 mx-auto">
                         <label className="label">
@@ -73,7 +74,7 @@ const Footer = () => {
                             <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </footer>
 
