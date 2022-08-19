@@ -20,6 +20,9 @@ import StripePayment from "./components/Hooks/Stripe/StripePayment";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
 import Calculate from "./components/Calculator/Calculate";
+import UserImages from "./components/Pages/HomePage/UserImages";
+import Setting from "./components/Dashboard/MyAccount/Setting";
+
 
 
 
@@ -70,7 +73,8 @@ function App() {
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
-          <Route path="Setting" element={<TakeLone />}></Route>
+          {/* <Route path="Setting" element={<UserImages />}></Route> */}
+          <Route path="Setting" element={<Setting />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
         <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>
