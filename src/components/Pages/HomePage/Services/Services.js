@@ -57,7 +57,7 @@ const Services = () => {
                         <div className='imageContainer '>
                             <img className='w-24' src={ourPackage} alt="Recharge" />
                         </div>
-                        <h1 className='3xl font-bold text-white pt-5 summaryText'>ALL SERVICES</h1>
+                        <h1 className='3xl font-bold text-white pt-5 summaryText'>SERVICES</h1>
                     </div>
                     <div className='myCard '>
                         <div className='success '></div>

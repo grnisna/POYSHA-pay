@@ -13,6 +13,25 @@ const Navbar = () => {
   const location = useLocation();
   // const from = location?.state?.from?.pathname|| '/';
 
+  const menu = <>
+    <li className='z-50' tabIndex="0">
+      <a className="justify-between">
+        Service
+        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </a>
+
+      <ul className="p-2 bg-white border">
+        <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
+        <li><NavLink to='/addMoney' >Add Money</NavLink></li>
+        <li><NavLink to='/addAccount' >Add Account</NavLink></li>
+        <li><a>Recharge</a></li>
+      </ul>
+    </li>
+  </>
+
+
+
+
   const logOut = () => {
     signOut(auth);
     // localStorage.removeItem('AccessToken');
@@ -51,13 +70,14 @@ const Navbar = () => {
 
             </ul>
           </div>
-          <NavLink to="/" ><img src={logo} className="w-12 lg:visible invisible " alt="" /></NavLink>
-          <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHA-PAY</h3>
+          <img src={logo} className="w-12 lg:visible invisible " alt="" />
+         <h3 className="lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase " >POYSHAPAY</h3>
 
         </div>
         <div className='navbar-center'>
           <div className=" hidden lg:flex">
             <ul className="menu menu-horizontal p-0">
+
               <li><NavLink to='/'>Home</NavLink></li>
               <li tabIndex="0">
                 <a>
@@ -71,7 +91,8 @@ const Navbar = () => {
                   <li><a>Recharge</a></li>
                 </ul>
               </li>
-              <li><NavLink to='/dashboard'>My poysha</NavLink></li>
+              <li><NavLink to='/dashboard'>My poisa</NavLink></li>
+
               <li><a>About us</a></li>
               <li><a>Contact</a></li>
 
