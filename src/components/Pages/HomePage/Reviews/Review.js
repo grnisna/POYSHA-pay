@@ -9,7 +9,7 @@ const Review = () => {
 
 
   useEffect(() => {
-    const url = 'http://localhost:5000/addReview';
+    const url = 'https://powerful-basin-90376.herokuapp.com/addReview';
     fetch(url)
       .then(res => res.json())
       .then(data => {
