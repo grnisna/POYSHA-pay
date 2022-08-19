@@ -28,11 +28,10 @@ const SendMoney = () => {
             .then(result => {
                 toast.success('send money successfully')
                 reset();
-<<<<<<< HEAD
                 setValue('');
-=======
 
->>>>>>> e4e0fbba7faedcaac764e73fff91e11575fd0fe2
+
+
             })
     };
 
