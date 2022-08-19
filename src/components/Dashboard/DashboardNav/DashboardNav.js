@@ -12,6 +12,7 @@ import Calculator from '../../../Assets/DashboardNav/calculator.png';
 import TransitionHistory from '../../../Assets/DashboardNav/invoice.png';
 import TakeLone from '../../../Assets/DashboardNav/lones.png';
 import SupportTicket from '../../../Assets/DashboardNav/customer-service.png';
+import ContactUS from '../../Pages/ContactUS/ContactUS';
 import Setting from '../../../Assets/DashboardNav/settings.png';
 import Logout from '../../../Assets/DashboardNav/log-out.png';
 
@@ -22,7 +23,7 @@ const DashboardNav = () => {
         <ul className='routeLinks p-5'>
           <li className='flex items-center navItem'>
             <img src={DashboardIcon} alt="" />
-            <Link to='index'>Dashboard</Link>
+            <Link to=''>Dashboard</Link>
           </li>
           <li className='flex items-center navItem'>
             <img src={Account} alt="" />
@@ -61,10 +62,19 @@ const DashboardNav = () => {
           </li>
           <li className='flex items-center navItem'>
             <img src={SupportTicket} alt="" />
+            <Link to='ContactUS'>ContactUs</Link>
+          </li>
+          <li className='flex items-center navItem'>
+            <img src={SupportTicket} alt="" />
+            <Link to='addReview'>Add Review</Link>
+          </li>
+          <li className='flex items-center navItem'>
+            <img src={SupportTicket} alt="" />
             <Link to='SupportTicket'>Support Ticket</Link>
           </li>
           <li className='flex items-center navItem'>
             <img src={Setting} alt="" />
+            {/* <Link to='Setting'>Setting</Link> */}
             <Link to='Setting'>Setting</Link>
           </li>
           <li className='flex items-center navItem'>

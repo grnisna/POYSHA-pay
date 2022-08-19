@@ -22,9 +22,11 @@ module.exports = {
 
           "success": "#36D399",
 
-          "warning": "#F79100",
+          "warning": "#FFFFFF",
 
           "error": "#F87272",
+
+          "--border-1": "1px"
         },
       },
     ],
