@@ -71,6 +71,7 @@ const SignUp = () => {
                     accountHolderOrigin: "Bangladesh",
                 },
             },
+
         }
 
         setMyNewData(newData)
@@ -123,6 +124,7 @@ const SignUp = () => {
                 </div>
                 <div className='lg:w-96 sm:w-80 shadow-xl bg-clip-padding backdrop-filter bg-white bg-opacity-50 backdrop-blur-md py-10 px-8 rounded-md text-black'>
 
+
                     <h1 className="mb-10 text-3xl font-bold text-center text-black">Sign Up</h1>
                     {/************* Sign Up Form ******************************/}
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -148,8 +150,6 @@ const SignUp = () => {
                         />
 
                         <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
-
-
 
                     </form>
 
