@@ -1,10 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Statement from '../../../Hooks/Statement/Statement';
 import './ViewAllTransaction.css';
 
 
 
 const ViewAllTransaction = () => {
+  const [allStatement] = Statement();
+
 
   const [AddedMoney, setAddedMoney] = useState([]);
   // const [number, setNumber] = useState(0);
@@ -211,6 +214,11 @@ const ViewAllTransaction = () => {
 
 
           </table>
+        }
+      </div>
+      <div className='w-20 m-auto flex justify-center items-center gap-2 mt-3'>
+        {
+          [...Array(allStatement).keys()].map(number => <button className='btn btn-outline'>{number + 1}</button>)
         }
       </div>
     </div >
