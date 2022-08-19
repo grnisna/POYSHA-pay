@@ -34,7 +34,7 @@ const Account = () => {
                       Poisha - Pay Personal Account
                     </h1>
                     <div className="account-number grid grid-cols-1 items-center">
-                      <h5 className="account-id">{userData.email}</h5>
+                      <h5 className="account-id">{userData?.email}</h5>
                       {/* <FaArrowRight className='left-arrow' /> */}
                     </div>
                   </div>
@@ -57,7 +57,7 @@ const Account = () => {
               <p className="account-section-title">Account Founds</p>
               <div className="">
                 <h1 className="founds">
-                  {userData.balance}
+                  {userData?.balance}
                   <span className="money-type">, 39 $</span>
                 </h1>
               </div>
@@ -78,7 +78,7 @@ const Account = () => {
       </div>
 
 
-      <div className ="card bg-base-100 shadow-xl justify-center p-4">
+      <div className="card bg-base-100 shadow-xl justify-center p-4">
         <div className="account-info col-span-1 m-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-4 justify-center">
 
           {
