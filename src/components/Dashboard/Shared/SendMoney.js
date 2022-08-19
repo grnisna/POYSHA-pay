@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
-
-
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input';
+// import PhoneInput from 'react-phone-number-input'
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
-import Button from '../../SharedCompo/Button';
+import DBUserData from '../../Hooks/UserData/DBUserData';
 
 
 const SendMoney = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
 
+    const [userData, setUserData] = DBUserData([]);
+
+    console.log(userData);
+
 
     const onSubmit = (data) => {
+        console.log(data);
         const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
         fetch(url, {
             method: 'POST',
@@ -26,15 +28,19 @@ const SendMoney = () => {
         })
             .then(res => res.json())
             .then(result => {
+                console.log(result);
                 toast.success('send money successfully')
                 reset();
+                setValue('');
+
+
 
             })
     };
 
     return (
 
-        <div className='flex flex-col items-center justify-center p-5'
+        <div className='flex flex-col items-center justify-center p-5 bg-slate-200'
 
             style={{
                 // backgroundImage: `url(${BgSendMoney})`,
@@ -44,19 +50,19 @@ const SendMoney = () => {
 
             }}
         >
-            <div className='flex items-center justify-center rounded-md'
-                style={{
-                    backgroundImage: `url(${BgSendMoney})`,
-                    backgroundSize: 'cover',
+            <div className='flex items-center justify-center rounded-md '
+            // style={{
+            //   backgroundImage: `url(${BgSendMoney})`,
+            //   backgroundSize: 'cover',
 
 
-                }}
+            // }}
             >
-                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding backdrop-filter bg-white bg-opacity-10 backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className='text-center text-white text-2xl'>Send Money</h2>
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
+                    <h2 className='text-center text-2xl'>Send Money</h2>
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">From To</span>
+                            <span class="label-text">From To</span>
                         </label>
                         <PhoneInput
                             className='input'
@@ -69,7 +75,7 @@ const SendMoney = () => {
 
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">Send To</span>
+                            <span class="label-text ">Send To</span>
                         </label>
                         <PhoneInput
                             className='input'
@@ -89,7 +95,7 @@ const SendMoney = () => {
 
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">Amount</span>
+                            <span class="label-text">Amount</span>
                         </label>
                         <input
                             placeholder="Sending amount $"
@@ -114,7 +120,7 @@ const SendMoney = () => {
 
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">Reference</span>
+                            <span class="label-text ">Reference</span>
                         </label>
                         <input
                             type="text"

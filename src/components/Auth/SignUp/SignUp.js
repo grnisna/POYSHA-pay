@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login2.jpg';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import LoginImage from '../../../Assets/Login/Login.png';
 import axios from 'axios';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import useToken from '../../Hooks/useToken';
-import auth from '../../../firebase.init';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -16,6 +15,7 @@ const SignUp = () => {
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/dashboard';
     const [value, setValue] = useState()
+    const [myNewData, setMyNewData] = useState([]);
 
     const [
         createUserWithEmailAndPassword,
@@ -26,66 +26,90 @@ const SignUp = () => {
     console.log(user);
 
     const [updateProfile] = useUpdateProfile(auth);
-
-    const [token,setToken] = useToken(user);
-
-    // navigate -------------------------- 
-    useEffect(() => {
-        if (token) {
-            navigate(from, { replace: true });
-        }
-
-    }, [from, navigate, token])
+    // const [newUser] = useAuthState(auth)
 
 
     const onSubmit = async data => {
+
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        // const newData = {
-        //     name: data.name,
-        //     email: data.email,
-        //     password: data.password,
-        //     address: data.address,
-        //     phone: data.phone,
-        //     balance: 1000
-        // }
 
-        // const url = `https://powerful-basin-90376.herokuapp.com/user/${data.email}`;
+        const newData = {
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            address: data.address,
+            phone: data.phone,
+            balance: 1000,
+            sendMoney: {
+                transactionsBy: "bank",
+                transactionsType: "debit",
+                transactionsAccount: "nurthern2017@gmail.com",
+                accountHolderName: "Rifat",
+                transactionsAmount: 2000,
+                transactionsDateTime: "10/jun/2022 at 05:30PM",
+            },
+            receiveMoney: {
+                transactionsBy: "Paypal",
+                transactionsType: "credit",
+                transactionsAccount: "simul420@gmail.com",
+                accountHolderName: "simul420",
+                transactionsAmount: 100,
+                transactionsDateTime: "15/mar/2022 at 02:10PM",
+            },
+            favoriteAccount: {
+                nisanAccountInfo: {
+                    accountHolderName: "Nisan",
+                    accountHolderEmail: "nisan430@gamil.com",
+                    accountHolderPhone: "(+880)1886627127",
+                    accountHolderOrigin: "Bangladesh",
+                },
+                MehideAccountHolderInfo: {
+                    accountHolderName: "Mehide",
+                    accountHolderEmail: "mehide430@gamil.com",
+                    accountHolderPhone: "(+880)1886627127",
+                    accountHolderOrigin: "Bangladesh",
+                },
+            },
 
-        // fetch(url, {
+        }
 
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newData)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         // setToken(data);
-        //         console.log(data);
-        //         // navigate(from, { replace: true });
-        //     })
+        setMyNewData(newData)
+        console.log(myNewData);
+
+        const url = `https://powerful-basin-90376.herokuapp.com/users`;
+
+        fetch(url, {
+
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                navigate(from, { replace: true });
+            })
     };
 
 
 
 
+    useEffect(() => {
+        if (user) {
+            async function getToken() {
+                const email = user.email;
+                const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
+                localStorage.setItem('AccessToken', data);
 
+                navigate(from, { replace: true });
+            }
 
-    // useEffect(() => {
-    //     if (user) {
-    //         async function getToken() {
-    //             const email = user.email;
-    //             const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
-    //             localStorage.setItem('AccessToken', data);
-
-    //             navigate(from, { replace: true });
-    //         }
-
-    //         getToken();
-    //     }
-    // }, [navigate, user, from])
+            getToken();
+        }
+    }, [navigate, user, from])
 
 
 
@@ -99,6 +123,7 @@ const SignUp = () => {
                     <img src={LoginImage} alt="" />
                 </div>
                 <div className='lg:w-96 sm:w-80 shadow-xl bg-clip-padding backdrop-filter bg-white bg-opacity-50 backdrop-blur-md py-10 px-8 rounded-md text-black'>
+
 
                     <h1 className="mb-10 text-3xl font-bold text-center text-black">Sign Up</h1>
                     {/************* Sign Up Form ******************************/}
@@ -126,13 +151,11 @@ const SignUp = () => {
 
                         <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
 
-
-
                     </form>
 
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
