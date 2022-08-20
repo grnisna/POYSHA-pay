@@ -1,33 +1,21 @@
 
-
-// import AppDownload from "./components/Pages/HomePage/AppDownload";
-
 import { Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login/Login";
 import RequireAuth from "./components/Auth/RequireAuth/RequireAuth";
-
 import SignUp from "./components/Auth/SignUp/SignUp";
-
-
-
 import Home from "./components/Pages/HomePage/Home";
 import AddMoney from "./components/Services/AddMoney";
 import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Account from "./components/Dashboard/MyAccount/Account";
-
 
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
-import RechargeMoney from "./components/Services/RechargeMoney";
-import SubFooter from './components/SharedCompo/Footer/SubFooter';
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
-import DashboardNav from "./components/Dashboard/DashboardNav/DashboardNav";
+
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
 import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
