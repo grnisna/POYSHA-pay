@@ -7,25 +7,35 @@ import './ViewAllTransaction.css';
 
 const ViewAllTransaction = () => {
   //pagination ----------
-  const [allStatement,setAllStatement] = useState();
-  const [activeNumber, setActiveNumber] = useState(0);
-  const [showQuantity, setShowQuantity] = useState(2);
+  const [allStatement,setAllStatement] = useState([]);
+  const [statementCount,setStatementCount] = useState(0);
+  const [activeStatement, setActiveStatement] = useState(0);
+  const [showQuantity, setShowQuantity] = useState(3);
 
   useEffect( ()=>{
-    const url = `http://localhost:5000/transactionStatement?activeNumber=${activeNumber}&showQuantity=${showQuantity}`;
+    const url = `http://localhost:5000/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`;
+    fetch(url)
+    .then( res => res.json())
+    .then( data => {
+        setAllStatement(data);
+    })
+} ,[activeStatement,showQuantity]);
+
+  useEffect( ()=>{
+    const url = `http://localhost:5000/statementCount`;
     fetch(url)
     .then( res => res.json())
     .then( data => {
         const count = data.count;
         const perTransaction = Math.ceil(count/2);
-        setAllStatement(perTransaction);
+        setStatementCount(perTransaction);
     })
 } ,[]);
  
 
 
 
-  const [AddedMoney, setAddedMoney] = useState([]);
+  // const [AddedMoney, setAddedMoney] = useState([]);
   // const [number, setNumber] = useState(0);
   const [sendMoney, setSendMoney] = useState([]);
   const [separateData, setSeparateData] = useState(false);
@@ -36,23 +46,23 @@ const ViewAllTransaction = () => {
 
   // get all Add money info
   // --------------------------------
-  useEffect(() => {
-    const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
-    fetch(url)
-      .then(res => res.json())
-      .then(data => setAddedMoney(data))
-  }, []);
+  // useEffect(() => {
+  //   const url = "http://localhost:5000/addMoneyTransactions"
+  //   fetch(url)
+  //     .then(res => res.json())
+  //     .then(data => setAddedMoney(data))
+  // }, []);
 
 
 
   // get all send money info 
   // --------------------------
-  useEffect(() => {
-    const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
-    fetch(url)
-      .then(res => res.json())
-      .then(data => setSendMoney(data))
-  }, []);
+  // useEffect(() => {
+  //   const url = "http://localhost:5000/sendMoney"
+  //   fetch(url)
+  //     .then(res => res.json())
+  //     .then(data => setSendMoney(data))
+  // }, []);
 
 
   // View all transAction about add money and send money ------------------
@@ -132,7 +142,7 @@ const ViewAllTransaction = () => {
 
                 <tbody className='text-center'>
                   {
-                    AddedMoney.map((viewAddMoney, index) =>
+                    allStatement.map((viewAddMoney, index) =>
                       <tr className=' border bg-green-300' key={viewAddMoney._id}>
                         <td>{index}</td>
                         <td >{viewAddMoney.accountNumber}</td>
@@ -199,7 +209,7 @@ const ViewAllTransaction = () => {
             {separateData === true ?
               <tbody className='text-center'>
                 {
-                  AddedMoney.reverse().map((viewAddMoney, index) =>
+                  allStatement.reverse().map((viewAddMoney, index) =>
                     <tr className=' border bg-green-300' key={viewAddMoney._id}>
                       <td>{index}</td>
                       <td >{viewAddMoney.accountNumber}</td>
@@ -234,10 +244,10 @@ const ViewAllTransaction = () => {
       </div>
       <div className='w-20 m-auto flex justify-center items-center gap-2 mt-3 pagination'>
         {
-          [...Array(allStatement).keys()].map(number => <button 
-            onClick={()=>setActiveNumber(number)} 
+          [...Array(statementCount).keys()].map(number => <button 
+            onClick={()=>setActiveStatement(number)} 
 
-            className={ activeNumber === number ? 'pagination selected btn btn-outline': 'btn btn-outline'}
+            className={ activeStatement === number ? 'pagination selected btn btn-outline': 'btn btn-outline'}
             >{number + 1}</button>)
         }
         
