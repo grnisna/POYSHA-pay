@@ -29,6 +29,7 @@ import ContactUS from "./components/Pages/ContactUS/ContactUS";
 // import Calculate from "./components/Calculator/Calculate";
 import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
+import Questions from "./components/Pages/HomePage/Questions";
 
 
 
@@ -77,6 +78,7 @@ function App() {
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
+          <Route path="FAQs" element={<Questions />}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
           {/* <Route path="Setting" element={<UserImages />}></Route> */}

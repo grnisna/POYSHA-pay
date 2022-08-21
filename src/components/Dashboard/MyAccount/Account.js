@@ -76,8 +76,6 @@ const Account = () => {
 
         </div>
       </div>
-
-
       <div className="card bg-base-100 shadow-xl justify-center p-4">
         <div className="account-info col-span-1 m-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-4 justify-center">
 
