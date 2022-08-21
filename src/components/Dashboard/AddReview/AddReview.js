@@ -43,7 +43,7 @@ const AddReview = () => {
 
 
 
-        const url = `https://powerful-basin-90376.herokuapp.com/addReview`;
+        const url = `http://localhost:5000/addReview`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -66,7 +66,8 @@ const AddReview = () => {
                 <div class="card-body">
                     <h2 class="font-bold text-center text-xl">Add review!</h2>
 
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}
+                        className='w-full'>
 
                         <input
                             type="text"
@@ -109,17 +110,12 @@ const AddReview = () => {
                             })} />
 
                         <div class="card-actions  justify-center">
-                            <input class="btn btn-primary w-full " type="submit" value="submit " />
+                            <input class="btn btn-primary w-full mt-5 " type="submit" value="submit " />
 
                         </div>
                     </form>
                 </div>
             </div>
-
-
-
-
-
         </div>
     );
 };

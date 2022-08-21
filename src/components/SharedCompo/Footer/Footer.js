@@ -21,7 +21,7 @@ const Footer = () => {
         <div className='text-primary bg-secondary' >
 
             <ScrollToTop smooth top="2000" />
-=======
+
 
             <footer className="footer  py-10 lg:px-20 mx-auto text-white font-normal">
 
@@ -88,8 +88,8 @@ const Footer = () => {
                 appId="5433920909987628"
             /> */}
 
-            </div>
-            );
+        </div>
+    );
 };
 
-            export default Footer;
+export default Footer;

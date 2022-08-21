@@ -9,7 +9,7 @@ const Review = () => {
 
 
   useEffect(() => {
-    const url = 'https://powerful-basin-90376.herokuapp.com/addReview';
+    const url = 'http://localhost:5000/addReview';
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -41,9 +41,13 @@ const Review = () => {
           )}
       </div>
       <div className="flex justify-end m-5">
-        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More ------
+
+        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More....
+
         </button></div>
     </div>
+
+
 
 
 
