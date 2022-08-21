@@ -6,7 +6,23 @@ import './ViewAllTransaction.css';
 
 
 const ViewAllTransaction = () => {
-  const [allStatement] = Statement();
+  //pagination ----------
+  const [allStatement,setAllStatement] = useState();
+  const [activeNumber, setActiveNumber] = useState(0);
+  const [showQuantity, setShowQuantity] = useState(2);
+
+  useEffect( ()=>{
+    const url = `http://localhost:5000/transactionStatement?activeNumber=${activeNumber}&showQuantity=${showQuantity}`;
+    fetch(url)
+    .then( res => res.json())
+    .then( data => {
+        const count = data.count;
+        const perTransaction = Math.ceil(count/2);
+        setAllStatement(perTransaction);
+    })
+} ,[]);
+ 
+
 
 
   const [AddedMoney, setAddedMoney] = useState([]);
@@ -216,10 +232,21 @@ const ViewAllTransaction = () => {
           </table>
         }
       </div>
-      <div className='w-20 m-auto flex justify-center items-center gap-2 mt-3'>
+      <div className='w-20 m-auto flex justify-center items-center gap-2 mt-3 pagination'>
         {
-          [...Array(allStatement).keys()].map(number => <button className='btn btn-outline'>{number + 1}</button>)
+          [...Array(allStatement).keys()].map(number => <button 
+            onClick={()=>setActiveNumber(number)} 
+
+            className={ activeNumber === number ? 'pagination selected btn btn-outline': 'btn btn-outline'}
+            >{number + 1}</button>)
         }
+        
+        <select onChange={e => setShowQuantity(e.target.value)}>
+          <option value="2" selected>2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+        </select>
+        <h1>Show Quantity</h1>
       </div>
     </div >
   );
