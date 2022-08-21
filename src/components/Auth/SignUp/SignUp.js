@@ -77,7 +77,7 @@ const SignUp = () => {
         setMyNewData(newData)
         console.log(myNewData);
 
-        const url = `http://localhost:5000/users`;
+        const url = `https://powerful-basin-90376.herokuapp.com/users`;
 
         fetch(url, {
 
