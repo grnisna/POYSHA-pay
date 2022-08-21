@@ -18,7 +18,14 @@ import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction
 
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
 import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
+import StripePayment from "./components/Hooks/Stripe/StripePayment";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
+import ContactUS from "./components/Pages/ContactUS/ContactUS";
+import Calculate from "./components/Calculator/Calculate";
+import UserImages from "./components/Pages/HomePage/UserImages";
+import Setting from "./components/Dashboard/MyAccount/Setting";
+
+
 
 
 
@@ -55,20 +62,24 @@ function App() {
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
-          <Route path="addMoney" element={<AddMoney />}></Route>
+          <Route path="addMoney" element={
+            <AddMoney></AddMoney>
+          }></Route>
           <Route path="addAccount" element={<OthersAccounts />}></Route>
           <Route path="RequestMoney" element={<AddMoney />}></Route>
-          <Route path="BankTransfer" element={<AddMoney />}></Route>
+          <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
-          <Route path="Calculator" element={<AddMoney />}></Route>
+          <Route path="Calculator" element={<Calculate></Calculate>}></Route>
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
+          <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
-          <Route path="Setting" element={<TakeLone />}></Route>
+          {/* <Route path="Setting" element={<UserImages />}></Route> */}
+          <Route path="Setting" element={<Setting />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
-        {/* <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route> */}
+        <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>

@@ -2,17 +2,27 @@ import React from 'react';
 import { BsFacebook, BsTwitter, BsPinterest, BsLinkedin, BsApple } from 'react-icons/bs';
 import { FaGooglePlay } from 'react-icons/fa';
 
+import './Footer.css'
+import ScrollToTop from "react-scroll-to-top";
+
+
 import './Footer.css';
 // import MessengerCustomerChat from "react-messenger-customer-chat";
 
 
+
 const Footer = () => {
+
     let getYear = () => {
         let currentYear = new Date().getFullYear();
         return currentYear;
     };
     return (
         <div className='text-primary bg-secondary' >
+
+            <ScrollToTop smooth top="2000" />
+
+
             <footer className="footer  py-10 lg:px-20 mx-auto text-white font-normal">
 
                 <div className=' mx-auto content-footer '>
@@ -78,8 +88,8 @@ const Footer = () => {
                 appId="5433920909987628"
             /> */}
 
-            </div>
-            );
+        </div>
+    );
 };
 
-            export default Footer;
+export default Footer;

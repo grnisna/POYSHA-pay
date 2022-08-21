@@ -3,7 +3,7 @@ import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import BGLogin from '../../../Assets/bg-login2.jpg';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import LoginImage from '../../../Assets/Login/Login.png';
 import axios from 'axios';
 import 'react-phone-number-input/style.css'
@@ -15,6 +15,7 @@ const SignUp = () => {
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/dashboard';
     const [value, setValue] = useState()
+    const [myNewData, setMyNewData] = useState([]);
 
     const [
         createUserWithEmailAndPassword,
@@ -25,20 +26,56 @@ const SignUp = () => {
     console.log(user);
 
     const [updateProfile] = useUpdateProfile(auth);
+    // const [newUser] = useAuthState(auth)
 
 
     const onSubmit = async data => {
-        console.log(data);
+
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
+
         const newData = {
             name: data.name,
             email: data.email,
             password: data.password,
             address: data.address,
             phone: data.phone,
-            balance: 1000
+            balance: 1000,
+            sendMoney: {
+                transactionsBy: "bank",
+                transactionsType: "debit",
+                transactionsAccount: "nurthern2017@gmail.com",
+                accountHolderName: "Rifat",
+                transactionsAmount: 2000,
+                transactionsDateTime: "10/jun/2022 at 05:30PM",
+            },
+            receiveMoney: {
+                transactionsBy: "Paypal",
+                transactionsType: "credit",
+                transactionsAccount: "simul420@gmail.com",
+                accountHolderName: "simul420",
+                transactionsAmount: 100,
+                transactionsDateTime: "15/mar/2022 at 02:10PM",
+            },
+            favoriteAccount: {
+                nisanAccountInfo: {
+                    accountHolderName: "Nisan",
+                    accountHolderEmail: "nisan430@gamil.com",
+                    accountHolderPhone: "(+880)1886627127",
+                    accountHolderOrigin: "Bangladesh",
+                },
+                MehideAccountHolderInfo: {
+                    accountHolderName: "Mehide",
+                    accountHolderEmail: "mehide430@gamil.com",
+                    accountHolderPhone: "(+880)1886627127",
+                    accountHolderOrigin: "Bangladesh",
+                },
+            },
+
         }
+
+        setMyNewData(newData)
+        console.log(myNewData);
 
         const url = `https://powerful-basin-90376.herokuapp.com/users`;
 
@@ -87,6 +124,7 @@ const SignUp = () => {
                 </div>
                 <div className='lg:w-96 sm:w-80 shadow-xl bg-clip-padding backdrop-filter bg-white bg-opacity-50 backdrop-blur-md py-10 px-8 rounded-md text-black'>
 
+
                     <h1 className="mb-10 text-3xl font-bold text-center text-black">Sign Up</h1>
                     {/************* Sign Up Form ******************************/}
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -106,20 +144,18 @@ const SignUp = () => {
                             international
                             defaultCountry="BD"
                             value={value}
-                            onChange={setValue} 
+                            onChange={setValue}
                             {...register("phone")}
                             required
-                            />
+                        />
 
                         <input className='mt-7 bg-white bg-opacity-30 hover:bg-opacity-80 transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="REGISTER" />
-
-
 
                     </form>
 
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
