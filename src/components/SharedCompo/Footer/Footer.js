@@ -21,7 +21,7 @@ const Footer = () => {
         <div className='text-primary bg-secondary' >
 
             <ScrollToTop smooth top="2000" />
-=======
+
 
             <footer className="footer  py-10 lg:px-20 mx-auto text-white font-normal">
 
@@ -49,14 +49,14 @@ const Footer = () => {
                 </div>
 
                 <div className='w-full '>
-                    <div className="grid justify-start">
+                    <div className="grid justify-start m-auto ">
                         <h1 className='text-xl uppercase lg:text-left mx-auto'>
                             Follow us
                         </h1>
-                        <span className='w-48 mx-auto'>
+                        <span className='w-48 mx-auto text-justify mb-3'>
                             To make your life easier Download Nagad app and <br />access all our services from a single touch point.
                         </span>
-                        <div className='lg:flex lg:gap-4 mb-2 mx-auto'>
+                        <div className='lg:flex lg:gap-4 gap-2 mb-2 mx-auto'>
                             <button className='btn btn-sm  rounded-full bg-black'><FaGooglePlay className=' text-green-400' />  Google Play</button>
                             <button className='btn btn-sm  rounded-full bg-black'><BsApple className=' text-grey-400' />  Apple Store</button>
                         </div>
@@ -88,8 +88,8 @@ const Footer = () => {
                 appId="5433920909987628"
             /> */}
 
-            </div>
-            );
+        </div>
+    );
 };
 
-            export default Footer;
+export default Footer;

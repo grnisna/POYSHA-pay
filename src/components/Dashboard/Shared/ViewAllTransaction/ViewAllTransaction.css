@@ -23,6 +23,12 @@ th, td {
 
   }
 
+  /* pagination ------------ */
+  .pagination .selected{
+    background: rgb(104, 33, 226);
+    color: #fff;
+  }
+
 @media screen and (max-width:400px) {
     .card{
         width: 90% !important;

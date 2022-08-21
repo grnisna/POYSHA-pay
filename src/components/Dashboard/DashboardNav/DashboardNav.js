@@ -64,6 +64,12 @@ const DashboardNav = () => {
             <img src={SupportTicket} alt="" />
             <Link to='ContactUS'>ContactUs</Link>
           </li>
+
+          <li className='flex items-center navItem'>
+            <img src={SupportTicket} alt="" />
+            <Link to='FAQs'>FAQs</Link>
+          </li>
+
           <li className='flex items-center navItem'>
             <img src={SupportTicket} alt="" />
             <Link to='addReview'>Add Review</Link>

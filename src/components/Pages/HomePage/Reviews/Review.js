@@ -40,10 +40,19 @@ const Review = () => {
             </div>
           )}
       </div>
-      <div className="flex justify-end m-5">
-        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More ----
-        </button></div>
+      <div className="flex justify-end mx-5">
+
+        <button className="btn btn-link  content-center justify-items-center  btn-lg">
+
+
+       See More....
+
+
+        </button>
+        </div>
     </div>
+
+
 
 
 
