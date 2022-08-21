@@ -13,7 +13,7 @@ const ViewAllTransaction = () => {
   const [showQuantity, setShowQuantity] = useState(3);
 
   useEffect( ()=>{
-    const url = `http://localhost:5000/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`;
+    const url = `https://powerful-basin-90376.herokuapp.com/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`;
     fetch(url)
     .then( res => res.json())
     .then( data => {
@@ -22,7 +22,7 @@ const ViewAllTransaction = () => {
 } ,[activeStatement,showQuantity]);
 
   useEffect( ()=>{
-    const url = `http://localhost:5000/statementCount`;
+    const url = `https://powerful-basin-90376.herokuapp.com/statementCount`;
     fetch(url)
     .then( res => res.json())
     .then( data => {
@@ -47,7 +47,7 @@ const ViewAllTransaction = () => {
   // get all Add money info
   // --------------------------------
   // useEffect(() => {
-  //   const url = "http://localhost:5000/addMoneyTransactions"
+  //   const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
   //   fetch(url)
   //     .then(res => res.json())
   //     .then(data => setAddedMoney(data))
@@ -58,7 +58,7 @@ const ViewAllTransaction = () => {
   // get all send money info 
   // --------------------------
   // useEffect(() => {
-  //   const url = "http://localhost:5000/sendMoney"
+  //   const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
   //   fetch(url)
   //     .then(res => res.json())
   //     .then(data => setSendMoney(data))

@@ -10,8 +10,7 @@ const SendMoney = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
     const [userData, setUserData] = DBUserData([]);
-
-    console.log(userData);
+    console.log(userData.phone)
 
 
     const onSubmit = (data) => {
@@ -56,9 +55,12 @@ const SendMoney = () => {
 
             // }}
             >
-                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' 
+
+                onSubmit={handleSubmit(onSubmit)}>
+
                     <h2 className='text-center text-2xl'>Send Money</h2>
-                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary text-xl'>$ {userData?.balance}</span></h2>
+                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'>$ {userData?.balance}</span></h2>
                     {/* <input type="number" name="balance" value={userData?.balance}
                         readOnly
                         {...register("balance")}
@@ -71,7 +73,7 @@ const SendMoney = () => {
                         <PhoneInput
                             className='input'
                             placeholder="Enter phone number"
-                            value={userData?.phone}
+                            value={userData.phone}
                             readOnly
                             {...register("senderNumber")}
                         />

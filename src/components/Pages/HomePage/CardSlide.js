@@ -4,8 +4,8 @@ import './CardSlide.css'
 
 const CardSlide = () => {
     return (
-        <div className='lg:pt-20'>
-            <h2 className='Tcompany lg:text-2xl text-l uppercase text-center '>Our Happy panthers</h2>
+        <div className='lg:pt-20 pt-10'>
+            <h2 className='Tcompany lg:text-4xl text-l uppercase text-center font-bold'>Our Happy panthers</h2>
             <div class="slider">
                 <div class="slide-track">
                     <div class="slide">
