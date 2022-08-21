@@ -9,6 +9,7 @@ import Footer from "./components/SharedCompo/Footer/Footer";
 import Navbar from "./components/SharedCompo/Navbar/Navbar";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
@@ -20,6 +21,7 @@ import SubFooter from './components/SharedCompo/Footer/SubFooter';
 >>>>>>> dbba14e1cd1336c29585c42c7df62d7a3164735a
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
+
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
 import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
 <<<<<<< HEAD
