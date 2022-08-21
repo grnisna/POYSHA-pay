@@ -50,7 +50,7 @@ const DashboardNav = () => {
           </li>
           <li className='flex items-center navItem'>
             <img src={Calculator} alt="" />
-            <Link to='Calculator'>Calculator</Link>
+            <Link to='CurrencyConvert'>CurrencyConvert</Link>
           </li>
           <li className='flex items-center navItem'>
             <img src={TransitionHistory} alt="" />

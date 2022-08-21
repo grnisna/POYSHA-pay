@@ -5,6 +5,7 @@ import PhoneInput from 'react-phone-number-input';
 // import PhoneInput from 'react-phone-number-input'
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import DBUserData from '../../Hooks/UserData/DBUserData';
+import axios from 'axios';
 
 
 const SendMoney = () => {
@@ -12,15 +13,24 @@ const SendMoney = () => {
   const [value, setValue] = useState();
 
   const [userData, setUserData] = DBUserData([]);
-
   console.log(userData);
 
-
   const onSubmit = (data) => {
-    console.log(data);
-    const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
+
+    const balance = parseInt(userData.balance - data.sendAmount)
+    console.log(balance);
+    const id = userData._id;
+
+    if (balance) {
+      axios.put(`https://afternoon-wave-69445.herokuapp.com/users/${id}}`, balance)
+        .then(response => {
+          console.log(response);
+        })
+    }
+
+    const url = `https://afternoon-wave-69445.herokuapp.com/sendMoney/${id}`;
     fetch(url, {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'content-type': 'application/json'
       },
@@ -33,6 +43,26 @@ const SendMoney = () => {
         reset();
 
       })
+
+
+    // // update balance 
+
+    // const url2 = `https://afternoon-wave-69445.herokuapp.com/users/${id}}`
+    // console.log(url2);
+    // fetch(url2, {
+    //   method: 'PUT',
+    //   headers: {
+    //     'content-type': 'application/json'
+    //   },
+    //   body: JSON.stringify(balance)
+    // })
+    //   .then(res => res.json())
+    //   .then(result => {
+    //     console.log(result);
+    //     toast.success('send money successfully')
+    //     reset();
+
+    //   })
   };
 
   return (

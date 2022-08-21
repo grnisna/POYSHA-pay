@@ -20,7 +20,7 @@ import StripePayment from "./components/Hooks/Stripe/StripePayment";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
 import Calculate from "./components/Calculator/Calculate";
-
+import CurrencyConvert from './components/Dashboard/CurrencyConvert/CurrencyConvert'
 
 
 
@@ -64,7 +64,7 @@ function App() {
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
-          <Route path="Calculator" element={<Calculate></Calculate>}></Route>
+          <Route path="CurrencyConvert" element={<CurrencyConvert />}></Route>
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>

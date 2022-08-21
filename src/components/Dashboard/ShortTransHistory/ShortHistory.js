@@ -15,7 +15,7 @@ const ShortHistory = () => {
     const [viewShortHistory, setViewShortHistory] = useState([]);
 
     useEffect(() => {
-        const url = "https://powerful-basin-90376.herokuapp.com/transactionHistory"
+        const url = "https://afternoon-wave-69445.herokuapp.com/transactionHistory"
         fetch(url)
             .then(res => res.json())
             .then(data => setViewShortHistory(data))

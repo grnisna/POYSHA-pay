@@ -18,7 +18,7 @@ const ViewAllTransaction = () => {
   // get all Add money info
   // --------------------------------
   useEffect(() => {
-    const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
+    const url = "https://afternoon-wave-69445.herokuapp.com/addMoneyTransactions"
     fetch(url)
       .then(res => res.json())
       .then(data => setAddedMoney(data))
@@ -29,7 +29,7 @@ const ViewAllTransaction = () => {
   // get all send money info 
   // --------------------------
   useEffect(() => {
-    const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
+    const url = "https://afternoon-wave-69445.herokuapp.com/sendMoney"
     fetch(url)
       .then(res => res.json())
       .then(data => setSendMoney(data))
@@ -38,7 +38,7 @@ const ViewAllTransaction = () => {
 
   // View all transAction about add money and send money ------------------
   //---------------------------------------------------------
-  const urls = ["https://powerful-basin-90376.herokuapp.com/addMoneyTransactions", "https://powerful-basin-90376.herokuapp.com/sendMoney"];
+  const urls = ["https://afternoon-wave-69445.herokuapp.com/addMoneyTransactions", "https://afternoon-wave-69445.herokuapp.com/sendMoney"];
 
   const headers = {
     "X-Api-Key": "the-api-key-00",

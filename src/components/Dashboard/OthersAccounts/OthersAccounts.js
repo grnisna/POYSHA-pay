@@ -25,7 +25,7 @@ const OthersAccounts = () => {
       origin: data.origin,
       HolderImg: 'https://placeimg.com/192/192/people'
     }
-    axios.post('https://powerful-basin-90376.herokuapp.com/addedAccount', accountData)
+    axios.post('https://afternoon-wave-69445.herokuapp.com/addedAccount', accountData)
       .then(response => {
         toast.success('successfully new Account added', response);
       })

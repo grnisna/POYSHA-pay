@@ -76,7 +76,7 @@ const SignUp = () => {
         setMyNewData(newData)
         console.log(myNewData);
 
-        const url = `http://localhost:5000/users`;
+        const url = `https://afternoon-wave-69445.herokuapp.com/users`;
 
         fetch(url, {
 
@@ -100,7 +100,7 @@ const SignUp = () => {
         if (user) {
             async function getToken() {
                 const email = user.email;
-                const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
+                const { data } = await axios.post('https://afternoon-wave-69445.herokuapp.com/login', { email });
                 localStorage.setItem('AccessToken', data);
 
                 navigate(from, { replace: true });

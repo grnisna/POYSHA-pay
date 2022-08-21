@@ -43,7 +43,7 @@ const AddReview = () => {
 
 
 
-        const url = `http://localhost:5000/addReview`;
+        const url = `https://afternoon-wave-69445.herokuapp.com/addReview`;
         fetch(url, {
             method: 'POST',
             headers: {
