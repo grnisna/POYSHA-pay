@@ -22,7 +22,8 @@ const Navbar = () => {
 
       <ul className="p-2 bg-white border">
         <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
-        <li><NavLink to='/addMoney' >Add Money</NavLink></li>
+        <li><NavLink to='/addMoney' >Add Money from Bank</NavLink></li>
+        <li><NavLink to='/BankTransfer' >Add Money From Card</NavLink></li>
         <li><NavLink to='/addAccount' >Add Account</NavLink></li>
         <li><a>Recharge</a></li>
       </ul>

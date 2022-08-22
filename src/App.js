@@ -24,6 +24,7 @@ import ContactUS from "./components/Pages/ContactUS/ContactUS";
 import Calculate from "./components/Calculator/Calculate";
 import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
+import AddMoneyFromBank from "./components/Services/AddMoneyFromBank";
 
 
 
@@ -43,6 +44,14 @@ function App() {
         <Route path='/addMoney' element={<RequireAuth>
           <AddMoney />
         </RequireAuth>}>
+        </Route>
+        <Route path='/BankTransfer' element={<RequireAuth>
+          <StripePayment />
+        </RequireAuth>}>
+        </Route>
+        <Route path='/addMoneyFromBank' element={
+          <AddMoneyFromBank />
+        }>
         </Route>
 
 

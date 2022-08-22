@@ -11,7 +11,10 @@ import Review from './Reviews/Review';
 
 
 const Home = () => {
+
+
     return (
+
         <div>
             <HeroBanner></HeroBanner>
 
@@ -20,6 +23,8 @@ const Home = () => {
             <Services></Services>
             <AppDownload></AppDownload>
             <Review></Review>
+
+
         </div>
     );
 };
