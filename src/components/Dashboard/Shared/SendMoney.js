@@ -14,7 +14,7 @@ const SendMoney = () => {
 
 
     const onSubmit = (data) => {
-        console.log(data);
+        
         const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
         fetch(url, {
             method: 'POST',
@@ -29,8 +29,6 @@ const SendMoney = () => {
                 toast.success('send money successfully')
                 reset();
                 setValue('');
-
-
 
             })
     };

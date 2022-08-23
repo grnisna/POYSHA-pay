@@ -67,9 +67,7 @@ function App() {
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
-          <Route path="addMoney" element={
-            <AddMoney></AddMoney>
-          }></Route>
+          <Route path="addMoney" element={ <AddMoney></AddMoney>}></Route>
           <Route path="addAccount" element={<OthersAccounts />}></Route>
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>

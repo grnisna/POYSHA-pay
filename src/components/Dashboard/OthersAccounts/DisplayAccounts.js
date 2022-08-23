@@ -19,11 +19,11 @@ const DisplayAccounts = ({ accounts }) => {
 
 
  return (
-  <tr className='border-b-2 grid lg:grid-cols-5 grid-cols-2 items-center justify-items-center'>
+  <tr className='lg:border-b-2 grid lg:grid-cols-5 grid-cols-2 items-center justify-items-center'>
    <td className='flex items-center flex-start py-2 '>
-    <div className="flex shrink w-64  flex-start px-50">
+    <div className="flex shrink lg:w-64  w-24 flex-start px-50">
      <div className="avatar px-5">
-      <div className="w-12 rounded-full">
+      <div className="w-12 lg:rounded-full">
        <img src={HolderImg} alt="" />
       </div>
      </div>
@@ -37,7 +37,7 @@ const DisplayAccounts = ({ accounts }) => {
     </div>
    </td>
    {/* <td>{AccountHolder}</td> */}
-   <td>{AccountNumber}</td>
+   <td className='w-24'>{AccountNumber}</td>
 
    <td onClick={handelQuickPay} className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>Quick Pay</td>
    <td onClick={handelAddRequest} className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>Add Request</td>
