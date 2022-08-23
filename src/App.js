@@ -36,6 +36,7 @@ import ContactUS from "./components/Pages/ContactUS/ContactUS";
 import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
 import Questions from "./components/Pages/HomePage/Questions";
+import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
 
 
 
@@ -86,7 +87,7 @@ function App() {
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
           {/* <Route path="Setting" element={<UserImages />}></Route> */}
-          <Route path="Setting" element={<Setting />}></Route>
+          <Route path="Setting" element={<SettingDemo />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
 
