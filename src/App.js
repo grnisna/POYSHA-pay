@@ -12,9 +12,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
+
+
 import RechargeMoney from "./components/Services/RechargeMoney";
 import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
+
+
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 
@@ -26,10 +30,13 @@ import CurrencyConvert from "./components/CurrencyConvert/CurrencyConvert";
 import StripePayment from "./components/Hooks/Stripe/StripePayment";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
+
 // import Calculate from "./components/Calculator/Calculate";
+
 import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
 import Questions from "./components/Pages/HomePage/Questions";
+
 
 
 
@@ -69,7 +76,9 @@ function App() {
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
+
           {/* <Route path="Calculator" element={<></\Calculate>}></Route> */}
+
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
