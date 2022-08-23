@@ -5,12 +5,28 @@ import './ShortHistory.css'
 import OverallSpend from '../../Hooks/OvarallSpend/OverallSpend';
 import Overall from './Overall';
 import { useState } from 'react';
+import Statement from '../../Hooks/Statement/Statement';
 
 
 
 
 const ShortHistory = () => {
     // const [myTransactionHistory] = TransactionHistory();
+    //--------------------------------------------
+    const [allStatement, setAllStatement] = useState([]);
+
+    useEffect(() => {
+        const url = `http://localhost:5000/transactionStatement`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                const count = data.count;
+                console.log(count);
+                const perTransaction = Math.ceil(count / 2);
+                setAllStatement(perTransaction);
+            })
+    }, []);
+    //--------------------------------------------
     const [userSpend] = OverallSpend();
     const [viewShortHistory, setViewShortHistory] = useState([]);
 
@@ -89,6 +105,7 @@ const ShortHistory = () => {
 
                 </div>
             </div>
+ 
 
         </div>
     );

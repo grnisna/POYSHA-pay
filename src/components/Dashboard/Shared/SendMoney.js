@@ -29,7 +29,7 @@ const SendMoney = () => {
                 console.log(result);
                 toast.success('send money successfully')
                 reset();
-
+                setValue('');
             })
     };
 
@@ -80,8 +80,10 @@ const SendMoney = () => {
                         </label>
                         <PhoneInput
                             className='input'
+                            type="tel"
                             placeholder="Enter phone number"
                             international
+                            maxLength="16"
                             defaultCountry="BD"
                             value={value}
                             onChange={setValue}
@@ -100,17 +102,25 @@ const SendMoney = () => {
                         </label>
                         <input
                             placeholder="Sending amount $"
+                            // type="number"
+                            maxLength="4"
+                            min="10"
+                            value={value}
+                            onChange={setValue}
                             class="input input-bordered"
+                            // ref={register({ required: true, pattern: /[0-9]{4}/ })}
                             {...register("sendAmount", {
                                 required: {
                                     value: true,
                                     message: 'Please Type Your Amount'
                                 },
                                 pattern: {
-                                    value: /^[0-9]+$/,
+                                    value: /^[0-9]{4}/,
                                     message: 'Provide Valid Amount'
                                 }
-                            })}
+                            })
+
+                            }
                         />
                         <label class="label">
                             {errors.sendAmount?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
@@ -132,10 +142,10 @@ const SendMoney = () => {
                                     value: true,
                                     message: 'Reference is required'
                                 },
-                                pattern: {
-                                    value: /^[0-9]+$/,
-                                    message: 'Only Number is allowed'
-                                }
+                                // pattern: {
+                                //     value: /^[0-9]+$/,
+                                //     message: 'Only Number is allowed'
+                                // }
                             })}
                         />
                         <label class="label">

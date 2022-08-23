@@ -5,7 +5,7 @@ import UserImage from './UserImage';
 const UserImages = () => {
     const [userImages, setUserImage] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/userimage', {
+        fetch('https://powerful-basin-90376.herokuapp.com/userimage', {
             method: 'GET',
 
         })
