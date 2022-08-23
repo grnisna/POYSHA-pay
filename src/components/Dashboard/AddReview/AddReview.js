@@ -62,9 +62,9 @@ const AddReview = () => {
 
     return (
         <div >
-            <div class="card w-96 mx-auto bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="font-bold text-center text-xl">Add review!</h2>
+            <div className="card w-96 mx-auto bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="font-bold text-center text-xl">Add review!</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}
                         className='w-full'>
@@ -75,8 +75,8 @@ const AddReview = () => {
 
                             className='input input-bordered w-full'
                             {...register('userName')} />
-                        <label class="label">
-                            <span class="label-text">Rate Count</span>
+                        <label className="label">
+                            <span className="label-text">Rate Count</span>
                         </label>
                         <input
                             type="number"
@@ -95,8 +95,8 @@ const AddReview = () => {
                         />
 
 
-                        <label class="label mt-5">
-                            <span class="label-text">Give us an feedback</span>
+                        <label className="label mt-5">
+                            <span className="label-text">Give us an feedback</span>
                         </label>
                         <textarea
                             name="feedback" id="" placeholder='Please Give us an feedback'
@@ -109,8 +109,8 @@ const AddReview = () => {
 
                             })} />
 
-                        <div class="card-actions  justify-center">
-                            <input class="btn btn-primary w-full mt-5 " type="submit" value="submit " />
+                        <div className="card-actions  justify-center">
+                            <input className="btn btn-primary w-full mt-5 " type="submit" value="submit " />
 
                         </div>
                     </form>

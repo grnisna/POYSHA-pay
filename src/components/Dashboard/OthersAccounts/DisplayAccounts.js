@@ -22,8 +22,8 @@ const DisplayAccounts = ({ accounts }) => {
   <tr className='border-b-2 grid lg:grid-cols-5 grid-cols-2 items-center justify-items-center'>
    <td className='flex items-center flex-start py-2 '>
     <div className="flex shrink w-64  flex-start px-50">
-     <div class="avatar px-5">
-      <div class="w-12 rounded-full">
+     <div className="avatar px-5">
+      <div className="w-12 rounded-full">
        <img src={HolderImg} alt="" />
       </div>
      </div>

@@ -65,9 +65,9 @@ const SendMoney = () => {
                         readOnly
                         {...register("balance")}
                         className="input input-bordered w-full max-w-xs text-2xl" /> */}
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">From</span>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">From</span>
                         </label>
 
                         <PhoneInput
@@ -79,9 +79,9 @@ const SendMoney = () => {
                         />
                     </div>
 
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text ">Send To</span>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text ">Send To</span>
                         </label>
                         <PhoneInput
                             className='input'
@@ -99,13 +99,13 @@ const SendMoney = () => {
                         />
                     </div>
 
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Amount</span>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Amount</span>
                         </label>
                         <input
                             placeholder="Sending amount $"
-                            class="input input-bordered"
+                            className="input input-bordered"
                             {...register("sendAmount", {
                                 required: {
                                     value: true,
@@ -117,16 +117,16 @@ const SendMoney = () => {
                                 }
                             })}
                         />
-                        <label class="label">
-                            {errors.sendAmount?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
-                            {errors.sendAmount?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
+                        <label className="label">
+                            {errors.sendAmount?.type === 'required' && <span className="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
+                            {errors.sendAmount?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
 
                         </label>
                     </div>
 
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text ">Reference</span>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text ">Reference</span>
                         </label>
                         <input
                             type="text"
@@ -143,9 +143,9 @@ const SendMoney = () => {
                                 }
                             })}
                         />
-                        <label class="label">
-                            {errors.Reference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
-                            {errors.Reference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                        <label className="label">
+                            {errors.Reference?.type === 'required' && <span className="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                            {errors.Reference?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.Reference.message}</span>}
 
                         </label>
                     </div>

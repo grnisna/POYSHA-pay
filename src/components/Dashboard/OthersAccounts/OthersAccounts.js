@@ -32,15 +32,15 @@ const OthersAccounts = () => {
   };
   return (
     <div className='others-account-history bg-slate-200 p-5  justify-center'>
-      <div class="card  bg-base-100 shadow-xl justify-center text-center ">
-        <div class="card-body items-center text-center py-10">
+      <div className="card  bg-base-100 shadow-xl justify-center text-center ">
+        <div className="card-body items-center text-center py-10">
           <h1 className='text-4xl font-bold py-10 text-secondary'>Add New Account</h1>
           {/* <div className="addAccountInput grid grid-cols-4 gap-10"> */}
           <form onSubmit={handleSubmit(onSubmit)} className="grid lg:grid-cols-4 grid-cols-1 gap-10">
-            <input type="text" placeholder="Account Holder" {...register("AccountHolder")} class="input input-bordered w-full max-w-xs" />
-            <input type="number" placeholder="Account Number"  {...register("AccountNumber")} class="input input-bordered w-full max-w-xs" />
-            <input type="text" placeholder="Origin" {...register("origin")} class="input input-bordered w-full max-w-xs" />
-            <input type="submit" value="Add Account" class="btn-secondary hover:btn-primary rounded-lg text-white input-bordered w-full max-w-xs" />
+            <input type="text" placeholder="Account Holder" {...register("AccountHolder")} className="input input-bordered w-full max-w-xs" />
+            <input type="number" placeholder="Account Number"  {...register("AccountNumber")} className="input input-bordered w-full max-w-xs" />
+            <input type="text" placeholder="Origin" {...register("origin")} className="input input-bordered w-full max-w-xs" />
+            <input type="submit" value="Add Account" className="btn-secondary hover:btn-primary rounded-lg text-white input-bordered w-full max-w-xs" />
           </form>
           {/* </div> */}
 
@@ -48,8 +48,8 @@ const OthersAccounts = () => {
 
         <hr />
 
-        <div class="card-body px-20 justify-center">
-          <table class="table-auto ">
+        <div className="card-body px-20 justify-center">
+          <table className="table-auto ">
             <tbody className=' text-center '>
               {
                 othersAccount.map(accounts => <DisplayAccounts

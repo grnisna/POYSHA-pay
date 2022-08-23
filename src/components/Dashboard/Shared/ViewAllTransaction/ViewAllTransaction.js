@@ -113,7 +113,7 @@ const ViewAllTransaction = () => {
 
 
   return (
-    <div class="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
+    <div className="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
       <div className='flex justify-center items-center lg:gap-7 gap-2  button-area'>
         {/* <span className='hover:bg-yellow-300'>All</span> */}
         <span onClick={falseFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>Send Money</span>

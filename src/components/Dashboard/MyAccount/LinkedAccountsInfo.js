@@ -5,12 +5,12 @@ const LinkedAccountsInfo = ({ accountInfo }) => {
  const { BankName, BankLogo, BankAccountNum } = accountInfo;
  return (
   <div className='pb-5 justify-center '>
-   <div class="card w-60 bg-base-100 shadow-xl ">
-    <div class="card-body  justify-center ">
+   <div className="card w-60 bg-base-100 shadow-xl ">
+    <div className="card-body  justify-center ">
      {/* top-part-of-card */}
      <div className="bankInfo grid grid-cols-3 items-center ">
       <div className="bankData lg:col-span-2 ">
-       <h2 class="text-sm">{BankName}</h2>
+       <h2 className="text-sm">{BankName}</h2>
        <div className="account-num flex items-center">
         <p className='text-xs'>{BankAccountNum}</p>
         <div className='copy-icon '><FaRegClone /></div>

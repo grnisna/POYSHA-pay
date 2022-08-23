@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './DashboardNav.css'
+import './DashboardNav.css';
 import DashboardIcon from '../../../Assets/DashboardNav/dashboardN.png';
 import Account from '../../../Assets/DashboardNav/userN.png';
 import SendMoney from '../../../Assets/DashboardNav/sendMoney.png';
@@ -20,7 +20,7 @@ const DashboardNav = () => {
   return (
     <div className='dashboard-nav'>
       <div className="navLinks">
-        <ul className='routeLinks p-5'>
+        <ul className='routeLinks  p-5'>
           <li className='flex items-center navItem'>
             <img src={DashboardIcon} alt="" />
             <Link to=''>Dashboard</Link>
