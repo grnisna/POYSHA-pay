@@ -67,7 +67,7 @@ const Navbar = () => {
 
               <li><NavLink to='/dashboard'>My poysha</NavLink></li>
               <li><a>About us</a></li>
-              <li><a>Contact</a></li>
+              <li><NavLink to="/contactUs">Contact</NavLink></li>
             </ul>
           </div>
         </div>
