@@ -29,7 +29,6 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             accountNumber: event.target.account.value,
             transferredAmount: event.target.amount.value,
             reference: event.target.reference.value,
-
             transactionType: 'addMoney'
         }
 

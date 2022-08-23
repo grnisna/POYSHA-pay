@@ -34,37 +34,37 @@ const AddMoney = () => {
 
             {/* <div className='grid grid-cols-1 md:grid-cols-2 justify-items-center lg:grid-cols-3 gap-10 mb-10 '>
                 <button className='w-96 shadow-2xl rounded-3xl '>
-                    <figure class=" image-full ">
+                    <figure className=" image-full ">
                         <img src="https://compassplus.ru/static/materials/testimonials/city-1.png" alt="Shoes" />
                         
                     </figure>
                 </button>
                 <button className='w-96 shadow-2xl rounded-3xl '>
-                    <figure class=" image-full px-5 pt-5">
+                    <figure className=" image-full px-5 pt-5">
                         <img src="https://i.pinimg.com/originals/52/96/8a/52968af44228ad023542426899b2fb07.jpg" alt="Shoes" />
                         
                     </figure>
                 </button>
                 <button className='w-96 shadow-2xl rounded-3xl '>
-                    <figure class=" image-full px-5 pt-5">
+                    <figure className=" image-full px-5 pt-5">
                         <img src="https://updateoffer.com/wp-content/uploads/2019/01/Dutch-Bangla-Bank.jpg" alt="Shoes" />
                         
                     </figure>
                 </button>
                 <button className='w-96 shadow-2xl rounded-3xl '>
-                    <figure class=" image-full px-5 pt-5">
+                    <figure className=" image-full px-5 pt-5">
                         <img src="https://bizdatainsights.com/wp-content/uploads/2020/07/ebl.jpg" alt="Shoes" />
 
                     </figure>
                 </button>
                 <button className='w-96 shadow-2xl rounded-3xl '>
-                    <figure class=" image-full px-5 pt-5">
+                    <figure className=" image-full px-5 pt-5">
                         <img src="https://banner2.cleanpng.com/20180530/ker/kisspng-world-bank-group-finance-world-development-report-5b0f49865e2ef4.1289488015277285183858.jpg" alt="Shoes" />
 
                     </figure>
                 </button>
                 <button className='w-96 shadow-2xl rounded-3xl '>
-                    <figure class=" image-full px-5 pt-5">
+                    <figure className=" image-full px-5 pt-5">
                         <img src="https://explain.com.ng/wp-content/uploads/2021/07/paypal-logo.jpeg" alt="Shoes" />
 
                     </figure>

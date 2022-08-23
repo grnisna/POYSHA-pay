@@ -35,7 +35,7 @@ const HeroBanner = () => {
 
                     <div className="getApp-link flex items-center gap-4">
                         <div className="email-input ">
-                            <input class=" email-input appearance-none border-2 rounded-full border-primary w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="example@gamil.com"></input>
+                            <input className=" email-input appearance-none border-2 rounded-full border-primary w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="example@gamil.com"></input>
                         </div>
                         <div className="get-link-btn lg:px-8 px-2  ">
                             <button className='get-link rounded-full'>GET LINK</button>

@@ -49,7 +49,7 @@ const AppDownload = () => {
                     </div>
                 </div>
 
-                <img className='lg:block hidden' src={mobile} alt="" />
+                <img className='lg:block hidden w-52' src={mobile} alt="" />
 
                 <div className='lg:ml-20'>
                     <div className='lg:text-left text-center mb-10'>

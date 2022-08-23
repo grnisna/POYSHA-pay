@@ -1,0 +1,9 @@
+
+@media screen  and (max-width:400px) {
+    .doBorder{
+        border-bottom: 2px solid #ccc;
+    }
+    .threeDot{
+        display: none;
+    }
+}
