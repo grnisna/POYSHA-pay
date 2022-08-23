@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "1",
+        "ques": "What type of phone must I have to use mobile banking?",
+        "ans": "It works with any web-enabled phone device whose network allows secure SSL traffic."
+    },
+    {
+        "_id": "2",
+        "ques": "What happens if I lose my mobile device?",
+        "ans": "Contact your mobile provider immediately and notify the bank if you have concerns someone may access your account.  Your account data is not stored on your mobile devices, and cannot be accessed without your login credentials.  When you replace your device, simply edit your Mobile Settings in FirstNet and make any changes to the wireless provider and/or phone number if applicable."
+    },
+    {
+        "_id": "3",
+        "ques": "Can i use any mobile device to access my accounts?",
+        "ans": "Yes.  You can access your accounts via any mobile device that is web-enabled and allows secure SSL traffic.  The only difference is that text messages are sent to the phone number entered when enrolling for mobile banking, not necessarily the device from which you perform the transaction."
+    },
+    {
+        "_id": "4",
+        "ques": "How do I sign up ?",
+        "ans": "Consumer customers must have a FirstNet ID (enrolled in Online Banking) and must have registered their phone for mobile banking and have the mobile app downloaded. Click on “Mobile Deposit” icon to register, sign up the accounts you want to deposit to, and agree to the terms and conditions to begin using the program. Cash management users, please contact ebanking at 608-943-0150 for further information regarding this product."
+    },
+    {
+        "_id": "5",
+        "ques": "Is it secure?",
+        "ans": "Yes. Your personal information is safe with us. We use advanced encryption and monitoring technology. We secure your accounts with your unique FirstNet ID and password.We never store your personal banking information on your phone.You will be logged off from mobile banking after 10 minutes of inactivity or when your phone times out, whichever comes first."
+    },
+    {
+        "_id": "6",
+        "ques": "How do I use mobile deposit?",
+        "ans": "To use Mobile Deposit follow these steps: You will need to register first. Log into your Mobile Banking App. Click “Mobile Deposit” in the menu screen. Fill out the user registration screen and click “continue Select the account(s) you want to be able to deposit into. Read the Terms and Conditions. Click “Agree” then click “continue” You have now arrived at the registration status screen and are able to make deposits Click on Mobile Deposit in the Menu Screen On the Deposit Listing screen click on the “plus” sign to continue to make a deposit Scan the front of the check and follow the prompts to make sure the image is correct. Once the front is scanned, you will scan the back of the check. Enter the account number you want the deposit to go into and the amount of the check. Once completed, click “Deposit”. You will then have the option to complete the transaction, or deposit another item. Click “Done” when you have deposited all your items."
+    },
+    {
+        "_id": "7",
+        "ques": "Who Do I Call For Help?",
+        "ans": "Please call +8801400960626. We're ready to help. If you're having technical issues with your phone or have questions about mobile data access or data charges on your phone bill, please contact the customer service department of your mobile service provider."
+    }
+]
