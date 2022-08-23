@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Rating } from 'react-simple-star-rating'
-import { FaStar } from "react-icons/fa";
+// import { Rating } from 'react-simple-star-rating'
+// import { FaStar } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -14,12 +14,12 @@ const colors = {
 const AddReview = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const [currentValue, setCurrentValue] = useState(0);
-    const [hoverValue, setHoverValue] = useState(undefined);
-    const [review, setReview] = useState(null);
-    const stars = Array(5).fill(0)
+    // const [currentValue, setCurrentValue] = useState(0);
+    // const [hoverValue, setHoverValue] = useState(undefined);
+    // const [review, setReview] = useState(null);
+    // const stars = Array(5).fill(0)
 
-    const [ratingValue, setRatingValue] = useState(0)
+    // const [ratingValue, setRatingValue] = useState(0)
 
     const [user, loading] = useAuthState(auth);
 
