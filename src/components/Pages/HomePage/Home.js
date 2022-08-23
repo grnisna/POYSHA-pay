@@ -6,6 +6,7 @@ import CardSlide from './CardSlide';
 import Users from './Users';
 import Review from './Reviews/Review';
 import Questions from './Questions';
+import Qus from './Qus';
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
         <div>
             <HeroBanner></HeroBanner>
             {/* <Questions></Questions> */}
+            <Qus/>
             <CardSlide></CardSlide>
             {/* <Users></Users> */}
             <Services></Services>

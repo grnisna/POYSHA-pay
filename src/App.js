@@ -78,7 +78,7 @@ function App() {
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
-          <Route path="FAQs" element={<Questions />}></Route>
+          <Route path="FAQs" element={<Questions/>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
           {/* <Route path="Setting" element={<UserImages />}></Route> */}

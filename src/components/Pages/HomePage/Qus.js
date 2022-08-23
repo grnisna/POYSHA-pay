@@ -1,12 +1,10 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Questions = () => {
+const Qus = () => {
     const [questions, setQuestions] = useState([])
     console.log(questions);
     useEffect(() => {
-        fetch("question.json")
+        fetch("http://localhost:5000/faq")
             .then(res => res.json())
             .then(data => setQuestions(data))
     }, [])
@@ -32,5 +30,4 @@ const Questions = () => {
     );
 };
 
-export default Questions;
-
+export default Qus;
