@@ -24,7 +24,7 @@ const OthersAccounts = () => {
   };
 
   return (
-    <div className='bg-slate-200 px-20 justify-center'>
+    <div className='bg-slate-200 px-20 justify-center h-screen overflow-y-scroll'>
       <div class="bg-base-100 shadow-xl justify-center text-center ">
         <div class="items-center text-center ">
           <h1 className='text-4xl font-bold text-primary py-5'>Add Your Favorites Contact</h1>
