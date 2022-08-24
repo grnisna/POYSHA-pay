@@ -1,40 +1,36 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
-
-
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input';
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
-import Button from '../../SharedCompo/Button';
 import DBUserData from '../../Hooks/UserData/DBUserData';
+import swal from 'sweetalert';
 
 
 const SendMoney = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [value, setValue] = useState();
-
   const [userData, setUserData] = DBUserData([]);
 
-  console.log(userData.phone);
-
-
   const onSubmit = (data) => {
-    console.log(data);
+    const sendAmount = data.sendAmount;
+    const transactionType = "sendMoney";
+    const newData = { ...data, transactionType }
     const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
     fetch(url, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(newData)
     })
       .then(res => res.json())
       .then(result => {
         console.log(result);
-        toast.success('send money successfully')
+        //swal add and remove tost
+        swal(`Done `, `Total ${sendAmount} Successfully send`, "success");
         reset();
+        setValue('');
 
       })
   };
@@ -59,16 +55,25 @@ const SendMoney = () => {
 
       // }}
       >
-        <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
+        <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md'
+
+          onSubmit={handleSubmit(onSubmit)}>
+
           <h2 className='text-center text-2xl'>Send Money</h2>
+          <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'>$ {userData?.balance}</span></h2>
+          {/* <input type="number" name="balance" value={userData?.balance}
+                        readOnly
+                        {...register("balance")}
+                        className="input input-bordered w-full max-w-xs text-2xl" /> */}
           <div class="form-control">
             <label class="label">
-              <span class="label-text">From To</span>
+              <span class="label-text">From</span>
             </label>
+
             <PhoneInput
               className='input'
               placeholder="Enter phone number"
-              value="+8801629504411"
+              value={userData.phone}
               readOnly
               {...register("senderNumber")}
             />

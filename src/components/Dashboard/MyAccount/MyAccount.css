@@ -42,6 +42,11 @@
  border-radius: 5px;
 }
 
+.transfer-btn:hover {
+ background-color: #313049;
+ color: #fff;
+}
+
 .link-btn {
  /* padding: 5px 5px; */
  padding: 10px 10px;
@@ -51,6 +56,11 @@
  color: rgb(7, 7, 7);
  border: 1px solid #6C63FF;
  border-radius: 5px;
+}
+
+.link-btn:hover {
+ background-color: #313049;
+ color: #fff;
 }
 
 .founds {

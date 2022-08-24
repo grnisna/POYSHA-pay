@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import OthersAccountHooks from '../../Hooks/OthersAccountsHooks/OthersAccountHooks';
 import DisplayAccounts from './DisplayAccounts';
 import { useForm } from "react-hook-form";
@@ -9,13 +9,15 @@ import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from '../../Hooks/Stripe/CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import StripePayment from '../../Hooks/Stripe/StripePayment';
-
 const stripePromise = loadStripe('pk_test_51L32KLCsQIHP5V5pO5zs1Mqu1tcstEOMngwtrtftvk3aUWXS91oilRcWhNEIK4vTTEZ6houmF4VijlGlGHI7FWEJ00jJLqyxcU');
+// import PhoneInput from 'react-phone-input-2';
+
 
 
 const OthersAccounts = () => {
   const [othersAccount] = OthersAccountHooks()
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [value, setValue] = useState();
   const onSubmit = data => {
     const accountData = {
       AccountHolder: data.AccountHolder,
@@ -63,6 +65,7 @@ const OthersAccounts = () => {
 
 
     </div>
+
 
   );
 };
