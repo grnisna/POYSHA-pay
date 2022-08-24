@@ -5,10 +5,12 @@ import SignUp from "./components/Auth/SignUp/SignUp";
 import Home from "./components/Pages/HomePage/Home";
 import AddMoney from "./components/Services/AddMoney";
 import Footer from "./components/SharedCompo/Footer/Footer";
-import Navbar from "./components/SharedCompo/Navbar/Navbar";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// added new tost 
+import { Toaster } from 'react-hot-toast';
 
+//components
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
@@ -21,12 +23,9 @@ import SubFooter from './components/SharedCompo/Footer/SubFooter';
 
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
-
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
 import DashboardOverView from "./components/Dashboard/MyAccount/DashboardOverView";
-
 import CurrencyConvert from "./components/CurrencyConvert/CurrencyConvert";
-
 import StripePayment from "./components/Hooks/Stripe/StripePayment";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
@@ -39,18 +38,27 @@ import Questions from "./components/Pages/HomePage/Questions";
 import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
 
 
-
-
-
-
-
 function App() {
   return (
     <div>
-      <Navbar></Navbar>
       <Routes>
         {/* ------------------main menu---------------------  */}
         <Route path='/' element={<Home />}></Route>
+        <Route path='/addMoney' element={<RequireAuth>
+          <AddMoney />
+        </RequireAuth>}>
+        </Route>
+        <Route path='/dashboard' element={<RequireAuth>
+          <Dashboard />
+        </RequireAuth>}>
+        </Route>
+        
+        {/* ashraf-edit */}
+        {/* <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>}> */}
+
         <Route path='/addMoney' element={<RequireAuth><AddMoney /></RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
@@ -64,7 +72,6 @@ function App() {
         <Route path='/resetpassword' element={<ResetPassword />}></Route>
         <Route path='/currency' element={<CurrencyConvert />}></Route>
 
-       
 
         {/* ---------------Dashboard Menu----------------------- */}
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard> </RequireAuth>}>
@@ -78,6 +85,9 @@ function App() {
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
 
+          <Route path="Calculator" element={<CurrencyConvert></CurrencyConvert>}></Route>
+
+
           {/* <Route path="Calculator" element={<></\Calculate>}></Route> */}
 
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
@@ -90,11 +100,8 @@ function App() {
           <Route path="Setting" element={<SettingDemo />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
-
-
-
       </Routes>
-      <Footer />
+      <Toaster />
       <ToastContainer />
     </div>
   );

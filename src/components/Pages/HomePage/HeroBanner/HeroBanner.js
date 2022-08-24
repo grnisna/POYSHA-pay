@@ -4,15 +4,19 @@ import React, { useRef } from 'react';
 import HeroSidePetter from '../../../../Assets/SVG/pattern.svg'
 import './HeroBanner.css';
 import { FaArrowRight } from "react-icons/fa";
+import AddMoneyModal from '../../../Hooks/Mongoose/AddMOney/AddMoneyModal';
 
 const HeroBanner = () => {
+    const [addMoney, setAddMoney] = AddMoneyModal();
+    console.log(addMoney);
     const ref = useRef(null);
     React.useEffect(() => {
         import("@lottiefiles/lottie-player");
     });
     return (
-        <section className='hero-banner lg:px-20 lg:py-20 grid lg:grid-cols-2 justify-center auto-cols-fr'
+        <section className='hero-banner lg:px-20 lg:pb-20 lg:pt-10 grid lg:grid-cols-2 justify-center auto-cols-fr'
             style={{
+                paddingBottom: "20px",
                 backgroundImage: `url(${HeroSidePetter})`,
                 backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
                 backgroundSize: 'cover', width: '100%',
