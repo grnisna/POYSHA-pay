@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import PhoneInput from 'react-phone-number-input';
-// import PhoneInput from 'react-phone-number-input'
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import DBUserData from '../../Hooks/UserData/DBUserData';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 
 
 const SendMoney = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [value, setValue] = useState();
-
   const [userData, setUserData] = DBUserData([]);
+
+
   console.log(userData);
 
   const onSubmit = (data) => {
@@ -22,32 +24,37 @@ const SendMoney = () => {
     const id = userData._id;
 
     if (balance) {
-      axios.put(`https://afternoon-wave-69445.herokuapp.com/users/${id}}`, balance)
+      axios.put(`https://powerful-basin-90376.herokuapp.com/users/${id}}`, balance)
         .then(response => {
           console.log(response);
         })
     }
 
-    const url = `https://afternoon-wave-69445.herokuapp.com/sendMoney/${id}`;
+    const sendAmount = data.sendAmount;
+    const transactionType = "sendMoney";
+    const newData = { ...data, transactionType }
+    const url = `https://powerful-basin-90376.herokuapp.com/sendMoney/${id}`;
     fetch(url, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(newData)
     })
       .then(res => res.json())
       .then(result => {
         console.log(result);
-        toast.success('send money successfully')
+        //swal add and remove tost
+        swal(`Done `, `Total ${sendAmount} Successfully send`, "success");
         reset();
+        setValue('');
 
       })
 
 
     // // update balance 
 
-    // const url2 = `https://afternoon-wave-69445.herokuapp.com/users/${id}}`
+    // const url2 = `https://powerful-basin-90376.herokuapp.com/users/${id}}`
     // console.log(url2);
     // fetch(url2, {
     //   method: 'PUT',
@@ -82,19 +89,27 @@ const SendMoney = () => {
       //   backgroundImage: `url(${BgSendMoney})`,
       //   backgroundSize: 'cover',
 
-
       // }}
       >
-        <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
+        <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md'
+
+          onSubmit={handleSubmit(onSubmit)}>
+
           <h2 className='text-center text-2xl'>Send Money</h2>
+          <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'>$ {userData?.balance}</span></h2>
+          {/* <input type="number" name="balance" value={userData?.balance}
+                        readOnly
+                        {...register("balance")}
+                        className="input input-bordered w-full max-w-xs text-2xl" /> */}
           <div class="form-control">
             <label class="label">
-              <span class="label-text">From To</span>
+              <span class="label-text">From</span>
             </label>
+
             <PhoneInput
               className='input'
               placeholder="Enter phone number"
-              value="+8801629504411"
+              value={userData.phone}
               readOnly
               {...register("senderNumber")}
             />
@@ -142,6 +157,7 @@ const SendMoney = () => {
               {errors.sendAmount?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
               {errors.sendAmount?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
 
+
             </label>
           </div>
 
@@ -167,6 +183,7 @@ const SendMoney = () => {
             <label class="label">
               {errors.Reference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
               {errors.Reference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+
 
             </label>
           </div>

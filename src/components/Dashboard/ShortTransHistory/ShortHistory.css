@@ -9,3 +9,9 @@
  background-color: #313049;
 
 }
+
+@media screen  and (max-width:400px) {
+    .table-responsive table{
+        overflow-x:auto;
+    }
+}

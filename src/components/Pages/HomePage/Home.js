@@ -3,17 +3,18 @@ import AppDownload from './AppDownload';
 import Services from './Services/Services';
 import HeroBanner from './HeroBanner/HeroBanner';
 import CardSlide from './CardSlide';
-import Review from './Reviews/Review';
-
+import Navbar from '../../SharedCompo/Navbar/Navbar';
+import Footer from '../../SharedCompo/Footer/Footer';
 
 const Home = () => {
     return (
         <div>
+            <Navbar></Navbar>
             <HeroBanner></HeroBanner>
             <CardSlide></CardSlide>
             <Services></Services>
             <AppDownload></AppDownload>
-            <Review></Review>
+            <Footer></Footer>
         </div>
     );
 };

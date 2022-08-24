@@ -35,7 +35,7 @@ const AddMoneyModal = ({ banks, setBanks }) => {
 
 
 
-        fetch(`https://afternoon-wave-69445.herokuapp.com/addMoney/${userId}`, {
+        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney/${userId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const AddMoneyModal = ({ banks, setBanks }) => {
                     text: "Deposit Successful"
                 });
             })
-        fetch('https://afternoon-wave-69445.herokuapp.com/transaction_history', {
+        fetch('https://powerful-basin-90376.herokuapp.com/transaction_history', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -67,10 +67,10 @@ const AddMoneyModal = ({ banks, setBanks }) => {
     }
 
     return (
-        <div>
+        <div >
             <input type="checkbox" id="add-money-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+                <div className="modal-box mx-10 ">
                     <label htmlFor="add-money-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-2xl text-center">Add Money from : <span className='text-orange-600'>{bankName} </span> </h3>
 
