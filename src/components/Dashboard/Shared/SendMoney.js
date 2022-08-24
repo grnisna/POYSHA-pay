@@ -115,7 +115,7 @@ const SendMoney = () => {
                                     value: /^[0-9]+$/,
                                     message: 'Provide Valid Amount'
                                 }
-                            })}
+                            })} 
                         />
                         <label className="label">
                             {errors.sendAmount?.type === 'required' && <span className="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
