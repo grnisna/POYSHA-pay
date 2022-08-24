@@ -1,18 +1,20 @@
 import React from 'react';
 import AppDownload from './AppDownload';
-import Growth from './Growth';
 import Services from './Services/Services';
 import HeroBanner from './HeroBanner/HeroBanner';
 import CardSlide from './CardSlide';
+import Navbar from '../../SharedCompo/Navbar/Navbar';
+import Footer from '../../SharedCompo/Footer/Footer';
 
 const Home = () => {
     return (
         <div>
+            <Navbar></Navbar>
             <HeroBanner></HeroBanner>
-            <Services></Services>
             <CardSlide></CardSlide>
+            <Services></Services>
             <AppDownload></AppDownload>
-            <Growth></Growth>
+            <Footer></Footer>
         </div>
     );
 };

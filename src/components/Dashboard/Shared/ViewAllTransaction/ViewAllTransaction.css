@@ -1,0 +1,50 @@
+.viewAllTable{
+    width:100%;
+    margin: auto;
+    box-shadow: 7px;
+}
+.button-area{
+    width: 60%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+.table-div{
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+th, td {
+    border: 1px solid black;
+
+  }
+
+  /* pagination ------------ */
+  .pagination .selected{
+    background: rgb(104, 33, 226);
+    color: #fff;
+  }
+
+@media screen and (max-width:400px) {
+    .card{
+        width: 90% !important;
+        margin: auto;
+    }
+    .viewAllTable{
+        width: 100%;
+    }
+    .button-area {
+        width: 100%;
+    }
+    .button-area span {
+        font-size: 10px;
+        padding: 2px;
+    }
+    .table-div{
+        width: 100%;
+    }
+}

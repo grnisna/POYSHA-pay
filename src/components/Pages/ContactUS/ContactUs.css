@@ -1,0 +1,19 @@
+
+
+.contactImage{
+    display: block;
+}
+
+@media screen and (max-width:400px) {
+    .contactImage{
+        display: none;
+        background-image: url(../../../Assets/SVG/contact.23fbd6d6.svg) ;
+
+    }
+    .contactUs{
+        background-image: url(../../../Assets/SVG/contact.23fbd6d6.svg) ;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+}
