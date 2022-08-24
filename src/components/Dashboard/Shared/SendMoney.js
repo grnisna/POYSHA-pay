@@ -134,7 +134,6 @@ const SendMoney = () => {
               })}
             />
           </div>
-
           <div class="form-control">
             <label class="label">
               <span class="label-text">Amount</span>
