@@ -45,17 +45,8 @@ const Navbar = () => {
         </div>
         <div className='navbar-center'>
           <div className=" hidden lg:flex">
-<<<<<<< HEAD
             {navMenu}
-=======
-            <ul className="menu menu-horizontal p-0">
-              {menu}
 
-              <li><NavLink to='/dashboard'>My poysha</NavLink></li>
-              <li><a>About us</a></li>
-              <li><NavLink to="/contactUs">Contact</NavLink></li>
-            </ul>
->>>>>>> e39c2ebe53af9a87468629203505746010ae5270
           </div>
         </div>
         <div className="navbar-end lg:pr-0 pr-6">

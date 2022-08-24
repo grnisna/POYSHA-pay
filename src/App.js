@@ -44,7 +44,6 @@ function App() {
       <Routes>
         {/* ------------------main menu---------------------  */}
         <Route path='/' element={<Home />}></Route>
-<<<<<<< HEAD
         <Route path='/addMoney' element={<RequireAuth>
           <AddMoney />
         </RequireAuth>}>
@@ -53,11 +52,13 @@ function App() {
           <Dashboard />
         </RequireAuth>}>
         </Route>
-        <Route path='/dashboard' element={
+        
+        {/* ashraf-edit */}
+        {/* <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>
-          </RequireAuth>}>
-=======
+          </RequireAuth>}> */}
+
         <Route path='/addMoney' element={<RequireAuth><AddMoney /></RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
@@ -71,11 +72,9 @@ function App() {
         <Route path='/resetpassword' element={<ResetPassword />}></Route>
         <Route path='/currency' element={<CurrencyConvert />}></Route>
 
-       
 
         {/* ---------------Dashboard Menu----------------------- */}
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard> </RequireAuth>}>
->>>>>>> e39c2ebe53af9a87468629203505746010ae5270
           <Route index element={<DashboardOverView />}></Route>
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
@@ -85,13 +84,12 @@ function App() {
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
-<<<<<<< HEAD
+
           <Route path="Calculator" element={<CurrencyConvert></CurrencyConvert>}></Route>
-=======
+
 
           {/* <Route path="Calculator" element={<></\Calculate>}></Route> */}
 
->>>>>>> e39c2ebe53af9a87468629203505746010ae5270
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
@@ -102,9 +100,6 @@ function App() {
           <Route path="Setting" element={<SettingDemo />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
-
-
-
       </Routes>
       <Toaster />
       <ToastContainer />
