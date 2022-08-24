@@ -1,23 +1,24 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useForm } from "react-hook-form";
+
 import BankNames from './BankNames';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import DBUserData from '../Hooks/UserData/DBUserData';
 import swal from 'sweetalert';
+import { useForm } from 'react-hook-form';
 
 const AddMoneyFromBank = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [bName, setBName] = useState([]);
     const [transactions, setTransactions] = useState([]);
-    const [banksNames, setBanksNames] = BankNames()
+    // const [banksNames, setBanksNames] = BankNames()
     const [user, loading] = useAuthState(auth);
 
     const [userData, setUserData] = DBUserData();
 
-    console.log(userData.phone)
+    //console.log(userData.phone)
 
 
 
@@ -26,41 +27,25 @@ const AddMoneyFromBank = () => {
             .then(res => res.json())
             .then(data => {
                 setBName(data)
+                //console.log(data);
             })
     }, []);
 
 
+    const onSubmit = (data) => {
 
-
-
-    const handelAddMoney = event => {
-        event.preventDefault();
-        const bankNameSelect = event.target.bankNameSelect.value;
-        console.log(transactions);
-
-
-
-        const addMoney = {
-            accountName: user.displayName,
-            AccountNumber: userData.phone,
-            bankNameSelect,
-            bankAccountNumber: event.target.bankAccountNumber.value,
-            transferredAmount: event.target.transferredAmount.value,
-            reference: event.target.reference.value,
-            transactionType: 'addMoney'
-        }
-
+        console.log(data)
         fetch('http://localhost:5000/addMoney', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(addMoney)
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setTransactions(null)
+                setTransactions()
                 swal({
                     icon: "success",
                     text: "Deposit Successful"
@@ -71,14 +56,14 @@ const AddMoneyFromBank = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(addMoney)
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setTransactions(null)
-            })
+                reset()
 
+            })
     }
 
     return (
@@ -87,80 +72,106 @@ const AddMoneyFromBank = () => {
 
         <div className='bg-slate-400'>
 
+            <form className='card mx-auto w-96 bg-white mt-5 p-5 shadow-2xl'
+                onSubmit={handleSubmit(onSubmit)}>
+                <h1 className='card-title m-5 uppercase'>Add Money from bank</h1>
 
-            <div class="card mx-auto w-96 bg-white mt-5  shadow-2xl">
-
-                <h2 className='text-2xl text-center mb-2 font-bold mt-5'>Add Money from Bank</h2>
-                <form className='mx-auto w-full -mt-1  px-2'
-                    onSubmit={handelAddMoney}>
-                    <input type="text"
-                        name='name' value={user?.displayName || ''}
-                        className='input input-bordered w-full  font-bold'
-                    // {...register("AccountHolderName")}
-                    />
-                    <input type="number"
-                        name='name'
-                        value={userData?.phone}
-                        className='input input-bordered mt-5 mx-auto w-full px-2 font-bold'
-                    // {...register("AccountNumber")}
-                    />
-
-                    <select
-                        name='bankNameSelect'
-                        class="select w-full mt-5 mx-auto  px-2"
-                    >
-                        {
-                            bName.map((b, index) => <option
-                                className='border-8'
-                                key={index}
-                                value={b.name}
-                            >{b.name}</option>)
+                <label class="label">
+                    <span class=" text-xs  -mb-2 mt-2  ">Poyha-Pay Account Name</span>
+                </label>
+                <input type="text"
+                    name='name' value={user?.displayName}
+                    className='input input-bordered w-full  font-bold'
+                    {...register('AccountHolder')}
+                />
+                <label class="label">
+                    <span class="  text-xs  -mb-2 mt-2">Poyha-Pay Account Number</span>
+                </label>
+                <input type="number"
+                    name='name'
+                    value={userData?.phone}
+                    className='input input-bordered mt-5 mx-auto w-full px-2 font-bold'
+                    {...register('Receiver')}
+                />
+                <label class="label">
+                    <span class="  text-xs  -mb-2 mt-2">Select Your Bank Name</span>
+                </label>
+                <select class="select w-full  mx-auto  px-2"
+                    {...register('BankName')}>
+                    {
+                        bName.map((b, index) => <option
+                            key={index}
+                            value={b.name}
+                        >{b.name}</option>)
+                    }
+                </select>
+                <label class="label">
+                    <span class="  text-xs -mb-2 mt-2">Enter Your Bank Account Number</span>
+                </label>
+                <input type="Number"
+                    required
+                    name='bankAccountNumber'
+                    minLength='14'
+                    placeholder='Enter Bank Account Number'
+                    className='input input-bordered w-full  mx-auto'
+                    {...register("bankAccountNumber", {
+                        minLength: {
+                            value: 12,
+                            message: 'Please Type Minimum  12 Digit  Account Number '
+                        }, maxLength: {
+                            value: 14,
+                            message: 'Please Type Maximum  14 Digit  Account Number'
                         }
+                    })}
+                />
+                <label>
+                    {errors.bankAccountNumber?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.bankAccountNumber.message}</span>}
+                    {errors.bankAccountNumber?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.bankAccountNumber.message}</span>}
+                </label>
 
-                    </select>
+
+                <label class="label">
+                    <span class="  text-xs  -mb-2 mt-2">Enter Your Amount</span>
+                </label>
+                <input type="Number"
+                    required
+                    name='transferredAmount'
+                    placeholder='Enter your Amount'
+                    className='input input-bordered  w-full  mx-auto'
+                    // {...register('transferredAmount')}
+                    {...register('transferredAmount', {
+                        min: {
+                            value: 500,
+                            message: 'Minimum Transaction Amount 500'
+                        },
+                        max: {
+                            value: 50000,
+                            message: 'Maximum Transaction Amount 5000'
+                        }
+                    })}
+                />
+                <label>
+                    {errors.transferredAmount?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
+                    {errors.transferredAmount?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
+                </label>
+                <label class="label">
+                    <span class="  text-xs  -mb-2 mt-2">Write Reference</span>
+                </label>
+                <input type="text"
+                    required
+                    name='reference'
+                    placeholder='Enter Reference'
+                    className='input input-bordered  w-full mx-auto'
+                    {...register('reference')}
+                />
+                <input type="text" name="" className='text-white input-ghost' id="" value={'addMoney'} readOnly
+                    {...register('transactionType')} />
+                <input type="submit"
+                    className='btn btn-secondary mt-5 w-full mx-auto'
+                    value="Add money" />
+            </form>
 
 
-                    <input type="Number"
-                        name='bankAccountNumber'
-                        placeholder='Enter Bank Account Number'
-                        className='input input-bordered w-full mt-5 mx-auto'
-                    // {...register("bankAccountNumber")}
-                    />
-
-                    <input type="Number"
-                        name='transferredAmount'
-                        placeholder='Enter your Amount'
-                        className='input input-bordered mt-5 w-full  mx-auto'
-                    // {...register("addMoneyAmount", {
-                    //     required: {
-                    //         value: true,
-                    //         message: 'Please Type Your Amount'
-                    //     },
-                    //     pattern: {
-                    //         value: /^[0-9]+$/,
-                    //         message: 'Provide Valid Amount'
-                    //     }
-                    // })}
-                    />
-
-                    <input type="text"
-                        name='reference'
-                        placeholder='Enter Reference'
-                        className='input input-bordered mt-5 w-full  mx-auto'
-                    // {...register("Reference", {
-                    //     required: {
-                    //         value: true,
-                    //         message: 'Reference is required'
-                    //     }
-                    // })}
-
-                    />
-
-                    <input type="submit" value="Add Money" className="btn btn-secondary mt-5 w-full  mx-auto" />
-
-                </form>
-
-            </div>
 
         </div>
 
