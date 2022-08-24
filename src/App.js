@@ -14,9 +14,13 @@ import { Toaster } from 'react-hot-toast';
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
+
+
 import RechargeMoney from "./components/Services/RechargeMoney";
 import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
+
+
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
@@ -25,16 +29,22 @@ import CurrencyConvert from "./components/CurrencyConvert/CurrencyConvert";
 import StripePayment from "./components/Hooks/Stripe/StripePayment";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
+
 // import Calculate from "./components/Calculator/Calculate";
+
 import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
 import Questions from "./components/Pages/HomePage/Questions";
+import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
+
 
 function App() {
   return (
     <div>
       <Routes>
+        {/* ------------------main menu---------------------  */}
         <Route path='/' element={<Home />}></Route>
+<<<<<<< HEAD
         <Route path='/addMoney' element={<RequireAuth>
           <AddMoney />
         </RequireAuth>}>
@@ -47,18 +57,41 @@ function App() {
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>}>
+=======
+        <Route path='/addMoney' element={<RequireAuth><AddMoney /></RequireAuth>}></Route>
+        <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
+        <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
+        <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
+        <Route path='/dashboard' element={<RequireAuth> <Dashboard /></RequireAuth>}></Route>
+        <Route path="/contactUs" element={<ContactUS></ContactUS>} ></Route>
+
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
+
+        <Route path='/resetpassword' element={<ResetPassword />}></Route>
+        <Route path='/currency' element={<CurrencyConvert />}></Route>
+
+       
+
+        {/* ---------------Dashboard Menu----------------------- */}
+        <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard> </RequireAuth>}>
+>>>>>>> e39c2ebe53af9a87468629203505746010ae5270
           <Route index element={<DashboardOverView />}></Route>
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
-          <Route path="addMoney" element={
-            <AddMoney></AddMoney>
-          }></Route>
+          <Route path="addMoney" element={<AddMoney></AddMoney>}></Route>
           <Route path="addAccount" element={<OthersAccounts />}></Route>
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
+<<<<<<< HEAD
           <Route path="Calculator" element={<CurrencyConvert></CurrencyConvert>}></Route>
+=======
+
+          {/* <Route path="Calculator" element={<></\Calculate>}></Route> */}
+
+>>>>>>> e39c2ebe53af9a87468629203505746010ae5270
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
@@ -66,19 +99,11 @@ function App() {
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
           {/* <Route path="Setting" element={<UserImages />}></Route> */}
-          <Route path="Setting" element={<Setting />}></Route>
+          <Route path="Setting" element={<SettingDemo />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
-        <Route path='/addMoney' element={<RequireAuth><AddMoney /> </RequireAuth>}></Route>
-        <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
-        <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
-        <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
 
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/signup' element={<SignUp />}></Route>
 
-        <Route path='/resetpassword' element={<ResetPassword />}></Route>
-        <Route path='/currency' element={<CurrencyConvert />}></Route>
 
       </Routes>
       <Toaster />

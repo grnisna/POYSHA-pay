@@ -39,7 +39,7 @@ const DashboardNav = () => {
   return (
     <div className='dashboard-nav '>
       <div className="navLinks">
-        <ul className='routeLinks px-5 py-2 overflow-y-visitable'>
+        <ul className='routeLinks px-5 py-2 overflow-y-visibale'>
           <li className='flex items-center navItem'>
             <img src={Home} alt="" />
             <Link to='/'>POYSHAPAY</Link>

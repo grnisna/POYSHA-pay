@@ -3,59 +3,56 @@
 *,
 *:before,
 *:after {
- box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .stripePaymentForm {
- font-size: 18px;
-
+  font-size: 18px;
 }
 
 .stripePaymentForm,
 form {
- max-width: 800px;
- margin: 80px auto;
- display: grid;
- align-items: center
+  max-width: 800px;
+  margin: 80px auto;
+  display: grid;
+  align-items: center;
 }
 
-.stripePaymentForm>label {
- color: #313049;
- font-weight: 400;
- letter-spacing: 0.025em;
- margin-top: 16px;
- display: block;
+.stripePaymentForm > label {
+  color: #313049;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  margin-top: 16px;
+  display: block;
 }
-
-
 
 .stripePaymentForm button {
- white-space: nowrap;
- color: #fff;
- background-color: #6C63FF;
- width: 100%;
- border: 0;
- outline: 0;
- display: inline-block;
- height: 40px;
- line-height: 40px;
- box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
- border-radius: 4px;
- font-size: 15px;
- font-weight: 600;
- text-transform: uppercase;
- letter-spacing: 0.025em;
- text-decoration: none;
- -webkit-transition: all 150ms ease;
- transition: all 150ms ease;
- margin-top: 10px;
+  white-space: nowrap;
+  color: #fff;
+  background-color: #6c63ff;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  margin-top: 10px;
 }
 
 .stripePaymentForm button:hover {
- color: #fff;
- cursor: pointer;
- background-color: #313049;
- transform: translateY(-1px);
+  color: #fff;
+  cursor: pointer;
+  background-color: #313049;
+  transform: translateY(-1px);
 }
 
 /* button[disabled] {
@@ -63,62 +60,61 @@ form {
 } */
 .stripePaymentForm input,
 select {
- display: block;
- border: none;
- font-size: 18px;
- margin: 10px 0 20px 0;
- max-width: 100%;
- padding: 10px 14px;
- border: 1px solid #6C63FF;
- box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
-  rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
- border-radius: 4px;
- background: white;
- color: #424770;
- letter-spacing: 0.025em;
- width: 500px;
+  display: block;
+  border: none;
+  font-size: 18px;
+  margin: 10px 0 20px 0;
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #6c63ff;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border-radius: 4px;
+  background: white;
+  color: #424770;
+  letter-spacing: 0.025em;
+  width: 500px;
 }
 
 .cardInput {
- border: 1px solid #6C63FF;
+  border: 1px solid #6c63ff;
 }
 
 input:focus {
- border: 1px solid #6C63FF;
+  border: 1px solid #6c63ff;
 }
 
 input::placeholder {
- color: #aab7c4;
+  color: #aab7c4;
 }
 
 input:focus {
- outline: none !important;
- border: 1px solid #6C63FF;
- box-shadow: 0 0 4px #6C63FF;
+  outline: none !important;
+  border: 1px solid #6c63ff;
+  box-shadow: 0 0 4px #6c63ff;
 }
 
 .Result {
- display: grid;
- justify-content: center;
- align-items: center;
- justify-content: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .result,
 .error {
-
- font-size: 16px;
- font-weight: normal;
- margin-top: 10px;
- margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .error {
- color: #e4584c;
+  color: #e4584c;
 }
 
 .result {
- color: #666ee8;
+  color: #666ee8;
 }
 
 /* 
@@ -131,14 +127,14 @@ More info: https://stripe.com/docs/stripe-js/reference#element-options
 .StripeElementP24,
 .StripeElementEPS,
 .StripeElementFpx {
- display: block;
- margin: 10px 0 20px 0;
- max-width: 500px;
- padding: 10px 14px;
- box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
-  rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
- border-radius: 4px;
- background: white;
+  display: block;
+  margin: 10px 0 20px 0;
+  max-width: 500px;
+  padding: 10px 14px;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border-radius: 4px;
+  background: white;
 }
 
 .StripeElement--focus,
@@ -146,20 +142,31 @@ More info: https://stripe.com/docs/stripe-js/reference#element-options
 .StripeElementP24--focus,
 .StripeElementEPS--focus,
 .StripeElementFpx--focus {
- box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px,
-  rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
- -webkit-transition: all 150ms ease;
- transition: all 150ms ease;
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px,
+    rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
 }
 
 .StripeElement.loading {
- height: 41.6px;
- opacity: 0.6;
+  height: 41.6px;
+  opacity: 0.6;
 }
 
 .StripeElementIdeal,
 .StripeElementP24,
 .StripeElementEPS,
 .StripeElementFpx {
- padding: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 400px) {
+  .stripePaymentForm  {
+    max-width: 300px;
+    margin: 10px auto;
+  }
+
+  .FormRow {
+    width: 220px;
+  }
 }

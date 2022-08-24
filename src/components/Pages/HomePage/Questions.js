@@ -16,7 +16,7 @@ const Questions = () => {
             {
                 questions.map(question => <div
 
-                    tabindex="0" class="collapse collapse-plus border border-base-100 bg-base-100 rounded-box"
+                    tabindex="0" className="collapse collapse-plus border border-base-100 bg-base-100 rounded-box"
                 >
                     <div className="collapse-title text-xl text-white font-medium bg-secondary hover:bg-primary ">
                         <h2>{question.ques}</h2>
