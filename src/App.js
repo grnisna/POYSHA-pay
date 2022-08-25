@@ -47,6 +47,7 @@ import ContactUS from "./components/Pages/ContactUS/ContactUS";
 import UserImages from "./components/Pages/HomePage/UserImages";
 
 import Setting from "./components/Dashboard/MyAccount/Setting";
+import AddMoneyFromBank from "./components/Services/AddMoneyFromBank";
 
 import Faqs from "./components/Dashboard/MyAccount/Faqs";
 
@@ -68,6 +69,18 @@ function App() {
           <AddMoney />
         </RequireAuth>}>
         </Route>
+
+        <Route path='/BankTransfer' element={<RequireAuth>
+          <StripePayment />
+        </RequireAuth>}>
+        </Route>
+        {/* <Route path='/addMoneyFromBank' element={
+          <AddMoneyFromBank />
+        }>
+        </Route> */}
+
+
+
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard />
         </RequireAuth>}>
@@ -104,7 +117,12 @@ function App() {
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
+
+          <Route path="addMoneyFromBank" element={<AddMoneyFromBank />}></Route>
+          {/* <Route path="Calculator" element={<Calculate></Calculate>}></Route> */}
+
           <Route path="CurrencyConvert" element={<CurrencyConvert />}></Route>
+
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>

@@ -25,17 +25,7 @@ const AddReview = () => {
 
 
 
-    // const handleClick = value => {
-    //     setCurrentValue(value)
-    // }
 
-    // const handleMouseOver = newHoverValue => {
-    //     setHoverValue(newHoverValue)
-    // };
-
-    // const handleMouseLeave = () => {
-    //     setHoverValue(undefined)
-    // }
 
     const onSubmit = data => {
 
