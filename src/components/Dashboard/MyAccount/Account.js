@@ -8,7 +8,7 @@ import axios from 'axios';
 import DBUserData from "../../Hooks/UserData/DBUserData";
 import { Link } from "react-router-dom";
 
-const dashCardBg = `https://eduvibe.react.devsvibe.com/static/media/home-two-cta.73d10bc1e4f1217dd528.jpg`
+const dashCardBg = `https://eduvibe.react.devsvibe.com/static/media/home-two-cta.73d10bc1e4f1217dd528.jpg`;
 
 const Account = () => {
   const [services, setServices] = useState([])

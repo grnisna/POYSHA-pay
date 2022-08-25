@@ -120,6 +120,7 @@ const SendMoney = () => {
                         </label>
                     </div>
 
+
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text ">Reference</span>
@@ -136,10 +137,52 @@ const SendMoney = () => {
 
                             })}
                         />
-                        <label class="label">
-                            {errors.Reference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
-                            {errors.Reference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                    </div>
+                    <label class="label">
+                        {errors.Reference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                        {errors.Reference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                    </label>
 
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text ">Send To</span>
+                        </label>
+                        <PhoneInput
+                            className='input'
+                            placeholder="Enter phone number"
+                            international
+                            defaultCountry="BD"
+                            value={value}
+                            onChange={setValue}
+                            {...register("receiverNumber", {
+                                required: {
+                                    value: true,
+                                    message: 'Phone Number is required'
+                                }
+                            })}
+                        />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Amount</span>
+                        </label>
+                        <input
+                            placeholder="Sending amount $"
+                            class="input input-bordered"
+                            {...register("sendAmount", {
+                                required: {
+                                    value: true,
+                                    message: 'Please Type Your Amount'
+                                },
+                                pattern: {
+                                    value: /^[0-9]+$/,
+                                    message: 'Provide Valid Amount'
+                                }
+                            })}
+                        />
+                        <label class="label">
+                            {errors.sendAmount?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
+                            {errors.sendAmount?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
                         </label>
                     </div>
                     <input className='input input-bordered w-full cursor-pointer bg-violet-400' type="submit" value="Submit" />
