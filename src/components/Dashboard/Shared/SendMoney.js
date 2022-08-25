@@ -10,8 +10,8 @@ const SendMoney = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
     const [userData, setUserData] = DBUserData([]);
+    console.log(userData.phone)
 
-    console.log(userData);
 
 
     const onSubmit = (data) => {
@@ -30,36 +30,26 @@ const SendMoney = () => {
                 toast.success('send money successfully')
                 reset();
                 setValue('');
+                setValue('');
+
             })
     };
 
     return (
 
         <div className='flex flex-col items-center justify-center p-5 bg-slate-200'
+            style={{ backgroundColor: '#f8f9fa' }}>
 
-            style={{
-                // backgroundImage: `url(${BgSendMoney})`,
-                // backgroundSize: 'cover',
+            <div className='flex items-center justify-center rounded-md '>
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md'
 
-                backgroundColor: '#f8f9fa'
+                    onSubmit={handleSubmit(onSubmit)}>
 
-            }}
-        >
-            <div className='flex items-center justify-center rounded-md '
-            // style={{
-            //   backgroundImage: `url(${BgSendMoney})`,
-            //   backgroundSize: 'cover',
-
-
-            // }}
-            >
-                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
                     <h2 className='text-center text-2xl'>Send Money</h2>
-                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary text-xl'>$ {userData?.balance}</span></h2>
-                    {/* <input type="number" name="balance" value={userData?.balance}
-                        readOnly
-                        {...register("balance")}
-                        className="input input-bordered w-full max-w-xs text-2xl" /> */}
+                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'
+                        name="balance" type="text" onChange={this.handleChange}
+                    >$ {userData?.balance}</span></h2>
+
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">From</span>
@@ -68,7 +58,7 @@ const SendMoney = () => {
                         <PhoneInput
                             className='input'
                             placeholder="Enter phone number"
-                            value={userData?.phone}
+                            value={userData.phone}
                             readOnly
                             {...register("senderNumber")}
                         />
@@ -101,14 +91,15 @@ const SendMoney = () => {
                             <span class="label-text">Amount</span>
                         </label>
                         <input
+
                             placeholder="Sending amount $"
-                            // type="number"
+
                             maxLength="4"
                             min="10"
                             value={value}
                             onChange={setValue}
                             class="input input-bordered"
-                            // ref={register({ required: true, pattern: /[0-9]{4}/ })}
+
                             {...register("sendAmount", {
                                 required: {
                                     value: true,
@@ -142,10 +133,7 @@ const SendMoney = () => {
                                     value: true,
                                     message: 'Reference is required'
                                 },
-                                // pattern: {
-                                //     value: /^[0-9]+$/,
-                                //     message: 'Only Number is allowed'
-                                // }
+
                             })}
                         />
                         <label class="label">

@@ -1,5 +1,6 @@
 import React from 'react';
-import Questions from '../../../components/Pages/HomePage/Questions';
+import Questions from '../../Pages/HomePage/Questions';
+
 
 const Faqs = () => {
     return (
