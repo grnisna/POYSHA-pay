@@ -81,7 +81,7 @@ const Login = () => {
 
                         <input type="password" className='input w-full max-w-md mt-1 h-10 rounded-3xl'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
 
-                        <input className='mt-7 bg-white hover:bg-secondary text-secondary   transition duration-500 rounded-3xl shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
+                        <input className='mt-7 bg-white hover:text-white hover:bg-secondary text-secondary   transition duration-500 rounded-3xl shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
 
                         <p onClick={() => navigate('/resetpassword')} className='btn btn-link  pe-auto text-decoration-none' variant="link">Forget Password</p>
 
