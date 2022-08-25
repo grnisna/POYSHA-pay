@@ -1,0 +1,17 @@
+.left-side{
+    width: 60%;
+}
+.right-side{
+    width: 35%;
+}
+
+
+.FormSection{
+    width: 80%;
+}
+.FormSection input {
+    width: 120%;
+}
+.paragraph{
+    font-size: 10px;
+}

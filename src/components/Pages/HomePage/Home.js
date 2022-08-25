@@ -3,23 +3,18 @@ import AppDownload from './AppDownload';
 import Services from './Services/Services';
 import HeroBanner from './HeroBanner/HeroBanner';
 import CardSlide from './CardSlide';
-import Users from './Users';
-import Review from './Reviews/Review';
-import Questions from './Questions';
-
-
-
+import Navbar from '../../SharedCompo/Navbar/Navbar';
+import Footer from '../../SharedCompo/Footer/Footer';
 
 const Home = () => {
     return (
         <div>
+            <Navbar></Navbar>
             <HeroBanner></HeroBanner>
-            {/* <Questions></Questions> */}
             <CardSlide></CardSlide>
-            {/* <Users></Users> */}
             <Services></Services>
             <AppDownload></AppDownload>
-            <Review></Review>
+            <Footer></Footer>
         </div>
     );
 };

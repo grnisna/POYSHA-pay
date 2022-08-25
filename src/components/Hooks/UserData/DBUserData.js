@@ -15,6 +15,7 @@ const DBUserData = () => {
   useEffect(() => {
     if (userEmail) {
       axios.get(`https://powerful-basin-90376.herokuapp.com/users/${userEmail}`)
+
         .then(response => {
           setUserData(response?.data[0]);
         })

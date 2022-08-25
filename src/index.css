@@ -11,6 +11,15 @@ body {
     sans-serif;
 }
 
+.btn-primary {
+  color: #FFFFFF;
+  background-color: #6C63FF;
+}
+
+.btn-primary:hover {
+  color: #FFFFFF;
+  background-color: #313049;
+}
 
 
 @tailwind base;
