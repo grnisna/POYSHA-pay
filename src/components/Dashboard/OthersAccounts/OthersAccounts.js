@@ -39,9 +39,6 @@ const OthersAccounts = () => {
           {/* </div> */}
         </div>
 
-
-
-
         <thead>
           {
             othersAccount.map(accounts =>
