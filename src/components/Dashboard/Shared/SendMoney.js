@@ -10,7 +10,6 @@ const SendMoney = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
     const [userData, setUserData] = DBUserData([]);
-    console.log(userData.phone)
 
 
     const onSubmit = (data) => {
@@ -73,7 +72,7 @@ const SendMoney = () => {
                         <PhoneInput
                             className='input'
                             placeholder="Enter phone number"
-                            value={userData.phone}
+                            value={userData?.phone}
                             readOnly
                             {...register("senderNumber")}
                         />
