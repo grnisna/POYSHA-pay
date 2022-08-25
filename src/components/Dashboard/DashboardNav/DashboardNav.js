@@ -35,7 +35,7 @@ const DashboardNav = () => {
           </li>
           <li className='flex items-center navItem'>
             <img src={AddMoney} alt="" />
-            <Link to='addMoney'>Add Money</Link>
+            <Link to='addMoneyFromBank'>Add Money</Link>
           </li>
           <li className='flex items-center navItem'>
             <img src={AddMoneyRequest} alt="" />

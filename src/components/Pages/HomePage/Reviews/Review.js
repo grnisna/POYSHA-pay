@@ -34,14 +34,14 @@ const Review = () => {
                   {/* <p className="text-yellow-700"><AiFillStar values={parseInt(review.star)} /></p> */}
                 </div>
               </div>
-              <div class=" mt-5 text-center ">
-                <span className="text-xs ">{review.Reference}</span>
+              <div class=" mt-5 text-left ">
+                <span className="text-xs  ">{review.Reference}</span>
               </div>
             </div>
           )}
       </div>
       <div className="flex justify-end m-5">
-        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More ---->
+        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More -->
         </button></div>
     </div>
 

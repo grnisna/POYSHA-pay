@@ -16,6 +16,7 @@ const Account = () => {
       .then(data => setServices(data))
   }, [])
 
+
   console.log("Hey i got the user data", userData);
 
   return (

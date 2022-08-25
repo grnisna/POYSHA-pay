@@ -49,10 +49,10 @@ function App() {
           <StripePayment />
         </RequireAuth>}>
         </Route>
-        <Route path='/addMoneyFromBank' element={
+        {/* <Route path='/addMoneyFromBank' element={
           <AddMoneyFromBank />
         }>
-        </Route>
+        </Route> */}
 
 
         <Route path='/dashboard' element={<RequireAuth>
@@ -78,6 +78,7 @@ function App() {
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
+          <Route path="addMoneyFromBank" element={<AddMoneyFromBank />}></Route>
           <Route path="Calculator" element={<Calculate></Calculate>}></Route>
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
           <Route path="takeLone" element={<TakeLone />}></Route>
