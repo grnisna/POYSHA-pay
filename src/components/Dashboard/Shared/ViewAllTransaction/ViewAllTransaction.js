@@ -1,10 +1,39 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Statement from '../../../Hooks/Statement/Statement';
 import './ViewAllTransaction.css';
 
 
 
 const ViewAllTransaction = () => {
+  //pagination ----------
+  const [allStatement, setAllStatement] = useState([]);
+  const [statementCount, setStatementCount] = useState(0);
+  const [activeStatement, setActiveStatement] = useState(0);
+  const [showQuantity, setShowQuantity] = useState(3);
+
+  useEffect(() => {
+    const url = `https://powerful-basin-90376.herokuapp.com/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setAllStatement(data);
+      })
+  }, [activeStatement, showQuantity]);
+
+  useEffect(() => {
+    const url = `https://powerful-basin-90376.herokuapp.com/statementCount`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const count = data.count;
+        const perTransaction = Math.ceil(count / 2);
+        setStatementCount(perTransaction);
+      })
+  }, []);
+
+
+
 
   const [AddedMoney, setAddedMoney] = useState([]);
   // const [number, setNumber] = useState(0);
@@ -17,6 +46,14 @@ const ViewAllTransaction = () => {
 
   // get all Add money info
   // --------------------------------
+
+  // useEffect(() => {
+  //   const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
+  //   fetch(url)
+  //     .then(res => res.json())
+  //     .then(data => setAddedMoney(data))
+  // }, []);
+
   useEffect(() => {
     const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
     fetch(url)
@@ -26,14 +63,24 @@ const ViewAllTransaction = () => {
 
 
 
+
   // get all send money info 
   // --------------------------
+
+  // useEffect(() => {
+  //   const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
+  //   fetch(url)
+  //     .then(res => res.json())
+  //     .then(data => setSendMoney(data))
+  // }, []);
+
   useEffect(() => {
     const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
     fetch(url)
       .then(res => res.json())
       .then(data => setSendMoney(data))
   }, []);
+
 
 
   // View all transAction about add money and send money ------------------
@@ -84,7 +131,7 @@ const ViewAllTransaction = () => {
 
 
   return (
-    <div class="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
+    <div className="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
       <div className='flex justify-center items-center lg:gap-7 gap-2  button-area'>
         {/* <span className='hover:bg-yellow-300'>All</span> */}
         <span onClick={falseFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>Send Money</span>
@@ -113,9 +160,9 @@ const ViewAllTransaction = () => {
 
                 <tbody className='text-center'>
                   {
-                    AddedMoney.map((viewAddMoney, index) =>
+                    allStatement.map((viewAddMoney, index) =>
                       <tr className=' border bg-green-300' key={viewAddMoney._id}>
-                        <td>{index}</td>
+                        <td>{index + 1}</td>
                         <td >{viewAddMoney.accountNumber}</td>
                         <td >{viewAddMoney.transferredAmount}</td>
 
@@ -141,7 +188,7 @@ const ViewAllTransaction = () => {
                   {
                     sendMoney.map((viewAllSendMoney, index) =>
                       <tr className=' border bg-cyan-200' key={viewAllSendMoney._id}>
-                        <td>{index}</td>
+                        <td>{index + 1}</td>
                         <td >{viewAllSendMoney.sendNumber}</td>
                         <td >{viewAllSendMoney.sendAmount}</td>
                       </tr>
@@ -180,9 +227,9 @@ const ViewAllTransaction = () => {
             {separateData === true ?
               <tbody className='text-center'>
                 {
-                  AddedMoney.reverse().map((viewAddMoney, index) =>
+                  allStatement.reverse().map((viewAddMoney, index) =>
                     <tr className=' border bg-green-300' key={viewAddMoney._id}>
-                      <td>{index}</td>
+                      <td>{index + 1}</td>
                       <td >{viewAddMoney.accountNumber}</td>
                       <td >{viewAddMoney.transferredAmount}</td>
                     </tr>
@@ -196,7 +243,7 @@ const ViewAllTransaction = () => {
                 {
                   sendMoney.map((viewAllSendMoney, index) =>
                     <tr className=' border bg-cyan-200' key={viewAllSendMoney._id}>
-                      <td>{index}</td>
+                      <td>{index + 1}</td>
                       <td >{viewAllSendMoney.sendNumber}</td>
                       <td >{viewAllSendMoney.sendAmount}</td>
                     </tr>
@@ -213,7 +260,24 @@ const ViewAllTransaction = () => {
           </table>
         }
       </div>
-    </div >
+      <div className='lg:w-20 w-10 m-auto flex justify-center items-center lg:gap-2 mt-3 pagination'>
+        {
+          [...Array(statementCount).keys()].map(number => <button
+            onClick={() => setActiveStatement(number)}
+
+            className={activeStatement === number ? 'pagination selected btn btn-outline' : 'btn btn-outline btn-sm'}
+          >{number + 1}</button>)
+        }
+
+        <select className='m-0 p-0' onChange={e => setShowQuantity(e.target.value)}>
+          <option value="5" selected>5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+        <h1 className='text-sm '>Show Qnt</h1>
+
+      </div>
+    </div>
   );
 };
 

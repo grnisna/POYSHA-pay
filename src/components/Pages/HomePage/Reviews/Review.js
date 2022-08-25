@@ -44,11 +44,6 @@ const Review = () => {
         <button className="btn btn-link  content-center justify-items-center  btn-lg">See More -->
         </button></div>
     </div>
-
-
-
-
-
   );
 };
 

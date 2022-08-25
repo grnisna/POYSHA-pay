@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Rating } from 'react-simple-star-rating'
-import { FaStar } from "react-icons/fa";
+// import { Rating } from 'react-simple-star-rating'
+// import { FaStar } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -14,12 +14,12 @@ const colors = {
 const AddReview = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const [currentValue, setCurrentValue] = useState(0);
-    const [hoverValue, setHoverValue] = useState(undefined);
-    const [review, setReview] = useState(null);
-    const stars = Array(5).fill(0)
+    // const [currentValue, setCurrentValue] = useState(0);
+    // const [hoverValue, setHoverValue] = useState(undefined);
+    // const [review, setReview] = useState(null);
+    // const stars = Array(5).fill(0)
 
-    const [ratingValue, setRatingValue] = useState(0)
+    // const [ratingValue, setRatingValue] = useState(0)
 
     const [user, loading] = useAuthState(auth);
 
@@ -31,9 +31,7 @@ const AddReview = () => {
 
         console.log(data);
 
-
-
-        const url = `http://localhost:5000/addReview`;
+        const url = `https://powerful-basin-90376.herokuapp.com/addReview`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -52,9 +50,9 @@ const AddReview = () => {
 
     return (
         <div >
-            <div class="card w-96 mx-auto bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="font-bold text-center text-xl">Add review!</h2>
+            <div className="card w-96 mx-auto bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="font-bold text-center text-xl">Add review!</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}
                         className='w-full'>
@@ -65,8 +63,8 @@ const AddReview = () => {
 
                             className='input input-bordered w-full'
                             {...register('userName')} />
-                        <label class="label">
-                            <span class="label-text">Rate Count</span>
+                        <label className="label">
+                            <span className="label-text">Rate Count</span>
                         </label>
                         <input
                             type="number"
@@ -85,8 +83,8 @@ const AddReview = () => {
                         />
 
 
-                        <label class="label mt-5">
-                            <span class="label-text">Give us an feedback</span>
+                        <label className="label mt-5">
+                            <span className="label-text">Give us an feedback</span>
                         </label>
                         <textarea
                             name="feedback" id="" placeholder='Please Give us an feedback'
@@ -99,8 +97,8 @@ const AddReview = () => {
 
                             })} />
 
-                        <div class="card-actions  justify-center">
-                            <input class="btn btn-primary w-full mt-5 " type="submit" value="submit " />
+                        <div className="card-actions  justify-center">
+                            <input className="btn btn-primary w-full mt-5 " type="submit" value="submit " />
 
                         </div>
                     </form>

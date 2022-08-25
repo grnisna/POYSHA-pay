@@ -17,7 +17,7 @@ const ELEMENTS_OPTIONS = {
 
 const StripePayment = () => {
     return (
-        <div className="stripePaymentForm grid justify-center items-center align-center border-2 rounded-md shadow-md">
+        <div className="stripePaymentForm grid justify-center items-center align-center border-2 rounded-md shadow-md ">
             <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
                 <CheckoutForm />
             </Elements>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import PhoneInput from 'react-phone-number-input';
-// import PhoneInput from 'react-phone-number-input'
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import DBUserData from '../../Hooks/UserData/DBUserData';
 
@@ -10,10 +9,9 @@ import DBUserData from '../../Hooks/UserData/DBUserData';
 const SendMoney = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
-
     const [userData, setUserData] = DBUserData([]);
+    console.log(userData.phone)
 
-    console.log(userData);
 
 
     const onSubmit = (data) => {
@@ -31,6 +29,8 @@ const SendMoney = () => {
                 console.log(result);
                 toast.success('send money successfully')
                 reset();
+                setValue('');
+                setValue('');
 
             })
     };
@@ -38,33 +38,27 @@ const SendMoney = () => {
     return (
 
         <div className='flex flex-col items-center justify-center p-5 bg-slate-200'
+            style={{ backgroundColor: '#f8f9fa' }}>
 
-            style={{
-                // backgroundImage: `url(${BgSendMoney})`,
-                // backgroundSize: 'cover',
+            <div className='flex items-center justify-center rounded-md '>
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md'
 
-                backgroundColor: '#f8f9fa'
+                    onSubmit={handleSubmit(onSubmit)}>
 
-            }}
-        >
-            <div className='flex items-center justify-center rounded-md '
-            // style={{
-            //   backgroundImage: `url(${BgSendMoney})`,
-            //   backgroundSize: 'cover',
-
-
-            // }}
-            >
-                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
                     <h2 className='text-center text-2xl'>Send Money</h2>
+                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'
+                        name="balance" type="text" onChange={this.handleChange}
+                    >$ {userData?.balance}</span></h2>
+
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">From To</span>
+                            <span class="label-text">From</span>
                         </label>
+
                         <PhoneInput
                             className='input'
                             placeholder="Enter phone number"
-                            value="+8801629504411"
+                            value={userData.phone}
                             readOnly
                             {...register("senderNumber")}
                         />
@@ -76,8 +70,10 @@ const SendMoney = () => {
                         </label>
                         <PhoneInput
                             className='input'
+                            type="tel"
                             placeholder="Enter phone number"
                             international
+                            maxLength="16"
                             defaultCountry="BD"
                             value={value}
                             onChange={setValue}
@@ -95,18 +91,27 @@ const SendMoney = () => {
                             <span class="label-text">Amount</span>
                         </label>
                         <input
+
                             placeholder="Sending amount $"
+
+                            maxLength="4"
+                            min="10"
+                            value={value}
+                            onChange={setValue}
                             class="input input-bordered"
+
                             {...register("sendAmount", {
                                 required: {
                                     value: true,
                                     message: 'Please Type Your Amount'
                                 },
                                 pattern: {
-                                    value: /^[0-9]+$/,
+                                    value: /^[0-9]{4}/,
                                     message: 'Provide Valid Amount'
                                 }
-                            })}
+                            })
+
+                            }
                         />
                         <label class="label">
                             {errors.sendAmount?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
@@ -128,10 +133,7 @@ const SendMoney = () => {
                                     value: true,
                                     message: 'Reference is required'
                                 },
-                                pattern: {
-                                    value: /^[0-9]+$/,
-                                    message: 'Only Number is allowed'
-                                }
+
                             })}
                         />
                         <label class="label">
