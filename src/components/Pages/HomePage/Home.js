@@ -3,25 +3,29 @@ import AppDownload from './AppDownload';
 import Services from './Services/Services';
 import HeroBanner from './HeroBanner/HeroBanner';
 import CardSlide from './CardSlide';
-import Users from './Users';
+// import Review from './Reviews/Review';
+
+import Navbar from '../../SharedCompo/Navbar/Navbar';
+import Footer from '../../SharedCompo/Footer/Footer';
 import Review from './Reviews/Review';
-import Questions from './Questions';
-import Qus from './Qus';
-
-
 
 
 const Home = () => {
+
+
     return (
+
         <div>
+            <Navbar></Navbar>
             <HeroBanner></HeroBanner>
-            {/* <Questions></Questions> */}
-            <Qus/>
+
             <CardSlide></CardSlide>
-            {/* <Users></Users> */}
             <Services></Services>
             <AppDownload></AppDownload>
-            <Review></Review>
+
+<Review></Review>
+            <Footer></Footer>
+
         </div>
     );
 };

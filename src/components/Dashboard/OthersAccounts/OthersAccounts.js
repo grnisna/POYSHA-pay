@@ -24,20 +24,20 @@ const OthersAccounts = () => {
   };
 
   return (
-    <div className='bg-slate-200 px-20 justify-center'>
-      <div class="bg-base-100 shadow-xl justify-center text-center ">
-        <div class="items-center text-center ">
+
+    <div className='bg-slate-200 px-20 justify-center h-screen overflow-y-scroll'>
+      <div className="bg-base-100 shadow-xl justify-center text-center ">
+        <div className="items-center text-center ">
           <h1 className='text-4xl font-bold text-primary py-5'>Add Your Favorites Contact</h1>
           <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-4 gap-5">
-            <input type="text" placeholder="Account Holder" {...register("AccountHolder")} class="input input-bordered w-full max-w-xs" required />
-            <input type="number" placeholder="Account Number"  {...register("AccountNumber")} class="input input-bordered w-full max-w-xs" required />
-            <input type="text" placeholder="Origin" {...register("origin")} class="input input-bordered w-full max-w-xs" required />
-            <input type="submit" value="Add Account" class="bg-primary hover:bg-secondry text-white border-none hover:text-white btn btn-sm btn-active h-full" />
+            <input type="text" placeholder="Account Holder" {...register("AccountHolder")} className="input input-bordered w-full max-w-xs" required />
+            <input type="number" placeholder="Account Number"  {...register("AccountNumber")} className="input input-bordered w-full max-w-xs" required />
+            <input type="text" placeholder="Origin" {...register("origin")} className="input input-bordered w-full max-w-xs" required />
+            <input type="submit" value="Add Account" className="bg-primary hover:bg-secondry text-white border-none hover:text-white btn btn-sm btn-active h-full" />
+
           </form>
           {/* </div> */}
         </div>
-
-
 
         <thead>
           {
