@@ -5,12 +5,15 @@ import HeroBanner from './HeroBanner/HeroBanner';
 import CardSlide from './CardSlide';
 import Navbar from '../../SharedCompo/Navbar/Navbar';
 import Footer from '../../SharedCompo/Footer/Footer';
+import Paypal from '../../Hooks/Paypal/Paypal';
+
+
 
 const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <HeroBanner></HeroBanner>
+            <HeroBanner />
             <CardSlide></CardSlide>
             <Services></Services>
             <AppDownload></AppDownload>

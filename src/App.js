@@ -11,18 +11,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // added new tost 
 import { Toaster } from 'react-hot-toast';
-
 //components
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
-
-
 import RechargeMoney from "./components/Services/RechargeMoney";
 import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
-
-
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 // import SendMoney2 from "./components/Dashboard/Shared/SendMoney2";
 import TakeLone from "./components/Dashboard/TakeLone/TakeLone";
@@ -33,12 +28,11 @@ import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
 // import CurrencyConvert from './components/Dashboard/CurrencyConvert/CurrencyConvert'
 // import Calculate from "./components/Calculator/Calculate";
-
 import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
 import Questions from "./components/Pages/HomePage/Questions";
 import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
-
+import Paypal from "./components/Hooks/Paypal/Paypal";
 
 
 function App() {
@@ -89,7 +83,7 @@ function App() {
           <Route path="addMoney" element={<AddMoney />}></Route>
           <Route path="CurrencyConvert" element={<CurrencyConvert />}></Route>
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
-          <Route path="takeLone" element={<TakeLone />}></Route>
+          <Route path="takeLone" element={<Paypal />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
           <Route path="FAQs" element={<Questions />}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
