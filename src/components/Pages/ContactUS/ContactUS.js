@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+  import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import bglogin2 from "../../../Assets/bg-login2.jpg";
 import contactf from "../../../Assets/SVG/contact.23fbd6d6.svg"
 import swal from 'sweetalert';
+import './ContactUs.css';
 
 const ContactUS = () => {
 
@@ -31,18 +32,16 @@ const ContactUS = () => {
   };
 
   return (
-    <div
-      className=" lg:flex w-full justify-center bg-slate-200 "
+    <div className=" contactUs flex justify-evenly items-center bg-slate-200 px-10 py-14 "
     // style={{ backgroundImage: `url(${bglogin2})` }}
     >
-  
-      <div className="flex justify-center">
-        <img className="w-[500px] " src={contactf} alt="" />
+      <div className="contactImage">
+        <img className="w-full" src={contactf} alt="" />
       </div>
-
-      <form className="lg:w-96 md:w-96 sm:w-96 bg-white shadow-xl rounded-md" ref={form} onSubmit={sendEmail}>
-        <h1 className="text-center mt-10 text-2xl font-bold">Contact With Us</h1>
-        <div className="shadow-xl bg-clip-padding backdrop-filter bg-opacity-20 backdrop-blur-md py-4 px-8 rounded-md">
+      
+      <form className="bg-white shadow-xl rounded-md" ref={form} onSubmit={sendEmail}>
+        <h1 className="text-center pt-4 text-2xl font-bold">Contact With Us</h1>
+        <div className="lg:w-96 md:w-96 sm:w-96 shadow-xl bg-clip-padding backdrop-filter   backdrop-blur-md py-4 px-8 rounded-md">
           <div className="card-body items-center text-center">
             <input
               required
@@ -74,6 +73,9 @@ const ContactUS = () => {
           </div>
         </div>
       </form>
+
+
+
     </div>
   );
 };

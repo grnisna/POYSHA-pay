@@ -38,10 +38,10 @@ const ResetPassword = () => {
                             onClick={async () => {
                                 if (email) {
                                     await sendPasswordResetEmail(email);
-                                    if(error){
+                                    if (error) {
                                         alert('Email not found');
                                     }
-                                    else{
+                                    else {
                                         toast('Email sent');
                                     }
                                 }
