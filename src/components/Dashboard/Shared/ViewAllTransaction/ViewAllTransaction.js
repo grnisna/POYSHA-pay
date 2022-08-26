@@ -10,7 +10,7 @@ const ViewAllTransaction = () => {
   const [allStatement, setAllStatement] = useState([]);
   const [statementCount, setStatementCount] = useState(0);
   const [activeStatement, setActiveStatement] = useState(0);
-  const [showQuantity, setShowQuantity] = useState(10);
+  const [showQuantity, setShowQuantity] = useState(5);
   // --------------------
   // const [sendMoneyCount,setSendMoneyCount] = useState(0);
 
@@ -65,7 +65,7 @@ const ViewAllTransaction = () => {
   // }, []);
 
   useEffect(() => {
-    const addMoneyUrl = `http://localhost:5000/addMoneyTransactions?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
+    const addMoneyUrl = `https://powerful-basin-90376.herokuapp.com/addMoneyTransactions?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
 
     fetch(addMoneyUrl)
       .then(res => res.json())
@@ -74,7 +74,7 @@ const ViewAllTransaction = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/addMoneyStatementCount`;
+    const url = `https://powerful-basin-90376.herokuapp.com/addMoneyStatementCount`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -90,7 +90,7 @@ const ViewAllTransaction = () => {
   // --------------------------
 
   useEffect(() => {
-    const sendMoneyUrl = `http://localhost:5000/sendMoney?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
+    const sendMoneyUrl = `https://powerful-basin-90376.herokuapp.com/sendMoney?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
 
     fetch(sendMoneyUrl)
       .then(res => res.json())
@@ -99,7 +99,7 @@ const ViewAllTransaction = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/sendMoneyStatementCount`;
+    const url = `https://powerful-basin-90376.herokuapp.com/sendMoneyStatementCount`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -282,7 +282,7 @@ const ViewAllTransaction = () => {
                       <td >{viewAllSendMoney.receiverNumber}</td>
                       <td >{viewAllSendMoney.sendAmount}</td>
                     </tr>
-                  )
+                  ).reverse()
                 }
               </tbody>
 

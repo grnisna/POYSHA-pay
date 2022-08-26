@@ -73,7 +73,7 @@ const SendMoney = () => {
             <PhoneInput
               className='input'
               placeholder="Enter phone number"
-              value={userData.phone}
+              value={userData?.phone}
               {...register("senderNumber")}
             />
           </div>
