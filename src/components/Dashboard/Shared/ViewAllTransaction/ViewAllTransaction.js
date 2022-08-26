@@ -64,6 +64,25 @@ const ViewAllTransaction = () => {
   //     .then(data => setAddedMoney(data))
   // }, []);
 
+  useEffect(() => {
+    const addMoneyUrl = `http://localhost:5000/addMoneyTransactions?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
+
+    fetch(addMoneyUrl)
+      .then(res => res.json())
+      .then(data => setAddedMoney(data))
+  }, [activeStatement, showQuantity]);
+
+
+  useEffect(() => {
+    const url = `http://localhost:5000/addMoneyStatementCount`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const count = data.count;
+        const perTransaction = Math.ceil(count / 2);
+        setStatementCount(perTransaction);
+      })
+  }, []);
 
 
 
@@ -152,7 +171,7 @@ const ViewAllTransaction = () => {
         {/* <span className='hover:bg-yellow-300'>All</span> */}
         <span onClick={falseFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>Send Money</span>
         <span onClick={trueFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>Received Money</span>
-        <span onClick={viewAll} className='btn hover:bg-violet-700 btn-outline btn-sm'>View All</span>
+        <span onClick={trueFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>View All</span>
 
       </div>
 
