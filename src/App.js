@@ -11,18 +11,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // added new tost 
 import { Toaster } from 'react-hot-toast';
-
 //components
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
-
-
 import RechargeMoney from "./components/Services/RechargeMoney";
 import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
-
-
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 
 
@@ -45,7 +40,6 @@ import ContactUS from "./components/Pages/ContactUS/ContactUS";
 // import CurrencyConvert from './components/Dashboard/CurrencyConvert/CurrencyConvert'
 // import Calculate from "./components/Calculator/Calculate";
 
-
 import UserImages from "./components/Pages/HomePage/UserImages";
 
 import Setting from "./components/Dashboard/MyAccount/Setting";
@@ -58,6 +52,9 @@ import Faqs from "./components/Dashboard/MyAccount/Faqs";
 
 import Questions from "./components/Pages/HomePage/Questions";
 import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
+
+import Paypal from "./components/Hooks/Paypal/Paypal";
+
 import AboutUs from './components/Pages/AboutUs/AboutUs';
 
 
@@ -131,7 +128,7 @@ function App() {
           <Route path="CurrencyConvert" element={<CurrencyConvert />}></Route>
 
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
-          <Route path="takeLone" element={<TakeLone />}></Route>
+          <Route path="takeLone" element={<Paypal />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
           <Route path="Faqs" element={<Faqs></Faqs>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>

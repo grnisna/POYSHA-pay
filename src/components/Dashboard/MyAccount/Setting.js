@@ -5,6 +5,7 @@ import UserImages from '../../Pages/HomePage/UserImages';
 const Setting = () => {
     return (
         <div>
+            
             <ImageUpload></ImageUpload>
             <UserImages></UserImages>
         </div>

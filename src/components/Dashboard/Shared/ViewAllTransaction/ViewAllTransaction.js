@@ -40,7 +40,6 @@ const ViewAllTransaction = () => {
   const [AddedMoney, setAddedMoney] = useState([]);
   // const [number, setNumber] = useState(0);
   const [sendMoney, setSendMoney] = useState([]);
-  console.log(sendMoney);
   const [separateData, setSeparateData] = useState(false);
   const [allTransActionData, setAllTransActionData] = useState(false);
   const [viewAllTransaction, setViewAllTransaction] = useState([]);

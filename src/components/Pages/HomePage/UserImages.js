@@ -20,7 +20,7 @@ const UserImages = () => {
             {/* <h2>{userImages.length}</h2> */}
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-5'>
                 {
-                    userImages.map(userimage => <UserImage
+                    userImages.slice(0,2).map(userimage => <UserImage
                         key={userimage._id}
                         userimage={userimage}
                     ></UserImage>)
