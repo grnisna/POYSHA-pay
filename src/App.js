@@ -38,6 +38,7 @@ import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
 import Questions from "./components/Pages/HomePage/Questions";
 import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
+import AboutUs from './components/Pages/AboutUs/AboutUs';
 
 
 
@@ -64,6 +65,7 @@ function App() {
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard /></RequireAuth>}></Route>
         <Route path="/contactUs" element={<ContactUS></ContactUS>} ></Route>
+        <Route path="/aboutUs" element={<AboutUs></AboutUs>} ></Route>
 
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
