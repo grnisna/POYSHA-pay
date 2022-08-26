@@ -50,7 +50,7 @@ const Login = () => {
 
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen p-5 bg-info text-white "
+        <div className="flex flex-col items-center justify-center h-screen p-5 bg-info "
         // style={
         //     { backgroundImage: `url(${BGLogin})`, backgroundSize: 'cover' }
         //     }
@@ -81,9 +81,9 @@ const Login = () => {
 
                         <input type="password" className='input w-full max-w-md mt-1 h-10 rounded-3xl'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
 
-                        <input className='mt-7 bg-white hover:bg-secondary text-secondary hover:text-white  transition duration-500 rounded-3xl shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
+                        <input className='mt-7 bg-white hover:text-white hover:bg-secondary text-secondary   transition duration-500 rounded-3xl shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
 
-                        <p onClick={() => navigate('/resetpassword')} className='btn btn-link text-white pe-auto text-decoration-none' variant="link">Forget Password</p>
+                        <p onClick={() => navigate('/resetpassword')} className='btn btn-link  pe-auto text-decoration-none' variant="link">Forget Password</p>
 
                         {/* <input className='mt-7 bg-white bg-opacity-0 hover:bg-opacity-90 hover:rounded-3xl transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" /> */}
 

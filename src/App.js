@@ -32,7 +32,11 @@ import UserImages from "./components/Pages/HomePage/UserImages";
 import Setting from "./components/Dashboard/MyAccount/Setting";
 import Questions from "./components/Pages/HomePage/Questions";
 import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
+
 import Paypal from "./components/Hooks/Paypal/Paypal";
+
+import AboutUs from './components/Pages/AboutUs/AboutUs';
+
 
 
 function App() {
@@ -52,18 +56,13 @@ function App() {
           <Dashboard />
         </RequireAuth>}>
         </Route>
-        {/* ashraf-edit */}
-        {/* <Route path='/dashboard' element={
-          <RequireAuth>
-            <Dashboard></Dashboard>
-          </RequireAuth>}> */}
-
         <Route path='/addMoney' element={<RequireAuth><AddMoney /></RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard /></RequireAuth>}></Route>
         <Route path="/contactUs" element={<ContactUS></ContactUS>} ></Route>
+        <Route path="/aboutUs" element={<AboutUs></AboutUs>} ></Route>
 
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
@@ -76,7 +75,7 @@ function App() {
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
-          <Route path="addMoney" element={<AddMoney></AddMoney>}></Route>
+          <Route path="addMoney"  element={<AddMoney></AddMoney>}></Route>
           <Route path="addAccount" element={<OthersAccounts />}></Route>
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
