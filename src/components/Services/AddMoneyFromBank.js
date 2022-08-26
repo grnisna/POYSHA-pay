@@ -190,6 +190,7 @@ const AddMoneyFromBank = () => {
                     {errors.transferredAmount?.type === 'min' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
                     {errors.transferredAmount?.type === 'max' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
                 </label>
+                
                 <label class="label">
                     <span class="  text-xs  -mb-2 mt-2">Write Reference</span>
                 </label>
