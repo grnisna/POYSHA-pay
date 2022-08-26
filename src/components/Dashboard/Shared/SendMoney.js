@@ -4,9 +4,7 @@ import { toast } from 'react-toastify';
 import PhoneInput from 'react-phone-number-input';
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import DBUserData from '../../Hooks/UserData/DBUserData';
-import axios from 'axios';
 import swal from 'sweetalert';
-
 
 
 const SendMoney = () => {
@@ -14,28 +12,14 @@ const SendMoney = () => {
   const [value, setValue] = useState();
   const [userData, setUserData] = DBUserData([]);
 
-
-  console.log(userData);
-
   const onSubmit = (data) => {
-
-    const balance = parseInt(userData.balance - data.sendAmount)
-    console.log(balance);
-    const id = userData._id;
-
-    if (balance) {
-      axios.put(`https://powerful-basin-90376.herokuapp.com/users/${id}}`, balance)
-        .then(response => {
-          console.log(response);
-        })
-    }
-
+    console.log(data);
     const sendAmount = data.sendAmount;
     const transactionType = "sendMoney";
     const newData = { ...data, transactionType }
-    const url = `https://powerful-basin-90376.herokuapp.com/sendMoney/${id}`;
+    const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
     fetch(url, {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
@@ -50,26 +34,6 @@ const SendMoney = () => {
         setValue('');
 
       })
-
-
-    // // update balance 
-
-    // const url2 = `https://powerful-basin-90376.herokuapp.com/users/${id}}`
-    // console.log(url2);
-    // fetch(url2, {
-    //   method: 'PUT',
-    //   headers: {
-    //     'content-type': 'application/json'
-    //   },
-    //   body: JSON.stringify(balance)
-    // })
-    //   .then(res => res.json())
-    //   .then(result => {
-    //     console.log(result);
-    //     toast.success('send money successfully')
-    //     reset();
-
-    //   })
   };
 
   return (
@@ -110,8 +74,9 @@ const SendMoney = () => {
               className='input'
               placeholder="Enter phone number"
               value={userData?.phone}
+
               readOnly
-              {...register("senderNumber")}
+
             />
           </div>
 

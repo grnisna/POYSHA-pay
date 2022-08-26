@@ -8,7 +8,7 @@ const AddMoneyModal = () => {
 
  useEffect(() => {
   const fetchAddMoney = async () => {
-   const response = await fetch('http://localhost:5000/dashboard')
+   const response = await fetch('https://powerful-basin-90376.herokuapp.com/dashboard')
    const json = await response.json()
 
    if (response.ok) {
