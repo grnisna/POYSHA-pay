@@ -1,7 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { AiFillStar } from 'react-icons/ai';
+import { useState,useEffect } from "react";
+
 
 const Review = () => {
   const [reviews, setReviews] = useState([]);
@@ -16,7 +15,7 @@ const Review = () => {
         setReviews(data);
         console.log(reviews);
       })
-  }, [])
+  }, [reviews])
 
   return (
     <div className="w-full mx-auto mt-10">
@@ -25,8 +24,8 @@ const Review = () => {
         {
           reviews.slice(0, 6).map(review =>
             // console.log(parseInt(review.star))
-            <div className="card w-96 bg-base-100 p-5 shadow-2xl">
-              <div className="flex  justify-between px-2">
+            <div class="card w-96 bg-base-100 p-5 shadow-2xl">
+              <div class="flex  justify-between px-2">
                 <img className="avatar w-20 rounded-full" src="https://placeimg.com/192/192/people" alt="user" />
                 <div className="flex flex-col justify-evenly items-center ">
                   <p className="text-xl font-bold">  {review.userName}</p>
@@ -34,28 +33,16 @@ const Review = () => {
                   {/* <p className="text-yellow-700"><AiFillStar values={parseInt(review.star)} /></p> */}
                 </div>
               </div>
-              <div className=" mt-5 text-center ">
-                <span className="text-xs ">{review.Reference}</span>
+              <div class=" mt-5 text-left ">
+                <span className="text-xs  ">{review.Reference}</span>
               </div>
             </div>
           )}
       </div>
-      <div className="flex justify-end mx-5">
-
-        <button className="btn btn-link  content-center justify-items-center  btn-lg">
-
-
-       See More....
-
-
-        </button>
-        </div>
+      <div className="flex justify-end m-5">
+        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More --
+        </button></div>
     </div>
-
-
-
-
-
   );
 };
 

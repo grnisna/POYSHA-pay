@@ -6,12 +6,13 @@ import Loading from '../SharedCompo/Loading';
 import axios from 'axios';
 import swal from 'sweetalert';
 import SweetSuccessTost from '../SharedCompo/SweetTost/SweetSuccessTost';
+import DBUserData from '../Hooks/UserData/DBUserData';
 
 const AddMoneyModal = ({ banks, setBanks }) => {
     const { _id, bankName } = banks;
     const [user, loading] = useAuthState(auth);
-
-    console.log(user);
+    const [userData, setUserData] = DBUserData([]);
+    const userId = userData._id;
 
     const handelAddMoney = event => {
         event.preventDefault();
@@ -34,8 +35,8 @@ const AddMoneyModal = ({ banks, setBanks }) => {
 
 
 
-        fetch('https://powerful-basin-90376.herokuapp.com/addMoney', {
-            method: 'POST',
+        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney/${userId}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },

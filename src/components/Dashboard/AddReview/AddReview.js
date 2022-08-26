@@ -25,23 +25,11 @@ const AddReview = () => {
 
 
 
-    // const handleClick = value => {
-    //     setCurrentValue(value)
-    // }
 
-    // const handleMouseOver = newHoverValue => {
-    //     setHoverValue(newHoverValue)
-    // };
-
-    // const handleMouseLeave = () => {
-    //     setHoverValue(undefined)
-    // }
 
     const onSubmit = data => {
 
         console.log(data);
-
-
 
         const url = `https://powerful-basin-90376.herokuapp.com/addReview`;
         fetch(url, {

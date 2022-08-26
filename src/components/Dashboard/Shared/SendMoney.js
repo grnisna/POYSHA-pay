@@ -12,8 +12,9 @@ const SendMoney = () => {
     const [userData, setUserData] = DBUserData([]);
 
 
+
     const onSubmit = (data) => {
-        
+        console.log(data);
         const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
         fetch(url, {
             method: 'POST',
@@ -27,8 +28,7 @@ const SendMoney = () => {
                 console.log(result);
                 toast.success('send money successfully')
                 reset();
-
-
+                setValue('');
                 setValue('');
 
             })
@@ -37,36 +37,21 @@ const SendMoney = () => {
     return (
 
         <div className='flex flex-col items-center justify-center p-5 bg-slate-200'
+            style={{ backgroundColor: '#f8f9fa' }}>
 
-            style={{
-                // backgroundImage: `url(${BgSendMoney})`,
-                // backgroundSize: 'cover',
+            <div className='flex items-center justify-center rounded-md '>
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md'
 
-                backgroundColor: '#f8f9fa'
-
-            }}
-        >
-            <div className='flex items-center justify-center rounded-md '
-            // style={{
-            //   backgroundImage: `url(${BgSendMoney})`,
-            //   backgroundSize: 'cover',
-
-
-            // }}
-            >
-                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md' 
-
-                onSubmit={handleSubmit(onSubmit)}>
+                    onSubmit={handleSubmit(onSubmit)}>
 
                     <h2 className='text-center text-2xl'>Send Money</h2>
-                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'>$ {userData?.balance}</span></h2>
-                    {/* <input type="number" name="balance" value={userData?.balance}
-                        readOnly
-                        {...register("balance")}
-                        className="input input-bordered w-full max-w-xs text-2xl" /> */}
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">From</span>
+                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'
+                        name="balance" type="text" onChange={this.handleChange}
+                    >$ {userData?.balance}</span></h2>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">From</span>
                         </label>
 
                         <PhoneInput
@@ -78,14 +63,16 @@ const SendMoney = () => {
                         />
                     </div>
 
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text ">Send To</span>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text ">Send To</span>
                         </label>
                         <PhoneInput
                             className='input'
+                            type="tel"
                             placeholder="Enter phone number"
                             international
+                            maxLength="16"
                             defaultCountry="BD"
                             value={value}
                             onChange={setValue}
@@ -98,34 +85,43 @@ const SendMoney = () => {
                         />
                     </div>
 
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Amount</span>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Amount</span>
                         </label>
                         <input
+
                             placeholder="Sending amount $"
-                            className="input input-bordered"
+
+                            maxLength="4"
+                            min="10"
+                            value={value}
+                            onChange={setValue}
+                            class="input input-bordered"
+
                             {...register("sendAmount", {
                                 required: {
                                     value: true,
                                     message: 'Please Type Your Amount'
                                 },
                                 pattern: {
-                                    value: /^[0-9]+$/,
+                                    value: /^[0-9]{4}/,
                                     message: 'Provide Valid Amount'
                                 }
-                            })}
+                            })
+
+                            }
                         />
-                        <label className="label">
-                            {errors.sendAmount?.type === 'required' && <span className="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
-                            {errors.sendAmount?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
+                        <label class="label">
+                            {errors.sendAmount?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
+                            {errors.sendAmount?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
 
                         </label>
                     </div>
 
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text ">Reference</span>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text ">Reference</span>
                         </label>
                         <input
                             type="text"
@@ -136,15 +132,12 @@ const SendMoney = () => {
                                     value: true,
                                     message: 'Reference is required'
                                 },
-                                pattern: {
-                                    value: /^[0-9]+$/,
-                                    message: 'Only Number is allowed'
-                                }
+
                             })}
                         />
-                        <label className="label">
-                            {errors.Reference?.type === 'required' && <span className="label-text-alt text-red-500">{errors.Reference.message}</span>}
-                            {errors.Reference?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                        <label class="label">
+                            {errors.Reference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                            {errors.Reference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
 
                         </label>
                     </div>

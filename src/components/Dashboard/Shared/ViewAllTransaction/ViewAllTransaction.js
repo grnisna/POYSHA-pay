@@ -35,7 +35,7 @@ const ViewAllTransaction = () => {
 
 
 
-  // const [AddedMoney, setAddedMoney] = useState([]);
+  const [AddedMoney, setAddedMoney] = useState([]);
   // const [number, setNumber] = useState(0);
   const [sendMoney, setSendMoney] = useState([]);
   const [separateData, setSeparateData] = useState(false);
@@ -46,6 +46,7 @@ const ViewAllTransaction = () => {
 
   // get all Add money info
   // --------------------------------
+
   // useEffect(() => {
   //   const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
   //   fetch(url)
@@ -53,16 +54,33 @@ const ViewAllTransaction = () => {
   //     .then(data => setAddedMoney(data))
   // }, []);
 
+  useEffect(() => {
+    const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setAddedMoney(data))
+  }, []);
+
+
 
 
   // get all send money info 
   // --------------------------
+
   // useEffect(() => {
   //   const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
   //   fetch(url)
   //     .then(res => res.json())
   //     .then(data => setSendMoney(data))
   // }, []);
+
+  useEffect(() => {
+    const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setSendMoney(data))
+  }, []);
+
 
 
   // View all transAction about add money and send money ------------------
@@ -259,7 +277,7 @@ const ViewAllTransaction = () => {
         <h1 className='text-sm '>Show Qnt</h1>
 
       </div>
-    </div >
+    </div>
   );
 };
 
