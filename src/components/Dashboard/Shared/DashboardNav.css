@@ -68,3 +68,11 @@
 .dashnav ul ul a:hover {
     background: wheat;
 }
+
+
+@media screen and (max-width: 400px) {
+    .routeLinks{
+        display: none;
+        background-color: red;
+    }
+}

@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
-
-
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input';
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
-import Button from '../../SharedCompo/Button';
+import DBUserData from '../../Hooks/UserData/DBUserData';
 
 
 const SendMoney = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [value, setValue] = useState();
+    const [userData, setUserData] = DBUserData([]);
+    console.log(userData.phone)
+
 
 
     const onSubmit = (data) => {
+        console.log(data);
         const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
         fetch(url, {
             method: 'POST',
@@ -26,9 +26,10 @@ const SendMoney = () => {
         })
             .then(res => res.json())
             .then(result => {
+                console.log(result);
                 toast.success('send money successfully')
                 reset();
-
+                setValue('');
                 setValue('');
 
             })
@@ -36,59 +37,28 @@ const SendMoney = () => {
 
     return (
 
-      <div
-        className="flex flex-col items-center justify-center p-5"
-        style={{
-          backgroundImage: `url(${BgSendMoney})`,
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="flex items-center justify-center">
-          <form
-            className="lg:w-96 md:w-96 sm:w-96 shadow-xl bg-clip-padding backdrop-filter bg-white bg-opacity-10 backdrop-blur-md py-10 px-8 rounded-md"
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <h2 className="text-center text-white text-2xl">Send Money</h2>
-            <div class="form-control">
-              <label className="label">
-                <span className="label-text text-white">From To</span>
-              </label>
-              <PhoneInput
-                className="input"
-                placeholder="Enter phone number"
-                value="+8801629504411"
-                readOnly
-                {...register("senderNumber")}
-              />
-            </div>
-        <div className='flex flex-col items-center justify-center p-5'
+        <div className='flex flex-col items-center justify-center p-5 bg-slate-200'
+            style={{ backgroundColor: '#f8f9fa' }}>
 
-            style={{
-                // backgroundImage: `url(${BgSendMoney})`,
-                // backgroundSize: 'cover',
+            <div className='flex items-center justify-center rounded-md '>
+                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md'
 
-                backgroundColor: '#f8f9fa'
+                    onSubmit={handleSubmit(onSubmit)}>
 
-            }}
-        >
-            <div className='flex items-center justify-center rounded-md'
-                style={{
-                    backgroundImage: `url(${BgSendMoney})`,
-                    backgroundSize: 'cover',
+                    <h2 className='text-center text-2xl'>Send Money</h2>
+                    <h2 className='pt-2'>Your Available Blance:  <span className='text-primary lg:text-xl text-l'
+                        name="balance" type="text" onChange={this.handleChange}
+                    >$ {userData?.balance}</span></h2>
 
-
-                }}
-            >
-                <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding backdrop-filter bg-white bg-opacity-10 backdrop-blur-md py-10 px-8 rounded-md' onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className='text-center text-white text-2xl'>Send Money</h2>
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">From To</span>
+                            <span class="label-text">From</span>
                         </label>
+
                         <PhoneInput
                             className='input'
                             placeholder="Enter phone number"
-                            value="+8801629504411"
+                            value={userData.phone}
                             readOnly
                             {...register("senderNumber")}
                         />
@@ -96,12 +66,14 @@ const SendMoney = () => {
 
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">Send To</span>
+                            <span class="label-text ">Send To</span>
                         </label>
                         <PhoneInput
                             className='input'
+                            type="tel"
                             placeholder="Enter phone number"
                             international
+                            maxLength="16"
                             defaultCountry="BD"
                             value={value}
                             onChange={setValue}
@@ -109,37 +81,37 @@ const SendMoney = () => {
                                 required: {
                                     value: true,
                                     message: 'Phone Number is required'
-                                },
-                                pattern: {
-                                    value: /^([+]\d{3}[ ])?\d{4}[ ]?\d{6}$/,
-                                    message: 'Phone Number is invalid'
                                 }
                             })}
                         />
-                        <label class="label">
-                            {errors.receiverNumber?.type === 'required' && <span class="label-text-alt text-red-500">{errors.receiverNumber.message}</span>}
-                            {errors.receiverNumber?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.receiverNumber.message}</span>}
-
-                        </label>
                     </div>
 
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text text-white">Amount</span>
+                            <span class="label-text">Amount</span>
                         </label>
                         <input
+
                             placeholder="Sending amount $"
+
+                            maxLength="4"
+                            min="10"
+                            value={value}
+                            onChange={setValue}
                             class="input input-bordered"
+
                             {...register("sendAmount", {
                                 required: {
                                     value: true,
                                     message: 'Please Type Your Amount'
                                 },
                                 pattern: {
-                                    value: /^[0-9]+$/,
+                                    value: /^[0-9]{4}/,
                                     message: 'Provide Valid Amount'
                                 }
-                            })}
+                            })
+
+                            }
                         />
                         <label class="label">
                             {errors.sendAmount?.type === 'required' && <span class="label-text-alt text-red-500">{errors.sendAmount.message}</span>}
@@ -148,37 +120,33 @@ const SendMoney = () => {
                         </label>
                     </div>
 
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text ">Reference</span>
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Write Something"
+                            className="input input-bordered"
+                            {...register("Reference", {
+                                required: {
+                                    value: true,
+                                    message: 'Reference is required'
+                                },
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-white">Send To</span>
-              </label>
-              <PhoneInput
-                className="input"
-                placeholder="Enter phone number"
-                international
-                defaultCountry="BD"
-                value={value}
-                onChange={setValue}
-                {...register("receiverNumber", {
-                  required: {
-                    value: true,
-                    message: "Phone Number is required",
-                  },
-                })}
-              />
+                            })}
+                        />
+                        <label class="label">
+                            {errors.Reference?.type === 'required' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+                            {errors.Reference?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.Reference.message}</span>}
+
+                        </label>
+                    </div>
+                    <input className='input input-bordered w-full cursor-pointer bg-violet-400' type="submit" value="Submit" />
+
+                </form>
             </div>
-
-
-            </div>
-            <input
-              className="input input-bordered w-full cursor-pointer bg-violet-400"
-              type="submit"
-              value="Submit"
-            />
-          </form>
         </div>
-      </div>
     );
 };
 

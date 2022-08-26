@@ -18,13 +18,15 @@ module.exports = {
 
           "base-100": "#FFFFFF",
 
-          "info": "#3ABFF8",
+          "info": "#e2eafc",
 
           "success": "#36D399",
 
           "warning": "#FFFFFF",
 
           "error": "#F87272",
+
+          "--border-1": "1px"
         },
       },
     ],

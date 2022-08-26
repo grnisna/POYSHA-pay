@@ -1,15 +1,18 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-    import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Loading from '../SharedCompo/Loading';
-
+import axios from 'axios';
+import swal from 'sweetalert';
+import SweetSuccessTost from '../SharedCompo/SweetTost/SweetSuccessTost';
+import DBUserData from '../Hooks/UserData/DBUserData';
 
 const AddMoneyModal = ({ banks, setBanks }) => {
     const { _id, bankName } = banks;
     const [user, loading] = useAuthState(auth);
-    
-    console.log(user);
+    const [userData, setUserData] = DBUserData([]);
+    const userId = userData._id;
 
     const handelAddMoney = event => {
         event.preventDefault();
@@ -27,10 +30,28 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             accountNumber: event.target.account.value,
             transferredAmount: event.target.amount.value,
             reference: event.target.reference.value,
-
+            transactionType: 'addMoney'
         }
 
-        fetch('https://powerful-basin-90376.herokuapp.com/addMoney', {
+
+
+        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addMoney)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setBanks(null)
+                swal({
+                    icon: "success",
+                    text: "Deposit Successful"
+                });
+            })
+        fetch('https://powerful-basin-90376.herokuapp.com/transaction_history', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,16 +62,15 @@ const AddMoneyModal = ({ banks, setBanks }) => {
             .then(data => {
                 console.log(data);
                 setBanks(null)
-                toast.success('successfully added money');
             })
 
     }
 
     return (
-        <div>
+        <div >
             <input type="checkbox" id="add-money-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+                <div className="modal-box mx-10 ">
                     <label htmlFor="add-money-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-2xl text-center">Add Money from : <span className='text-orange-600'>{bankName} </span> </h3>
 

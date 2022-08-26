@@ -1,29 +1,49 @@
 import React from "react";
-// import Slider from "react-slick";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const Review = ({ review }) => {
- 
+
+const Review = () => {
+  const [reviews, setReviews] = useState([]);
+
+
+
+  useEffect(() => {
+    const url = 'http://localhost:5000/addReview';
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setReviews(data);
+        console.log(reviews);
+      })
+  }, [])
+
   return (
-     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
-      <div className="card-body">
-         {review?.review}
-        <div className="flex items-center">
-         <img
-             src={review?.img}
-             className="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-5"
-             alt=""
-           />
-
-           <div>
-             <h4 className="text-xl">{review?.name}</h4>
-             <p>{review?.location}</p>
-           </div>
-       </div>
+    <div className="w-full mx-auto mt-10">
+      <h2 className="text-center text-3xl font-bold text-primary">Our Clint Says </h2>
+      <div className="  grid lg:grid-cols-3 mt-5 sm:grid-cols-1  gap-10 justify-items-center">
+        {
+          reviews.slice(0, 6).map(review =>
+            // console.log(parseInt(review.star))
+            <div class="card w-96 bg-base-100 p-5 shadow-2xl">
+              <div class="flex  justify-between px-2">
+                <img className="avatar w-20 rounded-full" src="https://placeimg.com/192/192/people" alt="user" />
+                <div className="flex flex-col justify-evenly items-center ">
+                  <p className="text-xl font-bold">  {review.userName}</p>
+                  <p className="text-yellow-500 font-bold">Rating: {review.star}</p>
+                  {/* <p className="text-yellow-700"><AiFillStar values={parseInt(review.star)} /></p> */}
+                </div>
+              </div>
+              <div class=" mt-5 text-left ">
+                <span className="text-xs  ">{review.Reference}</span>
+              </div>
+            </div>
+          )}
       </div>
-     </div>
-   
-     
-    
+      <div className="flex justify-end m-5">
+        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More -->
+        </button></div>
+    </div>
   );
 };
 

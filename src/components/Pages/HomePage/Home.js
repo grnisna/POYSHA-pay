@@ -5,13 +5,31 @@ import HeroBanner from './HeroBanner/HeroBanner';
 import CardSlide from './CardSlide';
 
 
+import Review from './Reviews/Review';
+
+
+
+import Navbar from '../../SharedCompo/Navbar/Navbar';
+import Footer from '../../SharedCompo/Footer/Footer';
+import PrivacyPolicy from '../../SharedCompo/Footer/PrivacyPolicy';
+
+
 const Home = () => {
+
+
     return (
+
         <div>
+            <Navbar></Navbar>
             <HeroBanner></HeroBanner>
             <CardSlide></CardSlide>
             <Services></Services>
             <AppDownload></AppDownload>
+
+            <Review></Review>
+     
+            <Footer></Footer>
+
         </div>
     );
 };
