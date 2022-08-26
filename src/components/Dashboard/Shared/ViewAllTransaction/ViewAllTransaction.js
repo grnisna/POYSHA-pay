@@ -7,62 +7,19 @@ import './ViewAllTransaction.css';
 
 const ViewAllTransaction = () => {
   //pagination ----------
+  const [AddedMoney, setAddedMoney] = useState([]);
+  const [sendMoney, setSendMoney] = useState([]);
   const [allStatement, setAllStatement] = useState([]);
+  console.log(allStatement);
   const [statementCount, setStatementCount] = useState(0);
   const [activeStatement, setActiveStatement] = useState(0);
   const [showQuantity, setShowQuantity] = useState(5);
-  // --------------------
-  // const [sendMoneyCount,setSendMoneyCount] = useState(0);
-
-  useEffect(() => {
-    const url = `https://powerful-basin-90376.herokuapp.com/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        setAllStatement(data);
-      })
-  }, [activeStatement, showQuantity]);
-
-  useEffect(() => {
-    const url = `https://powerful-basin-90376.herokuapp.com/statementCount`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const count = data.count;
-        const perTransaction = Math.ceil(count / 3);
-        setStatementCount(perTransaction);
-      })
-  }, []);
-
-
-
-
-  const [AddedMoney, setAddedMoney] = useState([]);
-  // const [number, setNumber] = useState(0);
-  const [sendMoney, setSendMoney] = useState([]);
-  console.log(sendMoney);
   const [separateData, setSeparateData] = useState(false);
   const [allTransActionData, setAllTransActionData] = useState(false);
-  const [viewAllTransaction, setViewAllTransaction] = useState([]);
 
 
 
-  // get all Add money info
-  // --------------------------------
-
-  // useEffect(() => {
-  //   const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
-  //   fetch(url)
-  //     .then(res => res.json())
-  //     .then(data => setAddedMoney(data))
-  // }, []);
-
-  // useEffect(() => {
-  //   const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
-  //   fetch(url)
-  //     .then(res => res.json())
-  //     .then(data => setAddedMoney(data))
-  // }, []);
+  // -------------- ADD Money -----------------------
 
   useEffect(() => {
     const addMoneyUrl = `https://powerful-basin-90376.herokuapp.com/addMoneyTransactions?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
@@ -79,15 +36,15 @@ const ViewAllTransaction = () => {
       .then(res => res.json())
       .then(data => {
         const count = data.count;
-        const perTransaction = Math.ceil(count / 2);
+        const perTransaction = Math.ceil(count / 10);
         setStatementCount(perTransaction);
       })
   }, []);
 
 
 
-  // get all send money info 
-  // --------------------------
+  // SEND MONEY---------------
+  // ------------------------------------------
 
   useEffect(() => {
     const sendMoneyUrl = `https://powerful-basin-90376.herokuapp.com/sendMoney?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
@@ -98,70 +55,55 @@ const ViewAllTransaction = () => {
   }, [activeStatement, showQuantity]);
 
 
+
   useEffect(() => {
     const url = `https://powerful-basin-90376.herokuapp.com/sendMoneyStatementCount`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
         const count = data.count;
-        const perTransaction = Math.ceil(count / 2);
+        const perTransaction = Math.ceil(count / 10);
         setStatementCount(perTransaction);
       })
   }, []);
 
-  // useEffect(() => {
-  //   const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
-  //   fetch(url)
-  //     .then(res => res.json())
-  //     .then(data => setSendMoney(data))
-  // }, []);
+
+  // ALL TRANSACTION HISTORY ----------------------
+  useEffect(() => {
+    const allStatement = `https://powerful-basin-90376.herokuapp.com/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
+
+    fetch(allStatement)
+      .then(res => res.json())
+      .then(data => setAllStatement(data))
+  }, [activeStatement, showQuantity]);
+
+  useEffect(() => {
+    const url = `https://powerful-basin-90376.herokuapp.com/statementCount`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const count = data.count;
+        const perTransaction = Math.ceil(count / 10);
+        setStatementCount(perTransaction);
+      })
+  }, []);
 
 
 
-  // View all transAction about add money and send money ------------------
-  //---------------------------------------------------------
-  // const urls = ["https://powerful-basin-90376.herokuapp.com/addMoneyTransactions", "https://powerful-basin-90376.herokuapp.com/sendMoney"];
-
-  // const headers = {
-  //   "X-Api-Key": "the-api-key-00",
-  // };
-
-  // function dualApiCall() {
-
-  //   const promises = urls.map(url => axios.get(url, { headers }));
-
-  //   Promise.all(promises).then(responses => {
-  //     let data = [];
-
-  //     responses.forEach(response => {
-  //       data = data.concat(response.data);
-  //     });
-
-  //     setViewAllTransaction(data);
-  //   });
-  // }
-  // // once time call a function 
-  // useEffect(() => {
-  //   dualApiCall();
-  // }, [])
-
-
-
-  // conditionally onclick function in send money and add money
+  // conditionally onclick function in send money and add money---------------
   const trueFunction = () => {
     setSeparateData(true);
+    setAllTransActionData(false);
   }
   const falseFunction = () => {
     setSeparateData(false);
+    setAllTransActionData(false);
   }
 
   const viewAll = () => {
     setAllTransActionData(true);
   }
 
-  // const incrementCount = () => {
-  //     setNumber(number + 1);
-  // };
 
 
 
@@ -171,130 +113,89 @@ const ViewAllTransaction = () => {
         {/* <span className='hover:bg-yellow-300'>All</span> */}
         <span onClick={falseFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>Send Money</span>
         <span onClick={trueFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>Received Money</span>
-        <span onClick={trueFunction} className='btn hover:bg-violet-700 btn-outline btn-sm'>View All</span>
+        <span onClick={viewAll} className='btn hover:bg-violet-700 btn-outline btn-sm'>View All</span>
 
       </div>
+      
+      <div  className={ allTransActionData === false ?  'showSendAndReceivedMoney' : 'hideSendAndReceivedMoney'}>
+        {separateData === false ?
 
-      <div className='table-div'>
-
-        {allTransActionData === true ?
-
-          <table className="viewAllTable  table-zebra shadow-xl">
-
-            <div className='lg:flex justify-evenly'>
-
-              <div>
-                {/*================ table heading ================ */}
-                <thead className='bg-red-200 table-head'>
-                  <tr>
-                    <th>No.</th>
-                    <th>  Receiver Number</th>
-                    <th>Amount</th>
-                  </tr>
-                </thead>
-
-                <tbody className='text-center'>
-                  {
-                    allStatement.map((showTransactionData, index) =>
-                      <tr className=' border bg-green-300' key={showTransactionData._id}>
-                        <td>{index + 1}</td>
-                        <td >{showTransactionData.accountNumber}</td>
-                        <td >{showTransactionData.transferredAmount}</td>
-
-                      </tr>
-                    ).reverse()
-                  }
-                </tbody>
-
-              </div>
-
-              <div className='mt-7 lg:mt-0'>
-
-                {/*================ table heading ================ */}
-                <thead className='bg-red-200 table-head'>
-                  <tr>
-                    <th>No.</th>
-                    <th>Send Number</th>
-                    <th>Amount</th>
-                  </tr>
-                </thead>
-                <tbody className='text-center'>
-
-                  {
-                    sendMoney.map((showSendMoney, index) =>
-                      <tr className=' border bg-cyan-200' key={showSendMoney._id}>
-                        <td>{index + 1}</td>
-                        <td >{showSendMoney.receiverNumber}</td>
-                        <td >{showSendMoney.sendAmount}</td>
-                      </tr>
-                    )
-                  }
-                </tbody>
-
-              </div>
-
-            </div>
+          <div className='moneySection'>
 
 
-          </table>
+            <ol className=''>
+              <ol className='flex items-center justify-between border-b mb-3'>
+                <li className='px-5'>Tr.No</li>
+                <li className='px-5'>Sent Number</li>
+                <li className='px-5'>Send Money</li>
+                <li className='px-5'>Date</li>
+              </ol>
+              {
+                sendMoney.map((listSendMoney, index) =>
+                  <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listSendMoney._id}>
+                    <li className='px-5 text-right'>{index + 1} </li>
+                    <li className='px-8 text-right'>{listSendMoney.sendNumber}</li>
+                    <li className='px-3 text-right'>{listSendMoney.sendAmount}</li>
+                    <li className='px-5 text-right'>22.08.2022</li>
+                  </ol>
+                )
+              }
+            </ol>
 
+
+          </div>
           :
-
-
-          <table className="viewAllTable  table-zebra shadow-xl">
-
-            {/*================ table heading ================ */}
-            <thead className='bg-red-200 table-head'>
-              <tr>
-                <th>No.</th>
-                {separateData === true ?
-                  <th>  Receiver Number</th>
-                  :
-                  <th>  Send Number</th>
-                }
-
-                <th>Amount</th>
-              </tr>
-            </thead>
-
-            {/*================ table body ================ */}
-
-            {separateData === true ?
-              <tbody className='text-center'>
-                {
-                  allStatement.reverse().map((viewAddMoney, index) =>
-                    <tr className=' border bg-green-300' key={viewAddMoney._id}>
-                      <td>{index + 1}</td>
-                      <td >{viewAddMoney.accountNumber}</td>
-                      <td >{viewAddMoney.transferredAmount}</td>
-                    </tr>
-                  ).reverse()
-                }
-              </tbody>
-
-              :
-              <tbody className='text-center'>
-
-                {
-                  sendMoney.map((viewAllSendMoney, index) =>
-                    <tr className=' border bg-cyan-200' key={viewAllSendMoney._id}>
-                      <td>{index + 1}</td>
-                      <td >{viewAllSendMoney.receiverNumber}</td>
-                      <td >{viewAllSendMoney.sendAmount}</td>
-                    </tr>
-                  ).reverse()
-                }
-              </tbody>
-
-            }
-
-
-
-
-
-          </table>
+          <div className='moneySection'>
+            <ol className=''>
+              <ol className='flex items-center justify-between border-b mb-3'>
+                <li className='px-5'>Tr.No</li>
+                <li className='px-5'>Received Num</li>
+                <li className='px-5'>received Money</li>
+                <li className='px-5'>Date</li>
+              </ol>
+              {
+                AddedMoney.map((listAddMoney, index) =>
+                  <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listAddMoney._id}>
+                    <li className='px-5 text-right'>{index + 1} </li>
+                    <li className='px-8 text-right'>{listAddMoney.accountNumber}</li>
+                    <li className='px-3 text-right'>{listAddMoney.transferredAmount}</li>
+                    <li className='px-5 text-right'>22.08.2022</li>
+                  </ol>
+                )
+              }
+            </ol>
+          </div>
         }
       </div>
+
+      <div className={ allTransActionData === true ?  'showSendAndReceivedMoney' : 'hideSendAndReceivedMoney'}>
+        {
+
+            <div className='moneySection'>
+              <ol className=''>
+                <ol className='flex items-center justify-between border-b mb-3'>
+                  <li className='px-5'>Tr.No</li>
+                  <li className='px-5'> Number</li>
+                  <li className='px-5'>Amount Money</li>
+                  <li className='px-5'>Date</li>
+                </ol>
+                {
+                  allStatement.map((listMoney, index) =>
+                    <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listMoney._id}>
+
+                      <li className='px-5 text-right'>{index + 1} </li>
+                      <li className='px-8 text-right'>{listMoney.accountNumber}</li>
+                      <li className='px-3 text-right'>{listMoney.transactionType}</li>
+                      <li className='px-5 text-right'>22.08.2022</li>
+                    </ol>
+                  )
+                }
+              </ol>
+            </div>
+        }
+      </div>
+
+
       <div className='lg:w-20 w-10 m-auto flex justify-center items-center lg:gap-2 mt-3 pagination'>
         {
           [...Array(statementCount).keys()].map(number => <button
