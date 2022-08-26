@@ -35,7 +35,7 @@ const AddMoneyFromBank = () => {
     const onSubmit = (data) => {
 
         console.log(data)
-        fetch('http://localhost:5000/addMoney', {
+        fetch('https://powerful-basin-90376.herokuapp.com/addMoney', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const AddMoneyFromBank = () => {
                     text: "Deposit Successful"
                 });
             })
-        fetch('http://localhost:5000/transaction_history', {
+        fetch('https://powerful-basin-90376.herokuapp.com/transaction_history', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
