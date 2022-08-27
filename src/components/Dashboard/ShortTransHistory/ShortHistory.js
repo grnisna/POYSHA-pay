@@ -41,11 +41,11 @@ const ShortHistory = () => {
                     <ol className='fontSizeStatement'>
                         <ol className='flex items-center justify-between border-b mb-3'>
                             
-                            <li className=''> Number</li>
-                            <li className=''> </li>
-                            <li className=''> Type</li>
-                            <li className=''>Amount Money</li>
-                            <li className=''>Date</li>
+                            <li className='font-bold'> Number</li>
+                            <li className='font-bold'> </li>
+                            <li className='font-bold'> Type</li>
+                            <li className='font-bold'>Amount Money</li>
+                            <li className='font-bold'>Date</li>
                         </ol>
                         {
                             allStatement.slice(0,5).map((listMoney, index) =>

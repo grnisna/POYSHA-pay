@@ -123,12 +123,12 @@ const ViewAllTransaction = () => {
           <div className='moneySection'>
 
 
-            <ol className='fontSize'>
+            <ol className='fontSize text-bold'>
               <ol className='flex items-center justify-between border-b mb-3'>
-                <li className='px-5'>Tr.No</li>
-                <li className='px-5'>Sent Number</li>
-                <li className='px-5'>Sent Money</li>
-                <li className='px-5'>Date</li>
+                <li className='px-5 font-bold	'>Tr.No</li>
+                <li className='px-5 font-bold	'>Sent Number</li>
+                <li className='px-5 font-bold	'>Sent Money</li>
+                <li className='px-5 font-bold	'>Date</li>
               </ol>
               {
                 sendMoney.map((listSendMoney, index) =>
@@ -148,10 +148,10 @@ const ViewAllTransaction = () => {
           <div className='moneySection'>
             <ol className='fontSize'>
               <ol className='flex items-center justify-between border-b mb-3'>
-                <li className='px-5'>Tr.No</li>
-                <li className='px-5'>Received Num</li>
-                <li className='px-5'>received Money</li>
-                <li className='px-5'>Date</li>
+                <li className='px-5 font-bold	'>Tr.No</li>
+                <li className='px-5 font-bold	'>Received Num</li>
+                <li className='px-5 font-bold	'>received Money</li>
+                <li className='px-5 font-bold	'>Date</li>
               </ol>
               {
                 AddedMoney.map((listAddMoney, index) =>
@@ -174,11 +174,11 @@ const ViewAllTransaction = () => {
           <div className='moneySection'>
             <ol className='fontSizeAllStatement'>
               <ol className='flex items-center justify-between border-b mb-3'>
-                <li className='px-2'>Tr.No</li>
-                <li className=''> Number</li>
-                <li className=''> Type</li>
-                <li className=''>Amount Money</li>
-                <li className=''>Date</li>
+                <li className='px-2 font-bold	'>Tr.No</li>
+                <li className=' font-bold	'> Number</li>
+                <li className=' font-bold	'> Type</li>
+                <li className=' font-bold	'>Amount Money</li>
+                <li className=' font-bold	'>Date</li>
               </ol>
               {
                 allStatement.map((listMoney, index) =>
