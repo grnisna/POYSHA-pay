@@ -87,7 +87,9 @@ const SendMoney = () => {
               className='input'
               placeholder="Enter phone number"
               value={userData?.phone}
-              {...register("senderNumber")}
+
+              readOnly
+
             />
           </div>
 
@@ -110,7 +112,6 @@ const SendMoney = () => {
               })}
             />
           </div>
-
           <div class="form-control">
             <label class="label">
               <span class="label-text">Amount</span>

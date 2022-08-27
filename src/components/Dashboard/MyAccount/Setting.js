@@ -6,6 +6,7 @@ import SettingDemo from './SettingDemo';
 const Setting = () => {
     return (
         <div>
+            
             <ImageUpload></ImageUpload>
             <UserImages></UserImages>
             <SettingDemo/>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 import './SettingDemo.css';
 
 const SettingDemo = () => {
@@ -42,7 +43,6 @@ const SettingDemo = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         if (data.success) {
           const img = data.data.url;
           const userimage = {
@@ -61,6 +61,7 @@ const SettingDemo = () => {
             .then(res => res.json())
             .then(uploaded => {
               if (uploaded.uploadedId) {
+               
                 reset();
               }
             })
@@ -73,6 +74,7 @@ const SettingDemo = () => {
     fetch('http://localhost:5000/userimage')
       .then(res => res.json())
       .then(data => {
+        // swal(`successfully Uploaded New Photo`);
         setImagesUrl(data);
       })
   }, [])
@@ -100,7 +102,6 @@ const SettingDemo = () => {
 
                   </div>
                 ).reverse()              }
-              {/* <img className='rounded-full' src="https://i.ibb.co/tbbyr8Q/new-pic.jpg" /> */}
             
 
             <div>
