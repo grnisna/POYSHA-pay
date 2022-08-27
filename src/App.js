@@ -33,10 +33,6 @@ import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
 
 
-
-
-
-
 // import CurrencyConvert from './components/Dashboard/CurrencyConvert/CurrencyConvert'
 // import Calculate from "./components/Calculator/Calculate";
 
@@ -133,7 +129,7 @@ function App() {
           <Route path="Faqs" element={<Faqs></Faqs>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
-          <Route path="Setting" element={<Setting />}></Route>
+          {/* <Route path="Setting" element={<Setting />}></Route> */}
           <Route path="Setting" element={<SettingDemo />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>

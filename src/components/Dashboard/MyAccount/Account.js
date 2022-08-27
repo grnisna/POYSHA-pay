@@ -43,7 +43,7 @@ const Account = () => {
                   <p className="account-section-title lg:text-left text-center">Main Account</p>
                   <div className="">
 
-                    <h1 className="account-title lg:text-left text-center">
+                    <h1 className="account-title lg:text-left text-center lg:text-xl text-sm">
                       Poysha - Pay Personal Account
                     </h1>
                     <div className="account-number grid grid-cols-1 items-center">
