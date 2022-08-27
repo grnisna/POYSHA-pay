@@ -1,186 +1,196 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import OthersAccountHooks from '../../Hooks/OthersAccountsHooks/OthersAccountHooks';
 import './SettingDemo.css';
 
 const SettingDemo = () => {
-    // const [othersAccount] = OthersAccountHooks();
+  const { register, formState: { errors }, handleSubmit, reset } = useForm();
+  const imageStorageKey = '5fbcdb5a428c028af61f3741571ad322';
+  const inputRef = useRef(null);
+  const [imagesUrl, setImagesUrl] = useState([]);
 
-    // const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    // const imageStorageKey = '346371b3f49c31b84126b628f818f105';
-
-    // const onSubmit = async data => {
-    //     const image = data.image[0];
-    //     const formData = new FormData();
-    //     formData.append('image', image);
-    //     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
-    //     fetch(url, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             if (result.success) {
-    //                 const img = result.data.url;
-    //                 const userimage = {
-    //                     name: data.name,
-    //                     img: img
-    //                 }
-
-    //                 fetch('https://powerful-basin-90376.herokuapp.com/userimage', {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'content-type': 'application/json',
-
-    //                     },
-    //                     body: JSON.stringify(userimage)
-    //                 })
-    //                     .then(res => res.json())
-    //                     .then(uploaded => {
-    //                         if (uploaded.uploadedId) {
-    //                             reset();
-    //                         }
-    //                     })
-    //             }
-    //         })
-    // }
-
-    const [image, setImage] = useState({ preview: "", raw: "" });
-
-    const handleChange = e => {
-      if (e.target.files.length) {
-        setImage({
-          preview: URL.createObjectURL(e.target.files[0]),
-          raw: e.target.files[0]
-        });
-      }
-    };
-  
-    const handleUpload = async e => {
-      e.preventDefault();
-      const formData = new FormData();
-      formData.append("image", image.raw);
-  
-      await fetch(`https://powerful-basin-90376.herokuapp.com/userimage`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data"
-        },
-        body: formData
-      });
-    };
+ 
 
 
-    return (
-        // <div className='flex justify-center items-center gap-5'>
+  const handleClick = () => {
+    // 👇️ open file input box on click of other element
+    inputRef.current.click();
+  };
 
-        //     <div className='left-side card shadow-xl'>
-        //         <div className='m-10'>
-        //             <h1 className='font-bold text-4xl  '>Account Setting</h1>
-        //         </div>
-        //         <div className='m-10'>
-        //             <h2 className='font-bold text-xl '>Profile Detils</h2>
-        //             <div class="flex   gap-5 mt-10">
-        //                 <div class="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ">
-        //                     <img className='rounded-full' src="https://placeimg.com/192/192/people" />
-        //                 </div>
+  const handleFileChange = event => {
+    const imageFile = event.target.files && event.target.files[0];
+    if (!imageFile) {
+      return;
+    }
 
-        //                 <div>
-        //                     <div className='flex justify center items-center gap-3'>
-        //                         <button className='btn text-primary'>Upload Profile Photo</button>
-        //                         <button className='btn text-primary'>Remove</button>
-        //                     </div>
-        //                     <p className='paragraph'>amar soner bangla ami tomay valobasi chirodin tomar akash tomar batas</p>
-        //                 </div>
-        //             </div>
+    //  reset file input
+    event.target.value = null;
+    // console.log('Image', imageFile);
+    //  is now empty
+    // console.log(event.target.files);
 
-        //         </div>
-        //         <div className='FormSection mt-[-75px] ml-5'>
-        //             <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center gap-14 w-full'>
-        //                 <div>
-        //                     <label className="label ">
-        //                         <span className="label-text font-bold">User Name</span>
-        //                     </label>
-        //                     <input
-        //                         type="text"
-        //                         placeholder="Update Name"
-        //                         className="input input-bordered w-full inputField "
-        //                         {...register("name", {
-        //                             required: {
-        //                                 value: true,
-        //                                 message: 'Name is Required'
-        //                             }
-        //                         })}
-        //                     />
-        //                 </div>
-        //                 <div>
-        //                     <label className="label ">
-        //                         <span className="label-text font-bold">User Email</span>
-        //                     </label>
-        //                     <input
-        //                         type="email"
-        //                         placeholder="Update Email"
-        //                         className="input input-bordered w-full max-w-xs "
-        //                         {...register("email", {
-        //                             required: {
-        //                                 value: true,
-        //                                 message: 'email is Required'
-        //                             }
-        //                         })}
-        //                     />
-        //                 </div>
-        //             </form>
-        //         </div>
-        //     </div>
+    // can still access file object here
+    // console.log(imageFile);
+    // console.log(imageFile.name);
 
-        //     <div className="right-side">
-        //         <div>
-        //             <div class="card w-96 bg-base-100 shadow-xl">
-        //                 <div class="card-body">
-        //                     <h2 class="card-title">Change Password</h2>
-        //                     <p className='text-[#bbb]'>Your can  parmanently removed or temporally freeze your account </p>
-        //                     <div class="card-actions justify-end">
-        //                         <button class="btn btn-primary w-full">Change password</button>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div class="card w-96 bg-base-100 shadow-xl mt-10">
-        //                 <div class="card-body">
-        //                     <h2 class="card-title">Close Account</h2>
-        //                     <p className='text-[#bbb]'>Your can  parmanently removed or temporally freeze your account </p>
-        //                     <div class="card-actions justify-end">
-        //                         <button class="btn btn-primary w-full">Close Account</button>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    fetch(url, {
+      method: 'POST',
+      body: formData
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.success) {
+          const img = data.data.url;
+          const userimage = {
+            name: data.name,
+            img: img
+          }
 
+          fetch('https://powerful-basin-90376.herokuapp.com/userimage', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+
+            },
+            body: JSON.stringify(userimage)
+          })
+            .then(res => res.json())
+            .then(uploaded => {
+              if (uploaded.uploadedId) {
+                reset();
+              }
+            })
+        }
+      })
+  };
+
+  // get IMAGES URL FROM MONGODB 
+  useEffect(() => {
+    fetch('http://localhost:5000/userimage')
+      .then(res => res.json())
+      .then(data => {
+        setImagesUrl(data);
+      })
+  }, [])
+
+
+
+
+  return (
+    <div className='flex justify-center items-center gap-5'>
+
+      <div className='left-side card shadow-xl'>
+        <div className='m-10'>
+          <h1 className='font-bold text-4xl  '>Account Setting</h1>
+        </div>
+        <div className='m-10'>
+          <h2 className='font-bold text-xl '>Profile Detils</h2>
+          <div class="flex   gap-5 mt-10">
+            
+              {
+                imagesUrl.slice(0, 1).map((url, index) =>
+                  <div className=' w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' >
+
+                    <img className='w-20 h-16 rounded-full' src={url.img} alt="" />
+                    
+
+                  </div>
+                ).reverse()              }
+              {/* <img className='rounded-full' src="https://i.ibb.co/tbbyr8Q/new-pic.jpg" /> */}
+            
+
+            <div>
+              <div className='flex justify center items-center gap-3'>
+                <button onClick={handleClick} className='btn text-primary'>Upload Profile Photo</button>
+                <button className='btn text-primary'>Remove</button>
+              </div>
+              <p className='paragraph'>amar soner bangla ami tomay valobasi chirodin tomar akash tomar batas</p>
+            </div>
+          </div>
+
+        </div>
+        {/*  ************** INPUT file *********************/}
         <div>
-      <label htmlFor="upload-button">
-        {image.preview ? (
-          <img src={image.preview} alt="dummy" width="300" height="300" />
-        ) : (
-          <>
-            <span className="fa-stack fa-2x mt-3 mb-2">
-              <i className="fas fa-circle fa-stack-2x" />
-              <i className="fas fa-store fa-stack-1x fa-inverse" />
-            </span>
-            <h5 className="text-center">Upload your photo</h5>
-          </>
-        )}
-      </label>
-      <input
-        type="file"
-        id="upload-button"
-        style={{ display: "none" }}
-        onChange={handleChange}
-      />
-      <br />
-      <button onClick={handleUpload}>Upload</button>
+          <input
+            style={{ display: 'none' }}
+            ref={inputRef}
+            type="file"
+            onChange={handleFileChange}
+          />
+        </div>
+        {/*  ************** INPUT file *********************/}
+
+
+        <div className='FormSection mt-[-75px] ml-5'>
+          <form className='flex justify-center items-center gap-14 w-full'>
+            <div>
+              <label className="label ">
+                <span className="label-text font-bold">User Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Update Name"
+                className="input input-bordered w-full inputField "
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: 'Name is Required'
+                  }
+                })}
+              />
+            </div>
+            <div>
+              <label className="label ">
+                <span className="label-text font-bold">User Email</span>
+              </label>
+              <input
+                type="email"
+                placeholder="Update Email"
+                className="input input-bordered w-full max-w-xs "
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: 'email is Required'
+                  }
+                })}
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div className="right-side">
+        <div>
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Change Password</h2>
+              <p className='text-[#bbb]'>Your can  parmanently removed or temporally freeze your account </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary w-full">Change password</button>
+              </div>
+            </div>
+          </div>
+          <div class="card w-96 bg-base-100 shadow-xl mt-10">
+            <div class="card-body">
+              <h2 class="card-title">Close Account</h2>
+              <p className='text-[#bbb]'>Your can  parmanently removed or temporally freeze your account </p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary w-full">Close Account</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
-    );
+
+
+  );
 };
 
 export default SettingDemo;
