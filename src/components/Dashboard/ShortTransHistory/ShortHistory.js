@@ -27,15 +27,15 @@ const ShortHistory = () => {
     return (
         <div className='bg-slate-200 grid lg:grid-cols-3 grid-cols-1 px-4 pb-4 gap-4 '>
             <div className="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
-                <div className="history-Header grid grid-cols-2 items-center py-5">
-                    <div className="header grid justify-start">
-                        <h2 className='lg:text-xl text-sm font-bold'>Latest Transactions</h2>
+                <div className="history-Header grid lg:grid-cols-2 grid-cols-1 items-center lg:py-5 py-0">
+                    <div className="header grid lg:justify-start justify-center">
+                        <h2 className='lg:text-xl text-sm font-bold text-center'>Latest Transactions</h2>
                     </div>
-                    <div className="array-header grid justify-end">
+                    {/* <div className="array-header grid justify-end">
                         <div className="icon-arrow">
-                            {/* <FaArrowRight className='right-arrow text-primary' /> */}
+                            <FaArrowRight className='right-arrow text-primary' />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='transActionSection'>
                     <ol className='fontSizeStatement'>
