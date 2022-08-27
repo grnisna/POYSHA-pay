@@ -23,6 +23,13 @@
     display: block;
 }
 
+.addMoneyColor{
+    color: green;
+}
+.sendMoneyColor{
+    color: rgb(219, 25, 138);
+}
+
   /* pagination ------------ */
   .pagination .selected{
     background: rgb(104, 33, 226);
@@ -30,13 +37,7 @@
   }
 
 @media screen and (max-width:400px) {
-    .card{
-        width: 90% !important;
-        margin: auto;
-    }
-    .viewAllTable{
-        width: 100%;
-    }
+
     .button-area {
         width: 100%;
     }
@@ -44,7 +45,20 @@
         font-size: 10px;
         padding: 2px;
     }
-    .table-div{
-        width: 100%;
+
+    .moneySection{
+        width: 100% ;
+        
+
     }
+    .fontSize ol li{
+        font-size: 10px;
+        padding: 0;
+    }
+    .fontSizeAllStatement ol li{
+        font-size: 8px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
 }

@@ -14,28 +14,14 @@ const ShortHistory = () => {
     // const [myTransactionHistory] = TransactionHistory();
     //--------------------------------------------
     const [allStatement, setAllStatement] = useState([]);
-
-    useEffect(() => {
-        const url = `https://powerful-basin-90376.herokuapp.com/transactionStatement`;
-        console.log(url);
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                const count = data.count;
-                console.log(count);
-                const perTransaction = Math.ceil(count / 2);
-                setAllStatement(perTransaction);
-            })
-    }, []);
-    //--------------------------------------------
     const [userSpend] = OverallSpend();
-    const [viewShortHistory, setViewShortHistory] = useState([]);
+    //--------------------------------------------
 
     useEffect(() => {
-        const url = "https://powerful-basin-90376.herokuapp.com/transactionHistory";
-        fetch(url)
+        const allStatement = `https://powerful-basin-90376.herokuapp.com/transactionStatement`
+        fetch(allStatement)
             .then(res => res.json())
-            .then(data => setViewShortHistory(data))
+            .then(data => setAllStatement(data))
     }, []);
 
     return (
@@ -43,7 +29,7 @@ const ShortHistory = () => {
             <div className="card shadow-xl bg-white grid lg:col-span-2 p-10 ">
                 <div className="history-Header grid grid-cols-2 items-center py-5">
                     <div className="header grid justify-start">
-                        <h2 className='text-xl font-bold'>Latest Transactions</h2>
+                        <h2 className='lg:text-xl text-sm font-bold'>Latest Transactions</h2>
                     </div>
                     <div className="array-header grid justify-end">
                         <div className="icon-arrow">
@@ -51,33 +37,28 @@ const ShortHistory = () => {
                         </div>
                     </div>
                 </div>
-                <div className="table-responsive">
-                    <table className="table-auto">
-                        <thead className='bg-red-200 table-head'>
-                            <tr>
-                                <th>Name</th>
-                                <th>Number</th>
-                                <th>Banks</th>
-                                <th>Amount</th>
-                                <th>Ref.</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
+                <div className='transActionSection'>
+                    <ol className='fontSizeStatement'>
+                        <ol className='flex items-center justify-between border-b mb-3'>
+                            
+                            <li className=''> Number</li>
+                            <li className=''> </li>
+                            <li className=''> Type</li>
+                            <li className=''>Amount Money</li>
+                            <li className=''>Date</li>
+                        </ol>
+                        {
+                            allStatement.slice(0,5).map((listMoney, index) =>
+                                <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listMoney._id}>
+                                    <li className={listMoney.transactionType === 'addMoney' ? 'addMoneyColor text-left text-left p-0 ' : 'sendMoneyColor  text-left p-0'}>{listMoney.transactionType === 'addMoney' ? listMoney.bankAccountNumber : listMoney.receiverNumber}</li>
+                                    <li className={listMoney.transactionType === 'addMoney' ? 'addMoneyColor text-left p-0 mx-[-40px] ' : 'sendMoneyColor  text-left p-0 mx-[-40px] '}>{listMoney.transactionType}</li>
+                                    <li className={listMoney.transactionType === 'addMoney' ? 'addMoneyColor  text-left p-0 m-0' : 'sendMoneyColor  text-left p-0 m-0'}>{listMoney.transactionType === 'addMoney' ? listMoney.transferredAmount : listMoney.sendAmount}</li>
+                                    <li className=' text-left p-0 m-0 '>22.08.2022</li>
 
-                                viewShortHistory.map(myHistory => <HistoryTable
-                                    myHistory={myHistory}
-                                    key={myHistory._id}
-                                ></HistoryTable>).reverse()
-                            }
-                            {/* {
-                            myTransactionHistory.map(myHistory => <HistoryTable
-                                myHistory={myHistory}
-                                key={myHistory.amount}
-                            ></HistoryTable>)
-                        } */}
-                        </tbody>
-                    </table>
+                                </ol>
+                            ).reverse()
+                        }
+                    </ol>
                 </div>
             </div>
 

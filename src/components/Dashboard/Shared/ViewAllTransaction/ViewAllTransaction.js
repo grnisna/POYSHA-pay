@@ -116,25 +116,25 @@ const ViewAllTransaction = () => {
         <span onClick={viewAll} className='btn hover:bg-violet-700 btn-outline btn-sm'>View All</span>
 
       </div>
-      
-      <div  className={ allTransActionData === false ?  'showSendAndReceivedMoney' : 'hideSendAndReceivedMoney'}>
+
+      <div className={allTransActionData === false ? 'showSendAndReceivedMoney' : 'hideSendAndReceivedMoney'}>
         {separateData === false ?
 
           <div className='moneySection'>
 
 
-            <ol className=''>
+            <ol className='fontSize'>
               <ol className='flex items-center justify-between border-b mb-3'>
                 <li className='px-5'>Tr.No</li>
                 <li className='px-5'>Sent Number</li>
-                <li className='px-5'>Send Money</li>
+                <li className='px-5'>Sent Money</li>
                 <li className='px-5'>Date</li>
               </ol>
               {
                 sendMoney.map((listSendMoney, index) =>
                   <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listSendMoney._id}>
                     <li className='px-5 text-right'>{index + 1} </li>
-                    <li className='px-8 text-right'>{listSendMoney.sendNumber}</li>
+                    <li className='px-8 text-right'>{listSendMoney.receiverNumber}</li>
                     <li className='px-3 text-right'>{listSendMoney.sendAmount}</li>
                     <li className='px-5 text-right'>22.08.2022</li>
                   </ol>
@@ -146,7 +146,7 @@ const ViewAllTransaction = () => {
           </div>
           :
           <div className='moneySection'>
-            <ol className=''>
+            <ol className='fontSize'>
               <ol className='flex items-center justify-between border-b mb-3'>
                 <li className='px-5'>Tr.No</li>
                 <li className='px-5'>Received Num</li>
@@ -157,8 +157,8 @@ const ViewAllTransaction = () => {
                 AddedMoney.map((listAddMoney, index) =>
                   <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listAddMoney._id}>
                     <li className='px-5 text-right'>{index + 1} </li>
-                    <li className='px-8 text-right'>{listAddMoney.accountNumber}</li>
-                    <li className='px-3 text-right'>{listAddMoney.transferredAmount}</li>
+                    <li className='px-5 text-right'>{listAddMoney.accountHolderNumber}</li>
+                    <li className='px-5 text-right'>{listAddMoney.transferredAmount}</li>
                     <li className='px-5 text-right'>22.08.2022</li>
                   </ol>
                 )
@@ -168,30 +168,33 @@ const ViewAllTransaction = () => {
         }
       </div>
 
-      <div className={ allTransActionData === true ?  'showSendAndReceivedMoney' : 'hideSendAndReceivedMoney'}>
+      <div className={allTransActionData === true ? 'showSendAndReceivedMoney' : 'hideSendAndReceivedMoney'}>
         {
 
-            <div className='moneySection'>
-              <ol className=''>
-                <ol className='flex items-center justify-between border-b mb-3'>
-                  <li className='px-5'>Tr.No</li>
-                  <li className='px-5'> Number</li>
-                  <li className='px-5'>Amount Money</li>
-                  <li className='px-5'>Date</li>
-                </ol>
-                {
-                  allStatement.map((listMoney, index) =>
-                    <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listMoney._id}>
-
-                      <li className='px-5 text-right'>{index + 1} </li>
-                      <li className='px-8 text-right'>{listMoney.accountNumber}</li>
-                      <li className='px-3 text-right'>{listMoney.transactionType}</li>
-                      <li className='px-5 text-right'>22.08.2022</li>
-                    </ol>
-                  )
-                }
+          <div className='moneySection'>
+            <ol className='fontSizeAllStatement'>
+              <ol className='flex items-center justify-between border-b mb-3'>
+                <li className='px-2'>Tr.No</li>
+                <li className=''> Number</li>
+                <li className=''> Type</li>
+                <li className=''>Amount Money</li>
+                <li className=''>Date</li>
               </ol>
-            </div>
+              {
+                allStatement.map((listMoney, index) =>
+                  <ol className=' text-right flex justify-between items-center  border-b mt-3 mb-3' key={listMoney._id}>
+
+                    <li className=' text-left p-0 m-0 '>{index + 1} </li>
+                    <li className={listMoney.transactionType === 'addMoney' ? 'addMoneyColor text-left text-left p-0 mx-[-30px] ' : 'sendMoneyColor  text-left p-0 mx-[-30px]'}>{listMoney.transactionType === 'addMoney' ? listMoney.bankAccountNumber : listMoney.receiverNumber}</li>
+                    <li className={listMoney.transactionType === 'addMoney' ? 'addMoneyColor text-left p-0 mx-[-40px] ' : 'sendMoneyColor  text-left p-0 mx-[-40px] '}>{listMoney.transactionType}</li>
+                    <li className={listMoney.transactionType === 'addMoney' ? 'addMoneyColor  text-left p-0 m-0' : 'sendMoneyColor  text-left p-0 m-0'}>{listMoney.transactionType === 'addMoney' ? listMoney.transferredAmount : listMoney.sendAmount}</li>
+                    <li className=' text-left p-0 m-0 '>22.08.2022</li>
+
+                  </ol>
+                ).reverse()
+              }
+            </ol>
+          </div>
         }
       </div>
 

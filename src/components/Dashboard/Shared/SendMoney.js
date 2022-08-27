@@ -33,6 +33,19 @@ const SendMoney = () => {
         reset();
         setValue('');
 
+      });
+
+    fetch('https://powerful-basin-90376.herokuapp.com/transactionHistory', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        reset();
+        setValue('');
       })
   };
 
