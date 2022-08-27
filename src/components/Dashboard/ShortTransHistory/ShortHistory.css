@@ -1,17 +1,28 @@
 .icon-arrow {
- width: 40px;
- height: 40px;
- /* padding: 5px; */
+  width: 40px;
+  height: 40px;
+  /* padding: 5px; */
 }
 
 .right-arrow {
- color: #6C63FF;
- background-color: #313049;
-
+  color: #6c63ff;
+  background-color: #313049;
 }
-
-@media screen  and (max-width:400px) {
-    .table-responsive table{
-        overflow-x:auto;
-    }
+.transActionSection {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+}
+@media screen and (max-width: 400px) {
+  .transActionSection {
+    width: 100%;
+  }
+  .fontSizeStatement ol li{
+    font-size: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 }
