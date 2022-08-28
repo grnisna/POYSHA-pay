@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import swal from 'sweetalert';
+import DBUserData from '../../Hooks/UserData/DBUserData';
 import './SettingDemo.css';
 
 const SettingDemo = () => {
@@ -9,8 +10,15 @@ const SettingDemo = () => {
   const imageStorageKey = '5fbcdb5a428c028af61f3741571ad322';
   const inputRef = useRef(null);
   const [imagesUrl, setImagesUrl] = useState([]);
+  const latestImgUrl = imagesUrl[imagesUrl.length - 1];
 
- 
+  const [userData] = DBUserData();
+  const userEmail = (userData.email);
+
+
+
+
+
 
 
   const handleClick = () => {
@@ -50,6 +58,7 @@ const SettingDemo = () => {
             img: img
           }
 
+
           fetch('https://powerful-basin-90376.herokuapp.com/userimage', {
             method: 'POST',
             headers: {
@@ -61,7 +70,7 @@ const SettingDemo = () => {
             .then(res => res.json())
             .then(uploaded => {
               if (uploaded.uploadedId) {
-               
+
                 reset();
               }
             })
@@ -71,13 +80,32 @@ const SettingDemo = () => {
 
   // get IMAGES URL FROM MONGODB 
   useEffect(() => {
-    fetch('http://localhost:5000/userimage')
+    fetch('https://powerful-basin-90376.herokuapp.com/userimage')
       .then(res => res.json())
       .then(data => {
         // swal(`successfully Uploaded New Photo`);
         setImagesUrl(data);
       })
-  }, [])
+  }, []);
+
+  const onSubmit = async data => {
+
+    const updatedName = { name: data.name }
+    fetch(`http://localhost:5000/user/${userEmail}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(updatedName)
+    })
+      .then(res => res.json())
+      .then(data => {
+        swal({
+          icon: "success",
+          text: "Updated successfully"
+        });
+        reset();
+      })
+  }
+
 
 
 
@@ -92,17 +120,15 @@ const SettingDemo = () => {
         <div className='m-10'>
           <h2 className='font-bold text-xl '>Profile Detils</h2>
           <div class="flex   gap-5 mt-10">
-            
-              {
-                imagesUrl.slice(0, 1).map((url, index) =>
-                  <div className=' w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' >
 
-                    <img className='w-20 h-16 rounded-full' src={url.img} alt="" />
-                    
 
-                  </div>
-                ).reverse()              }
-            
+            <div className=' w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' >
+
+              < img className='w-20 h-16 rounded-full' src={latestImgUrl?.img} alt="" />
+
+            </div>
+
+
 
             <div>
               <div className='flex justify center items-center gap-3'>
@@ -127,7 +153,7 @@ const SettingDemo = () => {
 
 
         <div className='FormSection mt-[-75px] ml-5'>
-          <form className='flex justify-center items-center gap-14 w-full'>
+          <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center gap-14 w-full'>
             <div>
               <label className="label ">
                 <span className="label-text font-bold">User Name</span>
@@ -146,19 +172,9 @@ const SettingDemo = () => {
             </div>
             <div>
               <label className="label ">
-                <span className="label-text font-bold">User Email</span>
+                <span className="label-text font-bold"></span>
               </label>
-              <input
-                type="email"
-                placeholder="Update Email"
-                className="input input-bordered w-full max-w-xs "
-                {...register("email", {
-                  required: {
-                    value: true,
-                    message: 'email is Required'
-                  }
-                })}
-              />
+              <input className='mt-4 bg-white hover:bg-secondary text-secondary hover:text-white  transition duration-500 rounded-md shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="UPDATED" />
             </div>
           </form>
         </div>

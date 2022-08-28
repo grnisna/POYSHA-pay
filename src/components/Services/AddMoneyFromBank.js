@@ -18,6 +18,7 @@ const AddMoneyFromBank = () => {
     const [user, loading] = useAuthState(auth);
 
     const [userData, setUserData] = DBUserData();
+    console.log(userData?.name?.name);
     const phoneNumber = userData.phone;
 
 
@@ -96,21 +97,22 @@ const AddMoneyFromBank = () => {
 
             <form className='card mx-auto w-96 bg-white mt-5 p-5 shadow-2xl'
                 onSubmit={handleSubmit(onSubmit)}>
-                <h1 className='card-title m-5 uppercase'>Add Money from bank</h1>
+                <h1 className='card-title m-5 uppercase '>Add Money from bank</h1>
 
                 <label class="label">
-                    <span class=" text-xs  -mb-2 mt-2  ">Poyha-Pay Account Name</span>
+                    <span class=" text-xs  -mb-2 mt-2 text-left ">Poyha-Pay Account Name</span>
                 </label>
                 <input type="text"
-                    name='name' value={user?.displayName}
+                    name='name' value={userData?.name?.name}
                     className='input input-bordered w-full  font-bold'
                     {...register('AccountHolder')}
                 />
                 <label class="label">
-                    <span class="  text-xs  -mb-2 mt-2">Poyha-Pay Account Number</span>
+                    <span class="  text-xs  mb-2 mt-2">Poyha-Pay Account Number</span>
                 </label>
-                <input type="number"
+                <input   type="number"
                     name='name'
+                    placeholder={phoneNumber}
 
                     className='input input-bordered text-black mt-5 mx-auto w-full px-2 font-bold'
                     {...register("accountHolderNumber", {
