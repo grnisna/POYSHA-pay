@@ -1,5 +1,5 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
 const Review = () => {
@@ -8,7 +8,7 @@ const Review = () => {
 
 
   useEffect(() => {
-    const url = 'https://powerful-basin-90376.herokuapp.com/addReview';
+    const url = 'http://localhost:4000/addReview';
     fetch(url)
       .then(res => res.json())
       .then(data => {

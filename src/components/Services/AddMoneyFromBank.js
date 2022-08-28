@@ -27,7 +27,7 @@ const AddMoneyFromBank = () => {
 
 
     useEffect(() => {
-        const bankNameUrl = `https://powerful-basin-90376.herokuapp.com/banksName`;
+        const bankNameUrl = `http://localhost:4000/banksName`;
         fetch(bankNameUrl)
             .then(res => res.json())
             .then(data => {
@@ -40,7 +40,7 @@ const AddMoneyFromBank = () => {
     const onSubmit = (data) => {
 
         console.log(data)
-        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney`, {
+        fetch(`http://localhost:4000/addMoney`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,7 +57,7 @@ const AddMoneyFromBank = () => {
                 });
             });
 
-        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney/${userData._id}`, {
+        fetch(`http://localhost:4000/addMoney/${userData._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -73,7 +73,7 @@ const AddMoneyFromBank = () => {
                     text: "Deposit Successful"
                 });
             })
-        fetch('https://powerful-basin-90376.herokuapp.com/transactionHistory', {
+        fetch('http://localhost:4000/transactionHistory', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -190,7 +190,7 @@ const AddMoneyFromBank = () => {
                     {errors.transferredAmount?.type === 'min' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
                     {errors.transferredAmount?.type === 'max' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
                 </label>
-                
+
                 <label class="label">
                     <span class="  text-xs  -mb-2 mt-2">Write Reference</span>
                 </label>

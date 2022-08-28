@@ -25,11 +25,6 @@ const Account = () => {
       .then(data => setServices(data))
   }, [])
 
-
-  console.log("Hey i got the user data", userData);
-
-
-
   return (
 
     <div className="account grid lg:grid-cols-3 lg:grid-flow-row-dense py-10  gap-10 px-6 bg-slate-200">

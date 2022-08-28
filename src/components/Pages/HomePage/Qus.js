@@ -4,7 +4,7 @@ const Qus = () => {
     const [questions, setQuestions] = useState([])
     console.log(questions);
     useEffect(() => {
-        fetch("https://powerful-basin-90376.herokuapp.com/faq")
+        fetch("http://localhost:4000/faq")
             .then(res => res.json())
             .then(data => setQuestions(data))
     }, [])

@@ -35,7 +35,7 @@ const AddMoneyModal = ({ banks, setBanks }) => {
 
 
 
-        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney/${userId}`, {
+        fetch(`http://localhost:4000/addMoney/${userId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const AddMoneyModal = ({ banks, setBanks }) => {
                     text: "Deposit Successful"
                 });
             })
-        fetch('https://powerful-basin-90376.herokuapp.com/transaction_history', {
+        fetch('http://localhost:4000/transaction_history', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

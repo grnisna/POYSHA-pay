@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import BGLogin from '../../../Assets/bg-login2.jpg';
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import axios from 'axios';
-import LoginImage from '../../../Assets/Login/Login.png';
 
 
 
@@ -37,12 +35,10 @@ const Login = () => {
         if (user) {
             async function getToken() {
                 const email = user.email;
-                const { data } = await axios.post('https://powerful-basin-90376.herokuapp.com/login', { email });
+                const { data } = await axios.post('http://localhost:4000/login', { email });
                 localStorage.setItem('AccessToken', data);
                 navigate(from, { replace: true });
             }
-
-
             getToken();
         }
     }, [navigate, user, from])

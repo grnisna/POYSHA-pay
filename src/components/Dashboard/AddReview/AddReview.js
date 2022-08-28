@@ -31,7 +31,7 @@ const AddReview = () => {
 
         console.log(data);
 
-        const url = `https://powerful-basin-90376.herokuapp.com/addReview`;
+        const url = `http://localhost:4000/addReview`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -15,7 +15,7 @@ const ViewAllTransaction = () => {
   // const [sendMoneyCount,setSendMoneyCount] = useState(0);
 
   useEffect(() => {
-    const url = `https://powerful-basin-90376.herokuapp.com/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`;
+    const url = `http://localhost:4000/transactionStatement?activeNumber=${activeStatement}&showQuantity=${showQuantity}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -24,7 +24,7 @@ const ViewAllTransaction = () => {
   }, [activeStatement, showQuantity]);
 
   useEffect(() => {
-    const url = `https://powerful-basin-90376.herokuapp.com/statementCount`;
+    const url = `http://localhost:4000/statementCount`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -50,21 +50,21 @@ const ViewAllTransaction = () => {
   // --------------------------------
 
   // useEffect(() => {
-  //   const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
+  //   const url = "http://localhost:4000/addMoneyTransactions"
   //   fetch(url)
   //     .then(res => res.json())
   //     .then(data => setAddedMoney(data))
   // }, []);
 
   // useEffect(() => {
-  //   const url = "https://powerful-basin-90376.herokuapp.com/addMoneyTransactions"
+  //   const url = "http://localhost:4000/addMoneyTransactions"
   //   fetch(url)
   //     .then(res => res.json())
   //     .then(data => setAddedMoney(data))
   // }, []);
 
   useEffect(() => {
-    const addMoneyUrl = `https://powerful-basin-90376.herokuapp.com/addMoneyTransactions?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
+    const addMoneyUrl = `http://localhost:4000/addMoneyTransactions?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
 
     fetch(addMoneyUrl)
       .then(res => res.json())
@@ -73,7 +73,7 @@ const ViewAllTransaction = () => {
 
 
   useEffect(() => {
-    const url = `https://powerful-basin-90376.herokuapp.com/addMoneyStatementCount`;
+    const url = `http://localhost:4000/addMoneyStatementCount`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -89,7 +89,7 @@ const ViewAllTransaction = () => {
   // --------------------------
 
   useEffect(() => {
-    const sendMoneyUrl = `https://powerful-basin-90376.herokuapp.com/sendMoney?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
+    const sendMoneyUrl = `http://localhost:4000/sendMoney?activeNumber=${activeStatement}&showQuantity=${showQuantity}`
 
     fetch(sendMoneyUrl)
       .then(res => res.json())
@@ -98,7 +98,7 @@ const ViewAllTransaction = () => {
 
 
   useEffect(() => {
-    const url = `https://powerful-basin-90376.herokuapp.com/sendMoneyStatementCount`;
+    const url = `http://localhost:4000/sendMoneyStatementCount`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -109,7 +109,7 @@ const ViewAllTransaction = () => {
   }, []);
 
   // useEffect(() => {
-  //   const url = "https://powerful-basin-90376.herokuapp.com/sendMoney"
+  //   const url = "http://localhost:4000/sendMoney"
   //   fetch(url)
   //     .then(res => res.json())
   //     .then(data => setSendMoney(data))
@@ -119,7 +119,7 @@ const ViewAllTransaction = () => {
 
   // View all transAction about add money and send money ------------------
   //---------------------------------------------------------
-  // const urls = ["https://powerful-basin-90376.herokuapp.com/addMoneyTransactions", "https://powerful-basin-90376.herokuapp.com/sendMoney"];
+  // const urls = ["http://localhost:4000/addMoneyTransactions", "http://localhost:4000/sendMoney"];
 
   // const headers = {
   //   "X-Api-Key": "the-api-key-00",

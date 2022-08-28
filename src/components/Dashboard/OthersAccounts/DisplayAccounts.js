@@ -26,7 +26,7 @@ const DisplayAccounts = ({ accounts }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://powerful-basin-90376.herokuapp.com/addedAccount/${id}`;
+            const url = `http://localhost:4000/addedAccount/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

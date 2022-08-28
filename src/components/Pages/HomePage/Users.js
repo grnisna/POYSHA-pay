@@ -5,7 +5,7 @@ import User from './User';
 const Users = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('https://powerful-basin-90376.herokuapp.com/user', {
+        fetch('http://localhost:4000/user', {
             method: 'GET',
 
         })

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './DashboardNav.css'
+import { FaEyeSlash, FaEye } from "react-icons/fa";
+import swal from 'sweetalert';
 
 //dashboard icons
 import Home from '../../../Assets/DashboardNav/house.png'
@@ -25,21 +27,48 @@ import LiveChat from '../../../Assets/DashboardNav/live-chat.png'
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import DBUserData from '../../Hooks/UserData/DBUserData';
 
 const DashboardNav = () => {
   const [user] = useAuthState(auth);
+  const [DBUser] = DBUserData();
+  const balance = DBUser?.balance
+
+  const [showBalance, setShowBalance] = useState();
+  function showHideHandler() {
+    setShowBalance(!showBalance)
+  }
+
+  // const btnData = showBalance ? "*******" : balance;
+
   const navigate = useNavigate();
   const logOut = () => {
-    signOut(auth);
-    // localStorage.removeItem('AccessToken');
-    navigate('/login');
-    window.localStorage.removeItem('AccessToken');
+
+
+    swal({
+      title: "Are you sure?",
+      text: "Do You Want To LogOut?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          signOut(auth);
+          navigate('/login');
+          window.localStorage.removeItem('AccessToken');
+          swal("Logout Successful", {
+            icon: "success",
+          });
+        } 
+      })
+
   }
 
   return (
     <div className='dashboard-nav '>
       <div className="navLinks">
-        <ul className='routeLinks px-5 py-2 overflow-y-visibale'>
+        <ul className='routeLinks px-5 py-2 overflow-y-visibale mesu'>
           <li className='flex items-center navItem'>
             <img src={Home} alt="" />
             <Link to='/'>POYSHAPAY</Link>
@@ -112,13 +141,16 @@ const DashboardNav = () => {
         <div className="user py-5">
           <div className="user-profile flex gap-4 justify-center justify-items-center items-center">
             <div class="avatar online">
-              <div class="w-10 rounded-full">
+              <div class="w-8 rounded-full">
                 <img src="https://placeimg.com/192/192/people" />
               </div>
             </div>
             <div className="user-info justify-center ">
-              <p className='font-bold'>Alex Dom</p>
-              <p className='text-xs'>Bangladesh</p>
+              <p className='font-bold text-md'>{DBUser?.name}</p>
+              <div className='flex bg-primary rounded-full text-white px-[4px] py-[2px] w-fit'>
+                <p className='text-xs text-bold text-center' >Balance :  {showBalance ? "******" : balance}</p>
+                <p className='px-[2px] cursor-pointer' onClick={showHideHandler}>{showBalance ? <FaEye /> : <FaEyeSlash />}</p>
+              </div>
             </div>
             <div className="singOut">
               <img src={Logout} onClick={logOut} className="w-6" alt="" />

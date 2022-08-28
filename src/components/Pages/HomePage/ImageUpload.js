@@ -24,7 +24,7 @@ const ImageUpload = () => {
                         img: img
                     }
 
-                    fetch('https://powerful-basin-90376.herokuapp.com/userimage', {
+                    fetch('http://localhost:4000/userimage', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -5,7 +5,7 @@ import UserImage from './UserImage';
 const UserImages = () => {
     const [userImages, setUserImage] = useState([])
     useEffect(() => {
-        fetch('https://powerful-basin-90376.herokuapp.com/userimage', {
+        fetch('http://localhost:4000/userimage', {
             method: 'GET',
 
         })
@@ -20,7 +20,7 @@ const UserImages = () => {
             {/* <h2>{userImages.length}</h2> */}
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-5'>
                 {
-                    userImages.slice(0,2).map(userimage => <UserImage
+                    userImages.slice(0, 2).map(userimage => <UserImage
                         key={userimage._id}
                         userimage={userimage}
                     ></UserImage>)

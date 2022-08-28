@@ -16,7 +16,7 @@ const ShortHistory = () => {
     const [allStatement, setAllStatement] = useState([]);
 
     useEffect(() => {
-        const url = `https://powerful-basin-90376.herokuapp.com/transactionStatement`;
+        const url = `http://localhost:4000/transactionStatement`;
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -32,7 +32,7 @@ const ShortHistory = () => {
     const [viewShortHistory, setViewShortHistory] = useState([]);
 
     useEffect(() => {
-        const url = "https://powerful-basin-90376.herokuapp.com/transactionHistory";
+        const url = "http://localhost:4000/transactionHistory";
         fetch(url)
             .then(res => res.json())
             .then(data => setViewShortHistory(data))
