@@ -8,7 +8,7 @@ import axios from 'axios';
 import DBUserData from "../../Hooks/UserData/DBUserData";
 import { Link } from "react-router-dom";
 
-const dashCardBg = `https://eduvibe.react.devsvibe.com/static/media/home-two-cta.73d10bc1e4f1217dd528.jpg`
+const dashCardBg = `https://eduvibe.react.devsvibe.com/static/media/home-two-cta.73d10bc1e4f1217dd528.jpg`;
 
 const Account = () => {
   const [services, setServices] = useState([])
@@ -43,7 +43,7 @@ const Account = () => {
                   <p className="account-section-title lg:text-left text-center">Main Account</p>
                   <div className="">
 
-                    <h1 className="account-title lg:text-left text-center">
+                    <h1 className="account-title lg:text-left text-center lg:text-xl text-sm">
                       Poysha - Pay Personal Account
                     </h1>
                     <div className="account-number grid grid-cols-1 items-center">

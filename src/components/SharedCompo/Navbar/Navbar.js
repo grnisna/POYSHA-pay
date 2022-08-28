@@ -32,9 +32,6 @@ const Navbar = () => {
   </>
 
 
-
-
-
   const logOut = () => {
     signOut(auth);
     // localStorage.removeItem('AccessToken');
@@ -44,8 +41,10 @@ const Navbar = () => {
 
   const navMenu = <>
     <Link to='/dashboard' className='nav-btn btn btn-sm px-5 rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>Explore</Link>
-    <Link to='/dashboard' className='nav-btn btn btn-sm px-5 rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>AboutUs</Link>
-    <Link to='/dashboard' className='nav-btn btn btn-sm px-5  rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>FAQs</Link>
+
+    <Link to='/aboutUs' className='nav-btn btn btn-sm px-5 rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>AboutUs</Link>
+
+    {/* <Link to='/dashboard' className='nav-btn btn btn-sm px-5  rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>FAQs</Link> */}
     <Link to='/dashboard' className='nav-btn btn btn-sm px-5  rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>Support</Link>
   </>
 
@@ -62,6 +61,7 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
+          <img src={logo} className='w-10' alt="" />
           <Link to="/" className=" lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase text-primary lg:flex  hidden " >POYSHAPAY</Link>
         </div>
         <div className='navbar-center'>

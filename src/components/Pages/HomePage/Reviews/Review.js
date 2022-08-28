@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 
 
 const Review = () => {
@@ -9,14 +8,14 @@ const Review = () => {
 
 
   useEffect(() => {
-    const url = 'http://localhost:5000/addReview';
+    const url = 'https://powerful-basin-90376.herokuapp.com/addReview';
     fetch(url)
       .then(res => res.json())
       .then(data => {
         setReviews(data);
         console.log(reviews);
       })
-  }, [])
+  }, [reviews])
 
   return (
     <div className="w-full mx-auto mt-10">
@@ -41,7 +40,7 @@ const Review = () => {
           )}
       </div>
       <div className="flex justify-end m-5">
-        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More -->
+        <button className="btn btn-link  content-center justify-items-center  btn-lg">See More --
         </button></div>
     </div>
   );
