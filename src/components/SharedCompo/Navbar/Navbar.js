@@ -32,9 +32,6 @@ const Navbar = () => {
   </>
 
 
-
-
-
   const logOut = () => {
     signOut(auth);
     // localStorage.removeItem('AccessToken');
@@ -64,6 +61,7 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
+          <img src={logo} className='w-10' alt="" />
           <Link to="/" className=" lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase text-primary lg:flex  hidden " >POYSHAPAY</Link>
         </div>
         <div className='navbar-center'>

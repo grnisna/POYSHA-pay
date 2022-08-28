@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import BGLogin from '../../../Assets/bg-login2.jpg';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -8,6 +9,7 @@ import LoginImage from '../../../Assets/Login/Login.png';
 import axios from 'axios';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import Loading from '../../../Animations/Loading';
 
 const SignUp = () => {
     //lottifle 
@@ -29,7 +31,8 @@ const SignUp = () => {
         loading,
         error
     ] = useCreateUserWithEmailAndPassword(auth);
-    console.log(user);
+    
+
 
     const [updateProfile] = useUpdateProfile(auth);
     // const [newUser] = useAuthState(auth)
@@ -65,8 +68,15 @@ const SignUp = () => {
             })
                 .then(res => res.json())
                 .then(result => {
-                    console.log(result);
-                    navigate(from, { replace: true });
+                    
+                    if (loading) {
+                        return <Loading></Loading>
+                    }
+                    else {
+                        toast.success('Successfully your are registerd');
+
+                        navigate(from, { replace: true });
+                    }
                 })
         }
         else {

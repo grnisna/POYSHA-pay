@@ -6,6 +6,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import auth from '../../../firebase.init';
 import axios from 'axios';
 import LoginImage from '../../../Assets/Login/Login.png';
+import Loading from '../../../Animations/Loading';
 
 
 
@@ -31,6 +32,9 @@ const Login = () => {
 
     const onSubmit = async event => {
         await signInWithEmailAndPassword(event.email, event.password);
+        if(loading){
+            return <Loading></Loading>
+        }
     };
 
     useEffect(() => {
@@ -41,7 +45,6 @@ const Login = () => {
                 localStorage.setItem('AccessToken', data);
                 navigate(from, { replace: true });
             }
-
 
             getToken();
         }

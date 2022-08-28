@@ -7,8 +7,8 @@ const Setting = () => {
     return (
         <div>
             
-            <ImageUpload></ImageUpload>
-            <UserImages></UserImages>
+            {/* <ImageUpload></ImageUpload>
+            <UserImages></UserImages> */}
             <SettingDemo/>
         </div>
     );
