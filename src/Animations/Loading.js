@@ -6,7 +6,7 @@ const Loading = () => {
   import("@lottiefiles/lottie-player");
  });
  return (
-  <div>
+  <div className='flex justify-center items-center min-h-screen'>
    <lottie-player
     id="firstLottie"
     ref={ref}

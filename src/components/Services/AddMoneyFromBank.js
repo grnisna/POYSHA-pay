@@ -12,22 +12,28 @@ const AddMoneyFromBank = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [bName, setBName] = useState([]);
+    console.log(bName);
     const [transactions, setTransactions] = useState([]);
     // const [banksNames, setBanksNames] = BankNames()
     const [user, loading] = useAuthState(auth);
 
     const [userData, setUserData] = DBUserData();
+    console.log(userData?.name?.name);
+    const phoneNumber = userData.phone;
 
-    //console.log(userData.phone)
+
+
+    console.log(userData.phone)
 
 
 
     useEffect(() => {
-        fetch('banksName.json')
+        const bankNameUrl = `https://powerful-basin-90376.herokuapp.com/banksName`;
+        fetch(bankNameUrl)
             .then(res => res.json())
             .then(data => {
                 setBName(data)
-                //console.log(data);
+
             })
     }, []);
 
@@ -35,7 +41,7 @@ const AddMoneyFromBank = () => {
     const onSubmit = (data) => {
 
         console.log(data)
-        fetch('http://localhost:5000/addMoney', {
+        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,8 +56,25 @@ const AddMoneyFromBank = () => {
                     icon: "success",
                     text: "Deposit Successful"
                 });
+            });
+
+        fetch(`https://powerful-basin-90376.herokuapp.com/addMoney/${userData._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setTransactions()
+                swal({
+                    icon: "success",
+                    text: "Deposit Successful"
+                });
             })
-        fetch('http://localhost:5000/transaction_history', {
+        fetch('https://powerful-basin-90376.herokuapp.com/transactionHistory', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -74,25 +97,40 @@ const AddMoneyFromBank = () => {
 
             <form className='card mx-auto w-96 bg-white mt-5 p-5 shadow-2xl'
                 onSubmit={handleSubmit(onSubmit)}>
-                <h1 className='card-title m-5 uppercase'>Add Money from bank</h1>
+                <h1 className='card-title m-5 uppercase '>Add Money from bank</h1>
 
                 <label class="label">
-                    <span class=" text-xs  -mb-2 mt-2  ">Poyha-Pay Account Name</span>
+                    <span class=" text-xs  -mb-2 mt-2 text-left ">Poyha-Pay Account Name</span>
                 </label>
                 <input type="text"
-                    name='name' value={user?.displayName}
+                    name='name' value={userData?.name?.name}
                     className='input input-bordered w-full  font-bold'
                     {...register('AccountHolder')}
                 />
                 <label class="label">
-                    <span class="  text-xs  -mb-2 mt-2">Poyha-Pay Account Number</span>
+                    <span class="  text-xs  mb-2 mt-2">Poyha-Pay Account Number</span>
                 </label>
-                <input type="number"
+                <input   type="number"
                     name='name'
-                    value={userData?.phone}
-                    className='input input-bordered mt-5 mx-auto w-full px-2 font-bold'
-                    {...register('Receiver')}
+                    placeholder={phoneNumber}
+
+                    className='input input-bordered text-black mt-5 mx-auto w-full px-2 font-bold'
+                    {...register("accountHolderNumber", {
+                        minLength: {
+                            value: 11,
+                            message: 'Please Type Minimum  11 Digit  Account Number '
+                        }, maxLength: {
+                            value: 11,
+                            message: 'Please Type Maximum  11 Digit  Account Number'
+                        }
+                    })}
                 />
+                <label>
+                    {errors.accountHolderNumber?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.accountHolderNumber.message}</span>}
+                    {errors.accountHolderNumber?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.accountHolderNumber.message}</span>}
+                </label>
+
+
                 <label class="label">
                     <span class="  text-xs  -mb-2 mt-2">Select Your Bank Name</span>
                 </label>
@@ -151,9 +189,10 @@ const AddMoneyFromBank = () => {
                     })}
                 />
                 <label>
-                    {errors.transferredAmount?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
-                    {errors.transferredAmount?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
+                    {errors.transferredAmount?.type === 'min' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
+                    {errors.transferredAmount?.type === 'max' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
                 </label>
+                
                 <label class="label">
                     <span class="  text-xs  -mb-2 mt-2">Write Reference</span>
                 </label>

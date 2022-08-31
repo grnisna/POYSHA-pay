@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login/Login";
 import RequireAuth from "./components/Auth/RequireAuth/RequireAuth";
 import SignUp from "./components/Auth/SignUp/SignUp";
+import Account from "./components/Dashboard/MyAccount/Account";
+// import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./components/Pages/HomePage/Home";
 import AddMoney from "./components/Services/AddMoney";
 import Footer from "./components/SharedCompo/Footer/Footer";
@@ -9,18 +11,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // added new tost 
 import { Toaster } from 'react-hot-toast';
-
 //components
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
-
-
 import RechargeMoney from "./components/Services/RechargeMoney";
 import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
-
-
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 
 
@@ -36,13 +33,8 @@ import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
 
 
-
-
-
-
 // import CurrencyConvert from './components/Dashboard/CurrencyConvert/CurrencyConvert'
 // import Calculate from "./components/Calculator/Calculate";
-
 
 import UserImages from "./components/Pages/HomePage/UserImages";
 
@@ -57,12 +49,20 @@ import Faqs from "./components/Dashboard/MyAccount/Faqs";
 import Questions from "./components/Pages/HomePage/Questions";
 import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
 
+import Paypal from "./components/Hooks/Paypal/Paypal";
+
+import AboutUs from './components/Pages/AboutUs/AboutUs';
+
+
 
 
 function App() {
   return (
     <div>
       <Routes>
+
+        <Route path='dashboard' element={<Dashboard></Dashboard>}></Route>
+
         {/* ------------------main menu---------------------  */}
         <Route path='/' element={<Home />}></Route>
         <Route path='/addMoney' element={<RequireAuth>
@@ -87,7 +87,6 @@ function App() {
         </Route>
 
 
-
         <Route path='/dashboard' element={
 
           <RequireAuth>
@@ -100,6 +99,7 @@ function App() {
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard /></RequireAuth>}></Route>
         <Route path="/contactUs" element={<ContactUS></ContactUS>} ></Route>
+        <Route path="/aboutUs" element={<AboutUs></AboutUs>} ></Route>
 
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
@@ -112,7 +112,7 @@ function App() {
           <Route path="dashboard" element={<SendMoney />}></Route>
           <Route path="myAccount" element={<SendMoney />}></Route>
           <Route path="sendMoney" element={<SendMoney />}></Route>
-          <Route path="addMoney" element={<AddMoney></AddMoney>}></Route>
+          <Route path="addMoney"  element={<AddMoney></AddMoney>}></Route>
           <Route path="addAccount" element={<OthersAccounts />}></Route>
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
@@ -124,18 +124,19 @@ function App() {
           <Route path="CurrencyConvert" element={<CurrencyConvert />}></Route>
 
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
-          <Route path="takeLone" element={<TakeLone />}></Route>
+          <Route path="takeLone" element={<Paypal />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
           <Route path="Faqs" element={<Faqs></Faqs>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
-          <Route path="Setting" element={<Setting />}></Route>
+          {/* <Route path="Setting" element={<Setting />}></Route> */}
           <Route path="Setting" element={<SettingDemo />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>
       </Routes>
       <Toaster />
       <ToastContainer />
+
     </div>
   );
 }
