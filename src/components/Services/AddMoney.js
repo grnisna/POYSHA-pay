@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 import BankNames from './BankNames';
 
 const AddMoney = () => {
-  //const [banksNames, setBanksNames] = BankNames();
-  //console.log(banksNames)
-
-
 
   return (
     <div className="grid justify-center justify-items-center lg:py-20 p-4 ">
