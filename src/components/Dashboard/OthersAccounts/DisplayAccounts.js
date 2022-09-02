@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 
 
 const DisplayAccounts = ({ accounts }) => {
-    
+
     const { AccountHolder, HolderImg, AccountNumber, origin } = accounts;
 
     const handelQuickPay = () => {
@@ -30,7 +30,9 @@ const DisplayAccounts = ({ accounts }) => {
         toast.success('Send Successful');
     }
     const [addedAccount, addedAccounts] = useAddedAccounts();
+    // console.log(addedAccount._id);
     const handleDelete = id => {
+        // console.log(id);
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
             const url = `https://powerful-basin-90376.herokuapp.com/addedAccount/${id}`;
@@ -43,11 +45,12 @@ const DisplayAccounts = ({ accounts }) => {
                     const remaining = addedAccounts.filter(addedAccount => addedAccount._id !== id);
                     addedAccounts(remaining);
                 })
-            console.log(addedAccount._id)
+            // console.log(addedAccount._id)
         }
     }
 
     return (
+
         <table class="table w-full">
             <tbody>
                 <tr className='grid lg:grid-cols-5 sm:grid-cols-2 border-b-2 border-y-4  px-1 items-center'>
@@ -68,8 +71,8 @@ const DisplayAccounts = ({ accounts }) => {
                         {AccountNumber}
                     </td>
                     <td className=' border-none flex justify-end'>
-                        <button onClick={handelQuickPay} 
-                        className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>
+                        <button onClick={handelQuickPay}
+                            className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>
                             QUICK PAY
                         </button>
                     </td>
@@ -77,7 +80,7 @@ const DisplayAccounts = ({ accounts }) => {
                         <button onClick={handelAddRequest} className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>Money Request</button>
                     </td>
                     <td className='border-none flex justify-end'>
-                        <button onClick={() => handleDelete(addedAccount._id)} className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>Delet</button>
+                        <button onClick={() => handleDelete(addedAccount[0]._id)} className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>Delet</button>
                         {/* <FiMoreVertical></FiMoreVertical> */}
                     </td>
                 </tr>

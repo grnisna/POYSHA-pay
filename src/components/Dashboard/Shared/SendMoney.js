@@ -1,73 +1,45 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { toast } from 'react-toastify';
 import PhoneInput from 'react-phone-number-input';
 import BgSendMoney from '../../../Assets/Send Money/background2.jpg';
 import DBUserData from '../../Hooks/UserData/DBUserData';
 import swal from 'sweetalert';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 
 const SendMoney = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [value, setValue] = useState();
-  const [userData, setUserData] = DBUserData([]);
+  const [userData] = DBUserData([]);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = data => {
+    const userId = userData?._id;
+    const sendTo = userData?.phoneNumber;
     const sendAmount = data.sendAmount;
-    const transactionType = "sendMoney";
-    const newData = { ...data, transactionType }
-    const url = `https://powerful-basin-90376.herokuapp.com/sendMoney`;
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(newData)
-    })
-      .then(res => res.json())
-      .then(result => {
-        console.log(result);
-        //swal add and remove tost
+
+
+    const newData = { ...data, sendTo: sendTo }
+    // add by ashraf
+    const url = `http://localhost:4000/sendMoney/${userId}`;
+    axios.put(url, newData)
+      .then(response => {
+        console.log(response);
         swal(`Done `, `Total ${sendAmount} Successfully send`, "success");
         reset();
         setValue('');
-
+      })
+      .catch(error => {
+        toast.error(`${error?.response?.data?.error}`)
       });
 
-    fetch('https://powerful-basin-90376.herokuapp.com/transactionHistory', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(newData)
-    })
-      .then(res => res.json())
-      .then(data => {
-        reset();
-        setValue('');
-      })
   };
 
   return (
 
     <div className='flex flex-col items-center justify-center p-5 bg-slate-200'
-
-      style={{
-        // backgroundImage: `url(${BgSendMoney})`,
-        // backgroundSize: 'cover',
-
-        backgroundColor: '#f8f9fa'
-
-      }}
-    >
-      <div className='flex items-center justify-center rounded-md '
-      // style={{
-      //   backgroundImage: `url(${BgSendMoney})`,
-      //   backgroundSize: 'cover',
-
-      // }}
-      >
+      style={{ backgroundColor: '#f8f9fa' }}>
+      <div className='flex items-center justify-center rounded-md '>
         <form className='lg:w-96 md:w-96 sm:w-96 shadow-xl  bg-clip-padding bg-slate-200 text-secondary  backdrop-blur-md py-10 px-8 rounded-md'
 
           onSubmit={handleSubmit(onSubmit)}>
@@ -86,8 +58,7 @@ const SendMoney = () => {
             <PhoneInput
               className='input'
               placeholder="Enter phone number"
-              value={userData?.phone}
-
+              value={userData?.phoneNumber}
               readOnly
 
             />
@@ -104,7 +75,7 @@ const SendMoney = () => {
               defaultCountry="BD"
               value={value}
               onChange={setValue}
-              {...register("receiverNumber", {
+              {...register("sendFrom", {
                 required: {
                   value: true,
                   message: 'Phone Number is required'

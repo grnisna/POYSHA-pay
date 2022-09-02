@@ -102,6 +102,14 @@ const DashboardNav = () => {
             {/* <Link to='Setting'>Setting</Link> */}
             <Link to='Setting'>Setting</Link>
           </li>
+          <li className='flex items-center navItem'>
+            <img src={Setting} alt="" />
+            <Link to='admin'>Admin</Link>
+          </li>
+          {/* <li className='flex items-center navItem'>
+            <img src={Setting} alt="" />
+            <Link to='userDetial'>Userd</Link>
+          </li> */}
         </ul>
 
 

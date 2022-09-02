@@ -36,15 +36,21 @@ const SignUp = () => {
 
     const [updateProfile] = useUpdateProfile(auth);
     // const [newUser] = useAuthState(auth)
-
+    var str = "Java Script Object Notation";
+    var matches = str.match(/\b(\w)/g);
+    var acronym = matches.join('');
 
     const onSubmit = async data => {
 
+
+        console.log(acronym)
         //if password not matched it will show error
         if (data.password === data.conformPassword) {
             await createUserWithEmailAndPassword(data.email, data.password);
             await updateProfile({ displayName: data.name });
+
             const newData = {
+                image: data.name.split("")[0],
                 name: data.name,
                 email: data.email,
                 password: data.password,
