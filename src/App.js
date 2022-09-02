@@ -53,10 +53,11 @@ import Setting from "./components/Dashboard/MyAccount/Setting";
 import Faqs from "./components/Dashboard/MyAccount/Faqs";
 
 
-
-
 import Questions from "./components/Pages/HomePage/Questions";
 import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
+import Users from "./components/Pages/HomePage/Users";
+
+import User from "./components/Pages/HomePage/User";
 
 
 
@@ -116,6 +117,8 @@ function App() {
           <Route path="takeLone" element={<TakeLone />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
           <Route path="Faqs" element={<Faqs></Faqs>}></Route>
+          <Route path="admin" element={<Users></Users>}></Route>
+          <Route path="admin/:user/:id" element={<User></User>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
           <Route path="Setting" element={<Setting />}></Route>
