@@ -57,30 +57,11 @@ const SignUp = () => {
         })
 
         .catch(error => {
-          navigate(from, { replace: true });
+          // navigate(from, { replace: true });
           toast.error(`${error?.response?.data?.error}`)
         });
-      navigate(from, { replace: true });
+      // navigate(from, { replace: true });
 
-
-      // fetch(url, {
-      //   method: 'POST',
-      //   headers: {
-      //     'content-type': 'application/json'
-      //   },
-      //   body: JSON.stringify(newData)
-      // })
-
-      //   .then(res => res.json())
-      //   .then(result => {
-      //     if (result?.error) {
-      //       setError(result?.error)
-      //       toast.error(`${result?.error}`)
-      //     } else {
-      //       toast.success("Account Created")
-      //     }
-      //     navigate(from, { replace: true });
-      //   })
 
     } else {
       console.log("Password Is not Matched");

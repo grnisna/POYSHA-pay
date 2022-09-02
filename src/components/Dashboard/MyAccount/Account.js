@@ -12,7 +12,8 @@ const dashCardBg = `https://eduvibe.react.devsvibe.com/static/media/home-two-cta
 
 const Account = () => {
   const [services, setServices] = useState([])
-  const [userData, setUserData] = DBUserData()
+  const [userData, setUserData, data, status] = DBUserData()
+  console.log(data);
 
   const ref = useRef(null);
   React.useEffect(() => {

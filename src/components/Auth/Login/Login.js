@@ -28,20 +28,22 @@ const Login = () => {
 
 
     const onSubmit = async event => {
+        console.log(event.email, event.password)
         await signInWithEmailAndPassword(event.email, event.password);
+        navigate(from, { replace: true });
     };
 
-    useEffect(() => {
-        if (user) {
-            async function getToken() {
-                const email = user.email;
-                const { data } = await axios.post('http://localhost:4000/login', { email });
-                localStorage.setItem('AccessToken', data);
-                navigate(from, { replace: true });
-            }
-            getToken();
-        }
-    }, [navigate, user, from])
+    // useEffect(() => {
+    //     if (user) {
+    //         async function getToken() {
+    //             const email = user.email;
+    //             const { data } = await axios.post('http://localhost:4000/login', { email });
+    //             localStorage.setItem('AccessToken', data);
+    //             navigate(from, { replace: true });
+    //         }
+    //         getToken();
+    //     }
+    // }, [navigate, user, from])
 
 
 

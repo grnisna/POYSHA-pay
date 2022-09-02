@@ -8,7 +8,7 @@ const Dashboard = () => {
             <div className="nav rounded-md ">
                 <DashboardNav className=''></DashboardNav>
             </div>
-            <div className="sections lg:col-span-5 md:col-span-2 ">
+            <div className="sections lg:col-span-5 md:col-span-2 bg-info">
                 <Outlet></Outlet>
             </div>
         </div>
