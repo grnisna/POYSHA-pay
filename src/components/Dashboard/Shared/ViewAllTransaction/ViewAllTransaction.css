@@ -1,8 +1,4 @@
-.viewAllTable{
-    width:100%;
-    margin: auto;
-    box-shadow: 7px;
-}
+
 .button-area{
     width: 60%;
     margin: auto;
@@ -10,18 +6,29 @@
     border-radius: 10px;
     padding: 10px;
 }
-.table-div{
-    width: 60%;
+
+.moneySection{
+    width: 60% ;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
 }
-th, td {
-    border: 1px solid black;
 
-  }
+.hideSendAndReceivedMoney{
+    display: none;
+}
+.showSendAndReceivedMoney{
+    display: block;
+}
+
+.addMoneyColor{
+    color: green;
+}
+.sendMoneyColor{
+    color: rgb(219, 25, 138);
+}
 
   /* pagination ------------ */
   .pagination .selected{
@@ -30,13 +37,7 @@ th, td {
   }
 
 @media screen and (max-width:400px) {
-    .card{
-        width: 90% !important;
-        margin: auto;
-    }
-    .viewAllTable{
-        width: 100%;
-    }
+
     .button-area {
         width: 100%;
     }
@@ -44,7 +45,20 @@ th, td {
         font-size: 10px;
         padding: 2px;
     }
-    .table-div{
-        width: 100%;
+
+    .moneySection{
+        width: 100% ;
+        
+
     }
+    .fontSize ol li{
+        font-size: 10px;
+        padding: 0;
+    }
+    .fontSizeAllStatement ol li{
+        font-size: 8px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
 }

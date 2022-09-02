@@ -6,6 +6,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import auth from '../../../firebase.init';
 import axios from 'axios';
 import LoginImage from '../../../Assets/Login/Login.png';
+import Loading from '../../../Animations/Loading';
 
 
 
@@ -31,6 +32,9 @@ const Login = () => {
 
     const onSubmit = async event => {
         await signInWithEmailAndPassword(event.email, event.password);
+        if(loading){
+            return <Loading></Loading>
+        }
     };
 
     useEffect(() => {
@@ -41,7 +45,6 @@ const Login = () => {
                 localStorage.setItem('AccessToken', data);
                 navigate(from, { replace: true });
             }
-
 
             getToken();
         }
@@ -76,12 +79,14 @@ const Login = () => {
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div>
-                            <input type="email" className='input w-full max-w-md rounded-3xl mt-1 mb-3 '{...register("email")} placeholder="Type Your Email" autocomplete="off" required />
+                            <input type="email" className='input w-full text-black max-w-md rounded-3xl mt-1 mb-3 '{...register("email")} placeholder="Type Your Email" autocomplete="off" required />
                         </div>
 
-                        <input type="password" className='input w-full max-w-md mt-1 h-10 rounded-3xl'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
+                        <input type="password" className='input w-full text-black max-w-md mt-1 h-10 rounded-3xl'{...register("password")} placeholder="Type Your Password" autocomplete="off" required />
 
-                        <input className='mt-7 bg-white hover:bg-secondary text-secondary   transition duration-500 rounded-3xl shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
+
+                        <input className='mt-7 bg-white hover:text-white hover:bg-secondary text-secondary   transition duration-500 rounded-3xl shadow-sm p-3 w-full font-semibold cursor-pointer' type="submit" value="LOGIN" />
+
 
                         <p onClick={() => navigate('/resetpassword')} className='btn btn-link  pe-auto text-decoration-none' variant="link">Forget Password</p>
 

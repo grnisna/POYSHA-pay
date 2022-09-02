@@ -5,6 +5,9 @@ import { FcInfo } from "react-icons/fc";
 import useAddedAccounts from '../../../Hooks/useAddedAccounts';
 
 import './DisplayAccounts.css'
+import QuickPayModal from './QuickPayModal';
+import toast from 'react-hot-toast';
+
 
 
 
@@ -13,14 +16,18 @@ const DisplayAccounts = ({ accounts }) => {
     const { AccountHolder, HolderImg, AccountNumber, origin } = accounts;
 
     const handelQuickPay = () => {
-        const quickPayAmounts = window.prompt('Please put the amounts');
-        console.log(quickPayAmounts);
+        const qucikpay = window.prompt('Please put the amounts');
+        if (qucikpay === '') {
+            toast.error('Please put the amount');
+        } else {
+            toast.success('Send Successful');
+        }
 
     }
 
     const handelAddRequest = () => {
         const addMoneyAmounts = window.prompt('Please put the amounts')
-        console.log(addMoneyAmounts);
+        toast.success('Send Successful');
     }
     const [addedAccount, addedAccounts] = useAddedAccounts();
     // console.log(addedAccount._id);
@@ -28,7 +35,7 @@ const DisplayAccounts = ({ accounts }) => {
         // console.log(id);
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/addedAccount/${id}`;
+            const url = `https://powerful-basin-90376.herokuapp.com/addedAccount/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -64,7 +71,10 @@ const DisplayAccounts = ({ accounts }) => {
                         {AccountNumber}
                     </td>
                     <td className=' border-none flex justify-end'>
-                        <button onClick={handelQuickPay} className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>Quick Pay</button>
+                        <button onClick={handelQuickPay}
+                            className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>
+                            QUICK PAY
+                        </button>
                     </td>
                     <td className=' border-none flex justify-end'>
                         <button onClick={handelAddRequest} className='hover:bg-primary bg-white text-primary border-none hover:text-white btn btn-sm btn-active'>Money Request</button>

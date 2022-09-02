@@ -14,6 +14,24 @@ const Navbar = () => {
   // const from = location?.state?.from?.pathname|| '/';
 
 
+  const menu = <>
+    <li className='z-50' tabIndex="0">
+      <a className="justify-between">
+        Service
+        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </a>
+
+      <ul className="p-2 bg-white border">
+        <li><NavLink to='/sendMoney' >Send Money</NavLink></li>
+        <li><NavLink to='/addMoney' >Add Money from Bank</NavLink></li>
+        <li><NavLink to='/BankTransfer' >Add Money From Card</NavLink></li>
+        <li><NavLink to='/addAccount' >Add Account</NavLink></li>
+        <li><a>Recharge</a></li>
+      </ul>
+    </li>
+  </>
+
+
   const logOut = () => {
     signOut(auth);
     // localStorage.removeItem('AccessToken');
@@ -23,8 +41,10 @@ const Navbar = () => {
 
   const navMenu = <>
     <Link to='/dashboard' className='nav-btn btn btn-sm px-5 rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>Explore</Link>
-    <Link to='/dashboard' className='nav-btn btn btn-sm px-5 rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>AboutUs</Link>
-    <Link to='/dashboard' className='nav-btn btn btn-sm px-5  rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>FAQs</Link>
+
+    <Link to='/aboutUs' className='nav-btn btn btn-sm px-5 rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>AboutUs</Link>
+
+    {/* <Link to='/dashboard' className='nav-btn btn btn-sm px-5  rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>FAQs</Link> */}
     <Link to='/dashboard' className='nav-btn btn btn-sm px-5  rounded-full btn-active text-secondary border-0 hover:text-white bg-white hover:bg-primary content-center'>Support</Link>
   </>
 
@@ -41,6 +61,7 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
+          <img src={logo} className='w-10' alt="" />
           <Link to="/" className=" lg:ml-1 ml-[-50px] lg:text-md font-semibold uppercase text-primary lg:flex  hidden " >POYSHAPAY</Link>
         </div>
         <div className='navbar-center'>

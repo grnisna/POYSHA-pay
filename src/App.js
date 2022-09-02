@@ -11,18 +11,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // added new tost 
 import { Toaster } from 'react-hot-toast';
-
 //components
 import SendMoney from "./components/Dashboard/Shared/SendMoney";
 import OthersAccounts from "./components/Dashboard/OthersAccounts/OthersAccounts";
 import Dashboard from "./components/Dashboard/MyAccount/Dashboard";
-
-
 import RechargeMoney from "./components/Services/RechargeMoney";
 import ResetPassword from "./components/Auth/ResetPassword/ResetPassword";
 import SubFooter from './components/SharedCompo/Footer/SubFooter';
-
-
 import ViewAllTransaction from "./components/Dashboard/Shared/ViewAllTransaction/ViewAllTransaction";
 
 
@@ -38,17 +33,13 @@ import AddReview from "./components/Dashboard/AddReview/AddReview";
 import ContactUS from "./components/Pages/ContactUS/ContactUS";
 
 
-
-
-
-
 // import CurrencyConvert from './components/Dashboard/CurrencyConvert/CurrencyConvert'
 // import Calculate from "./components/Calculator/Calculate";
-
 
 import UserImages from "./components/Pages/HomePage/UserImages";
 
 import Setting from "./components/Dashboard/MyAccount/Setting";
+import AddMoneyFromBank from "./components/Services/AddMoneyFromBank";
 
 import Faqs from "./components/Dashboard/MyAccount/Faqs";
 
@@ -58,6 +49,11 @@ import SettingDemo from "./components/Dashboard/MyAccount/SettingDemo";
 import Users from "./components/Pages/HomePage/Users";
 
 import User from "./components/Pages/HomePage/User";
+
+import Paypal from "./components/Hooks/Paypal/Paypal";
+
+import AboutUs from './components/Pages/AboutUs/AboutUs';
+
 
 
 
@@ -74,12 +70,22 @@ function App() {
           <AddMoney />
         </RequireAuth>}>
         </Route>
+
+        <Route path='/BankTransfer' element={<RequireAuth>
+          <StripePayment />
+        </RequireAuth>}>
+        </Route>
+        {/* <Route path='/addMoneyFromBank' element={
+          <AddMoneyFromBank />
+        }>
+        </Route> */}
+
+
+
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard />
         </RequireAuth>}>
         </Route>
-
-
 
 
         <Route path='/dashboard' element={
@@ -88,13 +94,13 @@ function App() {
             <Dashboard></Dashboard>
           </RequireAuth>}>  </Route>
 
-
         <Route path='/addMoney' element={<RequireAuth><AddMoney /></RequireAuth>}></Route>
         <Route path='/sendMoney' element={<RequireAuth><SendMoney /></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard></Dashboard></RequireAuth>}></Route>
         <Route path='/addAccount' element={<RequireAuth> <OthersAccounts></OthersAccounts> </RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth> <Dashboard /></RequireAuth>}></Route>
         <Route path="/contactUs" element={<ContactUS></ContactUS>} ></Route>
+        <Route path="/aboutUs" element={<AboutUs></AboutUs>} ></Route>
 
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
@@ -112,16 +118,21 @@ function App() {
           <Route path="RequestMoney" element={<AddMoney />}></Route>
           <Route path="BankTransfer" element={<StripePayment />}></Route>
           <Route path="addMoney" element={<AddMoney />}></Route>
+
+          <Route path="addMoneyFromBank" element={<AddMoneyFromBank />}></Route>
+          {/* <Route path="Calculator" element={<Calculate></Calculate>}></Route> */}
+
           <Route path="CurrencyConvert" element={<CurrencyConvert />}></Route>
+
           <Route path="TransitionHistory" element={<ViewAllTransaction></ViewAllTransaction>}></Route>
-          <Route path="takeLone" element={<TakeLone />}></Route>
+          <Route path="takeLone" element={<Paypal />}></Route>
           <Route path="ContactUS" element={<ContactUS></ContactUS>}></Route>
           <Route path="Faqs" element={<Faqs></Faqs>}></Route>
           <Route path="admin" element={<Users></Users>}></Route>
           <Route path="admin/:user/:id" element={<User></User>}></Route>
           <Route path="addReview" element={<AddReview />}></Route>
           <Route path="SupportTicket" element={<TakeLone />}></Route>
-          <Route path="Setting" element={<Setting />}></Route>
+          {/* <Route path="Setting" element={<Setting />}></Route> */}
           <Route path="Setting" element={<SettingDemo />}></Route>
           <Route path="LogOut" element={<TakeLone />}></Route>
         </Route>

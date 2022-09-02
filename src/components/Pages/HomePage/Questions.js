@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 
 const Questions = () => {
     const [questions, setQuestions] = useState([])
+    console.log(questions);
     useEffect(() => {
         fetch("questions.json")
             .then(res => res.json())
             .then(data => setQuestions(data))
     }, [])
-    console.log(questions);
     return (
         <div>
             <h2 className='text-3xl py-3 grid justify-center bg-info text-secondary'>Frequently Asking Questions</h2>
