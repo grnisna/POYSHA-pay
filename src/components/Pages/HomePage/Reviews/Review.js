@@ -13,7 +13,6 @@ const Review = () => {
       .then(res => res.json())
       .then(data => {
         setReviews(data);
-        console.log(reviews);
       })
   }, [reviews])
 
@@ -24,8 +23,8 @@ const Review = () => {
         {
           reviews.slice(0, 6).map(review =>
             // console.log(parseInt(review.star))
-            <div class="card w-96 bg-base-100 p-5 shadow-2xl">
-              <div class="flex  justify-between px-2">
+            <div className="card w-96 bg-base-100 p-5 shadow-2xl">
+              <div className="flex  justify-between px-2">
                 <img className="avatar w-20 rounded-full" src="https://placeimg.com/192/192/people" alt="user" />
                 <div className="flex flex-col justify-evenly items-center ">
                   <p className="text-xl font-bold">  {review.userName}</p>
@@ -33,7 +32,7 @@ const Review = () => {
                   {/* <p className="text-yellow-700"><AiFillStar values={parseInt(review.star)} /></p> */}
                 </div>
               </div>
-              <div class=" mt-5 text-left ">
+              <div className=" mt-5 text-left ">
                 <span className="text-xs  ">{review.Reference}</span>
               </div>
             </div>

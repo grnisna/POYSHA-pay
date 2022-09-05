@@ -111,8 +111,8 @@ const DashboardNav = () => {
         <div className='lg:[height:1px] bg-primary' />
         <div className="user py-5">
           <div className="user-profile flex gap-4 justify-center justify-items-center items-center">
-            <div class="avatar online">
-              <div class="w-10 rounded-full">
+            <div className="avatar online">
+              <div className="w-10 rounded-full">
                 <img src="https://placeimg.com/192/192/people" />
               </div>
             </div>

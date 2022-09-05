@@ -90,7 +90,7 @@ const AboutUS = () => {
                       className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -100,12 +100,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://www.facebook.com/ttbrifat"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Facebook"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -115,12 +115,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://github.com/techtobit"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Github"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ const AboutUS = () => {
                       className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -168,12 +168,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://www.facebook.com/profile.php?id=100010416578239"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Facebook"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -183,12 +183,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://github.com/mehedimugdho72"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Github"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +226,7 @@ const AboutUS = () => {
                       className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -236,12 +236,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://www.facebook.com/Shimul.SCD"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Facebook"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -251,12 +251,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://github.com/ShimulChandraDas"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Github"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -294,7 +294,7 @@ const AboutUS = () => {
                       className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -304,12 +304,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://www.facebook.com/s.m.mahfuzurr.rahman"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Facebook"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -319,12 +319,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://github.com/smmahfuzurrahman"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Github"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -362,7 +362,7 @@ const AboutUS = () => {
                       className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -372,12 +372,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://www.facebook.com/mprojit"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Facebook"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -387,12 +387,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://github.com/projit-1"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Github"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +430,7 @@ const AboutUS = () => {
                       className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -440,12 +440,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://www.facebook.com/grnisan"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Facebook"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -455,12 +455,12 @@ const AboutUS = () => {
                     </a>
                     <a
                       href="https://github.com/grnisna"
-                      class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                      className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
                       aria-label="Github"
                       target="blank"
                     >
                       <svg
-                        class="w-6 h-6 fill-current"
+                        className="w-6 h-6 fill-current"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"

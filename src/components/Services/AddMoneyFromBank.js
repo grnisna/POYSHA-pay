@@ -99,16 +99,16 @@ const AddMoneyFromBank = () => {
                 onSubmit={handleSubmit(onSubmit)}>
                 <h1 className='card-title m-5 uppercase '>Add Money from bank</h1>
 
-                <label class="label">
-                    <span class=" text-xs  -mb-2 mt-2 text-left ">Poyha-Pay Account Name</span>
+                <label className="label">
+                    <span className=" text-xs  -mb-2 mt-2 text-left ">Poyha-Pay Account Name</span>
                 </label>
                 <input type="text"
                     name='name' value={userData?.name?.name}
                     className='input input-bordered w-full  font-bold'
                     {...register('AccountHolder')}
                 />
-                <label class="label">
-                    <span class="  text-xs  mb-2 mt-2">Poyha-Pay Account Number</span>
+                <label className="label">
+                    <span className="  text-xs  mb-2 mt-2">Poyha-Pay Account Number</span>
                 </label>
                 <input   type="number"
                     name='name'
@@ -126,15 +126,15 @@ const AddMoneyFromBank = () => {
                     })}
                 />
                 <label>
-                    {errors.accountHolderNumber?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.accountHolderNumber.message}</span>}
-                    {errors.accountHolderNumber?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.accountHolderNumber.message}</span>}
+                    {errors.accountHolderNumber?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.accountHolderNumber.message}</span>}
+                    {errors.accountHolderNumber?.type === 'maxLength' && <span className="label-text-alt text-red-500">{errors.accountHolderNumber.message}</span>}
                 </label>
 
 
-                <label class="label">
-                    <span class="  text-xs  -mb-2 mt-2">Select Your Bank Name</span>
+                <label className="label">
+                    <span className="  text-xs  -mb-2 mt-2">Select Your Bank Name</span>
                 </label>
-                <select class="select w-full  mx-auto  px-2"
+                <select className="select w-full  mx-auto  px-2"
                     {...register('BankName')}>
                     {
                         bName.map((b, index) => <option
@@ -143,8 +143,8 @@ const AddMoneyFromBank = () => {
                         >{b.name}</option>)
                     }
                 </select>
-                <label class="label">
-                    <span class="  text-xs -mb-2 mt-2">Enter Your Bank Account Number</span>
+                <label className="label">
+                    <span className="  text-xs -mb-2 mt-2">Enter Your Bank Account Number</span>
                 </label>
                 <input type="Number"
                     required
@@ -163,13 +163,13 @@ const AddMoneyFromBank = () => {
                     })}
                 />
                 <label>
-                    {errors.bankAccountNumber?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.bankAccountNumber.message}</span>}
-                    {errors.bankAccountNumber?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.bankAccountNumber.message}</span>}
+                    {errors.bankAccountNumber?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.bankAccountNumber.message}</span>}
+                    {errors.bankAccountNumber?.type === 'maxLength' && <span className="label-text-alt text-red-500">{errors.bankAccountNumber.message}</span>}
                 </label>
 
 
-                <label class="label">
-                    <span class="  text-xs  -mb-2 mt-2">Enter Your Amount</span>
+                <label className="label">
+                    <span className="  text-xs  -mb-2 mt-2">Enter Your Amount</span>
                 </label>
                 <input type="Number"
                     required
@@ -189,12 +189,12 @@ const AddMoneyFromBank = () => {
                     })}
                 />
                 <label>
-                    {errors.transferredAmount?.type === 'min' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
-                    {errors.transferredAmount?.type === 'max' && <span class="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
+                    {errors.transferredAmount?.type === 'min' && <span className="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
+                    {errors.transferredAmount?.type === 'max' && <span className="label-text-alt text-red-500">{errors.transferredAmount.message}</span>}
                 </label>
                 
-                <label class="label">
-                    <span class="  text-xs  -mb-2 mt-2">Write Reference</span>
+                <label className="label">
+                    <span className="  text-xs  -mb-2 mt-2">Write Reference</span>
                 </label>
                 <input type="text"
                     required

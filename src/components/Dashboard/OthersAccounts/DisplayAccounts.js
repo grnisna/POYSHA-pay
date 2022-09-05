@@ -67,19 +67,19 @@ const DisplayAccounts = ({ accounts }) => {
         //             <td className='threeDot'><FiMoreVertical /></td>
         //         </tr>
         // =======
-        <table class="table w-full">
+        <table className="table w-full">
             <tbody>
                 <tr className='grid lg:grid-cols-5 sm:grid-cols-2 border-b-2 border-y-4  px-1 items-center'>
                     <td className=' border-none'>
-                        <div class="flex items-center space-x-3">
-                            <div class="avatar">
-                                <div class="mask mask-squircle w-12 h-12">
+                        <div className="flex items-center space-x-3">
+                            <div className="avatar">
+                                <div className="mask mask-squircle w-12 h-12">
                                     <img src={HolderImg} alt="" />
                                 </div>
                             </div>
                             <div>
-                                <div class="font-bold">{AccountHolder}</div>
-                                <div class="text-sm opacity-50">{origin}</div>
+                                <div className="font-bold">{AccountHolder}</div>
+                                <div className="text-sm opacity-50">{origin}</div>
                             </div>
                         </div>
                     </td>

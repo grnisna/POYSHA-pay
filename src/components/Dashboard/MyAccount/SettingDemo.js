@@ -119,7 +119,7 @@ const SettingDemo = () => {
         </div>
         <div className='m-10'>
           <h2 className='font-bold text-xl '>Profile Detils</h2>
-          <div class="flex   gap-5 mt-10">
+          <div className="flex   gap-5 mt-10">
 
 
             <div className=' w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2' >
@@ -182,21 +182,21 @@ const SettingDemo = () => {
 
       <div className="right-side">
         <div>
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-title">Change Password</h2>
+          <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <h2 className="card-title">Change Password</h2>
               <p className='text-[#bbb]'>Your can  parmanently removed or temporally freeze your account </p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary w-full">Change password</button>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary w-full">Change password</button>
               </div>
             </div>
           </div>
-          <div class="card w-96 bg-base-100 shadow-xl mt-10">
-            <div class="card-body">
-              <h2 class="card-title">Close Account</h2>
+          <div className="card w-96 bg-base-100 shadow-xl mt-10">
+            <div className="card-body">
+              <h2 className="card-title">Close Account</h2>
               <p className='text-[#bbb]'>Your can  parmanently removed or temporally freeze your account </p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary w-full">Close Account</button>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary w-full">Close Account</button>
               </div>
             </div>
           </div>

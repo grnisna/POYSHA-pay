@@ -11,6 +11,7 @@ import Footer from '../../SharedCompo/Footer/Footer';
 import Review from './Reviews/Review';
 
 import Paypal from '../../Hooks/Paypal/Paypal';
+import LiveChat from '../../LiveChat/LiveChat';
 
 
 
@@ -26,8 +27,8 @@ const Home = () => {
             <CardSlide></CardSlide>
             <Services></Services>
             <AppDownload></AppDownload>
-
-<Review></Review>
+            <LiveChat></LiveChat>
+            <Review></Review>
             <Footer></Footer>
 
         </div>
